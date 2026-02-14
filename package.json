@@ -1,0 +1,61 @@
+{
+  "name": "wuli.js",
+  "version": "1.0.0",
+  "description": "基于bullet的轻量TypeScript物理引擎",
+  "main": "dist/modules/index.js",
+  "module": "dist/modules/index.mjs",
+  "types": "dist/modules/index.d.ts",
+  "unpkg": "dist/bundle/index.js",
+  "jsdelivr": "dist/bundle/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/modules/index.d.ts",
+      "browser": "./dist/bundle/index.mjs",
+      "import": "./dist/modules/index.mjs",
+      "require": "./dist/modules/index.js"
+    },
+    "./*": {
+      "types": "./dist/modules/*.d.ts",
+      "import": "./dist/modules/*.mjs",
+      "require": "./dist/modules/*.js"
+    },
+    "./bundle": {
+      "types": "./dist/bundle/index.d.ts",
+      "import": "./dist/bundle/index.mjs",
+      "require": "./dist/bundle/index.js"
+    }
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jset --watch",
+    "test:coverage": "jest --coverage",
+    "build": "rimraf dist && tsup",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "physics",
+    "typescript"
+  ],
+  "author": "mrjordia <yangning009@hotmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrjordia/wuli.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mrjordia/wuli.js/issues"
+  },
+  "homepage": "https://github.com/mrjordia/wuli.js#readme",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.2.3",
+    "jest": "^30.2.0",
+    "rimraf": "^6.1.2",
+    "ts-jest": "^29.4.6",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}
