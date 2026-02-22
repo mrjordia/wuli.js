@@ -15,9 +15,9 @@
 
 ## 安装
 ```bash  
-npm install wuli  
+npm install wuli.js  
 # 或  
-yarn add wuli
+yarn add wuli.js
 ```
 ## 快速开始
 ```
