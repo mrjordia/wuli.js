@@ -109,7 +109,7 @@ export default class Shape {
 		}
 	}
 	public get density(): number {
-		return this._density ? this.density : 1;
+		return this._density ? this._density : 1;
 	}
 	public set density(density: number) {
 		this._density = density;
