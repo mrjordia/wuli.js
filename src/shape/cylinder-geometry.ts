@@ -4,18 +4,19 @@ import Aabb from "../common/aabb";
 import Transform from "../common/transform";
 import Vec3 from "../common/vec3";
 import RayCastHit from "./ray-cast-hit";
+import Method from "../common/method";
 
 export default class CylinderGeometry extends ConvexGeometry {
-	public radius : number;
-	public halfHeight : number;
-	constructor(radius : number, halfHeight : number) {
+	public radius: number;
+	public halfHeight: number;
+	constructor(radius: number, halfHeight: number) {
 		super(GEOMETRY_TYPE.CYLINDER);
 		this.radius = radius;
 		this.halfHeight = halfHeight;
 		this.updateMass();
 	}
 
-	public updateMass() : void {
+	public updateMass(): void {
 		const r = this.radius, h = this.halfHeight;
 		const r2 = r * r;
 		const h2 = h * h * 4;
@@ -31,7 +32,7 @@ export default class CylinderGeometry extends ConvexGeometry {
 		icf[7] = 0;
 		icf[8] = 0.083333333333333329 * (3 * r2 + h2);
 	}
-	public computeAabb(_aabb : Aabb, _tf : Transform) : void {
+	public computeAabb(_aabb: Aabb, _tf: Transform): void {
 		const r = this.radius, h = this.halfHeight;
 		const aabb = _aabb.elements, tf = _tf.elements;
 		const ax = tf[4], ay = tf[7], az = tf[10];
@@ -43,8 +44,9 @@ export default class CylinderGeometry extends ConvexGeometry {
 		const maxX = erX + ehX, maxY = erY + ehY, maxZ = erZ + ehZ;
 		aabb[0] = tf[0] - maxX; aabb[1] = tf[1] - maxY; aabb[2] = tf[2] - maxZ;
 		aabb[3] = tf[0] + maxX; aabb[4] = tf[1] + maxY; aabb[5] = tf[2] + maxZ;
+		Method.copyElements(aabb, this.aabbComputed.elements);
 	}
-	public computeLocalSupportingVertex(_dir : Vec3, _out : Vec3) : void {
+	public computeLocalSupportingVertex(_dir: Vec3, _out: Vec3): void {
 		const dir = _dir.elements, out = _out.elements;
 		const rx = dir[0];
 		const rz = dir[2];
@@ -58,7 +60,7 @@ export default class CylinderGeometry extends ConvexGeometry {
 		out[1] = dir[1] > 0 ? coreHeight : -coreHeight;
 		out[2] = rz * invLen;
 	}
-	public rayCastLocal(beginX : number, beginY : number, beginZ : number, endX : number, endY : number, endZ : number, hit : RayCastHit) : boolean {
+	public rayCastLocal(beginX: number, beginY: number, beginZ: number, endX: number, endY: number, endZ: number, hit: RayCastHit): boolean {
 		const halfH = this.halfHeight;
 		const dx = endX - beginX, dy = endY - beginY, dz = endZ - beginZ;
 		let tminy = 0, tmaxy = 1;
@@ -78,7 +80,7 @@ export default class CylinderGeometry extends ConvexGeometry {
 		}
 		if (tminy >= 1 || tmaxy <= 0) return false;
 		let tminxz = 0;
-		let tmaxxz : number;
+		let tmaxxz: number;
 		const a = dx * dx + dz * dz;
 		const b = beginX * dx + beginZ * dz;
 		const c = beginX * beginX + beginZ * beginZ - this.radius * this.radius;
@@ -94,7 +96,7 @@ export default class CylinderGeometry extends ConvexGeometry {
 			tminxz = 0;
 			tmaxxz = 1;
 		}
-		let min : number;
+		let min: number;
 		if (tmaxxz <= tminy || tmaxy <= tminxz) return false;
 		const normal = hit.normal.elements;
 		const position = hit.position.elements;

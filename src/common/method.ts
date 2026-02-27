@@ -557,6 +557,7 @@ export default class Method {
 		}
 		o[0] = vX; o[1] = vY; o[2] = vZ; o[3] = 0;
 	}
+
 }
 
 

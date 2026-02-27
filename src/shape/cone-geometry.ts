@@ -4,6 +4,7 @@ import Aabb from "../common/aabb";
 import Transform from "../common/transform";
 import Vec3 from "../common/vec3";
 import RayCastHit from "./ray-cast-hit";
+import Method from "../common/method";
 
 export default class ConeGeometry extends ConvexGeometry {
 	public radius : number;
@@ -61,6 +62,7 @@ export default class ConeGeometry extends ConvexGeometry {
 		aabb[3] = tf[0] + maxX;
 		aabb[4] = tf[1] + maxY;
 		aabb[5] = tf[2] + maxZ;
+		Method.copyElements(aabb, this.aabbComputed.elements);
 	}
 	public computeLocalSupportingVertex(_dir : Vec3, _out : Vec3) : void {
 		const dir = _dir.elements, out = _out.elements;

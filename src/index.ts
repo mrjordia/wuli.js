@@ -119,3 +119,6 @@ export * from './broad-phase/bvh-broad-phase/bvh-node';
 export * from './broad-phase/bvh-broad-phase/bvh-proxy';
 export * from './broad-phase/bvh-broad-phase/bvh-strategy';
 export * from './broad-phase/bvh-broad-phase/bvh-tree';
+
+export * from './shape/terrain-geometry';
+export * from './collision-detector/convex-terrain-detector';

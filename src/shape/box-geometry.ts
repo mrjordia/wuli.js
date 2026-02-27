@@ -16,7 +16,7 @@ import Method from "../common/method";
  *      ]
  */
 export default class BoxGeometry extends ConvexGeometry {
-	public size : Float64Array;
+	public size: Float64Array;
 
 	constructor(width = 1, height = 1, depth = 1) {
 		super(GEOMETRY_TYPE.BOX);
@@ -30,23 +30,23 @@ export default class BoxGeometry extends ConvexGeometry {
 			this.gjkMargin = minHalfExtents * 0.2;
 		}
 	}
-	public get halfWidth() : number {
+	public get halfWidth(): number {
 		return this.size[0];
 	}
-	public get halfHeight() : number {
+	public get halfHeight(): number {
 		return this.size[1];
 	}
-	public get halfDepth() : number {
+	public get halfDepth(): number {
 		return this.size[2];
 	}
 
-	public getHalfExtentsTo(halfExtents : { x : number, y : number, z : number }) : { x : number, y : number, z : number } {
+	public getHalfExtentsTo(halfExtents: { x: number, y: number, z: number }): { x: number, y: number, z: number } {
 		const es = this.size;
 		Method.setXYZ(halfExtents, es[0], es[1], es[2]);
 		return halfExtents;
 	}
 
-	public updateMass() : void {
+	public updateMass(): void {
 		const es = this.size;
 		this.volume = 8 * (es[0] * es[1] * es[2]);
 		const sqX = es[0] * es[0];
@@ -63,7 +63,7 @@ export default class BoxGeometry extends ConvexGeometry {
 		ic[7] = 0;
 		ic[8] = 0.33333333333333331 * (sqX + sqY);
 	}
-	public computeAabb(_aabb : Aabb, _tf : Transform) : void {
+	public computeAabb(_aabb: Aabb, _tf: Transform): void {
 		const tf = _tf.elements, aabb = _aabb.elements, es = this.size;
 		const xx = tf[3] * es[3] + tf[4] * es[4] + tf[5] * es[5];
 		const xy = tf[6] * es[3] + tf[7] * es[4] + tf[8] * es[5];
@@ -87,8 +87,9 @@ export default class BoxGeometry extends ConvexGeometry {
 		tfsX += tfzX; tfsY += tfzY; tfsZ += tfzZ;
 		aabb[0] = tf[0] - tfsX; aabb[1] = tf[1] - tfsY; aabb[2] = tf[2] - tfsZ;
 		aabb[3] = tf[0] + tfsX; aabb[4] = tf[1] + tfsY; aabb[5] = tf[2] + tfsZ;
+		Method.copyElements(aabb, this.aabbComputed.elements);
 	}
-	public computeLocalSupportingVertex(_dir : Vec3, _out : Vec3) : void {
+	public computeLocalSupportingVertex(_dir: Vec3, _out: Vec3): void {
 		const dir = _dir.elements, out = _out.elements, es = this.size;
 		let gjkMarginsX = this.gjkMargin, gjkMarginsY = this.gjkMargin, gjkMarginsZ = this.gjkMargin;
 		if (!(gjkMarginsX < es[0])) gjkMarginsX = es[0];
@@ -99,7 +100,7 @@ export default class BoxGeometry extends ConvexGeometry {
 		out[1] = dir[1] > 0 ? coreExtentsY : -coreExtentsY;
 		out[2] = dir[2] > 0 ? coreExtentsZ : -coreExtentsZ;
 	}
-	public rayCastLocal(beginX : number, beginY : number, beginZ : number, endX : number, endY : number, endZ : number, hit : RayCastHit) : boolean {
+	public rayCastLocal(beginX: number, beginY: number, beginZ: number, endX: number, endY: number, endZ: number, hit: RayCastHit): boolean {
 		const es = this.size;
 		const halfW = es[0], halfH = es[1], halfD = es[2];
 		const dx = endX - beginX, dy = endY - beginY, dz = endZ - beginZ;

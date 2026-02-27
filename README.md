@@ -6,12 +6,13 @@
 - 纯 TypeScript 编写，类型完备
 - 无外部依赖，可独立集成
 - 支持常见的物理碰撞检测及约束
+- 支持heightmap类型的地形碰撞
 - 支持全量引用及按需引用
 - 类型友好，方便根据需要裁剪减小体积
 
 ## 待办
-- 地形模块
 - 代码注释
+- 文档完善
 
 ## 安装
 ```bash  
@@ -71,7 +72,7 @@ world.afterCall=()=>{
 ```
 ### 或
 ```
-// 创建自定义计算循环
+// 根据不同平台（如H5、微信小程序...）创建自定义计算循环
 
 // 导入接口
 import { ISimulateAnimation } from 'wuli';
@@ -85,15 +86,17 @@ class AnimationRequest implements ISimulateAnimation{
   }
 
   public set callback(callback:Function){
-    //...
+    //world初始化时会将step函数传入
+    this._callback=callback;
   }
   public start(){
+    //在此实现循环调用_callback
     //...
     if(this._callback)this._callback();
     //...
   }
   public stop(){
-    //...
+    //停止循环...
   }
 }
 

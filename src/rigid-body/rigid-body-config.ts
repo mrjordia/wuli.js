@@ -1,7 +1,6 @@
 import Mat3 from "../common/mat3";
 import { RIGID_BODY_TYPE } from "../constant";
 import Vec3 from "../common/vec3";
-import Quat from "../common/quat";
 import Method from "../common/method";
 
 

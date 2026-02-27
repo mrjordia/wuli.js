@@ -4,11 +4,12 @@ import Aabb from "../common/aabb";
 import Transform from "../common/transform";
 import Vec3 from "../common/vec3";
 import RayCastHit from "./ray-cast-hit";
+import Method from "../common/method";
 
 export default class CapsuleGeometry extends ConvexGeometry {
-	public radius : number;
-	public halfHeight : number;
-	constructor(radius : number, halfHeight : number) {
+	public radius: number;
+	public halfHeight: number;
+	constructor(radius: number, halfHeight: number) {
 		super(GEOMETRY_TYPE.CAPSULE);
 		this.radius = radius;
 		this.halfHeight = halfHeight;
@@ -16,7 +17,7 @@ export default class CapsuleGeometry extends ConvexGeometry {
 		this.updateMass();
 	}
 
-	public updateMass() : void {
+	public updateMass(): void {
 		const r = this.radius, hh = this.halfHeight;
 		const r2 = r * r;
 		const hh2 = hh * hh;
@@ -36,7 +37,7 @@ export default class CapsuleGeometry extends ConvexGeometry {
 		icf[7] = 0;
 		icf[8] = inertiaXZ;
 	}
-	public computeAabb(_aabb : Aabb, _tf : Transform) : void {
+	public computeAabb(_aabb: Aabb, _tf: Transform): void {
 		const tf = _tf.elements, aabb = _aabb.elements, r = this.radius, hh = this.halfHeight;
 		let radVecX = r, radVecY = r, radVecZ = r;
 		const ax = tf[4], ay = tf[7], az = tf[10];
@@ -45,8 +46,9 @@ export default class CapsuleGeometry extends ConvexGeometry {
 		radVecX += axisX; radVecY += axisY; radVecZ += axisZ;
 		aabb[0] = tf[0] - radVecX; aabb[1] = tf[1] - radVecY; aabb[2] = tf[2] - radVecZ;
 		aabb[3] = tf[0] + radVecX; aabb[4] = tf[1] + radVecY; aabb[5] = tf[2] + radVecZ;
+		Method.copyElements(aabb, this.aabbComputed.elements);
 	}
-	public computeLocalSupportingVertex(dir : Vec3, out : Vec3) : void {
+	public computeLocalSupportingVertex(dir: Vec3, out: Vec3): void {
 		const oe = out.elements;
 		if (dir.y > 0) {
 			oe[1] = this.halfHeight;
@@ -56,12 +58,12 @@ export default class CapsuleGeometry extends ConvexGeometry {
 			oe[0] = oe[2] = 0;
 		}
 	}
-	public rayCastLocal(beginX : number, beginY : number, beginZ : number, endX : number, endY : number, endZ : number, hit : RayCastHit) : boolean {
+	public rayCastLocal(beginX: number, beginY: number, beginZ: number, endX: number, endY: number, endZ: number, hit: RayCastHit): boolean {
 		const halfH = this.halfHeight;
 		const dx = endX - beginX;
 		const dz = endZ - beginZ;
 		let tminxz = 0;
-		let tmaxxz : number;
+		let tmaxxz: number;
 		let a = dx * dx + dz * dz;
 		let b = beginX * dx + beginZ * dz;
 		let c = beginX * beginX + beginZ * beginZ - this.radius * this.radius;
@@ -83,7 +85,7 @@ export default class CapsuleGeometry extends ConvexGeometry {
 			tminxz = 0;
 		}
 		const crossY = beginY + (endY - beginY) * tminxz;
-		let min : number;
+		let min: number;
 		if (crossY > -halfH && crossY < halfH) {
 			if (tminxz > 0) {
 				min = tminxz;

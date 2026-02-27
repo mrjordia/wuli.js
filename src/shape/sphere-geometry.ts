@@ -4,6 +4,7 @@ import Aabb from "../common/aabb";
 import Transform from "../common/transform";
 import Vec3 from "../common/vec3";
 import RayCastHit from "./ray-cast-hit";
+import Method from "../common/method";
 
 export default class SphereGeometry extends ConvexGeometry {
 
@@ -36,6 +37,7 @@ export default class SphereGeometry extends ConvexGeometry {
 		const r = this.radius;
 		aabb[0] = tf[0] - r; aabb[1] = tf[1] - r; aabb[2] = tf[2] - r;
 		aabb[3] = tf[0] + r; aabb[4] = tf[1] + r; aabb[5] = tf[2] + r;
+		Method.copyElements(aabb, this.aabbComputed.elements);
 	}
 	public computeLocalSupportingVertex(dir: Vec3, out: Vec3): void {
 		let es = out.elements;

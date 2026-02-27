@@ -6,11 +6,11 @@ import Aabb from "../common/aabb";
 import Transform from "../common/transform";
 
 export default class ConvexHullGeometry extends ConvexGeometry {
-	public numVertices : number;
-	public vertices : Array<Vec3>;
-	public tmpVertices : Array<Vec3>;
+	public numVertices: number;
+	public vertices: Array<Vec3>;
+	public tmpVertices: Array<Vec3>;
 
-	constructor(vertices : Array<{ x : number, y : number, z : number }>) {
+	constructor(vertices: Array<{ x: number, y: number, z: number }>) {
 		super(GEOMETRY_TYPE.CONVEX_HULL);
 		this.numVertices = vertices.length;
 		this.vertices = new Array(this.numVertices);
@@ -25,7 +25,7 @@ export default class ConvexHullGeometry extends ConvexGeometry {
 		this._useGjkRayCast = true;
 		this.updateMass();
 	}
-	public updateMass() : void {
+	public updateMass(): void {
 		const icf = this.inertiaCoeff, vertices = this.vertices;
 		this.volume = 1;
 		icf[0] = 1; icf[1] = 0; icf[2] = 0;
@@ -69,7 +69,7 @@ export default class ConvexHullGeometry extends ConvexGeometry {
 		icf[7] = 0;
 		icf[8] = 0.33333333333333331 * (sizex + sizey) + diffCog;
 	}
-	public computeAabb(_aabb : Aabb, _tf : Transform) : void {
+	public computeAabb(_aabb: Aabb, _tf: Transform): void {
 		const gjm = this.gjkMargin, vertices = this.vertices;
 		const aabb = _aabb.elements, tf = _tf.elements;
 		const marginX = gjm, marginY = gjm, marginZ = gjm;
@@ -98,8 +98,9 @@ export default class ConvexHullGeometry extends ConvexGeometry {
 		}
 		aabb[0] = minX - marginX; aabb[1] = minY - marginY; aabb[2] = minZ - marginZ;
 		aabb[3] = maxX + marginX; aabb[4] = maxY + marginY; aabb[5] = maxZ + marginZ;
+		Method.copyElements(aabb, this.aabbComputed.elements);
 	}
-	public computeLocalSupportingVertex(_dir : Vec3, _out : Vec3) : void {
+	public computeLocalSupportingVertex(_dir: Vec3, _out: Vec3): void {
 		const dir = _dir.elements, out = _out.elements;
 		let _this = this.vertices[0].elements;
 		let maxDot = _this[0] * dir[0] + _this[1] * dir[1] + _this[2] * dir[2];

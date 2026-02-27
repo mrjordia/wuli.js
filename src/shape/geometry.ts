@@ -13,29 +13,31 @@ import RayCastHit from "./ray-cast-hit";
  *      ]
  */
 export default abstract class Geometry {
-	public readonly type : GEOMETRY_TYPE;
+	public readonly type: GEOMETRY_TYPE;
 	public volume = 0;
 	public inertiaCoeff = new Float64Array(9);
-	constructor(type : GEOMETRY_TYPE) {
+	public aabbComputed = new Aabb();
+
+	constructor(type: GEOMETRY_TYPE) {
 		this.type = type;
 	}
 
-	public abstract updateMass() : void;
-	public abstract computeAabb(aabb : Aabb, tf : Transform) : void;
-	public rayCastLocal(beginX : number, beginY : number, beginZ : number, endX : number, endY : number, endZ : number, hit : RayCastHit) : boolean {
+	public abstract updateMass(): void;
+	public abstract computeAabb(aabb: Aabb, tf: Transform): void;
+	public rayCastLocal(beginX: number, beginY: number, beginZ: number, endX: number, endY: number, endZ: number, hit: RayCastHit): boolean {
 		return false;
 	}
 
-	public rayCast(_begin : Vec3, _end : Vec3, _transform : Transform, hit : RayCastHit) : boolean {
+	public rayCast(_begin: Vec3, _end: Vec3, _transform: Transform, hit: RayCastHit): boolean {
 		const begin = _begin.elements;
 		const end = _end.elements;
-		const tf = _transform.elements; 
+		const tf = _transform.elements;
 		const hitPos = hit.position.elements;
 		const hitNormal = hit.normal.elements;
 
-		const tf0 = tf[0], tf1 = tf[1], tf2 = tf[2]; 
-		const tf3 = tf[3], tf4 = tf[4], tf5 = tf[5]; 
-		const tf6 = tf[6], tf7 = tf[7], tf8 = tf[8]; 
+		const tf0 = tf[0], tf1 = tf[1], tf2 = tf[2];
+		const tf3 = tf[3], tf4 = tf[4], tf5 = tf[5];
+		const tf6 = tf[6], tf7 = tf[7], tf8 = tf[8];
 		const tf9 = tf[9], tf10 = tf[10], tf11 = tf[11];
 
 		const bx = begin[0] - tf0, by = begin[1] - tf1, bz = begin[2] - tf2;

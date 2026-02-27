@@ -1,4 +1,4 @@
-import { CONSTANT, RIGID_BODY_TYPE } from "../constant";
+import { CONSTANT, GEOMETRY_TYPE, RIGID_BODY_TYPE } from "../constant";
 import MassData from "./mass-data";
 import Transform from "../common/transform";
 import Vec3 from "../common/vec3";
@@ -40,6 +40,7 @@ export default class RigidBody {
 	private _transform = new Transform();
 	private _type: RIGID_BODY_TYPE;
 	private _shapeList: Nullable<Shape>;
+	private _isTerrain = false;
 
 	public rotFactor = new Vec3(1, 1, 1);
 	public object3Ds: Array<IObject3D> = [];
@@ -126,13 +127,29 @@ export default class RigidBody {
 		this.sleepTime = 0;
 	}
 	public get type(): RIGID_BODY_TYPE {
-		return this._type;
+		return this._isTerrain ? RIGID_BODY_TYPE.STATIC : this._type;
 	}
 	public set type(type: RIGID_BODY_TYPE) {
+		if (this._isTerrain) {
+			throw new Error("Rigid type of terrain cannot be changed.");
+		}
 		this._type = type;
 		this.updateMass();
 	}
 	public addShape(shape: Shape): void {
+		if (shape.geometry.type === GEOMETRY_TYPE.TERRAIN) {
+			if (this._shapeList) {
+				throw new Error("RigidBody can only have one single terrain shape.");
+			} else {
+				this._isTerrain = true;
+				this.vel.fill(0);
+				this.angVel.fill(0);
+				this.getPositionTo(this._tV0);
+				Method.combineMat3Vec3ToTransform(this._tV0.elements, new Mat3().elements, this._ptransform.elements);
+				Method.copyElements(this._ptransform.elements, this._transform.elements);
+			}
+		}
+
 		if (!this._shapeList) {
 			this._shapeList = shape;
 			this._shapeListLast = shape;
@@ -152,7 +169,11 @@ export default class RigidBody {
 		this.updateMass();
 		this._updateShapeList();
 	}
+
 	public removeShape(shape: Shape): void {
+		if (this._isTerrain) {
+			throw new Error("Terrain shape cannot be removed.");
+		}
 		let prev = shape.prev;
 		let next = shape.next;
 		if (prev) {
@@ -397,6 +418,9 @@ export default class RigidBody {
 		Method.setM3X3(rotationMat3.elements as any, t[3], t[4], t[5], t[6], t[7], t[8], t[9], t[10], t[11]);
 	}
 	public setRotation(_rotationMat3: { elements: Array<number> | Float64Array }): void {
+		if (this._isTerrain) {
+			throw new Error('Terrain cannot rotate');
+		}
 		Method.copyElements(_rotationMat3.elements as Float64Array, this._tM0.elements);
 		const transform = this._transform.elements;
 		Method.setTransformRotation(transform, this._tM0.elements);
@@ -407,6 +431,9 @@ export default class RigidBody {
 		this.sleepTime = 0;
 	}
 	public rotate(_rotationMat3: { elements: Array<number> | Float64Array }): void {
+		if (this._isTerrain) {
+			throw new Error('Terrain cannot rotate');
+		}
 		Method.copyElements(_rotationMat3.elements as Float64Array, this._tM0.elements);
 		Method.rotateTransform(this._transform.elements, this._tM0.elements);
 		this._transformInvInertia(this._transform.elements);
@@ -422,6 +449,9 @@ export default class RigidBody {
 		Method.setXYZW(orientation, tq[0], tq[1], tq[2], tq[3]);
 	}
 	public setOrientation(_quaternion: { x: number, y: number, z: number, w: number }): void {
+		if (this._isTerrain) {
+			throw new Error('Terrain cannot rotate');
+		}
 		const quaternion = new Quat(_quaternion.x, _quaternion.y, _quaternion.z, _quaternion.w);
 		const transform = this._transform.elements;
 		Method.setTransformOrientation(transform, quaternion.elements);
@@ -436,6 +466,9 @@ export default class RigidBody {
 		Method.copyElements(this._transform.elements, transform.elements);
 	}
 	public setTransform(transform: Transform): void {
+		if (this._isTerrain) {
+			throw new Error('Terrain cannot rotate');
+		}
 		Method.copyElements(transform.elements, this._transform.elements);
 		this._transformInvInertia(this._transform.elements);
 		Method.copyElements(this._transform.elements, this._ptransform.elements);
@@ -477,7 +510,7 @@ export default class RigidBody {
 		return Method.setXYZ(linearVelocity, v[0], v[1], v[2]);
 	}
 	public setLinearVelocity(linearVelocity: { x: number, y: number, z: number }): void {
-		if (this._type === RIGID_BODY_TYPE.STATIC) {
+		if (this.type === RIGID_BODY_TYPE.STATIC) {
 			this.vel.fill(0);
 		} else {
 			this.vel[0] = linearVelocity.x;
@@ -493,7 +526,7 @@ export default class RigidBody {
 		Method.setXYZ(angularVelocity, v[0], v[1], v[2]);
 	}
 	public setAngularVelocity(angularVelocity: { x: number, y: number, z: number }): void {
-		if (this._type === RIGID_BODY_TYPE.STATIC) {
+		if (this.type === RIGID_BODY_TYPE.STATIC) {
 			this.angVel.fill(0);
 		} else {
 			this.angVel[0] = angularVelocity.x;
@@ -504,7 +537,7 @@ export default class RigidBody {
 		this.sleepTime = 0;
 	}
 	public addLinearVelocity(linearVelocityChange: { x: number, y: number, z: number }): void {
-		if (this._type !== RIGID_BODY_TYPE.STATIC) {
+		if (this.type !== RIGID_BODY_TYPE.STATIC) {
 			const v = (Method.setXYZ(this._tV0, linearVelocityChange.x, linearVelocityChange.y, linearVelocityChange.z) as Vec3).elements;
 			const t = this.vel;
 			t[0] += v[0]; t[1] += v[1]; t[2] += v[2];
@@ -513,7 +546,7 @@ export default class RigidBody {
 		this.sleepTime = 0;
 	}
 	public addAngularVelocity(angularVelocityChange: { x: number, y: number, z: number }): void {
-		if (this._type !== RIGID_BODY_TYPE.STATIC) {
+		if (this.type !== RIGID_BODY_TYPE.STATIC) {
 			const v = (Method.setXYZ(this._tV0, angularVelocityChange.x, angularVelocityChange.y, angularVelocityChange.z) as Vec3).elements;
 			const t = this.angVel;
 			t[0] += v[0]; t[1] += v[1]; t[2] += v[2];
@@ -620,7 +653,7 @@ export default class RigidBody {
 		this.sleepTime = 0;
 	}
 	public integrate(dt: number): void {
-		switch (this._type) {
+		switch (this.type) {
 			case RIGID_BODY_TYPE.STATIC:
 				this.vel.fill(0);
 				this.angVel.fill(0);
@@ -686,7 +719,7 @@ export default class RigidBody {
 			angPseudoVel[0] * angPseudoVel[0] + angPseudoVel[1] * angPseudoVel[1] + angPseudoVel[2] * angPseudoVel[2] === 0) {
 			return;
 		}
-		switch (this._type) {
+		switch (this.type) {
 			case RIGID_BODY_TYPE.STATIC:
 				pseudoVel.fill(0);
 				angPseudoVel.fill(0);
@@ -790,7 +823,7 @@ export default class RigidBody {
 			localInertia[0] * (localInertia[4] * localInertia[8] - localInertia[5] * localInertia[7]) -
 			localInertia[1] * (localInertia[3] * localInertia[8] - localInertia[5] * localInertia[6]) +
 			localInertia[2] * (localInertia[3] * localInertia[7] - localInertia[4] * localInertia[6]) > 0 &&
-			this._type === RIGID_BODY_TYPE.DYNAMIC) {
+			this.type === RIGID_BODY_TYPE.DYNAMIC) {
 			this._invMass = 1 / this._mass;
 			const d00 = localInertia[4] * localInertia[8] - localInertia[5] * localInertia[7];
 			const d01 = localInertia[3] * localInertia[8] - localInertia[5] * localInertia[6];
@@ -830,8 +863,8 @@ export default class RigidBody {
 			this._invMass = 0;
 			invLocalInertia.fill(0);
 			invLocalInertiaWithoutRotFactor.fill(0);
-			if (this._type === RIGID_BODY_TYPE.DYNAMIC) {
-				this._type = RIGID_BODY_TYPE.STATIC;
+			if (this.type === RIGID_BODY_TYPE.DYNAMIC) {
+				this.type = RIGID_BODY_TYPE.STATIC;
 			}
 		}
 		invInertia[0] = transform[3] * invLocalInertia[0] + transform[4] * invLocalInertia[3] + transform[5] * invLocalInertia[6];

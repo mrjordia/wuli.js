@@ -1,6 +1,6 @@
 {
   "name": "wuli.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "基于bullet的轻量TypeScript物理引擎",
   "main": "dist/modules/index.js",
   "module": "dist/modules/index.mjs",

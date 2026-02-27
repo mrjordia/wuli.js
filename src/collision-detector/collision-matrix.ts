@@ -6,20 +6,21 @@ import SphereBoxDetector from "./sphere-box-detector";
 import CapsuleCapsuleDetector from "./capsule-capsule-detector";
 import SphereCapsuleDetector from "./sphere-capsule-detector";
 import Detector from './detector';
+import ConvexTerrainDetector from './convex-terrain-detector';
 
 export default class CollisionMatrix {
-	public detectors : Array<Array<Detector>> = [];
+	public detectors: Array<Array<Detector>> = [];
 	constructor() {
 		this._init();
 	}
 
-	public getDetector(geomType1 : GEOMETRY_TYPE, geomType2 : GEOMETRY_TYPE) : Detector {
+	public getDetector(geomType1: GEOMETRY_TYPE, geomType2: GEOMETRY_TYPE): Detector {
 		let t1 = geomType1 - GEOMETRY_TYPE.NULL - 1;
 		let t2 = geomType2 - GEOMETRY_TYPE.NULL - 1;
 		return this.detectors[t1][t2];
 	}
 
-	private _init() : void {
+	private _init(): void {
 		this.detectors = new Array(8);
 		const detectors = this.detectors;
 		detectors[0] = new Array(8);
@@ -28,6 +29,7 @@ export default class CollisionMatrix {
 		detectors[3] = new Array(8);
 		detectors[4] = new Array(8);
 		detectors[5] = new Array(8);
+		detectors[6] = new Array(8);
 		const gjkEpaDetector = new GjkEpaDetector();
 		detectors[0][0] = new SphereSphereDetector();
 		detectors[0][1] = new SphereBoxDetector(false);
@@ -65,5 +67,18 @@ export default class CollisionMatrix {
 		detectors[5][3] = gjkEpaDetector;
 		detectors[5][4] = gjkEpaDetector;
 		detectors[5][5] = gjkEpaDetector;
+
+		detectors[0][6] = new ConvexTerrainDetector(false);
+		detectors[1][6] = new ConvexTerrainDetector(false);
+		detectors[2][6] = new ConvexTerrainDetector(false);
+		detectors[3][6] = new ConvexTerrainDetector(false);
+		detectors[4][6] = new ConvexTerrainDetector(false);
+		detectors[5][6] = new ConvexTerrainDetector(false);
+		detectors[6][0] = new ConvexTerrainDetector(true);
+		detectors[6][1] = new ConvexTerrainDetector(true);
+		detectors[6][2] = new ConvexTerrainDetector(true);
+		detectors[6][3] = new ConvexTerrainDetector(true);
+		detectors[6][4] = new ConvexTerrainDetector(true);
+		detectors[6][5] = new ConvexTerrainDetector(true);
 	}
 }
