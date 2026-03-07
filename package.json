@@ -1,6 +1,6 @@
 {
   "name": "wuli.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "基于bullet的轻量TypeScript物理引擎",
   "main": "dist/modules/index.js",
   "module": "dist/modules/index.mjs",
@@ -30,7 +30,8 @@
     "test:watch": "jset --watch",
     "test:coverage": "jest --coverage",
     "build": "rimraf dist && tsup",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "doc": "typedoc"
   },
   "files": [
     "dist"
@@ -56,6 +57,8 @@
     "rimraf": "^6.1.2",
     "ts-jest": "^29.4.6",
     "tsup": "^8.5.1",
+    "typedoc": "^0.28.17",
+    "typedoc-plugin-markdown": "^4.10.0",
     "typescript": "^5.9.3"
   }
 }

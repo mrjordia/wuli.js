@@ -11,7 +11,6 @@
 - 类型友好，方便根据需要裁剪减小体积
 
 ## 待办
-- 代码注释
 - 文档完善
 
 ## 安装
@@ -130,3 +129,6 @@ world.simulate = SIMULATE_STATE.START;// 启动模拟
 
 //其它逻辑
 ```
+
+## API文档
+[wuli.js API文档](doc/modules.md)

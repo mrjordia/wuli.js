@@ -1,9 +1,38 @@
 import Vec3 from "../common/vec3";
 
-
+/**
+ * 碰撞检测点详情类。
+ * 物理引擎碰撞检测中单个碰撞点的详情容器，
+ * 存储两个几何对象在碰撞点处的位置、穿透深度和标识ID，是DetectorResult的核心子数据结构。
+ */
 export default class DetectorResultPoint {
-	public position1 = new Vec3();
-	public position2 = new Vec3();
-	public depth = 0;
-	public id = 0;
+    /**
+     * 第一个几何对象的碰撞点坐标。
+     * 以世界坐标系/局部坐标系表示的第一个几何对象碰撞位置，初始化为零向量，
+     * 坐标空间取决于检测器的实现逻辑（通常为世界坐标系）。
+     */
+    public position1 = new Vec3();
+
+    /**
+     * 第二个几何对象的碰撞点坐标。
+     * 以世界坐标系/局部坐标系表示的第二个几何对象碰撞位置，初始化为零向量，
+     * 与position1对应同一碰撞接触点在不同对象上的投影位置。
+     */
+    public position2 = new Vec3();
+
+    /**
+     * 碰撞点穿透深度。
+     * 两个几何对象在该碰撞点处的穿透深度值（正数表示穿透，越大穿透越严重），
+     * 初始值为0（无穿透），用于物理引擎的碰撞响应计算（如推离重叠对象）。
+     */
+    public depth = 0;
+
+    /**
+     * 碰撞点唯一标识ID。
+     * 用于区分不同碰撞点的标识值，初始值为0，
+     * 可用于关联碰撞点与几何对象的面/边/顶点等原始数据，便于精准的碰撞响应。
+     */
+    public id = 0;
 }
+
+export { DetectorResultPoint };

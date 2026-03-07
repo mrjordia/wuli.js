@@ -1,0 +1,22 @@
+{
+  "entryPoints": [
+    "src/**/*"
+  ],
+  "out": "./doc",
+  "name": "wuli.js API文档",
+  "tsconfig": "./tsconfig.json",
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "includeVersion": false,
+  "navigation": {
+    "includeCategories": true,
+    "includeFolders": true
+  },
+  "plugin": [
+    "typedoc-plugin-markdown"
+  ],
+  "markdownItOptions": {
+    "fileNameFormatter": "kebab-case",
+    "hideBreadcrumbs": false
+  }
+}

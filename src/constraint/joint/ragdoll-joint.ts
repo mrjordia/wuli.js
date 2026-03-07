@@ -8,11 +8,47 @@ import JointSolverInfo from "./joint-solver-info";
 import TimeStep from "../../common/time-step";
 import { Nullable } from "../../common/nullable";
 
+/**
+ * 布娃娃关节实现类。
+ * 继承自Joint基类，是布娃娃关节（Ragdoll Joint）的具体实现，
+ *              专为角色物理模拟设计，支持「扭转（Twist）+ 双轴摆动（Swing）」的人体关节运动约束，
+ *              可精准限制关节旋转范围、添加弹性阻尼效果，完美模拟肩膀、髋关节、膝关节等人体关节的物理特性，
+ *              是角色布娃娃物理系统的核心组件
+ */
 export default class RagdollJoint extends Joint {
+	/**
+	 * 摆动限位驱动（占位）。
+	 * 摆动约束的占位限位驱动实例，仅用于适配约束求解器接口，
+	 *              实际摆动范围由maxSwingAngle1/2控制，该实例固定lowerLimit=-1、upperLimit=0
+	 */
 	public dummySwingLm = new RotationalLimitMotor();
+
+	/**
+	 * 摆动误差值。
+	 * 摆动角度超出限制范围的误差值（仅当超出时为正），
+	 *              用于约束求解器修正过度摆动，保证关节在设定范围内运动
+	 */
 	public swingError = 0;
+
+	/**
+	 * 摆动轴向量。
+	 * 实时计算的摆动约束轴（3维），指向摆动超限的方向，
+	 *              用于约束求解器施加修正力矩，限制过度摆动
+	 */
 	public swingAxis = new Float64Array(3);
+
+	/**
+	 * 扭转轴向量。
+	 * 实时计算的扭转约束轴（3维），与关节扭转轴对齐，
+	 *              用于约束求解器处理扭转旋转的限位和弹性
+	 */
 	public twistAxis = new Float64Array(3);
+
+	/**
+	 * 线性误差向量。
+	 * 关节锚点的线性偏移误差（X/Y/Z轴），所有分量需约束为0，
+	 *              保证两个刚体仅绕关节旋转，无位置偏移（模拟人体关节的固定连接）
+	 */
 	public linearError = new Float64Array(3);
 
 	private _swingAngle = 0;
@@ -24,6 +60,19 @@ export default class RagdollJoint extends Joint {
 	private _swingSd: SpringDamper;
 	private _maxSwingAngle1: number;
 	private _maxSwingAngle2: number;
+
+	/**
+	 * 构造函数：初始化布娃娃关节。
+	 * 核心初始化逻辑：
+	 *              1. 调用父类构造函数，指定关节类型为RAG_DOLL；
+	 *              2. 将配置中的本地扭转轴/摆动轴赋值到关节的本地基向量矩阵；
+	 *              3. 基于XY轴构建完整的本地约束基向量矩阵，适配人体关节坐标系；
+	 *              4. 克隆配置中的弹簧阻尼、限位驱动参数（避免联动修改）；
+	 *              5. 校验并修正最大摆动角度（确保不小于系统最小值）；
+	 *              6. 初始化占位摆动限位驱动的参数，适配求解器接口；
+	 *              初始化阶段完成约束参数的独立化和坐标系的构建
+	 * @param {RagdollJointConfig} config 布娃娃关节专属配置实例
+	 */
 	constructor(config: RagdollJointConfig) {
 		super(config, JOINT_TYPE.RAG_DOLL);
 		Method.copyElements(config.localTwistAxis1.elements, this.localBasis1, 0, 0, 3);
@@ -44,6 +93,22 @@ export default class RagdollJoint extends Joint {
 		this.dummySwingLm.lowerLimit = -1;
 		this.dummySwingLm.upperLimit = 0;
 	}
+
+	/**
+	 * 构建布娃娃关节的约束求解器信息。
+	 * 核心逻辑：
+	 *              1. 计算误差还原参数（erp），将线性误差转换为约束修正量；
+	 *              2. 构建X/Y/Z轴线性约束行：强制约束锚点偏移为0，无弹性/限位配置，
+	 *                 设置极大的力矩范围（±1e65536）确保严格约束；
+	 *              3. 计算摆动/扭转约束的有效转动惯量（模拟人体关节的转动特性）；
+	 *              4. 构建摆动约束行：仅当摆动超限且满足条件时，添加摆动约束，
+	 *                 配置弹簧阻尼和占位限位驱动，修正过度摆动；
+	 *              5. 构建扭转约束行：配置扭转限位驱动和弹簧阻尼，处理扭转旋转的约束；
+	 *              该方法是布娃娃关节物理特性的核心，兼顾了「固定连接」和「可控旋转」的人体关节特性
+	 * @param {JointSolverInfo} info 待填充的求解器信息实例
+	 * @param {Nullable<TimeStep>} timeStep 时间步信息（位置约束阶段为null）
+	 * @param {boolean} isPositionPart 是否为位置约束阶段
+	 */
 	public getInfo(info: JointSolverInfo, timeStep: Nullable<TimeStep>, isPositionPart: boolean): void {
 		const erp = this.getErp(timeStep, isPositionPart);
 		const le = this.linearError;
@@ -102,6 +167,19 @@ export default class RagdollJoint extends Joint {
 			j[9] = ta[0]; j[10] = ta[1]; j[11] = ta[2];
 		}
 	}
+
+	/**
+	 * 同步锚点和基向量，计算摆动/扭转角度及误差。
+	 * 核心逻辑（角色物理核心计算步骤）：
+	 *              1. 调用父类syncAnchors，同步锚点和基向量的世界坐标；
+	 *              2. 计算两个刚体的相对旋转，转换为摆动角度和扭转角度（适配人体关节运动）；
+	 *              3. 基于椭圆约束算法（maxSwingAngle1/2为椭圆半轴）判断摆动是否超限：
+	 *                 - 未超限：swingError=0，无摆动约束；
+	 *                 - 超限：计算摆动误差和修正轴，用于约束求解；
+	 *              4. 计算扭转轴向量并归一化，为扭转约束提供参考轴；
+	 *              5. 计算锚点间的线性偏移，更新linearError（需约束为0）；
+	 *              该方法是布娃娃关节「人体化运动」的核心，采用椭圆约束模拟人体关节的自然摆动范围
+	 */
 	public syncAnchors(): void {
 		super.syncAnchors();
 		const sa = this.swingAxis, ta = this.twistAxis;
@@ -150,44 +228,122 @@ export default class RagdollJoint extends Joint {
 		}
 		Method.subArray(this.anchor2, this.anchor1, le, 0, 0, 0, 3);
 	}
+
+	/**
+	 * 构建速度约束求解器信息。
+	 * 调用父类基础初始化，再通过getInfo构建速度约束参数（isPositionPart=false），
+	 *              用于修正关节旋转/平移的速度偏差，保证角色运动的平滑性
+	 * @param {TimeStep} timeStep 时间步信息
+	 * @param {JointSolverInfo} info 待填充的求解器信息实例
+	 */
 	public getVelocitySolverInfo(timeStep: TimeStep, info: JointSolverInfo): void {
 		super.getVelocitySolverInfo(timeStep, info);
 		this.getInfo(info, timeStep, false);
 	}
+
+	/**
+	 * 构建位置约束求解器信息。
+	 * 调用父类基础初始化，再通过getInfo构建位置约束参数（isPositionPart=true），
+	 *              用于修正关节的位置/角度偏差，保证角色关节的精准约束
+	 * @param {JointSolverInfo} info 待填充的求解器信息实例
+	 */
 	public getPositionSolverInfo(info: JointSolverInfo): void {
 		super.getPositionSolverInfo(info);
 		this.getInfo(info, null, true);
 	}
 
+	/**
+	 * 获取第一个刚体的世界扭转轴。
+	 * 将basis1中的扭转轴世界坐标赋值到输出对象，用于角色骨骼可视化或调试
+	 * @param {object} axis 输出对象（包含x/y/z属性）
+	 */
 	public getAxis1To(axis: { x: number, y: number, z: number }): void {
 		Method.setXYZ(axis, this.basis1[0], this.basis1[1], this.basis1[2]);
 	}
+
+	/**
+	 * 获取第二个刚体的世界扭转轴。
+	 * 将basis2中的扭转轴世界坐标赋值到输出对象，用于角色骨骼可视化或调试
+	 * @param {object} axis 输出对象（包含x/y/z属性）
+	 */
 	public getAxis2To(axis: { x: number, y: number, z: number }): void {
 		Method.setXYZ(axis, this.basis2[0], this.basis2[1], this.basis2[2]);
 	}
 
+	/**
+	 * 获取第一个刚体的本地扭转轴。
+	 * 将localBasis1中的扭转轴本地坐标赋值到输出对象，用于角色骨骼配置调整
+	 * @param {object} axis 输出对象（包含x/y/z属性）
+	 */
 	public getLocalAxis1To(axis: { x: number, y: number, z: number }): void {
 		Method.setXYZ(axis, this.localBasis1[0], this.localBasis1[1], this.localBasis1[2]);
 	}
+
+	/**
+	 * 获取第二个刚体的本地扭转轴。
+	 * 将localBasis2中的扭转轴本地坐标赋值到输出对象，用于角色骨骼配置调整
+	 * @param {object} axis 输出对象（包含x/y/z属性）
+	 */
 	public getLocalAxis2To(axis: { x: number, y: number, z: number }): void {
 		Method.setXYZ(axis, this.localBasis2[0], this.localBasis2[1], this.localBasis2[2]);
 	}
+
+	/**
+	 * 获取扭转弹簧阻尼器实例。
+	 * 外部访问/修改扭转弹性参数的接口（如调整关节复位力度），
+	 *              直接返回内部实例，修改会实时影响关节物理特性
+	 * @returns {SpringDamper} 内部扭转弹簧阻尼器实例
+	 */
 	public getTwistSpringDamper(): SpringDamper {
 		return this._twistSd;
 	}
+
+	/**
+	 * 获取扭转限位驱动实例。
+	 * 外部访问/修改扭转限位参数的接口（如限制肘关节扭转范围），
+	 *              直接返回内部实例，修改会实时影响关节运动范围
+	 * @returns {RotationalLimitMotor} 内部扭转限位驱动实例
+	 */
 	public getTwistLimitMotor(): RotationalLimitMotor {
 		return this._twistLm;
 	}
+
+	/**
+	 * 获取摆动弹簧阻尼器实例。
+	 * 外部访问/修改摆动弹性参数的接口（如调整肩关节缓冲效果），
+	 *              直接返回内部实例，修改会实时影响关节物理特性
+	 * @returns {SpringDamper} 内部摆动弹簧阻尼器实例
+	 */
 	public getSwingSpringDamper(): SpringDamper {
 		return this._swingSd;
 	}
+
+	/**
+	 * 获取当前摆动轴。
+	 * 将实时计算的摆动轴向量赋值到输出对象，用于角色关节运动状态监控
+	 * @param {object} axis 输出对象（包含x/y/z属性）
+	 */
 	public getSwingAxisTo(axis: { x: number, y: number, z: number }): void {
 		Method.setXYZ(axis, this.swingAxis[0], this.swingAxis[1], this.swingAxis[2]);
 	}
+
+	/**
+	 * 获取当前摆动角度。
+	 * 外部访问内部_swingAngle的接口，用于角色关节运动状态监控或逻辑判断
+	 * @returns {number} 当前摆动角度（弧度）
+	 */
 	public getSwingAngle(): number {
 		return this._swingAngle;
 	}
+
+	/**
+	 * 获取当前扭转角度。
+	 * 外部访问内部_twistAngle的接口，用于角色关节运动状态监控或逻辑判断
+	 * @returns {number} 当前扭转角度（弧度）
+	 */
 	public getTwistAngle(): number {
 		return this._twistAngle;
 	}
 }
+
+export { RagdollJoint };

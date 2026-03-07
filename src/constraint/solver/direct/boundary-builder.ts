@@ -2,63 +2,151 @@ import BoundaryBuildInfo from "./boundary-build-info";
 import Boundary from "./boundary";
 import JointSolverInfo from "../../joint/joint-solver-info";
 
+/**
+ * 边界构建器类。
+ * 物理引擎中基于关节约束信息递归构建边界的核心工具类，核心作用：
+ * 1. 解析关节约束的冲量限制规则，递归生成所有可能的边界组合；
+ * 2. 管理边界实例的内存复用，避免频繁创建/销毁Boundary对象带来的GC开销；
+ * 3. 封装边界构建的完整流程，将JointSolverInfo转换为可用于约束求解的Boundary实例集合；
+ * 核心特性：
+ * - 递归构建：采用深度优先递归算法遍历所有约束行的边界状态，保证边界组合的完整性；
+ * - 内存复用：预分配边界数组缓冲区，复用已有Boundary实例，降低内存分配开销；
+ * - 状态回溯：构建过程中动态维护BoundaryBuildInfo的计数状态，递归返回时自动回溯，保证状态一致性；
+ * - 阈值优化：通过大数阈值（1e65536）判断约束限制是否生效，适配浮点精度场景；
+ * 主要应用场景：关节约束的边界求解、凸多面体约束空间构建、PGS迭代求解的边界条件生成。
+ */
 export default class BoundaryBuilder {
-	public maxRows : number;
-	public numBoundaries = 0;
-	public boundaries : Array<Boundary>;
-	public bbInfo : BoundaryBuildInfo;
-	constructor(maxRows : number) {
-		this.maxRows = maxRows;
-		this.boundaries = new Array(1 << maxRows);
-		this.bbInfo = new BoundaryBuildInfo(maxRows);
-	}
-	public buildBoundariesRecursive(info : JointSolverInfo, i : number) : void {
-		if (i === info.numRows) {
-			if (!this.boundaries[this.numBoundaries]) {
-				this.boundaries[this.numBoundaries] = new Boundary(this.maxRows);
-			}
-			this.boundaries[this.numBoundaries++].init(this.bbInfo);
-			return;
-		}
-		const row = info.rows[i];
-		const lowerLimitEnabled = row.minImpulse > -1e65536;
-		const upperLimitEnabled = row.maxImpulse < 1e65536;
-		if (row.minImpulse === 0 && row.maxImpulse === 0) {
-			const _this = this.bbInfo;
-			_this.iBounded[_this.numBounded] = i;
-			_this.signs[_this.numBounded] = 0;
-			_this.numBounded++;
-			this.buildBoundariesRecursive(info, i + 1);
-			this.bbInfo.numBounded--;
-			return;
-		}
-		const _this = this.bbInfo;
-		_this.iUnbounded[_this.numUnbounded] = i;
-		_this.numUnbounded++;
-		this.buildBoundariesRecursive(info, i + 1);
-		this.bbInfo.numUnbounded--;
-		if (lowerLimitEnabled) {
-			const _this = this.bbInfo;
-			_this.iBounded[_this.numBounded] = i;
-			_this.signs[_this.numBounded] = -1;
-			_this.numBounded++;
-			this.buildBoundariesRecursive(info, i + 1);
-			this.bbInfo.numBounded--;
-		}
-		if (upperLimitEnabled) {
-			const _this = this.bbInfo;
-			_this.iBounded[_this.numBounded] = i;
-			_this.signs[_this.numBounded] = 1;
-			_this.numBounded++;
-			this.buildBoundariesRecursive(info, i + 1);
-			this.bbInfo.numBounded--;
-		}
-	}
-	public buildBoundaries(info : JointSolverInfo) : void {
-		this.numBoundaries = 0;
-		const _this = this.bbInfo;
-		_this.numBounded = 0;
-		_this.numUnbounded = 0;
-		this.buildBoundariesRecursive(info, 0);
-	}
+    /**
+     * 最大约束行数（边界维度上限）。
+     * 限定边界构建的最大约束行数量，核心作用：
+     * 1. 作为边界数组（boundaries）的长度基准（2^maxRows），预分配所有可能的边界组合空间；
+     * 2. 限制递归深度，防止无限递归导致的栈溢出；
+     * 3. 与BoundaryBuildInfo的size参数保持一致，保证数据维度匹配；
+     * 初始化规则：由构造函数参数指定，实例生命周期内不可修改。
+     */
+    public maxRows: number;
+
+    /**
+     * 已构建的边界数量。
+     * 记录当前有效边界实例的数量，核心特性：
+     * 1. 初始值为0，buildBoundaries调用时重置为0，构建过程中动态递增；
+     * 2. 作为boundaries数组的有效元素长度标识，取值范围：0 ≤ numBoundaries ≤ 2^maxRows；
+     * 3. 边界构建完成后，可通过该值遍历所有有效边界实例。
+     * @default 0
+     */
+    public numBoundaries = 0;
+
+    /**
+     * 边界实例数组。
+     * 存储所有边界实例的缓冲区，核心特性：
+     * 1. 数组长度为2^maxRows，预分配所有可能的边界组合空间；
+     * 2. 采用“惰性初始化”策略：仅在需要时创建Boundary实例，复用已有实例避免重复分配；
+     * 3. 数组索引与边界组合一一对应，支持快速访问特定边界实例；
+     * 内存优化：数组元素初始为undefined，首次使用时创建，后续复用。
+     */
+    public boundaries: Array<Boundary>;
+
+    /**
+     * 边界构建信息容器。
+     * 存储边界构建过程中的临时状态数据，核心作用：
+     * 1. 维护有界/无界约束行的索引和符号标记；
+     * 2. 递归过程中动态更新计数状态，返回时自动回溯，保证状态一致性；
+     * 3. 作为Boundary实例初始化的数据源，传递边界构建的核心参数；
+     * 初始化规则：构造函数中创建，与maxRows维度匹配。
+     */
+    public bbInfo: BoundaryBuildInfo;
+
+    /**
+     * 构造函数：初始化边界构建器。
+     * 核心初始化逻辑：
+     * 1. 赋值最大约束行数maxRows，作为所有边界构建的维度基准；
+     * 2. 预分配边界数组缓冲区，长度为2^maxRows（所有可能的边界组合数）；
+     * 3. 创建BoundaryBuildInfo实例，维度与maxRows保持一致；
+     * 工程化设计：预分配数组缓冲区符合物理引擎“空间换时间”的优化思路，减少运行时内存操作。
+     * @param {number} maxRows - 最大约束行数（边界维度上限）
+     */
+    constructor(maxRows: number) {
+        this.maxRows = maxRows;
+        this.boundaries = new Array(1 << maxRows);
+        this.bbInfo = new BoundaryBuildInfo(maxRows);
+    }
+
+    /**
+     * 递归构建边界。
+     * 核心递归逻辑（深度优先遍历）：
+     * 1. 终止条件：i === info.numRows时，创建/复用Boundary实例并初始化，完成一组边界构建；
+     * 2. 约束行状态判断：
+     *    - 冲量上下限均为0：标记为有界且符号为0，递归处理下一行；
+     *    - 其他情况：先标记为无界，递归处理下一行，再分别处理上下限生效的有界状态；
+     * 3. 状态回溯：递归返回后恢复bbInfo的计数状态（numBounded/numUnbounded），避免状态污染；
+     * 关键优化点：
+     * - 使用1e65536大数阈值判断约束限制是否生效，适配浮点精度问题；
+     * - 复用已有Boundary实例，仅在实例不存在时创建，降低内存分配开销；
+     * - 递归过程中通过临时变量_this减少bbInfo属性访问开销。
+     * @param {JointSolverInfo} info - 关节约束求解信息，包含所有约束行的冲量限制规则
+     * @param {number} i - 当前递归处理的约束行索引
+     */
+    public buildBoundariesRecursive(info: JointSolverInfo, i: number): void {
+        if (i === info.numRows) {
+            if (!this.boundaries[this.numBoundaries]) {
+                this.boundaries[this.numBoundaries] = new Boundary(this.maxRows);
+            }
+            this.boundaries[this.numBoundaries++].init(this.bbInfo);
+            return;
+        }
+        const row = info.rows[i];
+        const lowerLimitEnabled = row.minImpulse > -1e65536;
+        const upperLimitEnabled = row.maxImpulse < 1e65536;
+        if (row.minImpulse === 0 && row.maxImpulse === 0) {
+            const _this = this.bbInfo;
+            _this.iBounded[_this.numBounded] = i;
+            _this.signs[_this.numBounded] = 0;
+            _this.numBounded++;
+            this.buildBoundariesRecursive(info, i + 1);
+            this.bbInfo.numBounded--;
+            return;
+        }
+        const _this = this.bbInfo;
+        _this.iUnbounded[_this.numUnbounded] = i;
+        _this.numUnbounded++;
+        this.buildBoundariesRecursive(info, i + 1);
+        this.bbInfo.numUnbounded--;
+        if (lowerLimitEnabled) {
+            const _this = this.bbInfo;
+            _this.iBounded[_this.numBounded] = i;
+            _this.signs[_this.numBounded] = -1;
+            _this.numBounded++;
+            this.buildBoundariesRecursive(info, i + 1);
+            this.bbInfo.numBounded--;
+        }
+        if (upperLimitEnabled) {
+            const _this = this.bbInfo;
+            _this.iBounded[_this.numBounded] = i;
+            _this.signs[_this.numBounded] = 1;
+            _this.numBounded++;
+            this.buildBoundariesRecursive(info, i + 1);
+            this.bbInfo.numBounded--;
+        }
+    }
+
+    /**
+     * 构建边界入口方法。
+     * 边界构建的统一入口，核心流程：
+     * 1. 重置状态：将已构建边界数量numBoundaries置0，清空bbInfo的有界/无界计数；
+     * 2. 启动递归：调用buildBoundariesRecursive从第0行开始递归构建所有边界；
+     * 工程化价值：
+     * - 封装递归入口，对外提供简洁的调用接口，隐藏递归实现细节；
+     * - 构建前重置所有状态，保证多次调用的独立性和状态一致性；
+     * 执行时机：关节约束求解前，解析约束冲量限制并生成边界条件。
+     * @param {JointSolverInfo} info - 关节约束求解信息，包含所有约束行的冲量限制规则
+     */
+    public buildBoundaries(info: JointSolverInfo): void {
+        this.numBoundaries = 0;
+        const _this = this.bbInfo;
+        _this.numBounded = 0;
+        _this.numUnbounded = 0;
+        this.buildBoundariesRecursive(info, 0);
+    }
 }
+
+export { BoundaryBuilder };

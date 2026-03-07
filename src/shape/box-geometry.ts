@@ -7,17 +7,34 @@ import RayCastHit from "./ray-cast-hit";
 import Method from "../common/method";
 
 /**
- * elements:
- *      [
- *          _halfExtentsX,_halfExtentsY,_halfExtentsZ,               0
- *          _halfAxisXX,_halfAxisXY,_halfAxisXZ,                     3
- *          _halfAxisYX,_halfAxisYY,_halfAxisYZ,                     6
- *          _halfAxisZX,_halfAxisZY,_halfAxisZZ                      9
- *      ]
+ * 立方体凸几何体类。
+ * 实现基于轴向立方体的凸几何体，是物理引擎中最常用的基础碰撞体之一。
+ * 支持自定义尺寸、物理属性自动计算、世界坐标系AABB生成、GJK碰撞检测支撑顶点计算
+ * 以及高精度的射线-立方体相交检测，内部采用紧凑的 Float64Array 存储数据以优化性能。
  */
 export default class BoxGeometry extends ConvexGeometry {
+	/**
+	 * 立方体尺寸与轴向量数据（紧凑存储的 Float64Array）。
+	 * 数组内存布局（共12个元素）：
+	 * | 索引 | 含义                | 说明                     |
+	 * |------|---------------------|--------------------------|
+	 * | 0    | _halfExtentsX       | X轴半宽度                |
+	 * | 1    | _halfExtentsY       | Y轴半高度                |
+	 * | 2    | _halfExtentsZ       | Z轴半深度                |
+	 * | 3-5  | _halfAxisXX/XY/XZ   | X轴半长轴向量（X/Y/Z分量）|
+	 * | 6-8  | _halfAxisYX/YY/YZ   | Y轴半长轴向量（X/Y/Z分量）|
+	 * | 9-11 | _halfAxisZX/ZY/ZZ   | Z轴半长轴向量（X/Y/Z分量）|
+	 */
 	public size: Float64Array;
 
+	/**
+	 * 构造函数：创建立方体几何体实例。
+	 * 初始化立方体半尺寸和轴向量，自动计算物理质量属性，并限制GJK容差不超过
+	 * 最小半尺寸的20%，避免碰撞检测时因容差过大导致的精度问题。
+	 * @param {number} [width=1] - 立方体宽度（X轴完整尺寸，默认1）
+	 * @param {number} [height=1] - 立方体高度（Y轴完整尺寸，默认1）
+	 * @param {number} [depth=1] - 立方体深度（Z轴完整尺寸，默认1）
+	 */
 	constructor(width = 1, height = 1, depth = 1) {
 		super(GEOMETRY_TYPE.BOX);
 		let w = width * 0.5;
@@ -30,22 +47,54 @@ export default class BoxGeometry extends ConvexGeometry {
 			this.gjkMargin = minHalfExtents * 0.2;
 		}
 	}
+
+	/**
+	 * 获取立方体X轴半宽度
+	 * @returns {number} X轴半宽度值（size[0]）
+	 */
 	public get halfWidth(): number {
 		return this.size[0];
 	}
+
+	/**
+	 * 获取立方体Y轴半高度
+	 * @returns {number} Y轴半高度值（size[1]）
+	 */
 	public get halfHeight(): number {
 		return this.size[1];
 	}
+
+	/**
+	 * 获取立方体Z轴半深度
+	 * @returns {number} Z轴半深度值（size[2]）
+	 */
 	public get halfDepth(): number {
 		return this.size[2];
 	}
 
+	/**
+	 * 将立方体半尺寸写入目标对象。
+	 * 复用传入的对象存储半尺寸数据，避免创建新对象以提升性能。
+	 * @param {Object} halfExtents - 输出对象（需包含x/y/z属性）
+	 * @param {number} halfExtents.x - X轴半尺寸输出字段
+	 * @param {number} halfExtents.y - Y轴半尺寸输出字段
+	 * @param {number} halfExtents.z - Z轴半尺寸输出字段
+	 * @returns {Object} 填充了半尺寸数据的目标对象
+	 */
 	public getHalfExtentsTo(halfExtents: { x: number, y: number, z: number }): { x: number, y: number, z: number } {
 		const es = this.size;
 		Method.setXYZ(halfExtents, es[0], es[1], es[2]);
 		return halfExtents;
 	}
 
+	/**
+	 * 更新立方体的物理质量属性。
+	 * 计算立方体的体积和转动惯量系数：
+	 * 1. 体积 = 8 × 半宽 × 半高 × 半深（完整立方体体积）
+	 * 2. 转动惯量系数：基于均匀密度立方体公式 I = (1/3)×(r₁² + r₂²)，
+	 *    此处 0.33333333333333331 为 1/3 的高精度浮点表示。
+	 * @returns {void}
+	 */
 	public updateMass(): void {
 		const es = this.size;
 		this.volume = 8 * (es[0] * es[1] * es[2]);
@@ -63,6 +112,7 @@ export default class BoxGeometry extends ConvexGeometry {
 		ic[7] = 0;
 		ic[8] = 0.33333333333333331 * (sqX + sqY);
 	}
+
 	public computeAabb(_aabb: Aabb, _tf: Transform): void {
 		const tf = _tf.elements, aabb = _aabb.elements, es = this.size;
 		const xx = tf[3] * es[3] + tf[4] * es[4] + tf[5] * es[5];
@@ -89,6 +139,7 @@ export default class BoxGeometry extends ConvexGeometry {
 		aabb[3] = tf[0] + tfsX; aabb[4] = tf[1] + tfsY; aabb[5] = tf[2] + tfsZ;
 		Method.copyElements(aabb, this.aabbComputed.elements);
 	}
+
 	public computeLocalSupportingVertex(_dir: Vec3, _out: Vec3): void {
 		const dir = _dir.elements, out = _out.elements, es = this.size;
 		let gjkMarginsX = this.gjkMargin, gjkMarginsY = this.gjkMargin, gjkMarginsZ = this.gjkMargin;
@@ -100,6 +151,20 @@ export default class BoxGeometry extends ConvexGeometry {
 		out[1] = dir[1] > 0 ? coreExtentsY : -coreExtentsY;
 		out[2] = dir[2] > 0 ? coreExtentsZ : -coreExtentsZ;
 	}
+
+	/**
+	 * 局部坐标系下的射线-立方体相交检测。
+	 * 采用Slab算法实现高精度射线检测，支持处理射线平行于坐标轴的边界情况，
+	 * 计算相交点、法向量和相交比例，过滤起点在立方体内的无效检测。
+	 * @param {number} beginX - 射线起点X坐标（局部坐标系）
+	 * @param {number} beginY - 射线起点Y坐标（局部坐标系）
+	 * @param {number} beginZ - 射线起点Z坐标（局部坐标系）
+	 * @param {number} endX - 射线终点X坐标（局部坐标系）
+	 * @param {number} endY - 射线终点Y坐标（局部坐标系）
+	 * @param {number} endZ - 射线终点Z坐标（局部坐标系）
+	 * @param {RayCastHit} hit - 输出参数，存储射线检测结果
+	 * @returns {boolean} 射线是否与立方体相交（true：相交，false：未相交）
+	 */
 	public rayCastLocal(beginX: number, beginY: number, beginZ: number, endX: number, endY: number, endZ: number, hit: RayCastHit): boolean {
 		const es = this.size;
 		const halfW = es[0], halfH = es[1], halfD = es[2];
@@ -213,3 +278,5 @@ export default class BoxGeometry extends ConvexGeometry {
 		return true;
 	}
 }
+
+export { BoxGeometry };

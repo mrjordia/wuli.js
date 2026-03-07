@@ -10,8 +10,30 @@ import JointSolverInfo from './joint-solver-info';
 import TimeStep from '../../common/time-step';
 import { Nullable } from '../../common/nullable';
 
+/**
+ * 圆柱关节实现类。
+ * 继承自Joint基类，是圆柱关节的具体实现，支持两个刚体沿指定轴的平移运动+绕该轴的旋转运动，
+ *              封装了平移/旋转的误差计算、约束求解信息构建、锚点同步等核心逻辑，是物理引擎中圆柱约束的核心实现类
+ */
 export default class CylindricalJoint extends Joint {
+	/**
+	 * 旋转误差向量（3维）。
+	 * 存储圆柱关节的旋转误差分量：
+	 *              - [0]：绕主轴的旋转角度误差；
+	 *              - [1]：Y轴旋转误差（约束轴）；
+	 *              - [2]：Z轴旋转误差（约束轴）；
+	 *              用于约束求解时的位置/速度修正
+	 */
 	public angularError = new Float64Array(3);
+
+	/**
+	 * 平移误差向量（3维）。
+	 * 存储圆柱关节的平移误差分量：
+	 *              - [0]：沿主轴的平移距离误差；
+	 *              - [1]：Y轴平移误差（约束轴）；
+	 *              - [2]：Z轴平移误差（约束轴）；
+	 *              用于约束求解时的位置/速度修正
+	 */
 	public linearError = new Float64Array(3);
 
 	private _basis: BasisTracker;
@@ -20,6 +42,15 @@ export default class CylindricalJoint extends Joint {
 	private _rotSd: SpringDamper;
 	private _rotLm: RotationalLimitMotor;
 	private _tM = new Float64Array(9);
+
+	/**
+	 * 构造函数：初始化圆柱关节。
+	 * 核心初始化逻辑：
+	 *              1. 调用父类构造函数，指定关节类型为CYLINDRICAL；
+	 *              2. 拷贝配置中的本地轴到关节基向量矩阵，基于X轴构建本地基向量；
+	 *              3. 初始化基向量跟踪器，克隆配置中的弹簧阻尼/限位驱动参数（避免联动修改）；
+	 * @param {CylindricalJointConfig} config 圆柱关节专属配置实例
+	 */
 	constructor(config: CylindricalJointConfig) {
 		super(config, JOINT_TYPE.CYLINDRICAL);
 		Method.copyElements(config.localAxis1.elements, this.localBasis1, 0, 0, 3);
@@ -32,20 +63,94 @@ export default class CylindricalJoint extends Joint {
 		this._rotLm = config.rotationalLimitMotor.clone();
 	}
 
+	/**
+	 * 绕主轴的旋转角度。
+	 * 获取angularError[0]，即圆柱关节绕主轴的旋转角度误差
+	 */
 	public get angle(): number { return this.angularError[0]; };
+
+	/**
+	 * Y轴旋转误差。
+	 * 获取angularError[1]，即圆柱关节Y轴方向的旋转误差（约束轴）
+	 */
 	public get angularErrorY(): number { return this.angularError[1]; };
+
+	/**
+	 * Z轴旋转误差。
+	 * 获取angularError[2]，即圆柱关节Z轴方向的旋转误差（约束轴）
+	 */
 	public get angularErrorZ(): number { return this.angularError[2]; };
+
+	/**
+	 * 绕主轴的旋转角度。
+	 * 设置angularError[0]，手动更新圆柱关节绕主轴的旋转角度误差
+	 */
 	public set angle(n: number) { this.angularError[0] = n; };
+
+	/**
+	 * Y轴旋转误差。
+	 * 设置angularError[1]，手动更新圆柱关节Y轴方向的旋转误差
+	 */
 	public set angularErrorY(n: number) { this.angularError[1] = n; };
+
+	/**
+	 * Z轴旋转误差。
+	 * 设置angularError[2]，手动更新圆柱关节Z轴方向的旋转误差
+	 */
 	public set angularErrorZ(n: number) { this.angularError[2] = n; };
 
+	/**
+	 * 沿主轴的平移距离。
+	 * 获取linearError[0]，即圆柱关节沿主轴的平移距离误差
+	 */
 	public get translation(): number { return this.linearError[0]; };
+
+	/**
+	 * Y轴平移误差。
+	 * 获取linearError[1]，即圆柱关节Y轴方向的平移误差（约束轴）
+	 */
 	public get linearErrorY(): number { return this.linearError[1]; };
+
+	/**
+	 * Z轴平移误差。
+	 * 获取linearError[2]，即圆柱关节Z轴方向的平移误差（约束轴）
+	 */
 	public get linearErrorZ(): number { return this.linearError[2]; };
+
+	/**
+	 * 沿主轴的平移距离。
+	 * 设置linearError[0]，手动更新圆柱关节沿主轴的平移距离误差
+	 */
 	public set translation(n: number) { this.linearError[0] = n; };
+
+	/**
+	 * Y轴平移误差。
+	 * 设置linearError[1]，手动更新圆柱关节Y轴方向的平移误差
+	 */
 	public set linearErrorY(n: number) { this.linearError[1] = n; };
+
+	/**
+	 * Z轴平移误差。
+	 * 设置linearError[2]，手动更新圆柱关节Z轴方向的平移误差。
+	 */
 	public set linearErrorZ(n: number) { this.linearError[2] = n; };
 
+	/**
+	 * 构建圆柱关节的约束求解器信息。
+	 * 核心逻辑：
+	 *              1. 计算ERP参数，初始化平移/旋转误差的RHS（右手边）值；
+	 *              2. 计算平移/旋转约束的有效质量；
+	 *              3. 构建平移约束行（主轴平移+Y/Z轴约束）：
+	 *                 - 主轴平移：配置限位驱动、弹簧阻尼、雅可比矩阵；
+	 *                 - Y/Z轴平移：固定约束（无限冲量范围），仅设置RHS和雅可比矩阵；
+	 *              4. 构建旋转约束行（主轴旋转+Y/Z轴约束）：
+	 *                 - 主轴旋转：配置限位驱动、弹簧阻尼、雅可比矩阵；
+	 *                 - Y/Z轴旋转：固定约束（无限冲量范围），仅设置RHS和雅可比矩阵；
+	 *              是圆柱关节约束求解的核心参数构建方法
+	 * @param {JointSolverInfo} info 待填充的求解器信息实例
+	 * @param {Nullable<TimeStep>} timeStep 时间步信息（位置约束阶段为null）
+	 * @param {boolean} isPositionPart 是否为位置约束阶段
+	 */
 	public getInfo(info: JointSolverInfo, timeStep: Nullable<TimeStep>, isPositionPart: boolean): void {
 		const erp = this.getErp(timeStep, isPositionPart);
 		const ae = this.angularError, le = this.linearError;
@@ -110,6 +215,16 @@ export default class CylindricalJoint extends Joint {
 		j[6] = _basis[6]; j[7] = _basis[7]; j[8] = _basis[8];
 		j[9] = _basis[6]; j[10] = _basis[7]; j[11] = _basis[8];
 	}
+
+	/**
+	 * 同步锚点和基向量，并计算平移/旋转误差。
+	 * 核心逻辑：
+	 *              1. 调用父类syncAnchors方法，同步锚点和基向量的世界坐标；
+	 *              2. 计算两个刚体基向量的旋转差值，通过四元数插值修正基向量跟踪器；
+	 *              3. 计算旋转误差（绕主轴/Y/Z轴）和平移误差（沿主轴/Y/Z轴）；
+	 *              4. 更新angularError和linearError，为约束求解提供误差数据；
+	 *              是圆柱关节约束求解的前置核心步骤，保证误差计算的实时性
+	 */
 	public syncAnchors(): void {
 		super.syncAnchors();
 		const bt = this._basis;
@@ -213,44 +328,117 @@ export default class CylindricalJoint extends Joint {
 		le[1] = m[1];
 		le[2] = m[2];
 	}
+
+	/**
+	 * 构建速度约束求解器信息。
+	 * 调用父类基础初始化方法，再调用getInfo构建速度约束的具体参数（isPositionPart=false）
+	 * @param {TimeStep} timeStep 时间步信息
+	 * @param {JointSolverInfo} info 待填充的求解器信息实例
+	 */
 	public getVelocitySolverInfo(timeStep: TimeStep, info: JointSolverInfo): void {
 		super.getVelocitySolverInfo(timeStep, info);
 		this.getInfo(info, timeStep, false);
 	}
+
+	/**
+	 * 构建位置约束求解器信息。
+	 * 调用父类基础初始化方法，再调用getInfo构建位置约束的具体参数（isPositionPart=true，timeStep=null）
+	 * @param {JointSolverInfo} info 待填充的求解器信息实例
+	 */
 	public getPositionSolverInfo(info: JointSolverInfo): void {
 		super.getPositionSolverInfo(info);
 		this.getInfo(info, null, true);
 	}
 
+	/**
+	 * 获取第一个刚体关节轴的世界坐标。
+	 * 将basis1[0-2]（主轴世界坐标）赋值到输出对象，用于外部访问关节轴的实时位置
+	 * @param {object} out 输出对象（包含x/y/z属性）
+	 */
 	public getAxis1To(out: { x: number, y: number, z: number }): void {
 		Method.setXYZ(out, this.basis1[0], this.basis1[1], this.basis1[2]);
 	}
+
+	/**
+	 * 获取第二个刚体关节轴的世界坐标。
+	 * 将basis2[0-2]（主轴世界坐标）赋值到输出对象，用于外部访问关节轴的实时位置
+	 * @param {object} out 输出对象（包含x/y/z属性）
+	 */
 	public getAxis2To(out: { x: number, y: number, z: number }): void {
 		Method.setXYZ(out, this.basis2[0], this.basis2[1], this.basis2[2]);
 	}
 
+	/**
+	 * 获取第一个刚体的本地关节轴。
+	 * 将localBasis1[0-2]（本地主轴）赋值到输出对象，用于外部访问本地轴配置
+	 * @param {object} out 输出对象（包含x/y/z属性）
+	 */
 	public getLocalAxis1To(out: { x: number, y: number, z: number }): void {
 		Method.setXYZ(out, this.localBasis1[0], this.localBasis1[1], this.localBasis1[2]);
 	}
+
+	/**
+	 * 获取第二个刚体的本地关节轴。
+	 * 将localBasis2[0-2]（本地主轴）赋值到输出对象，用于外部访问本地轴配置
+	 * @param {object} out 输出对象（包含x/y/z属性）
+	 */
 	public getLocalAxis2To(out: { x: number, y: number, z: number }): void {
 		Method.setXYZ(out, this.localBasis2[0], this.localBasis2[1], this.localBasis2[2]);
 	}
+
+	/**
+	 * 获取平移弹簧阻尼器配置。
+	 * 返回内部克隆的平移弹簧阻尼器实例，支持外部修改参数（如调整频率/阻尼比）
+	 * @returns {SpringDamper} 平移弹簧阻尼器实例
+	 */
 	public getTranslationalSpringDamper(): SpringDamper {
 		return this._translSd;
 	}
+
+	/**
+	 * 获取旋转弹簧阻尼器配置。
+	 * 返回内部克隆的旋转弹簧阻尼器实例，支持外部修改参数（如调整频率/阻尼比）
+	 * @returns {SpringDamper} 旋转弹簧阻尼器实例
+	 */
 	public getRotationalSpringDamper(): SpringDamper {
 		return this._rotSd;
 	}
+
+	/**
+	 * 获取平移限位驱动配置。
+	 * 返回内部克隆的平移限位驱动实例，支持外部修改限位/驱动参数（如调整限位范围/驱动速度）
+	 * @returns {TranslationalLimitMotor} 平移限位驱动实例
+	 */
 	public getTranslationalLimitMotor(): TranslationalLimitMotor {
 		return this._translLm;
 	}
+
+	/**
+	 * 获取旋转限位驱动配置。
+	 * 返回内部克隆的旋转限位驱动实例，支持外部修改限位/驱动参数（如调整限位角度/驱动速度）
+	 * @returns {RotationalLimitMotor} 旋转限位驱动实例
+	 */
 	public getRotationalLimitMotor(): RotationalLimitMotor {
 		return this._rotLm;
 	}
+
+	/**
+	 * 获取绕主轴的旋转角度。
+	 * 兼容式getter方法，与angle属性getter功能一致，适配外部调用习惯
+	 * @returns {number} 旋转角度误差（angularError[0]）
+	 */
 	public getAngle(): number {
 		return this.angularError[0];
 	}
+
+	/**
+	 * 获取沿主轴的平移距离。
+	 * 兼容式getter方法，与translation属性getter功能一致，适配外部调用习惯
+	 * @returns {number} 平移距离误差（linearError[0]）
+	 */
 	public getTranslation(): number {
 		return this.linearError[0];
 	}
 }
+
+export { CylindricalJoint };

@@ -1,0 +1,58 @@
+[**wuli.js API文档**](../../../../README.md)
+
+***
+
+[wuli.js API文档](../../../../modules.md) / [constraint/solver/contact-solver-mass-data-row](../README.md) / ContactSolverMassDataRow
+
+# Class: ContactSolverMassDataRow
+
+Defined in: [constraint/solver/contact-solver-mass-data-row.ts:7](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/contact-solver-mass-data-row.ts#L7)
+
+接触约束求解质量数据行类。
+物理引擎中接触约束求解的核心质量数据存储结构，
+             存储两个刚体在法向(N)/切向(T)/副法向(B)三个方向的逆质量/逆转动惯量分量，
+             以及预计算的有效质量（massN）和切向质量矩阵（massTB），是约束冲量计算的关键数据载体
+
+## Constructors
+
+### Constructor
+
+> **new ContactSolverMassDataRow**(): `ContactSolverMassDataRow`
+
+#### Returns
+
+`ContactSolverMassDataRow`
+
+## Properties
+
+### elements
+
+> **elements**: `Float64Array`\<`ArrayBuffer`\>
+
+Defined in: [constraint/solver/contact-solver-mass-data-row.ts:31](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/contact-solver-mass-data-row.ts#L31)
+
+接触求解质量数据的原始数组。
+64位高精度浮点数组，存储三个方向的逆质量/转动惯量分量、有效质量和切向质量矩阵，
+             内存布局严格定义如下：
+索引范围 | 字段名          | 物理含义
+-------- | --------------- | ----------------------------------------------------------------
+0-2      | invMLinN1X/Y/Z  | 第一个刚体法向(N)线速度的逆质量分量 (1/mass * 法向单位向量分量)
+3-5      | invMLinN2X/Y/Z  | 第二个刚体法向(N)线速度的逆质量分量
+6-8      | invMAngN1X/Y/Z  | 第一个刚体法向(N)角速度的逆转动惯量分量 (invI * 角动量臂 × 法向)
+9-11     | invMAngN2X/Y/Z  | 第二个刚体法向(N)角速度的逆转动惯量分量
+12-14    | invMLinT1X/Y/Z  | 第一个刚体切向(T)线速度的逆质量分量
+15-17    | invMLinT2X/Y/Z  | 第二个刚体切向(T)线速度的逆质量分量
+18-20    | invMAngT1X/Y/Z  | 第一个刚体切向(T)角速度的逆转动惯量分量
+21-23    | invMAngT2X/Y/Z  | 第二个刚体切向(T)角速度的逆转动惯量分量
+24-26    | invMLinB1X/Y/Z  | 第一个刚体副法向(B)线速度的逆质量分量
+27-29    | invMLinB2X/Y/Z  | 第二个刚体副法向(B)线速度的逆质量分量
+30-32    | invMAngB1X/Y/Z  | 第一个刚体副法向(B)角速度的逆转动惯量分量
+33-35    | invMAngB2X/Y/Z  | 第二个刚体副法向(B)角速度的逆转动惯量分量
+36       | massN           | 法向有效质量 (1 / (J·M⁻¹·Jᵀ)，约束方程核心参数)
+37-40    | massTB00/01/10/11 | 切向/副法向的2x2有效质量矩阵，用于摩擦约束求解
+
+#### Default
+
+```ts
+new Float64Array(41)
+```

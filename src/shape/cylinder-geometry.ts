@@ -6,9 +6,32 @@ import Vec3 from "../common/vec3";
 import RayCastHit from "./ray-cast-hit";
 import Method from "../common/method";
 
+/**
+ * 圆柱体凸几何体类。
+ * 实现基于轴向圆柱体的凸几何体（沿Y轴延伸），是物理引擎中常用的基础碰撞体，
+ * 支持自定义半径/高度、物理属性自动计算、世界坐标系AABB生成、GJK碰撞检测支撑顶点计算
+ * 以及高精度的射线-圆柱体相交检测，适用于圆柱状物体（如柱子、车轮、管道）的碰撞模拟。
+ */
 export default class CylinderGeometry extends ConvexGeometry {
+	/**
+	 * 圆柱体底面半径（XZ平面）。
+	 * 圆柱体径向尺寸，决定XZ平面内圆形截面的大小
+	 */
 	public radius: number;
+
+	/**
+	 * 圆柱体的半高度（仅沿Y轴方向）。
+	 * 圆柱体轴向半高度，完整高度 = 2 × halfHeight，中心在局部坐标系原点
+	 */
 	public halfHeight: number;
+
+	/**
+	 * 构造函数：创建圆柱体几何体实例。
+	 * 初始化圆柱体的半径和半高度，自动计算物理质量属性（体积、转动惯量系数），
+	 * 圆柱体默认沿Y轴延伸，底面位于XZ平面。
+	 * @param {number} radius - 圆柱体底面半径（必须大于0）
+	 * @param {number} halfHeight - 圆柱体半高度（必须大于等于0）
+	 */
 	constructor(radius: number, halfHeight: number) {
 		super(GEOMETRY_TYPE.CYLINDER);
 		this.radius = radius;
@@ -16,22 +39,42 @@ export default class CylinderGeometry extends ConvexGeometry {
 		this.updateMass();
 	}
 
+	/**
+	 * 更新圆柱体的物理质量属性。
+	 * 基于均匀密度假设计算圆柱体的体积和转动惯量系数：
+	 * 1. 体积计算：V = πr²H（H为完整高度=2×halfHeight，3.14159265358979 = π）
+	 * 2. 转动惯量：
+	 *    - X/Z轴（径向）：0.083333333333333329 × (3r² + H²)（即 1/12 × (3r² + H²)）
+	 *    - Y轴（轴向）：0.5 × r²（即 1/2 × r²）
+	 * @returns {void}
+	 */
 	public updateMass(): void {
 		const r = this.radius, h = this.halfHeight;
 		const r2 = r * r;
-		const h2 = h * h * 4;
-		this.volume = 3.14159265358979 * r2 * h * 2;
+		const h2 = h * h * 4; // 完整高度的平方 (2h)²
+		this.volume = 3.14159265358979 * r2 * h * 2; // πr²×2h = πr²H
 		const icf = this.inertiaCoeff;
-		icf[0] = 0.083333333333333329 * (3 * r2 + h2);
+		icf[0] = 0.083333333333333329 * (3 * r2 + h2); // X轴转动惯量系数 (1/12)
 		icf[1] = 0;
 		icf[2] = 0;
 		icf[3] = 0;
-		icf[4] = 0.5 * r2;
+		icf[4] = 0.5 * r2; // Y轴转动惯量系数 (1/2)
 		icf[5] = 0;
 		icf[6] = 0;
 		icf[7] = 0;
-		icf[8] = 0.083333333333333329 * (3 * r2 + h2);
+		icf[8] = 0.083333333333333329 * (3 * r2 + h2); // Z轴转动惯量系数 (1/12)
 	}
+
+	/**
+	 * 计算圆柱体在指定变换下的世界坐标系AABB。
+	 * 核心逻辑：
+	 * 1. 结合圆柱体半径（径向）和半高度（轴向），计算变换后各轴的投影范围；
+	 * 2. 基于旋转分量计算径向/轴向在世界坐标系的最大扩展；
+	 * 3. 叠加平移分量得到最终AABB，并同步到aabbComputed属性。
+	 * @param {Aabb} _aabb - 输出参数，存储计算后的世界AABB
+	 * @param {Transform} _tf - 圆柱体的变换矩阵（包含平移、旋转、缩放）
+	 * @returns {void}
+	 */
 	public computeAabb(_aabb: Aabb, _tf: Transform): void {
 		const r = this.radius, h = this.halfHeight;
 		const aabb = _aabb.elements, tf = _tf.elements;
@@ -46,6 +89,17 @@ export default class CylinderGeometry extends ConvexGeometry {
 		aabb[3] = tf[0] + maxX; aabb[4] = tf[1] + maxY; aabb[5] = tf[2] + maxZ;
 		Method.copyElements(aabb, this.aabbComputed.elements);
 	}
+
+	/**
+	 * 计算局部坐标系下沿指定方向的支撑顶点。
+	 * 圆柱体支撑顶点计算逻辑（GJK/EPA碰撞检测核心）：
+	 * 1. 径向（XZ平面）：沿采样方向的径向分量取半径极值（扣除GJK容差）；
+	 * 2. 轴向（Y轴）：沿采样方向的Y分量正负取半高度极值（扣除GJK容差）；
+	 * 3. 扣除GJK容差以保证碰撞检测的稳定性。
+	 * @param {Vec3} _dir - 采样方向向量（局部坐标系，无需归一化）
+	 * @param {Vec3} _out - 输出参数，存储计算得到的支撑顶点
+	 * @returns {void}
+	 */
 	public computeLocalSupportingVertex(_dir: Vec3, _out: Vec3): void {
 		const dir = _dir.elements, out = _out.elements;
 		const rx = dir[0];
@@ -60,6 +114,22 @@ export default class CylinderGeometry extends ConvexGeometry {
 		out[1] = dir[1] > 0 ? coreHeight : -coreHeight;
 		out[2] = rz * invLen;
 	}
+
+	/**
+	 * 局部坐标系下的射线-圆柱体相交检测。
+	 * 分两步检测射线与圆柱体的相交：
+	 * 1. 先检测射线是否在圆柱体的Y轴高度范围内；
+	 * 2. 再检测射线与圆柱体侧面（XZ平面圆形截面）的相交；
+	 * 最终返回第一个有效相交点，区分命中顶面/底面（Y轴法向量）和侧面（径向法向量）。
+	 * @param {number} beginX - 射线起点X坐标（局部坐标系）
+	 * @param {number} beginY - 射线起点Y坐标（局部坐标系）
+	 * @param {number} beginZ - 射线起点Z坐标（局部坐标系）
+	 * @param {number} endX - 射线终点X坐标（局部坐标系）
+	 * @param {number} endY - 射线终点Y坐标（局部坐标系）
+	 * @param {number} endZ - 射线终点Z坐标（局部坐标系）
+	 * @param {RayCastHit} hit - 输出参数，存储射线检测结果（交点、法向量、相交比例）
+	 * @returns {boolean} 射线是否与圆柱体相交（true：相交，false：未相交）
+	 */
 	public rayCastLocal(beginX: number, beginY: number, beginZ: number, endX: number, endY: number, endZ: number, hit: RayCastHit): boolean {
 		const halfH = this.halfHeight;
 		const dx = endX - beginX, dy = endY - beginY, dz = endZ - beginZ;
@@ -119,3 +189,5 @@ export default class CylinderGeometry extends ConvexGeometry {
 		return true;
 	}
 }
+
+export { CylinderGeometry };

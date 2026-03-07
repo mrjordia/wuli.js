@@ -9,14 +9,44 @@ import JointSolverInfo from "./joint-solver-info";
 import TimeStep from "../../common/time-step";
 import { Nullable } from "../../common/nullable";
 
-
+/**
+ * 旋转关节实现类。
+ * 继承自Joint基类，是旋转关节（Revolute Joint）的具体实现，
+ *              仅允许两个刚体绕指定轴做纯旋转运动（完全限制平移和其他方向旋转自由度），
+ *              支持旋转角度限位、弹簧阻尼缓冲，可精准模拟门轴、车轮、铰链、机械臂关节等场景的物理特性，
+ *              是刚体物理模拟中最常用的关节类型之一
+ */
 export default class RevoluteJoint extends Joint {
-	public angularError = new Float64Array(3);//0:angle,1:angularErrorY,2:angularErrorZ
+	/**
+	 * 角度误差数组。
+	 * 存储旋转关节的角度误差（3维），各索引含义：
+	 *              - 0: 绕旋转轴的旋转角度（核心运动参数）
+	 *              - 1: Y轴方向角度误差（需约束为0，限制非目标轴旋转）
+	 *              - 2: Z轴方向角度误差（需约束为0，限制非目标轴旋转）
+	 */
+	public angularError = new Float64Array(3);
+
+	/**
+	 * 线性误差数组。
+	 * 存储关节锚点的线性偏移误差（X/Y/Z轴），所有分量需约束为0，
+	 *              保证两个刚体仅绕关节轴旋转，无位置偏移（模拟铰链的固定连接特性）
+	 */
 	public linearError = new Float64Array(3);
 
 	private _basis: BasisTracker;
 	private _sd: SpringDamper;
 	private _lm: RotationalLimitMotor;
+
+	/**
+	 * 构造函数：初始化旋转关节。
+	 * 核心初始化逻辑：
+	 *              1. 调用父类构造函数，指定关节类型为REVOLUTE；
+	 *              2. 从配置中复制本地旋转轴到关节本地基向量矩阵；
+	 *              3. 基于X轴构建完整的本地基向量矩阵（适配旋转关节的单轴旋转特性）；
+	 *              4. 初始化基向量追踪器，用于后续基向量更新；
+	 *              5. 克隆配置中的弹簧阻尼器和限位驱动实例（避免配置联动）；
+	 * @param {RevoluteJointConfig} config 旋转关节配置实例
+	 */
 	constructor(config: RevoluteJointConfig) {
 		super(config, JOINT_TYPE.REVOLUTE);
 		Method.copyElements(config.localAxis1.elements, this.localBasis1, 0, 0, 3);
@@ -27,20 +57,91 @@ export default class RevoluteJoint extends Joint {
 		this._lm = config.limitMotor.clone();
 	}
 
+	/**
+	 * 绕旋转轴的旋转角度
+	 * @returns {number} 当前旋转角度（弧度）
+	 */
 	public get angle(): number { return this.angularError[0]; }
+
+	/**
+	 * Y轴方向角度误差
+	 * @returns {number} Y轴角度误差值
+	 */
 	public get angularErrorY(): number { return this.angularError[1]; }
+
+	/**
+	 * Z轴方向角度误差
+	 * @returns {number} Z轴角度误差值
+	 */
 	public get angularErrorZ(): number { return this.angularError[2]; }
+
+	/**
+	 * 绕旋转轴的旋转角度
+	 * @param {number} n 目标旋转角度（弧度）
+	 */
 	public set angle(n: number) { this.angularError[0] = n; }
+
+	/**
+	 * Y轴方向角度误差
+	 * @param {number} n 目标Y轴角度误差值
+	 */
 	public set angularErrorY(n: number) { this.angularError[1] = n; }
+
+	/**
+	 * Z轴方向角度误差
+	 * @param {number} n 目标Z轴角度误差值
+	 */
 	public set angularErrorZ(n: number) { this.angularError[2] = n; }
 
+	/**
+	 * X轴线性误差
+	 * @returns {number} X轴线性偏移误差值
+	 */
 	public get linearErrorX(): number { return this.linearError[0]; }
+
+	/**
+	 * Y轴线性误差
+	 * @returns {number} Y轴线性偏移误差值
+	 */
 	public get linearErrorY(): number { return this.linearError[1]; }
+
+	/**
+	 * Z轴线性误差
+	 * @returns {number} Z轴线性偏移误差值
+	 */
 	public get linearErrorZ(): number { return this.linearError[2]; }
+
+	/**
+	 * X轴线性误差
+	 * @param {number} n 目标X轴线性误差值
+	 */
 	public set linearErrorX(n: number) { this.linearError[0] = n; }
+
+	/**
+	 * Y轴线性误差
+	 * @param {number} n 目标Y轴线性误差值
+	 */
 	public set linearErrorY(n: number) { this.linearError[1] = n; }
+
+	/**
+	 * Z轴线性误差
+	 * @param {number} n 目标Z轴线性误差值
+	 */
 	public set linearErrorZ(n: number) { this.linearError[2] = n; }
 
+	/**
+	 * 构建旋转关节的约束求解器信息。
+	 * 核心逻辑：
+	 *              1. 计算误差还原参数（erp），将线性/角度误差转换为约束修正量；
+	 *              2. 构建X/Y/Z轴线性约束行：强制约束锚点偏移为0，设置极大力矩范围（±1e65536）确保严格约束；
+	 *              3. 构建Y/Z轴角度约束行：强制约束非目标轴旋转为0，限制刚体绕非指定轴的旋转；
+	 *              4. 计算旋转驱动的有效转动惯量（模拟刚体旋转的物理特性）；
+	 *              5. 构建旋转轴约束行：配置弹簧阻尼和限位驱动，处理绕目标轴的旋转约束；
+	 *              该方法是旋转关节物理约束的核心，确保仅绕指定轴旋转且无位置偏移
+	 * @param {JointSolverInfo} info 待填充的求解器信息实例
+	 * @param {Nullable<TimeStep>} timeStep 时间步信息（位置约束阶段为null）
+	 * @param {boolean} isPositionPart 是否为位置约束阶段
+	 */
 	public getInfo(info: JointSolverInfo, timeStep: Nullable<TimeStep>, isPositionPart: boolean): void {
 		const erp = this.getErp(timeStep, isPositionPart);
 		const le = this.linearError, ae = this.angularError;
@@ -110,6 +211,17 @@ export default class RevoluteJoint extends Joint {
 		j[6] = bte[6]; j[7] = bte[7]; j[8] = bte[8];
 		j[9] = bte[6]; j[10] = bte[7]; j[11] = bte[8];
 	}
+
+	/**
+	 * 同步锚点和基向量，计算角度/线性误差。
+	 * 核心逻辑（旋转关节物理核心计算步骤）：
+	 *              1. 调用父类syncAnchors，同步锚点和基向量的世界坐标；
+	 *              2. 通过四元数球面插值（Slerp）计算刚体间的相对旋转，保证旋转计算的平滑性；
+	 *              3. 更新基向量追踪器的基向量矩阵，确保旋转轴始终对齐；
+	 *              4. 计算绕目标轴的旋转角度（核心运动参数）和非目标轴的角度误差（需约束为0）；
+	 *              5. 计算锚点间的线性偏移，更新linearError（需约束为0）；
+	 *              该方法是旋转关节「纯旋转、无平移」特性的核心保障，通过高精度的四元数计算确保旋转约束的准确性
+	 */
 	public syncAnchors(): void {
 		super.syncAnchors();
 		const bt = this._basis;
@@ -215,35 +327,94 @@ export default class RevoluteJoint extends Joint {
 		}
 		Method.subArray(this.anchor2, this.anchor1, this.linearError, 0, 0, 0, 3);
 	}
+
+	/**
+	 * 构建速度约束求解器信息。
+	 * 调用父类基础初始化，再通过getInfo构建速度约束参数（isPositionPart=false），
+	 *              用于修正旋转/平移的速度偏差，保证旋转运动的平滑性
+	 * @param {TimeStep} timeStep 时间步信息
+	 * @param {JointSolverInfo} info 待填充的求解器信息实例
+	 */
 	public getVelocitySolverInfo(timeStep: TimeStep, info: JointSolverInfo): void {
 		super.getVelocitySolverInfo(timeStep, info);
 		this.getInfo(info, timeStep, false);
 	}
+
+	/**
+	 * 构建位置约束求解器信息。
+	 * 调用父类基础初始化，再通过getInfo构建位置约束参数（isPositionPart=true），
+	 *              用于修正位置/角度偏差，保证旋转约束的精准性
+	 * @param {JointSolverInfo} info 待填充的求解器信息实例
+	 */
 	public getPositionSolverInfo(info: JointSolverInfo): void {
 		super.getPositionSolverInfo(info);
 		this.getInfo(info, null, true);
 	}
 
+	/**
+	 * 获取第一个刚体的世界旋转轴。
+	 * 将basis1中的旋转轴世界坐标赋值到输出对象，用于物理调试或可视化
+	 * @param {object} axis 输出对象（包含x/y/z属性）
+	 */
 	public getAxis1To(axis: { x: number, y: number, z: number }): void {
 		Method.setXYZ(axis, this.basis1[0], this.basis1[1], this.basis1[2]);
 	}
+
+	/**
+	 * 获取第二个刚体的世界旋转轴。
+	 * 将basis2中的旋转轴世界坐标赋值到输出对象，用于物理调试或可视化
+	 * @param {object} axis 输出对象（包含x/y/z属性）
+	 */
 	public getAxis2To(axis: { x: number, y: number, z: number }): void {
 		Method.setXYZ(axis, this.basis2[0], this.basis2[1], this.basis2[2]);
 	}
 
+	/**
+	 * 获取第一个刚体的本地旋转轴。
+	 * 将localBasis1中的旋转轴本地坐标赋值到输出对象，用于配置调整
+	 * @param {object} axis 输出对象（包含x/y/z属性）
+	 */
 	public getLocalAxis1To(axis: { x: number, y: number, z: number }): void {
 		Method.setXYZ(axis, this.localBasis1[0], this.localBasis1[1], this.localBasis1[2]);
 	}
+
+	/**
+	 * 获取第二个刚体的本地旋转轴。
+	 * 将localBasis2中的旋转轴本地坐标赋值到输出对象，用于配置调整
+	 * @param {object} axis 输出对象（包含x/y/z属性）
+	 */
 	public getLocalAxis2To(axis: { x: number, y: number, z: number }): void {
 		Method.setXYZ(axis, this.localBasis2[0], this.localBasis2[1], this.localBasis2[2]);
 	}
+
+	/**
+	 * 获取弹簧阻尼器实例。
+	 * 外部访问/修改旋转弹性参数的接口（如调整门的缓冲力度），
+	 *              直接返回内部实例，修改会实时影响关节物理特性
+	 * @returns {SpringDamper} 内部弹簧阻尼器实例
+	 */
 	public getSpringDamper(): SpringDamper {
 		return this._sd;
 	}
+
+	/**
+	 * 获取旋转限位驱动实例。
+	 * 外部访问/修改旋转限位参数的接口（如限制门的开合角度），
+	 *              直接返回内部实例，修改会实时影响关节运动范围
+	 * @returns {RotationalLimitMotor} 内部旋转限位驱动实例
+	 */
 	public getLimitMotor(): RotationalLimitMotor {
 		return this._lm;
 	}
+
+	/**
+	 * 获取当前旋转角度。
+	 * 外部访问旋转角度的快捷接口，与angle getter功能一致，兼容不同调用习惯
+	 * @returns {number} 当前绕旋转轴的旋转角度（弧度）
+	 */
 	public getAngle(): number {
 		return this.angularError[0];
 	}
 }
+
+export { RevoluteJoint };
