@@ -6,7 +6,7 @@
 
 # Interface: IWorldOptions
 
-Defined in: [world.ts:42](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/world.ts#L42)
+Defined in: [world.ts:42](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L42)
 
 物理世界初始化配置项。
 理世界创建时的核心配置，支持自定义宽相位类型、重力、步进间隔等。
@@ -17,7 +17,7 @@ Defined in: [world.ts:42](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc
 
 > `optional` **broadPhaseType**: `number`
 
-Defined in: [world.ts:46](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/world.ts#L46)
+Defined in: [world.ts:46](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L46)
 
 可选，宽相位检测类型（默认BVH），取值见BROAD_PHASE_TYPE
 
@@ -27,7 +27,7 @@ Defined in: [world.ts:46](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc
 
 > `optional` **gravity**: [`Vec3`](../../common/vec3/classes/Vec3.md)
 
-Defined in: [world.ts:48](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/world.ts#L48)
+Defined in: [world.ts:48](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L48)
 
 可选，世界重力向量（默认Vec3(0, -9.8, 0)，标准重力）
 
@@ -37,7 +37,7 @@ Defined in: [world.ts:48](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc
 
 > `optional` **intervalInSecond**: `number`
 
-Defined in: [world.ts:50](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/world.ts#L50)
+Defined in: [world.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L50)
 
 可选，物理步进间隔（秒），默认0.01666（约60FPS）
 
@@ -47,7 +47,7 @@ Defined in: [world.ts:50](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc
 
 > `optional` **simulateAnimation**: (`intervalInMs`) => [`ISimulateAnimation`](ISimulateAnimation.md)
 
-Defined in: [world.ts:44](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/world.ts#L44)
+Defined in: [world.ts:44](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L44)
 
 可选，模拟动画控制器工厂方法，入参为步进间隔（毫秒），返回控制器实例
 
@@ -67,6 +67,6 @@ Defined in: [world.ts:44](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc
 
 > `optional` **stats**: `boolean` \| [`InfoDisplay`](../../common/info-display/classes/InfoDisplay.md)
 
-Defined in: [world.ts:52](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/world.ts#L52)
+Defined in: [world.ts:52](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L52)
 
 可选，性能监控开关/实例，true则创建默认InfoDisplay，也可传入自定义实例

@@ -6,7 +6,7 @@
 
 # Interface: IShapeConfigOptions
 
-Defined in: [shape/shape-config.ts:14](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/shape-config.ts#L14)
+Defined in: [shape/shape-config.ts:14](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape-config.ts#L14)
 
 形状配置项接口。
 定义创建ShapeConfig实例的可选配置参数，涵盖碰撞体的位置、旋转、物理属性、碰撞规则、几何体和接触回调等核心配置，
@@ -18,7 +18,7 @@ Defined in: [shape/shape-config.ts:14](https://github.com/mrjordia/wuli.js/blob/
 
 > `optional` **collisionGroup**: `number`
 
-Defined in: [shape/shape-config.ts:49](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/shape-config.ts#L49)
+Defined in: [shape/shape-config.ts:49](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape-config.ts#L49)
 
 碰撞组。
 碰撞分层标识，用于碰撞过滤：只有满足 collisionGroup & collisionMask != 0 的两个碰撞体才会检测碰撞；
@@ -30,7 +30,7 @@ Defined in: [shape/shape-config.ts:49](https://github.com/mrjordia/wuli.js/blob/
 
 > `optional` **collisionMask**: `number`
 
-Defined in: [shape/shape-config.ts:55](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/shape-config.ts#L55)
+Defined in: [shape/shape-config.ts:55](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape-config.ts#L55)
 
 碰撞掩码。
 碰撞检测的目标分组掩码，与collisionGroup配合实现碰撞过滤；
@@ -42,7 +42,7 @@ Defined in: [shape/shape-config.ts:55](https://github.com/mrjordia/wuli.js/blob/
 
 > `optional` **contactCallback**: [`ContactCallback`](../../../common/contact-callback/classes/ContactCallback.md)
 
-Defined in: [shape/shape-config.ts:67](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/shape-config.ts#L67)
+Defined in: [shape/shape-config.ts:67](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape-config.ts#L67)
 
 接触回调函数。
 碰撞接触时的自定义回调，可用于处理碰撞事件（如播放音效、扣血、触发机关）；
@@ -54,7 +54,7 @@ Defined in: [shape/shape-config.ts:67](https://github.com/mrjordia/wuli.js/blob/
 
 > `optional` **density**: `number`
 
-Defined in: [shape/shape-config.ts:43](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/shape-config.ts#L43)
+Defined in: [shape/shape-config.ts:43](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape-config.ts#L43)
 
 密度。
 单位体积的质量，用于计算碰撞体的总质量（质量=密度×几何体体积）；
@@ -66,7 +66,7 @@ Defined in: [shape/shape-config.ts:43](https://github.com/mrjordia/wuli.js/blob/
 
 > `optional` **friction**: `number`
 
-Defined in: [shape/shape-config.ts:31](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/shape-config.ts#L31)
+Defined in: [shape/shape-config.ts:31](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape-config.ts#L31)
 
 摩擦系数。
 取值范围通常为0~1：0表示无摩擦（光滑表面），1表示最大静摩擦；
@@ -78,7 +78,7 @@ Defined in: [shape/shape-config.ts:31](https://github.com/mrjordia/wuli.js/blob/
 
 > **geometry**: [`Geometry`](../../geometry/classes/Geometry.md)
 
-Defined in: [shape/shape-config.ts:61](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/shape-config.ts#L61)
+Defined in: [shape/shape-config.ts:61](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape-config.ts#L61)
 
 碰撞体关联的几何体。
 碰撞体的几何形状定义，支持球体、地形、圆柱体等所有继承自Geometry的几何体类型；
@@ -90,7 +90,7 @@ Defined in: [shape/shape-config.ts:61](https://github.com/mrjordia/wuli.js/blob/
 
 > `optional` **position**: `object`
 
-Defined in: [shape/shape-config.ts:19](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/shape-config.ts#L19)
+Defined in: [shape/shape-config.ts:19](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape-config.ts#L19)
 
 碰撞体初始位置（局部坐标系）。
 仅对非地形几何体生效，地形几何体的位置由变换矩阵单独控制，忽略该配置。
@@ -113,7 +113,7 @@ Defined in: [shape/shape-config.ts:19](https://github.com/mrjordia/wuli.js/blob/
 
 > `optional` **restitution**: `number`
 
-Defined in: [shape/shape-config.ts:37](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/shape-config.ts#L37)
+Defined in: [shape/shape-config.ts:37](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape-config.ts#L37)
 
 恢复系数（弹性系数）。
 取值范围通常为0~1：0表示完全非弹性碰撞（无反弹），1表示完全弹性碰撞（无能量损失）；
@@ -125,7 +125,7 @@ Defined in: [shape/shape-config.ts:37](https://github.com/mrjordia/wuli.js/blob/
 
 > `optional` **rotation**: `object`
 
-Defined in: [shape/shape-config.ts:25](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/shape-config.ts#L25)
+Defined in: [shape/shape-config.ts:25](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape-config.ts#L25)
 
 碰撞体初始旋转四元数。
 仅对非地形几何体生效，内部会转换为3x3旋转矩阵；

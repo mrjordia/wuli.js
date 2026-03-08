@@ -6,7 +6,7 @@
 
 # Abstract Class: ConstraintSolver
 
-Defined in: [constraint/solver/constraint-solver.ts:11](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/constraint-solver.ts#L11)
+Defined in: [constraint/solver/constraint-solver.ts:11](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L11)
 
 约束求解器抽象基类。
 物理引擎中所有约束求解器的统一抽象接口，定义了约束求解全生命周期的标准化方法，
@@ -35,7 +35,7 @@ Defined in: [constraint/solver/constraint-solver.ts:11](https://github.com/mrjor
 
 > **addedToIsland**: `boolean` = `false`
 
-Defined in: [constraint/solver/constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/constraint-solver.ts#L21)
+Defined in: [constraint/solver/constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L21)
 
 是否已加入求解岛标记。
 用于物理引擎的岛屿法（Island Method）优化：标记约束是否已被加入当前求解岛，
@@ -53,7 +53,7 @@ false
 
 > `abstract` **postSolve**(): `void`
 
-Defined in: [constraint/solver/constraint-solver.ts:99](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/constraint-solver.ts#L99)
+Defined in: [constraint/solver/constraint-solver.ts:99](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L99)
 
 约束求解后置回调（抽象方法）。
 整个约束求解流程的最终收尾逻辑，通常用于：
@@ -71,7 +71,7 @@ Defined in: [constraint/solver/constraint-solver.ts:99](https://github.com/mrjor
 
 > `abstract` **postSolveVelocity**(`timeStep`): `void`
 
-Defined in: [constraint/solver/constraint-solver.ts:61](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/constraint-solver.ts#L61)
+Defined in: [constraint/solver/constraint-solver.ts:61](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L61)
 
 速度约束求解后置处理（抽象方法）。
 速度求解后的收尾逻辑，通常用于：
@@ -97,7 +97,7 @@ Defined in: [constraint/solver/constraint-solver.ts:61](https://github.com/mrjor
 
 > `abstract` **preSolvePosition**(`timeStep`): `void`
 
-Defined in: [constraint/solver/constraint-solver.ts:71](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/constraint-solver.ts#L71)
+Defined in: [constraint/solver/constraint-solver.ts:71](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L71)
 
 位置约束求解前置处理（抽象方法）。
 位置求解前的初始化逻辑，通常用于：
@@ -123,7 +123,7 @@ Defined in: [constraint/solver/constraint-solver.ts:71](https://github.com/mrjor
 
 > `abstract` **preSolveVelocity**(`timeStep`): `void`
 
-Defined in: [constraint/solver/constraint-solver.ts:31](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/constraint-solver.ts#L31)
+Defined in: [constraint/solver/constraint-solver.ts:31](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L31)
 
 速度约束求解前置处理（抽象方法）。
 速度求解前的初始化逻辑，通常用于：
@@ -149,7 +149,7 @@ Defined in: [constraint/solver/constraint-solver.ts:31](https://github.com/mrjor
 
 > `abstract` **solvePositionNgs**(`timeStep`): `void`
 
-Defined in: [constraint/solver/constraint-solver.ts:90](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/constraint-solver.ts#L90)
+Defined in: [constraint/solver/constraint-solver.ts:90](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L90)
 
 NGS位置约束求解（抽象方法）。
 基于高斯-塞德尔迭代（NGS）的位置约束求解，核心特点：
@@ -175,7 +175,7 @@ NGS位置约束求解（抽象方法）。
 
 > `abstract` **solvePositionSplitImpulse**(): `void`
 
-Defined in: [constraint/solver/constraint-solver.ts:80](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/constraint-solver.ts#L80)
+Defined in: [constraint/solver/constraint-solver.ts:80](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L80)
 
 分离冲量位置求解（抽象方法）。
 基于分离冲量（Split Impulse）的位置修正方法，核心作用：
@@ -193,7 +193,7 @@ Defined in: [constraint/solver/constraint-solver.ts:80](https://github.com/mrjor
 
 > `abstract` **solveVelocity**(): `void`
 
-Defined in: [constraint/solver/constraint-solver.ts:51](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/constraint-solver.ts#L51)
+Defined in: [constraint/solver/constraint-solver.ts:51](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L51)
 
 速度约束求解（抽象方法）。
 约束求解的核心方法，用于计算满足约束的速度修正量，通常实现：
@@ -212,7 +212,7 @@ Defined in: [constraint/solver/constraint-solver.ts:51](https://github.com/mrjor
 
 > `abstract` **warmStart**(`timeStep`): `void`
 
-Defined in: [constraint/solver/constraint-solver.ts:41](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/constraint-solver.ts#L41)
+Defined in: [constraint/solver/constraint-solver.ts:41](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L41)
 
 约束热启动（抽象方法）。
 利用上一帧的冲量数据预热当前帧求解，核心作用：

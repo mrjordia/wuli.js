@@ -6,7 +6,7 @@
 
 # Class: Vec3
 
-Defined in: [common/vec3.ts:16](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/vec3.ts#L16)
+Defined in: [common/vec3.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/vec3.ts#L16)
 
 3D双精度浮点向量核心类。
 物理引擎中表示3维空间物理量的基础核心类，核心作用：
@@ -26,7 +26,7 @@ Defined in: [common/vec3.ts:16](https://github.com/mrjordia/wuli.js/blob/7de21a8
 
 > **new Vec3**(`x?`, `y?`, `z?`): `Vec3`
 
-Defined in: [common/vec3.ts:42](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/vec3.ts#L42)
+Defined in: [common/vec3.ts:42](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/vec3.ts#L42)
 
 构造函数：初始化三维向量。
 核心初始化逻辑：
@@ -64,7 +64,7 @@ Z轴分量，默认0
 
 > **elements**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [common/vec3.ts:30](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/vec3.ts#L30)
+Defined in: [common/vec3.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/vec3.ts#L30)
 
 向量分量存储数组（双精度浮点）。
 固定长度3的Float64Array，内存布局严格定义：
@@ -86,7 +86,7 @@ Defined in: [common/vec3.ts:30](https://github.com/mrjordia/wuli.js/blob/7de21a8
 
 > **get** **x**(): `number`
 
-Defined in: [common/vec3.ts:54](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/vec3.ts#L54)
+Defined in: [common/vec3.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/vec3.ts#L54)
 
 X分量访问器（只读）。
 封装elements[0]的只读访问，兼顾易用性与性能：
@@ -101,7 +101,7 @@ X分量访问器（只读）。
 
 > **set** **x**(`num`): `void`
 
-Defined in: [common/vec3.ts:63](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/vec3.ts#L63)
+Defined in: [common/vec3.ts:63](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/vec3.ts#L63)
 
 X分量设置器（可写）。
 封装elements[0]的写入操作，保证分量赋值的规范性：
@@ -126,7 +126,7 @@ X分量设置器（可写）。
 
 > **get** **y**(): `number`
 
-Defined in: [common/vec3.ts:72](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/vec3.ts#L72)
+Defined in: [common/vec3.ts:72](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/vec3.ts#L72)
 
 Y分量访问器（只读）。
 封装elements[1]的只读访问，逻辑同x访问器。
@@ -141,7 +141,7 @@ Y分量访问器（只读）。
 
 > **set** **y**(`num`): `void`
 
-Defined in: [common/vec3.ts:81](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/vec3.ts#L81)
+Defined in: [common/vec3.ts:81](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/vec3.ts#L81)
 
 Y分量设置器（可写）。
 封装elements[1]的写入操作，逻辑同x设置器。
@@ -166,7 +166,7 @@ Y分量设置器（可写）。
 
 > **get** **z**(): `number`
 
-Defined in: [common/vec3.ts:90](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/vec3.ts#L90)
+Defined in: [common/vec3.ts:90](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/vec3.ts#L90)
 
 Z分量访问器（只读）。
 封装elements[2]的只读访问，逻辑同x访问器。
@@ -181,7 +181,7 @@ Z分量访问器（只读）。
 
 > **set** **z**(`num`): `void`
 
-Defined in: [common/vec3.ts:99](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/vec3.ts#L99)
+Defined in: [common/vec3.ts:99](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/vec3.ts#L99)
 
 Z分量设置器（可写）。
 封装elements[2]的写入操作，逻辑同x设置器。

@@ -6,7 +6,7 @@
 
 # Class: BvhStrategy
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-strategy.ts:16](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-strategy.ts#L16)
+Defined in: [broad-phase/bvh-broad-phase/bvh-strategy.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-strategy.ts#L16)
 
 BVH（边界体积层次）树策略核心类。
 物理引擎中BVH树构建与更新的核心策略类，核心作用：
@@ -35,7 +35,7 @@ BVH（边界体积层次）树策略核心类。
 
 > **balancingEnabled**: `boolean` = `false`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-strategy.ts:30](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-strategy.ts#L30)
+Defined in: [broad-phase/bvh-broad-phase/bvh-strategy.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-strategy.ts#L30)
 
 树平衡开关。
 是否启用BVH树的平衡优化：
@@ -49,7 +49,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-strategy.ts:30](https://github.com/
 
 > **decideInsertion**(`currentNode`, `leaf`): `-1` \| `0` \| `1`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-strategy.ts:49](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-strategy.ts#L49)
+Defined in: [broad-phase/bvh-broad-phase/bvh-strategy.ts:49](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-strategy.ts#L49)
 
 决定新叶子节点的插入位置。
 核心逻辑：根据_insertionStrategy选择不同的插入策略：
@@ -90,7 +90,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-strategy.ts:49](https://github.com/
 
 > **splitLeaves**(`leaves`, `from`, `until`): `number`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-strategy.ts:103](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-strategy.ts#L103)
+Defined in: [broad-phase/bvh-broad-phase/bvh-strategy.ts:103](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-strategy.ts#L103)
 
 分割叶子节点集合（BVH树构建核心）。
 基于空间方差的节点分割算法，核心逻辑：

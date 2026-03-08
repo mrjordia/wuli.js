@@ -6,7 +6,7 @@
 
 # Class: IncidentVertex
 
-Defined in: [collision-detector/box-box-detector/incident-vertex.ts:5](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/collision-detector/box-box-detector/incident-vertex.ts#L5)
+Defined in: [collision-detector/box-box-detector/incident-vertex.ts:5](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/incident-vertex.ts#L5)
 
 入射顶点（IncidentVertex）类。
 用于表示碰撞检测中接触点的入射顶点数据，存储顶点的二维坐标和三维法向量信息
@@ -27,7 +27,7 @@ Defined in: [collision-detector/box-box-detector/incident-vertex.ts:5](https://g
 
 > **elements**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [collision-detector/box-box-detector/incident-vertex.ts:15](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/collision-detector/box-box-detector/incident-vertex.ts#L15)
+Defined in: [collision-detector/box-box-detector/incident-vertex.ts:15](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/incident-vertex.ts#L15)
 
 顶点数据存储数组，采用Float64Array保证高精度计算。
 数组结构（索引对应含义）：

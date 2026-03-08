@@ -6,7 +6,7 @@
 
 # Interface: IRigidBodyConfigOptions
 
-Defined in: [rigid-body/rigid-body-config.ts:10](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body-config.ts#L10)
+Defined in: [rigid-body/rigid-body-config.ts:10](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body-config.ts#L10)
 
 刚体配置项接口（初始化入参类型）。
 用于定义创建RigidBodyConfig时的可选配置参数，所有字段均为可选，未传时使用默认值
@@ -17,7 +17,7 @@ Defined in: [rigid-body/rigid-body-config.ts:10](https://github.com/mrjordia/wul
 
 > `optional` **angularDamping**: `number`
 
-Defined in: [rigid-body/rigid-body-config.ts:52](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body-config.ts#L52)
+Defined in: [rigid-body/rigid-body-config.ts:52](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body-config.ts#L52)
 
 角阻尼系数（角速度衰减率），取值范围 [0, 1]。
 作用：模拟旋转阻力，使刚体角速度逐渐衰减。
@@ -30,7 +30,7 @@ Defined in: [rigid-body/rigid-body-config.ts:52](https://github.com/mrjordia/wul
 
 > `optional` **angularVelocity**: `object`
 
-Defined in: [rigid-body/rigid-body-config.ts:27](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body-config.ts#L27)
+Defined in: [rigid-body/rigid-body-config.ts:27](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body-config.ts#L27)
 
 刚体初始角速度（rad/s）
 
@@ -52,7 +52,7 @@ Defined in: [rigid-body/rigid-body-config.ts:27](https://github.com/mrjordia/wul
 
 > `optional` **autoSleep**: `boolean`
 
-Defined in: [rigid-body/rigid-body-config.ts:38](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body-config.ts#L38)
+Defined in: [rigid-body/rigid-body-config.ts:38](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body-config.ts#L38)
 
 是否启用自动休眠。
 休眠逻辑：刚体速度低于阈值时进入休眠状态，停止物理计算以提升性能。
@@ -64,7 +64,7 @@ Defined in: [rigid-body/rigid-body-config.ts:38](https://github.com/mrjordia/wul
 
 > `optional` **linearDamping**: `number`
 
-Defined in: [rigid-body/rigid-body-config.ts:45](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body-config.ts#L45)
+Defined in: [rigid-body/rigid-body-config.ts:45](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body-config.ts#L45)
 
 线性阻尼系数（速度衰减率），取值范围 [0, 1]。
 作用：模拟空气阻力、摩擦力等，使刚体线速度逐渐衰减。
@@ -77,7 +77,7 @@ Defined in: [rigid-body/rigid-body-config.ts:45](https://github.com/mrjordia/wul
 
 > `optional` **linearVelocity**: `object`
 
-Defined in: [rigid-body/rigid-body-config.ts:23](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body-config.ts#L23)
+Defined in: [rigid-body/rigid-body-config.ts:23](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body-config.ts#L23)
 
 刚体初始线速度（m/s）
 
@@ -99,7 +99,7 @@ Defined in: [rigid-body/rigid-body-config.ts:23](https://github.com/mrjordia/wul
 
 > `optional` **name**: `string`
 
-Defined in: [rigid-body/rigid-body-config.ts:57](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body-config.ts#L57)
+Defined in: [rigid-body/rigid-body-config.ts:57](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body-config.ts#L57)
 
 刚体名称（用于调试/标识）
 默认为空字符串
@@ -110,7 +110,7 @@ Defined in: [rigid-body/rigid-body-config.ts:57](https://github.com/mrjordia/wul
 
 > `optional` **position**: `object`
 
-Defined in: [rigid-body/rigid-body-config.ts:14](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body-config.ts#L14)
+Defined in: [rigid-body/rigid-body-config.ts:14](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body-config.ts#L14)
 
 刚体初始位置（世界坐标系）
 
@@ -132,7 +132,7 @@ Defined in: [rigid-body/rigid-body-config.ts:14](https://github.com/mrjordia/wul
 
 > `optional` **rotation**: `object`
 
-Defined in: [rigid-body/rigid-body-config.ts:19](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body-config.ts#L19)
+Defined in: [rigid-body/rigid-body-config.ts:19](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body-config.ts#L19)
 
 刚体初始旋转（四元数）。
 注：内部会自动转换为3x3旋转矩阵存储
@@ -159,7 +159,7 @@ Defined in: [rigid-body/rigid-body-config.ts:19](https://github.com/mrjordia/wul
 
 > `optional` **type**: [`RIGID_BODY_TYPE`](../../../constant/enumerations/RIGID_BODY_TYPE.md)
 
-Defined in: [rigid-body/rigid-body-config.ts:32](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body-config.ts#L32)
+Defined in: [rigid-body/rigid-body-config.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body-config.ts#L32)
 
 刚体类型（静态/动态/运动学）。
 默认为动态刚体（RIGID_BODY_TYPE.DYNAMIC）

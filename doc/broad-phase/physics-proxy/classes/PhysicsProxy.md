@@ -6,7 +6,7 @@
 
 # Class: PhysicsProxy
 
-Defined in: [broad-phase/physics-proxy.ts:12](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/physics-proxy.ts#L12)
+Defined in: [broad-phase/physics-proxy.ts:12](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/physics-proxy.ts#L12)
 
 物理代理核心类。
 物理引擎中用于封装碰撞形状（Shape）的代理类，核心作用：
@@ -25,7 +25,7 @@ Defined in: [broad-phase/physics-proxy.ts:12](https://github.com/mrjordia/wuli.j
 
 > **new PhysicsProxy**(`userData`, `id`): `PhysicsProxy`
 
-Defined in: [broad-phase/physics-proxy.ts:62](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/physics-proxy.ts#L62)
+Defined in: [broad-phase/physics-proxy.ts:62](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/physics-proxy.ts#L62)
 
 构造函数：初始化物理代理。
 核心初始化逻辑：
@@ -58,7 +58,7 @@ Defined in: [broad-phase/physics-proxy.ts:62](https://github.com/mrjordia/wuli.j
 
 > **id**: `number`
 
-Defined in: [broad-phase/physics-proxy.ts:36](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/physics-proxy.ts#L36)
+Defined in: [broad-phase/physics-proxy.ts:36](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/physics-proxy.ts#L36)
 
 代理唯一标识ID。
 物理代理的全局唯一ID，用于区分不同的代理实例；
@@ -70,7 +70,7 @@ Defined in: [broad-phase/physics-proxy.ts:36](https://github.com/mrjordia/wuli.j
 
 > **next**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<`PhysicsProxy`\>
 
-Defined in: [broad-phase/physics-proxy.ts:50](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/physics-proxy.ts#L50)
+Defined in: [broad-phase/physics-proxy.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/physics-proxy.ts#L50)
 
 双向链表后继节点。
 指向链表中当前代理的下一个节点；
@@ -82,7 +82,7 @@ Defined in: [broad-phase/physics-proxy.ts:50](https://github.com/mrjordia/wuli.j
 
 > **prev**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<`PhysicsProxy`\>
 
-Defined in: [broad-phase/physics-proxy.ts:43](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/physics-proxy.ts#L43)
+Defined in: [broad-phase/physics-proxy.ts:43](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/physics-proxy.ts#L43)
 
 双向链表前驱节点。
 指向链表中当前代理的上一个节点；
@@ -94,7 +94,7 @@ Defined in: [broad-phase/physics-proxy.ts:43](https://github.com/mrjordia/wuli.j
 
 > **size**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [broad-phase/physics-proxy.ts:29](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/physics-proxy.ts#L29)
+Defined in: [broad-phase/physics-proxy.ts:29](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/physics-proxy.ts#L29)
 
 AABB包围盒尺寸数据。
 长度为6的浮点数组，存储AABB包围盒的最小/最大边界值，数组结构：
@@ -110,7 +110,7 @@ AABB包围盒尺寸数据。
 
 > **userData**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`Shape`](../../../shape/shape/classes/Shape.md)\>
 
-Defined in: [broad-phase/physics-proxy.ts:18](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/physics-proxy.ts#L18)
+Defined in: [broad-phase/physics-proxy.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/physics-proxy.ts#L18)
 
 关联的物理形状实例。
 指向代理所封装的Shape对象（如盒体、球体、凸包等）；

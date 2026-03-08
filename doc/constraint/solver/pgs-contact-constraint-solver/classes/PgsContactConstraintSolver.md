@@ -6,7 +6,7 @@
 
 # Class: PgsContactConstraintSolver
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:17](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L17)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:17](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L17)
 
 PGS接触约束求解器类。
 基于投影梯度下降（Projected Gauss-Seidel, PGS）算法的接触约束求解器，
@@ -26,7 +26,7 @@ PGS接触约束求解器类。
 
 > **new PgsContactConstraintSolver**(`constraint`): `PgsContactConstraintSolver`
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:49](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L49)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:49](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L49)
 
 构造函数：初始化PGS接触约束求解器。
 核心初始化逻辑：
@@ -56,7 +56,7 @@ Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:49](https://gith
 
 > **addedToIsland**: `boolean` = `false`
 
-Defined in: [constraint/solver/constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/constraint-solver.ts#L21)
+Defined in: [constraint/solver/constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L21)
 
 是否已加入求解岛标记。
 用于物理引擎的岛屿法（Island Method）优化：标记约束是否已被加入当前求解岛，
@@ -78,7 +78,7 @@ false
 
 > **constraint**: [`ContactConstraint`](../../../contact/contact-constraint/classes/ContactConstraint.md)
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:23](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L23)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:23](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L23)
 
 关联的接触约束实例。
 存储接触流形、刚体/形状关联数据，是求解器的核心数据源，
@@ -90,7 +90,7 @@ Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:23](https://gith
 
 > **info**: [`ContactSolverInfo`](../../../contact/contact-solver-info/classes/ContactSolverInfo.md)
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:31](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L31)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:31](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L31)
 
 接触求解信息容器。
 存储约束求解的核心数据：雅克比矩阵、冲量、摩擦系数、rhs（约束方程右侧值）等，
@@ -108,7 +108,7 @@ new ContactSolverInfo()
 
 > **massData**: [`ContactSolverMassDataRow`](../../contact-solver-mass-data-row/classes/ContactSolverMassDataRow.md)[]
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:39](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L39)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:39](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L39)
 
 接触求解质量数据行数组。
 每个元素对应一个接触点的质量数据（逆质量、逆转动惯量、有效质量），
@@ -126,7 +126,7 @@ Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:39](https://gith
 
 > **postSolve**(): `void`
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:674](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L674)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:674](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L674)
 
 约束求解后置回调（核心收尾方法）。
 整个约束求解流程的最终收尾逻辑，完成以下关键操作：
@@ -150,7 +150,7 @@ Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:674](https://git
 
 > **postSolveVelocity**(`timeStep`): `void`
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:64](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L64)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:64](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L64)
 
 速度约束求解后置处理（空实现）。
 当前版本为空实现，预留扩展接口，可用于：
@@ -180,7 +180,7 @@ Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:64](https://gith
 
 > **preSolvePosition**(`timeStep`): `void`
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:315](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L315)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:315](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L315)
 
 位置约束求解前置处理。
 位置求解前的初始化逻辑，完成以下操作：
@@ -212,7 +212,7 @@ Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:315](https://git
 
 > **preSolveVelocity**(`timeStep`): `void`
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:81](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L81)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:81](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L81)
 
 速度约束求解前置处理（核心方法）。
 速度求解前的核心初始化逻辑，完成以下关键操作：
@@ -248,7 +248,7 @@ Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:81](https://gith
 
 > **solvePositionNgs**(`timeStep`): `void`
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:413](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L413)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:413](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L413)
 
 NGS位置约束求解（核心方法）。
 基于高斯-塞德尔（NGS）迭代的位置约束求解，完成以下核心操作：
@@ -284,7 +284,7 @@ NGS位置约束求解（核心方法）。
 
 > **solvePositionSplitImpulse**(): `void`
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:361](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L361)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:361](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L361)
 
 分离冲量位置求解。
 基于分离冲量（Split Impulse）的位置修正方法，核心逻辑：
@@ -310,7 +310,7 @@ Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:361](https://git
 
 > **solveVelocity**(): `void`
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:221](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L221)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:221](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L221)
 
 速度约束求解（核心方法）。
 PGS算法的核心实现，分两步求解接触约束的速度修正：
@@ -340,7 +340,7 @@ PGS算法的核心实现，分两步求解接触约束的速度修正：
 
 > **warmStart**(`timeStep`): `void`
 
-Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:164](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/pgs-contact-constraint-solver.ts#L164)
+Defined in: [constraint/solver/pgs-contact-constraint-solver.ts:164](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-contact-constraint-solver.ts#L164)
 
 约束热启动（核心方法）。
 利用上一帧的冲量数据预热当前帧求解，核心逻辑：

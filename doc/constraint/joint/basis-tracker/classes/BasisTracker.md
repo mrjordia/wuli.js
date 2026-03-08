@@ -6,7 +6,7 @@
 
 # Class: BasisTracker
 
-Defined in: [constraint/joint/basis-tracker.ts:8](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/basis-tracker.ts#L8)
+Defined in: [constraint/joint/basis-tracker.ts:8](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/basis-tracker.ts#L8)
 
 基向量追踪器类。
 用于追踪关节关联刚体的基向量（坐标系）变化，存储3x3基向量矩阵的9个元素，
@@ -18,7 +18,7 @@ Defined in: [constraint/joint/basis-tracker.ts:8](https://github.com/mrjordia/wu
 
 > **new BasisTracker**(`joint`): `BasisTracker`
 
-Defined in: [constraint/joint/basis-tracker.ts:34](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/basis-tracker.ts#L34)
+Defined in: [constraint/joint/basis-tracker.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/basis-tracker.ts#L34)
 
 构造函数：初始化基向量追踪器。
 核心初始化逻辑：
@@ -43,7 +43,7 @@ Defined in: [constraint/joint/basis-tracker.ts:34](https://github.com/mrjordia/w
 
 > **elements**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [constraint/joint/basis-tracker.ts:25](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/basis-tracker.ts#L25)
+Defined in: [constraint/joint/basis-tracker.ts:25](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/basis-tracker.ts#L25)
 
 3x3基向量矩阵的元素数组（Float64Array类型）。
 长度为9的浮点数组，按行优先顺序存储基向量矩阵：
@@ -60,7 +60,7 @@ Defined in: [constraint/joint/basis-tracker.ts:25](https://github.com/mrjordia/w
 
 > **joint**: [`Joint`](../../joint/classes/Joint.md)
 
-Defined in: [constraint/joint/basis-tracker.ts:13](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/basis-tracker.ts#L13)
+Defined in: [constraint/joint/basis-tracker.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/basis-tracker.ts#L13)
 
 当前追踪器绑定的关节实例。
 关联的目标关节，追踪器基于该关节的刚体状态更新基向量数据

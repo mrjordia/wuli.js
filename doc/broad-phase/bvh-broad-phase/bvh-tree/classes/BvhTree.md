@@ -6,7 +6,7 @@
 
 # Class: BvhTree
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:19](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L19)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:19](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L19)
 
 BVH（边界体积层次）树核心管理类。
 物理引擎中BVH树的核心管理类，负责BVH树的构建、销毁、平衡检测等全生命周期管理，核心作用：
@@ -36,7 +36,7 @@ BVH（边界体积层次）树核心管理类。
 
 > **leafList**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`BvhNode`](../../bvh-node/classes/BvhNode.md)\>
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:53](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L53)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:53](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L53)
 
 叶子节点链表头节点。
 指向叶子节点双向链表的第一个节点；
@@ -48,7 +48,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:53](https://github.com/mrjo
 
 > **leafListLast**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`BvhNode`](../../bvh-node/classes/BvhNode.md)\>
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:60](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L60)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:60](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L60)
 
 叶子节点链表尾节点。
 指向叶子节点双向链表的最后一个节点；
@@ -60,7 +60,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:60](https://github.com/mrjo
 
 > **nodePool**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`BvhNode`](../../bvh-node/classes/BvhNode.md)\>
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:46](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L46)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:46](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L46)
 
 BVH节点对象池。
 存储闲置的BVHNode实例，用于树构建时的节点复用；
@@ -72,7 +72,7 @@ BVH节点对象池。
 
 > **numLeaves**: `number` = `0`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:32](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L32)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L32)
 
 叶子节点数量。
 统计当前BVH树中叶子节点的总数（即关联BvhProxy的节点数）；
@@ -84,7 +84,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:32](https://github.com/mrjo
 
 > **root**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`BvhNode`](../../bvh-node/classes/BvhNode.md)\>
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:25](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L25)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:25](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L25)
 
 BVH树根节点。
 指向BVH树的根节点；
@@ -96,7 +96,7 @@ BVH树根节点。
 
 > **strategy**: [`BvhStrategy`](../../bvh-strategy/classes/BvhStrategy.md)
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:39](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L39)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:39](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L39)
 
 BVH树策略实例。
 关联的BvhStrategy实例，提供节点分割、插入决策的策略支持；
@@ -108,7 +108,7 @@ BVH树策略实例。
 
 > **tmp**: `any`[]
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:67](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L67)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:67](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L67)
 
 临时数组缓存。
 长度为1024的数组，用于树构建过程中的临时数据存储；
@@ -120,7 +120,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:67](https://github.com/mrjo
 
 > **buildTopDownRecursive**(`leaves`, `from`, `until`): [`BvhNode`](../../bvh-node/classes/BvhNode.md)
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:150](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L150)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:150](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L150)
 
 自顶向下递归构建BVH树。
 BVH树构建核心算法，分治思想：
@@ -166,7 +166,7 @@ BVH树构建核心算法，分治思想：
 
 > **decomposeRecursive**(`root`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:122](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L122)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:122](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L122)
 
 递归分解BVH树（仅重置节点拓扑信息）。
 核心逻辑（后序遍历）：
@@ -194,7 +194,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:122](https://github.com/mrj
 
 > **deleteRecursive**(`root`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:94](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L94)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:94](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L94)
 
 递归删除BVH树节点（含叶子节点清理）。
 核心逻辑（后序遍历）：
@@ -225,7 +225,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:94](https://github.com/mrjo
 
 > **getBalance**(): `number`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:76](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L76)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:76](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L76)
 
 获取BVH树的总平衡度。
 对外提供的树平衡度查询接口，核心逻辑：
@@ -244,7 +244,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:76](https://github.com/mrjo
 
 > **getBalanceRecursive**(`root`): `number`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:194](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L194)
+Defined in: [broad-phase/bvh-broad-phase/bvh-tree.ts:194](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-tree.ts#L194)
 
 递归计算BVH树的平衡度。
 平衡度计算逻辑（后序遍历）：

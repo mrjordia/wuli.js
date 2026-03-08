@@ -6,7 +6,7 @@
 
 # Class: RigidBody
 
-Defined in: [rigid-body/rigid-body.ts:33](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L33)
+Defined in: [rigid-body/rigid-body.ts:33](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L33)
 
 刚体类，是物理引擎的核心对象，负责管理物体的物理属性、运动状态和碰撞形状。
 支持静态(STATIC)、动态(DYNAMIC)、运动学(KINEMATIC)三种刚体类型，提供完整的物理交互能力
@@ -17,7 +17,7 @@ Defined in: [rigid-body/rigid-body.ts:33](https://github.com/mrjordia/wuli.js/bl
 
 > **new RigidBody**(`config`): `RigidBody`
 
-Defined in: [rigid-body/rigid-body.ts:115](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L115)
+Defined in: [rigid-body/rigid-body.ts:115](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L115)
 
 构造函数，创建刚体实例
 
@@ -39,7 +39,7 @@ Defined in: [rigid-body/rigid-body.ts:115](https://github.com/mrjordia/wuli.js/b
 
 > **addedToIsland**: `boolean` = `false`
 
-Defined in: [rigid-body/rigid-body.ts:83](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L83)
+Defined in: [rigid-body/rigid-body.ts:83](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L83)
 
 是否已添加到物理岛，用于优化碰撞检测
 
@@ -49,7 +49,7 @@ Defined in: [rigid-body/rigid-body.ts:83](https://github.com/mrjordia/wuli.js/bl
 
 > **angPseudoVel**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:93](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L93)
+Defined in: [rigid-body/rigid-body.ts:93](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L93)
 
 伪角速度，用于约束求解阶段的旋转修正
 
@@ -59,7 +59,7 @@ Defined in: [rigid-body/rigid-body.ts:93](https://github.com/mrjordia/wuli.js/bl
 
 > **angularContactImpulse**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:101](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L101)
+Defined in: [rigid-body/rigid-body.ts:101](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L101)
 
 接触产生的角冲量累计值，用于物理调试
 
@@ -69,7 +69,7 @@ Defined in: [rigid-body/rigid-body.ts:101](https://github.com/mrjordia/wuli.js/b
 
 > **angVel**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:89](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L89)
+Defined in: [rigid-body/rigid-body.ts:89](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L89)
 
 角速度 (rad/s)，存储在Float64Array[3]中 [x, y, z]
 
@@ -79,7 +79,7 @@ Defined in: [rigid-body/rigid-body.ts:89](https://github.com/mrjordia/wuli.js/bl
 
 > **contactLinkList**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`ContactLink`](../../../constraint/contact/contact-link/classes/ContactLink.md)\>
 
-Defined in: [rigid-body/rigid-body.ts:67](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L67)
+Defined in: [rigid-body/rigid-body.ts:67](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L67)
 
 接触链接链表头节点，管理当前刚体的所有接触约束
 
@@ -89,7 +89,7 @@ Defined in: [rigid-body/rigid-body.ts:67](https://github.com/mrjordia/wuli.js/bl
 
 > **contactLinkListLast**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`ContactLink`](../../../constraint/contact/contact-link/classes/ContactLink.md)\>
 
-Defined in: [rigid-body/rigid-body.ts:69](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L69)
+Defined in: [rigid-body/rigid-body.ts:69](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L69)
 
 接触链接链表最后一个节点
 
@@ -99,7 +99,7 @@ Defined in: [rigid-body/rigid-body.ts:69](https://github.com/mrjordia/wuli.js/bl
 
 > **force**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:95](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L95)
+Defined in: [rigid-body/rigid-body.ts:95](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L95)
 
 作用在刚体上的合外力 (N)，存储在Float64Array[3]中 [x, y, z]
 
@@ -109,7 +109,7 @@ Defined in: [rigid-body/rigid-body.ts:95](https://github.com/mrjordia/wuli.js/bl
 
 > **invInertia**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:109](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L109)
+Defined in: [rigid-body/rigid-body.ts:109](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L109)
 
 世界空间逆转动惯量矩阵（3x3），行优先存储
 
@@ -119,7 +119,7 @@ Defined in: [rigid-body/rigid-body.ts:109](https://github.com/mrjordia/wuli.js/b
 
 > **invLocalInertia**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:105](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L105)
+Defined in: [rigid-body/rigid-body.ts:105](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L105)
 
 本地逆转动惯量矩阵（3x3），行优先存储
 
@@ -129,7 +129,7 @@ Defined in: [rigid-body/rigid-body.ts:105](https://github.com/mrjordia/wuli.js/b
 
 > **invLocalInertiaWithoutRotFactor**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:107](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L107)
+Defined in: [rigid-body/rigid-body.ts:107](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L107)
 
 未应用旋转因子的本地逆转动惯量矩阵，用于旋转因子修改时快速计算
 
@@ -139,7 +139,7 @@ Defined in: [rigid-body/rigid-body.ts:107](https://github.com/mrjordia/wuli.js/b
 
 > **jointLinkList**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`JointLink`](../../../constraint/joint/joint-link/classes/JointLink.md)\>
 
-Defined in: [rigid-body/rigid-body.ts:73](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L73)
+Defined in: [rigid-body/rigid-body.ts:73](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L73)
 
 关节链接链表头节点，管理当前刚体的所有关节约束
 
@@ -149,7 +149,7 @@ Defined in: [rigid-body/rigid-body.ts:73](https://github.com/mrjordia/wuli.js/bl
 
 > **jointLinkListLast**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`JointLink`](../../../constraint/joint/joint-link/classes/JointLink.md)\>
 
-Defined in: [rigid-body/rigid-body.ts:75](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L75)
+Defined in: [rigid-body/rigid-body.ts:75](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L75)
 
 关节链接链表最后一个节点
 
@@ -159,7 +159,7 @@ Defined in: [rigid-body/rigid-body.ts:75](https://github.com/mrjordia/wuli.js/bl
 
 > **linearContactImpulse**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:99](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L99)
+Defined in: [rigid-body/rigid-body.ts:99](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L99)
 
 接触产生的线性冲量累计值，用于物理调试
 
@@ -169,7 +169,7 @@ Defined in: [rigid-body/rigid-body.ts:99](https://github.com/mrjordia/wuli.js/bl
 
 > **localInertia**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:103](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L103)
+Defined in: [rigid-body/rigid-body.ts:103](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L103)
 
 本地转动惯量矩阵（3x3），行优先存储
 
@@ -179,7 +179,7 @@ Defined in: [rigid-body/rigid-body.ts:103](https://github.com/mrjordia/wuli.js/b
 
 > `readonly` **name**: `string`
 
-Defined in: [rigid-body/rigid-body.ts:61](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L61)
+Defined in: [rigid-body/rigid-body.ts:61](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L61)
 
 刚体名称，用于调试和标识
 
@@ -189,7 +189,7 @@ Defined in: [rigid-body/rigid-body.ts:61](https://github.com/mrjordia/wuli.js/bl
 
 > **next**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<`RigidBody`\>
 
-Defined in: [rigid-body/rigid-body.ts:63](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L63)
+Defined in: [rigid-body/rigid-body.ts:63](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L63)
 
 链表下一个刚体的引用，用于物理世界的刚体管理
 
@@ -199,7 +199,7 @@ Defined in: [rigid-body/rigid-body.ts:63](https://github.com/mrjordia/wuli.js/bl
 
 > **numContactLinks**: `number` = `0`
 
-Defined in: [rigid-body/rigid-body.ts:71](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L71)
+Defined in: [rigid-body/rigid-body.ts:71](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L71)
 
 接触链接的数量
 
@@ -209,7 +209,7 @@ Defined in: [rigid-body/rigid-body.ts:71](https://github.com/mrjordia/wuli.js/bl
 
 > **numJointLinks**: `number` = `0`
 
-Defined in: [rigid-body/rigid-body.ts:77](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L77)
+Defined in: [rigid-body/rigid-body.ts:77](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L77)
 
 关节链接的数量
 
@@ -219,7 +219,7 @@ Defined in: [rigid-body/rigid-body.ts:77](https://github.com/mrjordia/wuli.js/bl
 
 > **object3Ds**: [`IObject3D`](../interfaces/IObject3D.md)[] = `[]`
 
-Defined in: [rigid-body/rigid-body.ts:59](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L59)
+Defined in: [rigid-body/rigid-body.ts:59](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L59)
 
 关联的3D渲染对象列表，用于同步物理状态到渲染引擎
 
@@ -229,7 +229,7 @@ Defined in: [rigid-body/rigid-body.ts:59](https://github.com/mrjordia/wuli.js/bl
 
 > **prev**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<`RigidBody`\>
 
-Defined in: [rigid-body/rigid-body.ts:65](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L65)
+Defined in: [rigid-body/rigid-body.ts:65](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L65)
 
 链表上一个刚体的引用，用于物理世界的刚体管理
 
@@ -239,7 +239,7 @@ Defined in: [rigid-body/rigid-body.ts:65](https://github.com/mrjordia/wuli.js/bl
 
 > **pseudoVel**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:91](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L91)
+Defined in: [rigid-body/rigid-body.ts:91](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L91)
 
 伪线性速度，用于约束求解阶段的位置修正
 
@@ -249,7 +249,7 @@ Defined in: [rigid-body/rigid-body.ts:91](https://github.com/mrjordia/wuli.js/bl
 
 > **rotFactor**: [`Vec3`](../../../common/vec3/classes/Vec3.md)
 
-Defined in: [rigid-body/rigid-body.ts:57](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L57)
+Defined in: [rigid-body/rigid-body.ts:57](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L57)
 
 旋转因子，用于缩放各轴的转动惯量。
 可用于限制特定轴的旋转（设为0）或调整旋转难易程度
@@ -260,7 +260,7 @@ Defined in: [rigid-body/rigid-body.ts:57](https://github.com/mrjordia/wuli.js/bl
 
 > **sleeping**: `boolean` = `false`
 
-Defined in: [rigid-body/rigid-body.ts:81](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L81)
+Defined in: [rigid-body/rigid-body.ts:81](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L81)
 
 是否处于休眠状态，休眠的刚体不参与物理计算
 
@@ -270,7 +270,7 @@ Defined in: [rigid-body/rigid-body.ts:81](https://github.com/mrjordia/wuli.js/bl
 
 > **sleepTime**: `number` = `0`
 
-Defined in: [rigid-body/rigid-body.ts:79](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L79)
+Defined in: [rigid-body/rigid-body.ts:79](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L79)
 
 休眠计时，达到阈值后进入休眠状态
 
@@ -280,7 +280,7 @@ Defined in: [rigid-body/rigid-body.ts:79](https://github.com/mrjordia/wuli.js/bl
 
 > **torque**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:97](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L97)
+Defined in: [rigid-body/rigid-body.ts:97](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L97)
 
 作用在刚体上的合外力矩 (N·m)，存储在Float64Array[3]中 [x, y, z]
 
@@ -290,7 +290,7 @@ Defined in: [rigid-body/rigid-body.ts:97](https://github.com/mrjordia/wuli.js/bl
 
 > **vel**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [rigid-body/rigid-body.ts:87](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L87)
+Defined in: [rigid-body/rigid-body.ts:87](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L87)
 
 线性速度 (m/s)，存储在Float64Array[3]中 [x, y, z]
 
@@ -300,7 +300,7 @@ Defined in: [rigid-body/rigid-body.ts:87](https://github.com/mrjordia/wuli.js/bl
 
 > **world**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`World`](../../../world/classes/World.md)\>
 
-Defined in: [rigid-body/rigid-body.ts:85](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L85)
+Defined in: [rigid-body/rigid-body.ts:85](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L85)
 
 所属的物理世界引用
 
@@ -312,7 +312,7 @@ Defined in: [rigid-body/rigid-body.ts:85](https://github.com/mrjordia/wuli.js/bl
 
 > **get** **angularDamping**(): `number`
 
-Defined in: [rigid-body/rigid-body.ts:175](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L175)
+Defined in: [rigid-body/rigid-body.ts:175](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L175)
 
 获取角阻尼系数
 
@@ -330,7 +330,7 @@ Defined in: [rigid-body/rigid-body.ts:175](https://github.com/mrjordia/wuli.js/b
 
 > **get** **autoSleep**(): `boolean`
 
-Defined in: [rigid-body/rigid-body.ts:133](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L133)
+Defined in: [rigid-body/rigid-body.ts:133](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L133)
 
 获取是否启用自动休眠
 
@@ -344,7 +344,7 @@ Defined in: [rigid-body/rigid-body.ts:133](https://github.com/mrjordia/wuli.js/b
 
 > **set** **autoSleep**(`autoSleepEnabled`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:141](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L141)
+Defined in: [rigid-body/rigid-body.ts:141](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L141)
 
 设置自动休眠状态，修改后会立即唤醒刚体
 
@@ -368,7 +368,7 @@ Defined in: [rigid-body/rigid-body.ts:141](https://github.com/mrjordia/wuli.js/b
 
 > **get** **gravityScale**(): `number`
 
-Defined in: [rigid-body/rigid-body.ts:215](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L215)
+Defined in: [rigid-body/rigid-body.ts:215](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L215)
 
 获取重力缩放因子
 
@@ -382,7 +382,7 @@ Defined in: [rigid-body/rigid-body.ts:215](https://github.com/mrjordia/wuli.js/b
 
 > **set** **gravityScale**(`gravityScale`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:223](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L223)
+Defined in: [rigid-body/rigid-body.ts:223](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L223)
 
 设置重力缩放因子，修改后会立即唤醒刚体
 
@@ -406,7 +406,7 @@ Defined in: [rigid-body/rigid-body.ts:223](https://github.com/mrjordia/wuli.js/b
 
 > **get** **invMass**(): `number`
 
-Defined in: [rigid-body/rigid-body.ts:151](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L151)
+Defined in: [rigid-body/rigid-body.ts:151](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L151)
 
 获取质量的倒数
 
@@ -424,7 +424,7 @@ Defined in: [rigid-body/rigid-body.ts:151](https://github.com/mrjordia/wuli.js/b
 
 > **get** **linearDamping**(): `number`
 
-Defined in: [rigid-body/rigid-body.ts:159](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L159)
+Defined in: [rigid-body/rigid-body.ts:159](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L159)
 
 获取线性阻尼系数
 
@@ -438,7 +438,7 @@ Defined in: [rigid-body/rigid-body.ts:159](https://github.com/mrjordia/wuli.js/b
 
 > **set** **linearDamping**(`damping`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:167](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L167)
+Defined in: [rigid-body/rigid-body.ts:167](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L167)
 
 设置线性阻尼系数
 
@@ -462,7 +462,7 @@ Defined in: [rigid-body/rigid-body.ts:167](https://github.com/mrjordia/wuli.js/b
 
 > **get** **mass**(): `number`
 
-Defined in: [rigid-body/rigid-body.ts:207](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L207)
+Defined in: [rigid-body/rigid-body.ts:207](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L207)
 
 获取刚体质量
 
@@ -480,7 +480,7 @@ Defined in: [rigid-body/rigid-body.ts:207](https://github.com/mrjordia/wuli.js/b
 
 > **get** **ptransform**(): [`Transform`](../../../common/transform/classes/Transform.md)
 
-Defined in: [rigid-body/rigid-body.ts:191](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L191)
+Defined in: [rigid-body/rigid-body.ts:191](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L191)
 
 获取上一帧的变换矩阵
 
@@ -498,7 +498,7 @@ Defined in: [rigid-body/rigid-body.ts:191](https://github.com/mrjordia/wuli.js/b
 
 > **get** **shapeList**(): [`Shape`](../../../shape/shape/classes/Shape.md)
 
-Defined in: [rigid-body/rigid-body.ts:183](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L183)
+Defined in: [rigid-body/rigid-body.ts:183](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L183)
 
 获取形状链表头节点
 
@@ -516,7 +516,7 @@ Defined in: [rigid-body/rigid-body.ts:183](https://github.com/mrjordia/wuli.js/b
 
 > **get** **transform**(): [`Transform`](../../../common/transform/classes/Transform.md)
 
-Defined in: [rigid-body/rigid-body.ts:199](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L199)
+Defined in: [rigid-body/rigid-body.ts:199](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L199)
 
 获取当前帧的变换矩阵
 
@@ -534,7 +534,7 @@ Defined in: [rigid-body/rigid-body.ts:199](https://github.com/mrjordia/wuli.js/b
 
 > **get** **type**(): [`RIGID_BODY_TYPE`](../../../constant/enumerations/RIGID_BODY_TYPE.md)
 
-Defined in: [rigid-body/rigid-body.ts:233](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L233)
+Defined in: [rigid-body/rigid-body.ts:233](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L233)
 
 获取刚体类型（地形刚体始终返回STATIC）
 
@@ -548,7 +548,7 @@ Defined in: [rigid-body/rigid-body.ts:233](https://github.com/mrjordia/wuli.js/b
 
 > **set** **type**(`type`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:242](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L242)
+Defined in: [rigid-body/rigid-body.ts:242](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L242)
 
 设置刚体类型，地形刚体不允许修改类型
 
@@ -574,7 +574,7 @@ Defined in: [rigid-body/rigid-body.ts:242](https://github.com/mrjordia/wuli.js/b
 
 > **addAngularVelocity**(`angularVelocityChange`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:816](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L816)
+Defined in: [rigid-body/rigid-body.ts:816](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L816)
 
 添加角速度增量。
 静态刚体不会产生任何变化
@@ -607,7 +607,7 @@ Defined in: [rigid-body/rigid-body.ts:816](https://github.com/mrjordia/wuli.js/b
 
 > **addLinearVelocity**(`linearVelocityChange`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:801](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L801)
+Defined in: [rigid-body/rigid-body.ts:801](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L801)
 
 添加线性速度增量。
 静态刚体不会产生任何变化
@@ -640,7 +640,7 @@ Defined in: [rigid-body/rigid-body.ts:801](https://github.com/mrjordia/wuli.js/b
 
 > **addObject3D**(...`object3Ds`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:435](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L435)
+Defined in: [rigid-body/rigid-body.ts:435](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L435)
 
 添加3D渲染对象关联，用于同步物理状态到渲染引擎。
 关联后会在object3Ds的userData中存储刚体引用，避免重复关联
@@ -663,7 +663,7 @@ Defined in: [rigid-body/rigid-body.ts:435](https://github.com/mrjordia/wuli.js/b
 
 > **addShape**(`shape`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:258](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L258)
+Defined in: [rigid-body/rigid-body.ts:258](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L258)
 
 向刚体添加碰撞形状。
 1. 地形形状只能添加一个，且会自动将刚体设为静态
@@ -692,7 +692,7 @@ Defined in: [rigid-body/rigid-body.ts:258](https://github.com/mrjordia/wuli.js/b
 
 > **applyAngularImpulse**(`_impulse`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:867](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L867)
+Defined in: [rigid-body/rigid-body.ts:867](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L867)
 
 应用角冲量到刚体。
 仅改变角速度：Δω = I⁻¹ × J
@@ -725,7 +725,7 @@ Defined in: [rigid-body/rigid-body.ts:867](https://github.com/mrjordia/wuli.js/b
 
 > **applyForce**(`_force`, `_positionInWorld`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:884](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L884)
+Defined in: [rigid-body/rigid-body.ts:884](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L884)
 
 应用力到刚体指定位置。
 1. 力会累加到刚体的合外力中
@@ -776,7 +776,7 @@ Defined in: [rigid-body/rigid-body.ts:884](https://github.com/mrjordia/wuli.js/b
 
 > **applyForceToCenter**(`_force`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:903](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L903)
+Defined in: [rigid-body/rigid-body.ts:903](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L903)
 
 应用力到刚体质心。
 仅累加到合外力，不会产生力矩
@@ -809,7 +809,7 @@ Defined in: [rigid-body/rigid-body.ts:903](https://github.com/mrjordia/wuli.js/b
 
 > **applyImpulse**(`_impulse`, `_positionInWorld`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:834](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L834)
+Defined in: [rigid-body/rigid-body.ts:834](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L834)
 
 应用冲量到刚体指定位置。
 1. 冲量会改变线性速度：Δv = J/m
@@ -860,7 +860,7 @@ Defined in: [rigid-body/rigid-body.ts:834](https://github.com/mrjordia/wuli.js/b
 
 > **applyLinearImpulse**(`_impulse`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:853](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L853)
+Defined in: [rigid-body/rigid-body.ts:853](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L853)
 
 应用线性冲量到刚体质心。
 仅改变线性速度：Δv = J/m
@@ -893,7 +893,7 @@ Defined in: [rigid-body/rigid-body.ts:853](https://github.com/mrjordia/wuli.js/b
 
 > **applyTorque**(`_torque`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:916](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L916)
+Defined in: [rigid-body/rigid-body.ts:916](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L916)
 
 应用力矩到刚体。
 仅累加到合外力矩中
@@ -926,7 +926,7 @@ Defined in: [rigid-body/rigid-body.ts:916](https://github.com/mrjordia/wuli.js/b
 
 > **clearObject3D**(): `void`
 
-Defined in: [rigid-body/rigid-body.ts:462](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L462)
+Defined in: [rigid-body/rigid-body.ts:462](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L462)
 
 清空所有关联的3D渲染对象
 
@@ -940,7 +940,7 @@ Defined in: [rigid-body/rigid-body.ts:462](https://github.com/mrjordia/wuli.js/b
 
 > **getAngularContactImpulseTo**(`angularContactImpulse`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:937](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L937)
+Defined in: [rigid-body/rigid-body.ts:937](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L937)
 
 获取接触产生的角冲量累计值并写入目标对象。
 
@@ -972,7 +972,7 @@ Defined in: [rigid-body/rigid-body.ts:937](https://github.com/mrjordia/wuli.js/b
 
 > **getAngularVelocityTo**(`angularVelocity`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:775](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L775)
+Defined in: [rigid-body/rigid-body.ts:775](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L775)
 
 获取角速度并写入目标对象
 
@@ -1004,7 +1004,7 @@ Defined in: [rigid-body/rigid-body.ts:775](https://github.com/mrjordia/wuli.js/b
 
 > **getLinearContactImpulseTo**(`linearContactImpulse`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:928](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L928)
+Defined in: [rigid-body/rigid-body.ts:928](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L928)
 
 获取接触产生的线性冲量累计值并写入目标对象。
 
@@ -1036,7 +1036,7 @@ Defined in: [rigid-body/rigid-body.ts:928](https://github.com/mrjordia/wuli.js/b
 
 > **getLinearVelocityTo**(`linearVelocity`): `object`
 
-Defined in: [rigid-body/rigid-body.ts:750](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L750)
+Defined in: [rigid-body/rigid-body.ts:750](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L750)
 
 获取线性速度并写入目标对象
 
@@ -1082,7 +1082,7 @@ Defined in: [rigid-body/rigid-body.ts:750](https://github.com/mrjordia/wuli.js/b
 
 > **getLocalInertiaTo**(`inertia`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:698](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L698)
+Defined in: [rigid-body/rigid-body.ts:698](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L698)
 
 获取本地转动惯量矩阵并写入目标对象
 
@@ -1106,7 +1106,7 @@ Defined in: [rigid-body/rigid-body.ts:698](https://github.com/mrjordia/wuli.js/b
 
 > **getLocalPointTo**(`worldPoint`, `localPoint`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:947](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L947)
+Defined in: [rigid-body/rigid-body.ts:947](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L947)
 
 将世界空间点转换为刚体本地空间点。
 
@@ -1154,7 +1154,7 @@ Defined in: [rigid-body/rigid-body.ts:947](https://github.com/mrjordia/wuli.js/b
 
 > **getLocalVectorTo**(`worldVector`, `localVector`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:959](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L959)
+Defined in: [rigid-body/rigid-body.ts:959](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L959)
 
 将世界空间向量转换为刚体本地空间向量。
 仅转换方向，不包含位置偏移
@@ -1203,7 +1203,7 @@ Defined in: [rigid-body/rigid-body.ts:959](https://github.com/mrjordia/wuli.js/b
 
 > **getMassDataTo**(`massData`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:707](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L707)
+Defined in: [rigid-body/rigid-body.ts:707](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L707)
 
 获取质量数据（质量+本地转动惯量）并写入目标对象
 
@@ -1225,7 +1225,7 @@ Defined in: [rigid-body/rigid-body.ts:707](https://github.com/mrjordia/wuli.js/b
 
 > **getOrientationTo**(`orientation`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:642](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L642)
+Defined in: [rigid-body/rigid-body.ts:642](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L642)
 
 获取刚体四元数并写入目标对象
 
@@ -1261,7 +1261,7 @@ Defined in: [rigid-body/rigid-body.ts:642](https://github.com/mrjordia/wuli.js/b
 
 > **getPositionTo**(`position`): `object`
 
-Defined in: [rigid-body/rigid-body.ts:498](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L498)
+Defined in: [rigid-body/rigid-body.ts:498](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L498)
 
 获取刚体位置并写入目标对象
 
@@ -1307,7 +1307,7 @@ Defined in: [rigid-body/rigid-body.ts:498](https://github.com/mrjordia/wuli.js/b
 
 > **getRotationFactorTo**(`rotationFactor`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:728](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L728)
+Defined in: [rigid-body/rigid-body.ts:728](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L728)
 
 获取旋转因子并写入目标对象
 
@@ -1339,7 +1339,7 @@ Defined in: [rigid-body/rigid-body.ts:728](https://github.com/mrjordia/wuli.js/b
 
 > **getRotationTo**(`rotationMat3`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:594](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L594)
+Defined in: [rigid-body/rigid-body.ts:594](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L594)
 
 获取刚体旋转矩阵并写入目标对象
 
@@ -1363,7 +1363,7 @@ Defined in: [rigid-body/rigid-body.ts:594](https://github.com/mrjordia/wuli.js/b
 
 > **getTransformTo**(`transform`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:672](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L672)
+Defined in: [rigid-body/rigid-body.ts:672](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L672)
 
 获取刚体变换矩阵并写入目标对象
 
@@ -1385,7 +1385,7 @@ Defined in: [rigid-body/rigid-body.ts:672](https://github.com/mrjordia/wuli.js/b
 
 > **getWorldPointTo**(`localPoint`, `worldPoint`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:970](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L970)
+Defined in: [rigid-body/rigid-body.ts:970](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L970)
 
 将刚体本地空间点转换为世界空间点。
 
@@ -1433,7 +1433,7 @@ Defined in: [rigid-body/rigid-body.ts:970](https://github.com/mrjordia/wuli.js/b
 
 > **getWorldVectorTo**(`localVector`, `worldVector`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:982](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L982)
+Defined in: [rigid-body/rigid-body.ts:982](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L982)
 
 将刚体本地空间向量转换为世界空间向量。
 仅转换方向，不包含位置偏移
@@ -1482,7 +1482,7 @@ Defined in: [rigid-body/rigid-body.ts:982](https://github.com/mrjordia/wuli.js/b
 
 > **integrate**(`dt`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:1016](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L1016)
+Defined in: [rigid-body/rigid-body.ts:1016](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L1016)
 
 积分刚体运动状态（位置和旋转）。
 1. 静态刚体：重置所有速度为0
@@ -1510,7 +1510,7 @@ Defined in: [rigid-body/rigid-body.ts:1016](https://github.com/mrjordia/wuli.js/
 
 > **integratePseudoVelocity**(): `void`
 
-Defined in: [rigid-body/rigid-body.ts:1082](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L1082)
+Defined in: [rigid-body/rigid-body.ts:1082](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L1082)
 
 积分伪速度，用于约束求解阶段的位置修正。
 伪速度不代表真实的物理速度，仅用于碰撞响应的位置调整
@@ -1525,7 +1525,7 @@ Defined in: [rigid-body/rigid-body.ts:1082](https://github.com/mrjordia/wuli.js/
 
 > **removeObject3D**(...`object3Ds`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:450](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L450)
+Defined in: [rigid-body/rigid-body.ts:450](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L450)
 
 移除3D渲染对象关联。
 移除后会清空object3Ds的userData中的刚体引用
@@ -1548,7 +1548,7 @@ Defined in: [rigid-body/rigid-body.ts:450](https://github.com/mrjordia/wuli.js/b
 
 > **removeShape**(`shape`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:300](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L300)
+Defined in: [rigid-body/rigid-body.ts:300](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L300)
 
 从刚体移除碰撞形状。
 1. 移除形状后会清理相关的接触约束
@@ -1577,7 +1577,7 @@ Defined in: [rigid-body/rigid-body.ts:300](https://github.com/mrjordia/wuli.js/b
 
 > **rotate**(`_rotationMat3`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:625](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L625)
+Defined in: [rigid-body/rigid-body.ts:625](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L625)
 
 旋转刚体（增量旋转）。
 旋转后会更新逆转动惯量矩阵和形状列表
@@ -1606,7 +1606,7 @@ Defined in: [rigid-body/rigid-body.ts:625](https://github.com/mrjordia/wuli.js/b
 
 > **setAngularVelocity**(`angularVelocity`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:784](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L784)
+Defined in: [rigid-body/rigid-body.ts:784](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L784)
 
 设置角速度，静态刚体速度会被置0
 
@@ -1638,7 +1638,7 @@ Defined in: [rigid-body/rigid-body.ts:784](https://github.com/mrjordia/wuli.js/b
 
 > **setLinearVelocity**(`linearVelocity`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:759](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L759)
+Defined in: [rigid-body/rigid-body.ts:759](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L759)
 
 设置线性速度，静态刚体速度会被置0
 
@@ -1670,7 +1670,7 @@ Defined in: [rigid-body/rigid-body.ts:759](https://github.com/mrjordia/wuli.js/b
 
 > **setMassData**(`massData`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:716](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L716)
+Defined in: [rigid-body/rigid-body.ts:716](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L716)
 
 设置质量数据，会更新逆转动惯量矩阵
 
@@ -1692,7 +1692,7 @@ Defined in: [rigid-body/rigid-body.ts:716](https://github.com/mrjordia/wuli.js/b
 
 > **setOrientation**(`_quaternion`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:654](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L654)
+Defined in: [rigid-body/rigid-body.ts:654](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L654)
 
 设置刚体四元数。
 设置后会更新逆转动惯量矩阵和形状列表
@@ -1733,7 +1733,7 @@ Defined in: [rigid-body/rigid-body.ts:654](https://github.com/mrjordia/wuli.js/b
 
 > **setPosition**(`_position`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:509](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L509)
+Defined in: [rigid-body/rigid-body.ts:509](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L509)
 
 设置刚体位置。
 设置后会更新形状列表并唤醒刚体
@@ -1766,7 +1766,7 @@ Defined in: [rigid-body/rigid-body.ts:509](https://github.com/mrjordia/wuli.js/b
 
 > **setRotation**(`_rotationMat3`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:605](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L605)
+Defined in: [rigid-body/rigid-body.ts:605](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L605)
 
 设置刚体旋转矩阵。
 设置后会更新逆转动惯量矩阵和形状列表
@@ -1795,7 +1795,7 @@ Defined in: [rigid-body/rigid-body.ts:605](https://github.com/mrjordia/wuli.js/b
 
 > **setRotationFactor**(`rotationFactor`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:738](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L738)
+Defined in: [rigid-body/rigid-body.ts:738](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L738)
 
 设置旋转因子，用于调整各轴转动惯量。
 设置后会重新计算逆转动惯量矩阵
@@ -1828,7 +1828,7 @@ Defined in: [rigid-body/rigid-body.ts:738](https://github.com/mrjordia/wuli.js/b
 
 > **setTransform**(`transform`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:682](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L682)
+Defined in: [rigid-body/rigid-body.ts:682](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L682)
 
 设置刚体变换矩阵。
 设置后会更新逆转动惯量矩阵和形状列表
@@ -1855,7 +1855,7 @@ Defined in: [rigid-body/rigid-body.ts:682](https://github.com/mrjordia/wuli.js/b
 
 > **sleep**(): `void`
 
-Defined in: [rigid-body/rigid-body.ts:1001](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L1001)
+Defined in: [rigid-body/rigid-body.ts:1001](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L1001)
 
 强制刚体进入休眠状态。
 休眠可提升物理引擎性能，休眠的刚体只有被外力作用时才会唤醒
@@ -1870,7 +1870,7 @@ Defined in: [rigid-body/rigid-body.ts:1001](https://github.com/mrjordia/wuli.js/
 
 > **translate**(`_translation`): `void`
 
-Defined in: [rigid-body/rigid-body.ts:482](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L482)
+Defined in: [rigid-body/rigid-body.ts:482](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L482)
 
 平移刚体位置。
 平移后会更新形状列表并唤醒刚体
@@ -1903,7 +1903,7 @@ Defined in: [rigid-body/rigid-body.ts:482](https://github.com/mrjordia/wuli.js/b
 
 > **updateMass**(): `void`
 
-Defined in: [rigid-body/rigid-body.ts:526](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L526)
+Defined in: [rigid-body/rigid-body.ts:526](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L526)
 
 更新刚体的质量和转动惯量。
 1. 遍历所有形状，累加质量和转动惯量
@@ -1921,7 +1921,7 @@ Defined in: [rigid-body/rigid-body.ts:526](https://github.com/mrjordia/wuli.js/b
 
 > **updateObject3Ds**(): `void`
 
-Defined in: [rigid-body/rigid-body.ts:470](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L470)
+Defined in: [rigid-body/rigid-body.ts:470](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L470)
 
 同步刚体的位置和旋转到所有关联的3D渲染对象。
 通常在物理步进后调用，更新渲染对象的显示状态
@@ -1936,7 +1936,7 @@ Defined in: [rigid-body/rigid-body.ts:470](https://github.com/mrjordia/wuli.js/b
 
 > **wakeUp**(): `void`
 
-Defined in: [rigid-body/rigid-body.ts:992](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/rigid-body/rigid-body.ts#L992)
+Defined in: [rigid-body/rigid-body.ts:992](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/rigid-body.ts#L992)
 
 唤醒刚体，退出休眠状态。
 休眠的刚体不会参与物理计算，唤醒后重置休眠计时

@@ -6,7 +6,7 @@
 
 # Class: BoundaryBuilder
 
-Defined in: [constraint/solver/direct/boundary-builder.ts:18](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-builder.ts#L18)
+Defined in: [constraint/solver/direct/boundary-builder.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-builder.ts#L18)
 
 边界构建器类。
 物理引擎中基于关节约束信息递归构建边界的核心工具类，核心作用：
@@ -26,7 +26,7 @@ Defined in: [constraint/solver/direct/boundary-builder.ts:18](https://github.com
 
 > **new BoundaryBuilder**(`maxRows`): `BoundaryBuilder`
 
-Defined in: [constraint/solver/direct/boundary-builder.ts:68](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-builder.ts#L68)
+Defined in: [constraint/solver/direct/boundary-builder.ts:68](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-builder.ts#L68)
 
 构造函数：初始化边界构建器。
 核心初始化逻辑：
@@ -53,7 +53,7 @@ Defined in: [constraint/solver/direct/boundary-builder.ts:68](https://github.com
 
 > **bbInfo**: [`BoundaryBuildInfo`](../../boundary-build-info/classes/BoundaryBuildInfo.md)
 
-Defined in: [constraint/solver/direct/boundary-builder.ts:57](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-builder.ts#L57)
+Defined in: [constraint/solver/direct/boundary-builder.ts:57](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-builder.ts#L57)
 
 边界构建信息容器。
 存储边界构建过程中的临时状态数据，核心作用：
@@ -68,7 +68,7 @@ Defined in: [constraint/solver/direct/boundary-builder.ts:57](https://github.com
 
 > **boundaries**: [`Boundary`](../../boundary/classes/Boundary.md)[]
 
-Defined in: [constraint/solver/direct/boundary-builder.ts:47](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-builder.ts#L47)
+Defined in: [constraint/solver/direct/boundary-builder.ts:47](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-builder.ts#L47)
 
 边界实例数组。
 存储所有边界实例的缓冲区，核心特性：
@@ -83,7 +83,7 @@ Defined in: [constraint/solver/direct/boundary-builder.ts:47](https://github.com
 
 > **maxRows**: `number`
 
-Defined in: [constraint/solver/direct/boundary-builder.ts:27](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-builder.ts#L27)
+Defined in: [constraint/solver/direct/boundary-builder.ts:27](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-builder.ts#L27)
 
 最大约束行数（边界维度上限）。
 限定边界构建的最大约束行数量，核心作用：
@@ -98,7 +98,7 @@ Defined in: [constraint/solver/direct/boundary-builder.ts:27](https://github.com
 
 > **numBoundaries**: `number` = `0`
 
-Defined in: [constraint/solver/direct/boundary-builder.ts:37](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-builder.ts#L37)
+Defined in: [constraint/solver/direct/boundary-builder.ts:37](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-builder.ts#L37)
 
 已构建的边界数量。
 记录当前有效边界实例的数量，核心特性：
@@ -118,7 +118,7 @@ Defined in: [constraint/solver/direct/boundary-builder.ts:37](https://github.com
 
 > **buildBoundaries**(`info`): `void`
 
-Defined in: [constraint/solver/direct/boundary-builder.ts:143](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-builder.ts#L143)
+Defined in: [constraint/solver/direct/boundary-builder.ts:143](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-builder.ts#L143)
 
 构建边界入口方法。
 边界构建的统一入口，核心流程：
@@ -147,7 +147,7 @@ Defined in: [constraint/solver/direct/boundary-builder.ts:143](https://github.co
 
 > **buildBoundariesRecursive**(`info`, `i`): `void`
 
-Defined in: [constraint/solver/direct/boundary-builder.ts:89](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-builder.ts#L89)
+Defined in: [constraint/solver/direct/boundary-builder.ts:89](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-builder.ts#L89)
 
 递归构建边界。
 核心递归逻辑（深度优先遍历）：

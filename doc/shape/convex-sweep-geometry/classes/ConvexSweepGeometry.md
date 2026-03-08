@@ -6,7 +6,7 @@
 
 # Class: ConvexSweepGeometry
 
-Defined in: [shape/convex-sweep-geometry.ts:15](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/convex-sweep-geometry.ts#L15)
+Defined in: [shape/convex-sweep-geometry.ts:15](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/convex-sweep-geometry.ts#L15)
 
 凸扫掠几何体类。
 实现用于「凸体扫掠检测（Convex Sweep Test）」的封装几何体，
@@ -24,7 +24,7 @@ Defined in: [shape/convex-sweep-geometry.ts:15](https://github.com/mrjordia/wuli
 
 > **new ConvexSweepGeometry**(): `ConvexSweepGeometry`
 
-Defined in: [shape/convex-sweep-geometry.ts:35](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/convex-sweep-geometry.ts#L35)
+Defined in: [shape/convex-sweep-geometry.ts:35](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/convex-sweep-geometry.ts#L35)
 
 构造函数：创建凸扫掠几何体实例。
 初始化父类并设置几何体类型为NULL，
@@ -44,7 +44,7 @@ Defined in: [shape/convex-sweep-geometry.ts:35](https://github.com/mrjordia/wuli
 
 > **aabbComputed**: [`Aabb`](../../../common/aabb/classes/Aabb.md)
 
-Defined in: [shape/geometry.ts:26](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/geometry.ts#L26)
+Defined in: [shape/geometry.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L26)
 
 预计算的AABB缓存（用于临时计算，避免频繁创建新Aabb实例）
 
@@ -58,7 +58,7 @@ Defined in: [shape/geometry.ts:26](https://github.com/mrjordia/wuli.js/blob/7de2
 
 > **c**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`ConvexGeometry`](../../convex-geometry/classes/ConvexGeometry.md)\>
 
-Defined in: [shape/convex-sweep-geometry.ts:21](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/convex-sweep-geometry.ts#L21)
+Defined in: [shape/convex-sweep-geometry.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/convex-sweep-geometry.ts#L21)
 
 被扫掠的目标凸几何体。
 待执行扫掠检测的原始凸几何体（如Box/Capsule/Cone），
@@ -70,7 +70,7 @@ Defined in: [shape/convex-sweep-geometry.ts:21](https://github.com/mrjordia/wuli
 
 > **gjkMargin**: `number`
 
-Defined in: [shape/convex-geometry.ts:20](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/convex-geometry.ts#L20)
+Defined in: [shape/convex-geometry.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/convex-geometry.ts#L20)
 
 GJK 算法的边缘容差（碰撞检测margin）。 用于解决 GJK 算法中几何体边缘的精度问题，避免因浮点误差导致的碰撞检测失效，
 该值通常为极小的正数（如 0.001）。
@@ -91,7 +91,7 @@ GJK 算法的边缘容差（碰撞检测margin）。 用于解决 GJK 算法中�
 
 > **inertiaCoeff**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [shape/geometry.ts:24](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/geometry.ts#L24)
+Defined in: [shape/geometry.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L24)
 
 惯性张量系数（3x3矩阵，Float64Array存储，按行优先排列）。
 惯性张量的基础系数，不同几何体有不同的系数矩阵，
@@ -108,7 +108,7 @@ Defined in: [shape/geometry.ts:24](https://github.com/mrjordia/wuli.js/blob/7de2
 
 > **localTranslation**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`Vec3`](../../../common/vec3/classes/Vec3.md)\>
 
-Defined in: [shape/convex-sweep-geometry.ts:28](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/convex-sweep-geometry.ts#L28)
+Defined in: [shape/convex-sweep-geometry.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/convex-sweep-geometry.ts#L28)
 
 局部坐标系下的扫掠平移向量。
 几何体扫掠的位移向量（已转换到局部坐标系），
@@ -120,7 +120,7 @@ Defined in: [shape/convex-sweep-geometry.ts:28](https://github.com/mrjordia/wuli
 
 > `readonly` **type**: [`GEOMETRY_TYPE`](../../../constant/enumerations/GEOMETRY_TYPE.md)
 
-Defined in: [shape/geometry.ts:15](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/geometry.ts#L15)
+Defined in: [shape/geometry.ts:15](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L15)
 
 几何体类型标识（如SPHERE/BOX/CAPSULE等），只读不可修改
 
@@ -134,7 +134,7 @@ Defined in: [shape/geometry.ts:15](https://github.com/mrjordia/wuli.js/blob/7de2
 
 > **volume**: `number` = `0`
 
-Defined in: [shape/geometry.ts:17](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/geometry.ts#L17)
+Defined in: [shape/geometry.ts:17](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L17)
 
 几何体体积（m³），用于结合密度计算质量
 
@@ -148,7 +148,7 @@ Defined in: [shape/geometry.ts:17](https://github.com/mrjordia/wuli.js/blob/7de2
 
 > **computeAabb**(`aabb`, `tf`): `void`
 
-Defined in: [shape/convex-sweep-geometry.ts:83](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/convex-sweep-geometry.ts#L83)
+Defined in: [shape/convex-sweep-geometry.ts:83](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/convex-sweep-geometry.ts#L83)
 
 计算几何体在指定变换下的AABB包围盒。
 抽象方法，子类需实现以适配不同几何体的AABB计算逻辑：
@@ -183,7 +183,7 @@ Defined in: [shape/convex-sweep-geometry.ts:83](https://github.com/mrjordia/wuli
 
 > **computeLocalSupportingVertex**(`_dir`, `_out`): `void`
 
-Defined in: [shape/convex-sweep-geometry.ts:74](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/convex-sweep-geometry.ts#L74)
+Defined in: [shape/convex-sweep-geometry.ts:74](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/convex-sweep-geometry.ts#L74)
 
 计算局部坐标系下沿指定方向的扫掠支撑顶点。
 扫掠支撑顶点核心计算逻辑：
@@ -220,7 +220,7 @@ Defined in: [shape/convex-sweep-geometry.ts:74](https://github.com/mrjordia/wuli
 
 > **init**(`c`, `_transform`, `_translation`): `void`
 
-Defined in: [shape/convex-sweep-geometry.ts:50](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/convex-sweep-geometry.ts#L50)
+Defined in: [shape/convex-sweep-geometry.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/convex-sweep-geometry.ts#L50)
 
 初始化扫掠几何体。
 核心逻辑：
@@ -258,7 +258,7 @@ Defined in: [shape/convex-sweep-geometry.ts:50](https://github.com/mrjordia/wuli
 
 > **rayCast**(`begin`, `end`, `transform`, `hit`): `boolean`
 
-Defined in: [shape/convex-geometry.ts:44](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/convex-geometry.ts#L44)
+Defined in: [shape/convex-geometry.ts:44](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/convex-geometry.ts#L44)
 
 世界坐标系下的射线检测（通用实现，无需子类重写）。
 通用射线检测逻辑，核心步骤：
@@ -303,7 +303,7 @@ Defined in: [shape/convex-geometry.ts:44](https://github.com/mrjordia/wuli.js/bl
 
 > **rayCastLocal**(`beginX`, `beginY`, `beginZ`, `endX`, `endY`, `endZ`, `hit`): `boolean`
 
-Defined in: [shape/geometry.ts:69](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/geometry.ts#L69)
+Defined in: [shape/geometry.ts:69](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L69)
 
 本地坐标系下的射线检测（子类可重写）。
 基础实现返回false，子类需根据自身几何形状重写此方法，
@@ -369,7 +369,7 @@ Defined in: [shape/geometry.ts:69](https://github.com/mrjordia/wuli.js/blob/7de2
 
 > **updateMass**(): `void`
 
-Defined in: [shape/convex-sweep-geometry.ts:86](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/shape/convex-sweep-geometry.ts#L86)
+Defined in: [shape/convex-sweep-geometry.ts:86](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/convex-sweep-geometry.ts#L86)
 
 更新几何体的质量相关数据。
 抽象方法，子类需实现以计算当前几何体的体积和惯性张量系数：

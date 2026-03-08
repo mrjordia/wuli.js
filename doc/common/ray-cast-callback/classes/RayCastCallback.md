@@ -6,7 +6,7 @@
 
 # Abstract Class: RayCastCallback
 
-Defined in: [common/ray-cast-callback.ts:9](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/ray-cast-callback.ts#L9)
+Defined in: [common/ray-cast-callback.ts:9](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-callback.ts#L9)
 
 射线检测回调抽象类。
 物理引擎射线检测的核心回调接口，定义射线与形状相交后的自定义处理逻辑；
@@ -32,7 +32,7 @@ Defined in: [common/ray-cast-callback.ts:9](https://github.com/mrjordia/wuli.js/
 
 > `abstract` **process**(`shape`, `hit?`): `void`
 
-Defined in: [common/ray-cast-callback.ts:21](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/ray-cast-callback.ts#L21)
+Defined in: [common/ray-cast-callback.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-callback.ts#L21)
 
 射线相交处理抽象方法（必须实现）。
 核心用途：

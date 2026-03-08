@@ -6,7 +6,7 @@
 
 # Class: BoundaryBuildInfo
 
-Defined in: [constraint/solver/direct/boundary-build-info.ts:13](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-build-info.ts#L13)
+Defined in: [constraint/solver/direct/boundary-build-info.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-build-info.ts#L13)
 
 边界构建信息管理类。
 物理引擎中边界构建流程的核心数据容器类，核心作用：
@@ -25,7 +25,7 @@ Defined in: [constraint/solver/direct/boundary-build-info.ts:13](https://github.
 
 > **new BoundaryBuildInfo**(`size`): `BoundaryBuildInfo`
 
-Defined in: [constraint/solver/direct/boundary-build-info.ts:79](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-build-info.ts#L79)
+Defined in: [constraint/solver/direct/boundary-build-info.ts:79](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-build-info.ts#L79)
 
 构造函数：初始化边界构建信息容器。
 核心初始化逻辑：
@@ -52,7 +52,7 @@ Defined in: [constraint/solver/direct/boundary-build-info.ts:79](https://github.
 
 > **iBounded**: `Int8Array`
 
-Defined in: [constraint/solver/direct/boundary-build-info.ts:40](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-build-info.ts#L40)
+Defined in: [constraint/solver/direct/boundary-build-info.ts:40](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-build-info.ts#L40)
 
 有界维度的索引数组。
 存储有界维度的索引值，核心特性：
@@ -66,7 +66,7 @@ Defined in: [constraint/solver/direct/boundary-build-info.ts:40](https://github.
 
 > **iUnbounded**: `Int8Array`
 
-Defined in: [constraint/solver/direct/boundary-build-info.ts:68](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-build-info.ts#L68)
+Defined in: [constraint/solver/direct/boundary-build-info.ts:68](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-build-info.ts#L68)
 
 无界维度的索引数组。
 存储无界维度的索引值，核心特性：
@@ -80,7 +80,7 @@ Defined in: [constraint/solver/direct/boundary-build-info.ts:68](https://github.
 
 > **numBounded**: `number` = `0`
 
-Defined in: [constraint/solver/direct/boundary-build-info.ts:31](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-build-info.ts#L31)
+Defined in: [constraint/solver/direct/boundary-build-info.ts:31](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-build-info.ts#L31)
 
 有界维度的数量。
 已标记为有界的维度计数，核心特性：
@@ -100,7 +100,7 @@ Defined in: [constraint/solver/direct/boundary-build-info.ts:31](https://github.
 
 > **numUnbounded**: `number` = `0`
 
-Defined in: [constraint/solver/direct/boundary-build-info.ts:59](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-build-info.ts#L59)
+Defined in: [constraint/solver/direct/boundary-build-info.ts:59](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-build-info.ts#L59)
 
 无界维度的数量。
 已标记为无界的维度计数，核心特性：
@@ -120,7 +120,7 @@ Defined in: [constraint/solver/direct/boundary-build-info.ts:59](https://github.
 
 > **signs**: `Int8Array`
 
-Defined in: [constraint/solver/direct/boundary-build-info.ts:49](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-build-info.ts#L49)
+Defined in: [constraint/solver/direct/boundary-build-info.ts:49](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-build-info.ts#L49)
 
 有界维度的符号标记数组。
 标记对应有界维度的符号方向，核心作用：
@@ -134,7 +134,7 @@ Defined in: [constraint/solver/direct/boundary-build-info.ts:49](https://github.
 
 > **size**: `number`
 
-Defined in: [constraint/solver/direct/boundary-build-info.ts:21](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary-build-info.ts#L21)
+Defined in: [constraint/solver/direct/boundary-build-info.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-build-info.ts#L21)
 
 边界维度总容量。
 边界构建的最大维度数量，核心作用：

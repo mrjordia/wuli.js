@@ -6,7 +6,7 @@
 
 # Class: ContactConstraint
 
-Defined in: [constraint/contact/contact-constraint.ts:16](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L16)
+Defined in: [constraint/contact/contact-constraint.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L16)
 
 接触约束类。
 物理引擎中单个碰撞接触的约束求解核心类，负责构建速度/位置约束的求解数据、同步接触流形数据、判断接触状态，
@@ -18,7 +18,7 @@ Defined in: [constraint/contact/contact-constraint.ts:16](https://github.com/mrj
 
 > **new ContactConstraint**(`manifold`): `ContactConstraint`
 
-Defined in: [constraint/contact/contact-constraint.ts:83](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L83)
+Defined in: [constraint/contact/contact-constraint.ts:83](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L83)
 
 构造函数：初始化接触约束实例。
 初始化时创建PGS求解器实例并关联当前约束，绑定接触流形
@@ -41,7 +41,7 @@ Defined in: [constraint/contact/contact-constraint.ts:83](https://github.com/mrj
 
 > **manifold**: [`Manifold`](../../manifold/classes/Manifold.md)
 
-Defined in: [constraint/contact/contact-constraint.ts:27](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L27)
+Defined in: [constraint/contact/contact-constraint.ts:27](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L27)
 
 关联的接触流形。
 存储接触点、法向、穿透深度等核心数据，是约束构建的数据源
@@ -52,7 +52,7 @@ Defined in: [constraint/contact/contact-constraint.ts:27](https://github.com/mrj
 
 > **positionCorrectionAlgorithm**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`POSITION_CORRECTION_ALGORITHM`](../../../../constant/enumerations/POSITION_CORRECTION_ALGORITHM.md)\>
 
-Defined in: [constraint/contact/contact-constraint.ts:62](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L62)
+Defined in: [constraint/contact/contact-constraint.ts:62](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L62)
 
 位置修正算法类型。
 标记使用的位置修正算法（如BAUMGARTE），决定位置约束的构建方式
@@ -69,7 +69,7 @@ null
 
 > **rigidBody1**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`RigidBody`](../../../../rigid-body/rigid-body/classes/RigidBody.md)\>
 
-Defined in: [constraint/contact/contact-constraint.ts:34](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L34)
+Defined in: [constraint/contact/contact-constraint.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L34)
 
 第一个碰撞刚体。
 约束关联的第一个刚体，提供速度、角速度、质量等物理属性，用于约束方程构建
@@ -86,7 +86,7 @@ null
 
 > **rigidBody2**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`RigidBody`](../../../../rigid-body/rigid-body/classes/RigidBody.md)\>
 
-Defined in: [constraint/contact/contact-constraint.ts:41](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L41)
+Defined in: [constraint/contact/contact-constraint.ts:41](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L41)
 
 第二个碰撞刚体。
 约束关联的第二个刚体，与rigidBody1配对，共同参与约束方程计算
@@ -103,7 +103,7 @@ null
 
 > **shape1**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`Shape`](../../../../shape/shape/classes/Shape.md)\>
 
-Defined in: [constraint/contact/contact-constraint.ts:48](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L48)
+Defined in: [constraint/contact/contact-constraint.ts:48](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L48)
 
 第一个碰撞形状。
 关联的第一个几何形状，提供摩擦系数、恢复系数等接触属性
@@ -120,7 +120,7 @@ null
 
 > **shape2**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`Shape`](../../../../shape/shape/classes/Shape.md)\>
 
-Defined in: [constraint/contact/contact-constraint.ts:55](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L55)
+Defined in: [constraint/contact/contact-constraint.ts:55](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L55)
 
 第二个碰撞形状。
 关联的第二个几何形状，与shape1配对计算接触属性（如摩擦系数取几何平均）
@@ -137,7 +137,7 @@ null
 
 > **solver**: [`PgsContactConstraintSolver`](../../../solver/pgs-contact-constraint-solver/classes/PgsContactConstraintSolver.md)
 
-Defined in: [constraint/contact/contact-constraint.ts:21](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L21)
+Defined in: [constraint/contact/contact-constraint.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L21)
 
 PGS接触约束求解器实例。
 基于投影梯度下降（PGS）算法的约束求解器，负责实际的速度/位置约束求解计算
@@ -148,7 +148,7 @@ PGS接触约束求解器实例。
 
 > **transform1**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`Transform`](../../../../common/transform/classes/Transform.md)\>
 
-Defined in: [constraint/contact/contact-constraint.ts:69](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L69)
+Defined in: [constraint/contact/contact-constraint.ts:69](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L69)
 
 第一个刚体的变换矩阵。
 存储刚体1的位置、旋转信息，用于计算接触点的世界坐标和相对位置
@@ -165,7 +165,7 @@ null
 
 > **transform2**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`Transform`](../../../../common/transform/classes/Transform.md)\>
 
-Defined in: [constraint/contact/contact-constraint.ts:76](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L76)
+Defined in: [constraint/contact/contact-constraint.ts:76](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L76)
 
 第二个刚体的变换矩阵。
 存储刚体2的变换信息，与transform1配合计算接触点的深度和位置
@@ -182,7 +182,7 @@ null
 
 > **getPositionSolverInfo**(`info`): `void`
 
-Defined in: [constraint/contact/contact-constraint.ts:181](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L181)
+Defined in: [constraint/contact/contact-constraint.ts:181](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L181)
 
 构建位置约束求解数据。
 位置约束构建逻辑：
@@ -210,7 +210,7 @@ Defined in: [constraint/contact/contact-constraint.ts:181](https://github.com/mr
 
 > **getVelocitySolverInfo**(`timeStep`, `info`): `void`
 
-Defined in: [constraint/contact/contact-constraint.ts:105](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L105)
+Defined in: [constraint/contact/contact-constraint.ts:105](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L105)
 
 构建速度约束求解数据（核心方法）。
 速度约束构建完整流程：
@@ -250,7 +250,7 @@ Defined in: [constraint/contact/contact-constraint.ts:105](https://github.com/mr
 
 > **isTouching**(): `boolean`
 
-Defined in: [constraint/contact/contact-constraint.ts:224](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L224)
+Defined in: [constraint/contact/contact-constraint.ts:224](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L224)
 
 判断是否处于有效接触状态。
 遍历所有接触点，只要存在一个深度≥0的有效接触点，就判定为处于接触状态，
@@ -268,7 +268,7 @@ Defined in: [constraint/contact/contact-constraint.ts:224](https://github.com/mr
 
 > **syncManifold**(): `void`
 
-Defined in: [constraint/contact/contact-constraint.ts:214](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-constraint.ts#L214)
+Defined in: [constraint/contact/contact-constraint.ts:214](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-constraint.ts#L214)
 
 同步接触流形数据。
 根据刚体的最新变换（transform1/transform2），更新接触流形中所有接触点的穿透深度和世界坐标，

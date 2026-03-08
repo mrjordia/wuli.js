@@ -6,7 +6,7 @@
 
 # Class: MassMatrix
 
-Defined in: [constraint/solver/direct/mass-matrix.ts:18](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/mass-matrix.ts#L18)
+Defined in: [constraint/solver/direct/mass-matrix.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/mass-matrix.ts#L18)
 
 质量矩阵管理类。
 物理引擎中MLCP/PGS约束求解的核心质量矩阵计算与缓存管理类，核心作用：
@@ -27,7 +27,7 @@ Defined in: [constraint/solver/direct/mass-matrix.ts:18](https://github.com/mrjo
 
 > **new MassMatrix**(`size`): `MassMatrix`
 
-Defined in: [constraint/solver/direct/mass-matrix.ts:97](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/mass-matrix.ts#L97)
+Defined in: [constraint/solver/direct/mass-matrix.ts:97](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/mass-matrix.ts#L97)
 
 构造函数：初始化质量矩阵管理器。
 核心初始化逻辑：
@@ -60,7 +60,7 @@ Defined in: [constraint/solver/direct/mass-matrix.ts:97](https://github.com/mrjo
 
 > **cacheComputed**: `boolean`[]
 
-Defined in: [constraint/solver/direct/mass-matrix.ts:40](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/mass-matrix.ts#L40)
+Defined in: [constraint/solver/direct/mass-matrix.ts:40](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/mass-matrix.ts#L40)
 
 子矩阵缓存状态数组。
 标记子矩阵是否已计算并缓存，核心作用：
@@ -75,7 +75,7 @@ Defined in: [constraint/solver/direct/mass-matrix.ts:40](https://github.com/mrjo
 
 > **cachedSubmatrices**: `Float64Array`\<`ArrayBufferLike`\>[][]
 
-Defined in: [constraint/solver/direct/mass-matrix.ts:50](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/mass-matrix.ts#L50)
+Defined in: [constraint/solver/direct/mass-matrix.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/mass-matrix.ts#L50)
 
 缓存的子矩阵数组。
 存储预计算的质量矩阵子矩阵（已求逆），核心特性：
@@ -90,7 +90,7 @@ Defined in: [constraint/solver/direct/mass-matrix.ts:50](https://github.com/mrjo
 
 > **invMass**: `Float64Array`\<`ArrayBufferLike`\>[]
 
-Defined in: [constraint/solver/direct/mass-matrix.ts:70](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/mass-matrix.ts#L70)
+Defined in: [constraint/solver/direct/mass-matrix.ts:70](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/mass-matrix.ts#L70)
 
 包含CFM的逆质量矩阵。
 存储带约束力混合（CFM）的逆质量矩阵，核心特性：
@@ -105,7 +105,7 @@ Defined in: [constraint/solver/direct/mass-matrix.ts:70](https://github.com/mrjo
 
 > **invMassWithoutCfm**: `Float64Array`\<`ArrayBufferLike`\>[]
 
-Defined in: [constraint/solver/direct/mass-matrix.ts:30](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/mass-matrix.ts#L30)
+Defined in: [constraint/solver/direct/mass-matrix.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/mass-matrix.ts#L30)
 
 不含CFM的逆质量矩阵。
 存储纯物理特性的逆质量矩阵（无约束力混合），核心特性：
@@ -120,7 +120,7 @@ Defined in: [constraint/solver/direct/mass-matrix.ts:30](https://github.com/mrjo
 
 > **maxSubmatrixId**: `number`
 
-Defined in: [constraint/solver/direct/mass-matrix.ts:80](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/mass-matrix.ts#L80)
+Defined in: [constraint/solver/direct/mass-matrix.ts:80](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/mass-matrix.ts#L80)
 
 最大子矩阵ID。
 子矩阵缓存的最大ID值（1 << size），核心作用：
@@ -135,7 +135,7 @@ Defined in: [constraint/solver/direct/mass-matrix.ts:80](https://github.com/mrjo
 
 > **tmpMatrix**: `Float64Array`\<`ArrayBufferLike`\>[]
 
-Defined in: [constraint/solver/direct/mass-matrix.ts:60](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/mass-matrix.ts#L60)
+Defined in: [constraint/solver/direct/mass-matrix.ts:60](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/mass-matrix.ts#L60)
 
 矩阵计算临时缓冲区。
 子矩阵计算的临时存储缓冲区，核心作用：
@@ -150,7 +150,7 @@ Defined in: [constraint/solver/direct/mass-matrix.ts:60](https://github.com/mrjo
 
 > **computeInvMass**(`info`, `massData`): `void`
 
-Defined in: [constraint/solver/direct/mass-matrix.ts:625](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/mass-matrix.ts#L625)
+Defined in: [constraint/solver/direct/mass-matrix.ts:625](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/mass-matrix.ts#L625)
 
 计算逆质量矩阵（带/不带CFM）。
 核心计算流程（分三阶段）：
@@ -195,7 +195,7 @@ Defined in: [constraint/solver/direct/mass-matrix.ts:625](https://github.com/mrj
 
 > **computeSubmatrix**(`id`, `indices`, `size`): `void`
 
-Defined in: [constraint/solver/direct/mass-matrix.ts:157](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/mass-matrix.ts#L157)
+Defined in: [constraint/solver/direct/mass-matrix.ts:157](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/mass-matrix.ts#L157)
 
 计算质量矩阵子矩阵（带缓存）。
 核心计算流程（分两阶段）：

@@ -6,7 +6,7 @@
 
 # Class: DetectorResult
 
-Defined in: [collision-detector/detector-result.ts:10](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/collision-detector/detector-result.ts#L10)
+Defined in: [collision-detector/detector-result.ts:10](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result.ts#L10)
 
 碰撞检测结果类。
 物理引擎碰撞检测的结果容器，用于存储两个几何形状碰撞的核心数据，
@@ -18,7 +18,7 @@ Defined in: [collision-detector/detector-result.ts:10](https://github.com/mrjord
 
 > **new DetectorResult**(): `DetectorResult`
 
-Defined in: [collision-detector/detector-result.ts:43](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/collision-detector/detector-result.ts#L43)
+Defined in: [collision-detector/detector-result.ts:43](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result.ts#L43)
 
 碰撞检测结果构造函数。
 初始化碰撞点数组，为每个元素创建DetectorResultPoint实例，
@@ -34,7 +34,7 @@ Defined in: [collision-detector/detector-result.ts:43](https://github.com/mrjord
 
 > **incremental**: `boolean` = `false`
 
-Defined in: [collision-detector/detector-result.ts:29](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/collision-detector/detector-result.ts#L29)
+Defined in: [collision-detector/detector-result.ts:29](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result.ts#L29)
 
 增量检测标记。
 标记是否启用增量碰撞检测：
@@ -47,7 +47,7 @@ Defined in: [collision-detector/detector-result.ts:29](https://github.com/mrjord
 
 > **normal**: [`Vec3`](../../../common/vec3/classes/Vec3.md)
 
-Defined in: [collision-detector/detector-result.ts:21](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/collision-detector/detector-result.ts#L21)
+Defined in: [collision-detector/detector-result.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result.ts#L21)
 
 碰撞法线向量。
 表示碰撞接触的法线方向（指向第一个几何对象的外侧），初始化为零向量
@@ -58,7 +58,7 @@ Defined in: [collision-detector/detector-result.ts:21](https://github.com/mrjord
 
 > **numPoints**: `number` = `0`
 
-Defined in: [collision-detector/detector-result.ts:15](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/collision-detector/detector-result.ts#L15)
+Defined in: [collision-detector/detector-result.ts:15](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result.ts#L15)
 
 有效碰撞点数量。
 标记points数组中实际有效的碰撞点个数，初始值为0
@@ -69,7 +69,7 @@ Defined in: [collision-detector/detector-result.ts:15](https://github.com/mrjord
 
 > **points**: [`DetectorResultPoint`](../../detector-result-point/classes/DetectorResultPoint.md)[]
 
-Defined in: [collision-detector/detector-result.ts:36](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/collision-detector/detector-result.ts#L36)
+Defined in: [collision-detector/detector-result.ts:36](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result.ts#L36)
 
 碰撞点数组。
 存储碰撞点详情的数组，长度由最大碰撞点数常量限制，
@@ -81,7 +81,7 @@ Defined in: [collision-detector/detector-result.ts:36](https://github.com/mrjord
 
 > **clear**(): `void`
 
-Defined in: [collision-detector/detector-result.ts:75](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/collision-detector/detector-result.ts#L75)
+Defined in: [collision-detector/detector-result.ts:75](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result.ts#L75)
 
 清空碰撞检测结果。
 重置所有碰撞相关数据至初始状态：
@@ -100,7 +100,7 @@ Defined in: [collision-detector/detector-result.ts:75](https://github.com/mrjord
 
 > **getMaxDepth**(): `number`
 
-Defined in: [collision-detector/detector-result.ts:54](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/collision-detector/detector-result.ts#L54)
+Defined in: [collision-detector/detector-result.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result.ts#L54)
 
 获取最大穿透深度。
 遍历所有有效碰撞点，筛选出最大的depth值，用于判断碰撞的严重程度，

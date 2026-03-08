@@ -6,7 +6,7 @@
 
 # Class: RayCastWrapper
 
-Defined in: [common/ray-cast-wrapper.ts:12](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/ray-cast-wrapper.ts#L12)
+Defined in: [common/ray-cast-wrapper.ts:12](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-wrapper.ts#L12)
 
 射线检测宽相位回调包装类。
 物理引擎宽相位阶段的射线检测封装，遍历宽相位筛选出的物理代理，
@@ -36,7 +36,7 @@ Defined in: [common/ray-cast-wrapper.ts:12](https://github.com/mrjordia/wuli.js/
 
 > **begin**: [`Vec3`](../../vec3/classes/Vec3.md)
 
-Defined in: [common/ray-cast-wrapper.ts:16](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/ray-cast-wrapper.ts#L16)
+Defined in: [common/ray-cast-wrapper.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-wrapper.ts#L16)
 
 射线起点坐标（世界坐标系）
 
@@ -46,7 +46,7 @@ Defined in: [common/ray-cast-wrapper.ts:16](https://github.com/mrjordia/wuli.js/
 
 > `optional` **callback**: [`RayCastCallback`](../../ray-cast-callback/classes/RayCastCallback.md)
 
-Defined in: [common/ray-cast-wrapper.ts:20](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/ray-cast-wrapper.ts#L20)
+Defined in: [common/ray-cast-wrapper.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-wrapper.ts#L20)
 
 射线命中后的自定义回调（可选，未设置时不执行后续处理）
 
@@ -56,7 +56,7 @@ Defined in: [common/ray-cast-wrapper.ts:20](https://github.com/mrjordia/wuli.js/
 
 > **end**: [`Vec3`](../../vec3/classes/Vec3.md)
 
-Defined in: [common/ray-cast-wrapper.ts:18](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/ray-cast-wrapper.ts#L18)
+Defined in: [common/ray-cast-wrapper.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-wrapper.ts#L18)
 
 射线终点坐标（世界坐标系）
 
@@ -66,7 +66,7 @@ Defined in: [common/ray-cast-wrapper.ts:18](https://github.com/mrjordia/wuli.js/
 
 > **rayCastHit**: [`RayCastHit`](../../../shape/ray-cast-hit/classes/RayCastHit.md)
 
-Defined in: [common/ray-cast-wrapper.ts:14](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/ray-cast-wrapper.ts#L14)
+Defined in: [common/ray-cast-wrapper.ts:14](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-wrapper.ts#L14)
 
 射线检测命中结果容器（复用该实例避免频繁创建）
 
@@ -76,7 +76,7 @@ Defined in: [common/ray-cast-wrapper.ts:14](https://github.com/mrjordia/wuli.js/
 
 > **process**(`proxy`): `void`
 
-Defined in: [common/ray-cast-wrapper.ts:32](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/ray-cast-wrapper.ts#L32)
+Defined in: [common/ray-cast-wrapper.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-wrapper.ts#L32)
 
 处理单个物理代理的射线检测。
 核心逻辑：

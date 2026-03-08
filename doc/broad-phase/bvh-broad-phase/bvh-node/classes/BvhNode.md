@@ -6,7 +6,7 @@
 
 # Class: BvhNode
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:16](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-node.ts#L16)
+Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-node.ts#L16)
 
 BVH树节点核心类。
 物理引擎中BVH树的核心节点结构，核心作用：
@@ -35,7 +35,7 @@ BVH树节点核心类。
 
 > **childIndex**: `number` = `0`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:52](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-node.ts#L52)
+Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:52](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-node.ts#L52)
 
 节点在父节点中的索引。
 标记当前节点是父节点children数组的第几个元素（0/1）；
@@ -47,7 +47,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:52](https://github.com/mrjo
 
 > **children**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<`BvhNode`\>[]
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:45](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-node.ts#L45)
+Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:45](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-node.ts#L45)
 
 子节点数组（二叉树）。
 长度为2的数组，存储当前节点的左右子节点；
@@ -61,7 +61,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:45](https://github.com/mrjo
 
 > **height**: `number` = `0`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:68](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-node.ts#L68)
+Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:68](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-node.ts#L68)
 
 节点高度。
 标记当前节点在BVH树中的高度；
@@ -75,7 +75,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:68](https://github.com/mrjo
 
 > **next**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<`BvhNode`\>
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:22](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-node.ts#L22)
+Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-node.ts#L22)
 
 节点单向链表后继节点。
 指向BVH树节点链表中的下一个节点；
@@ -87,7 +87,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:22](https://github.com/mrjo
 
 > **nextLeaf**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<`BvhNode`\>
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:36](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-node.ts#L36)
+Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:36](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-node.ts#L36)
 
 叶子节点双向链表后继节点。
 仅叶子节点有效，指向叶子节点链表中的下一个叶子节点；
@@ -99,7 +99,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:36](https://github.com/mrjo
 
 > **parent**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<`BvhNode`\>
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:59](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-node.ts#L59)
+Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:59](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-node.ts#L59)
 
 父节点引用。
 指向当前节点的父节点；
@@ -111,7 +111,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:59](https://github.com/mrjo
 
 > **prevLeaf**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<`BvhNode`\>
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:29](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-node.ts#L29)
+Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:29](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-node.ts#L29)
 
 叶子节点双向链表前驱节点。
 仅叶子节点有效，指向叶子节点链表中的上一个叶子节点；
@@ -123,7 +123,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:29](https://github.com/mrjo
 
 > **proxy**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`BvhProxy`](../../bvh-proxy/classes/BvhProxy.md)\>
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:75](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-node.ts#L75)
+Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:75](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-node.ts#L75)
 
 关联的BVH代理。
 仅叶子节点有效，指向关联的BvhProxy实例；
@@ -135,7 +135,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:75](https://github.com/mrjo
 
 > **size**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:86](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-node.ts#L86)
+Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:86](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-node.ts#L86)
 
 节点AABB包围盒数据。
 长度为6的浮点数组，存储AABB包围盒的最小/最大边界值，数组结构：
@@ -151,7 +151,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:86](https://github.com/mrjo
 
 > **tmp**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:93](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/bvh-broad-phase/bvh-node.ts#L93)
+Defined in: [broad-phase/bvh-broad-phase/bvh-node.ts:93](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-node.ts#L93)
 
 临时向量缓存。
 长度为3的浮点数组，用于节点AABB计算的临时向量存储；

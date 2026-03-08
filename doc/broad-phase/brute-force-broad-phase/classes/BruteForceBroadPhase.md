@@ -6,7 +6,7 @@
 
 # Class: BruteForceBroadPhase
 
-Defined in: [broad-phase/brute-force-broad-phase.ts:26](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/brute-force-broad-phase.ts#L26)
+Defined in: [broad-phase/brute-force-broad-phase.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/brute-force-broad-phase.ts#L26)
 
 暴力遍历型粗检测实现类。
 物理引擎中最简单的粗检测（BroadPhase）实现，核心特性：
@@ -28,7 +28,7 @@ Defined in: [broad-phase/brute-force-broad-phase.ts:26](https://github.com/mrjor
 
 > **new BruteForceBroadPhase**(): `BruteForceBroadPhase`
 
-Defined in: [broad-phase/brute-force-broad-phase.ts:34](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/brute-force-broad-phase.ts#L34)
+Defined in: [broad-phase/brute-force-broad-phase.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/brute-force-broad-phase.ts#L34)
 
 构造函数：初始化暴力粗检测实例。
 核心初始化逻辑：
@@ -50,7 +50,7 @@ Defined in: [broad-phase/brute-force-broad-phase.ts:34](https://github.com/mrjor
 
 > **identity**: [`Transform`](../../../common/transform/classes/Transform.md)
 
-Defined in: [broad-phase/broad-phase.ts:75](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/broad-phase.ts#L75)
+Defined in: [broad-phase/broad-phase.ts:75](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L75)
 
 单位变换矩阵。
 预初始化的单位Transform实例（无平移、无旋转）；
@@ -66,7 +66,7 @@ Defined in: [broad-phase/broad-phase.ts:75](https://github.com/mrjordia/wuli.js/
 
 > **incremental**: `boolean` = `false`
 
-Defined in: [broad-phase/broad-phase.ts:61](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/broad-phase.ts#L61)
+Defined in: [broad-phase/broad-phase.ts:61](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L61)
 
 增量检测开关。
 是否启用增量式粗检测；
@@ -82,7 +82,7 @@ Defined in: [broad-phase/broad-phase.ts:61](https://github.com/mrjordia/wuli.js/
 
 > **proxyPairList**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`ProxyPair`](../../proxy-pair/classes/ProxyPair.md)\>
 
-Defined in: [broad-phase/broad-phase.ts:54](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/broad-phase.ts#L54)
+Defined in: [broad-phase/broad-phase.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L54)
 
 碰撞对链表头节点。
 指向当前帧检测出的候选碰撞对链表的第一个节点；
@@ -98,7 +98,7 @@ collectPairs方法会更新该链表，用于后续细检测阶段处理。
 
 > **raycastHit**: [`RayCastHit`](../../../shape/ray-cast-hit/classes/RayCastHit.md)
 
-Defined in: [broad-phase/broad-phase.ts:89](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/broad-phase.ts#L89)
+Defined in: [broad-phase/broad-phase.ts:89](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L89)
 
 射线检测命中结果。
 预初始化的RayCastHit实例，用于存储射线检测的命中数据；
@@ -114,7 +114,7 @@ Defined in: [broad-phase/broad-phase.ts:89](https://github.com/mrjordia/wuli.js/
 
 > **testCount**: `number` = `0`
 
-Defined in: [broad-phase/broad-phase.ts:68](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/broad-phase.ts#L68)
+Defined in: [broad-phase/broad-phase.ts:68](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L68)
 
 检测计数。
 统计当前帧粗检测的碰撞对测试次数；
@@ -130,7 +130,7 @@ Defined in: [broad-phase/broad-phase.ts:68](https://github.com/mrjordia/wuli.js/
 
 > `readonly` **type**: [`BROAD_PHASE_TYPE`](../../../constant/enumerations/BROAD_PHASE_TYPE.md)
 
-Defined in: [broad-phase/broad-phase.ts:47](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/broad-phase.ts#L47)
+Defined in: [broad-phase/broad-phase.ts:47](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L47)
 
 粗检测类型标识。
 标记当前粗检测实例的具体类型（如网格型、扫描型等）；
@@ -146,7 +146,7 @@ Defined in: [broad-phase/broad-phase.ts:47](https://github.com/mrjordia/wuli.js/
 
 > **zero**: [`Vec3`](../../../common/vec3/classes/Vec3.md)
 
-Defined in: [broad-phase/broad-phase.ts:82](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/broad-phase.ts#L82)
+Defined in: [broad-phase/broad-phase.ts:82](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L82)
 
 零向量。
 预初始化的零向量（x=0,y=0,z=0）；
@@ -162,7 +162,7 @@ Defined in: [broad-phase/broad-phase.ts:82](https://github.com/mrjordia/wuli.js/
 
 > **aabbTest**(`aabb`, `callback`): `void`
 
-Defined in: [broad-phase/brute-force-broad-phase.ts:211](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/brute-force-broad-phase.ts#L211)
+Defined in: [broad-phase/brute-force-broad-phase.ts:211](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/brute-force-broad-phase.ts#L211)
 
 AABB测试。
 实现父类抽象方法，核心逻辑：
@@ -199,7 +199,7 @@ AABB测试回调函数
 
 > **collectPairs**(): `void`
 
-Defined in: [broad-phase/brute-force-broad-phase.ts:113](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/brute-force-broad-phase.ts#L113)
+Defined in: [broad-phase/brute-force-broad-phase.ts:113](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/brute-force-broad-phase.ts#L113)
 
 收集候选碰撞对。
 实现父类抽象方法，核心逻辑（暴力双重循环）：
@@ -226,7 +226,7 @@ Defined in: [broad-phase/brute-force-broad-phase.ts:113](https://github.com/mrjo
 
 > **convexCast**(`convex`, `begin`, `translation`, `callback`): `void`
 
-Defined in: [broad-phase/brute-force-broad-phase.ts:184](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/brute-force-broad-phase.ts#L184)
+Defined in: [broad-phase/brute-force-broad-phase.ts:184](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/brute-force-broad-phase.ts#L184)
 
 凸体扫掠检测。
 实现父类抽象方法，核心逻辑：
@@ -276,7 +276,7 @@ Defined in: [broad-phase/brute-force-broad-phase.ts:184](https://github.com/mrjo
 
 > **createProxy**(`userData`, `aabb`): [`PhysicsProxy`](../../physics-proxy/classes/PhysicsProxy.md)
 
-Defined in: [broad-phase/brute-force-broad-phase.ts:49](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/brute-force-broad-phase.ts#L49)
+Defined in: [broad-phase/brute-force-broad-phase.ts:49](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/brute-force-broad-phase.ts#L49)
 
 创建物理代理。
 实现父类抽象方法，核心逻辑：
@@ -314,7 +314,7 @@ Defined in: [broad-phase/brute-force-broad-phase.ts:49](https://github.com/mrjor
 
 > **destroyProxy**(`proxy`): `void`
 
-Defined in: [broad-phase/brute-force-broad-phase.ts:64](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/brute-force-broad-phase.ts#L64)
+Defined in: [broad-phase/brute-force-broad-phase.ts:64](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/brute-force-broad-phase.ts#L64)
 
 销毁物理代理。
 实现父类抽象方法，核心逻辑：
@@ -344,7 +344,7 @@ Defined in: [broad-phase/brute-force-broad-phase.ts:64](https://github.com/mrjor
 
 > **isOverlapping**(`proxy1`, `proxy2`): `boolean`
 
-Defined in: [broad-phase/broad-phase.ts:150](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/broad-phase.ts#L150)
+Defined in: [broad-phase/broad-phase.ts:150](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L150)
 
 判断两个代理的AABB是否重叠。
 通用的AABB重叠判断实现：
@@ -382,7 +382,7 @@ Defined in: [broad-phase/broad-phase.ts:150](https://github.com/mrjordia/wuli.js
 
 > **moveProxy**(`proxy`, `aabb`, `displacement`): `void`
 
-Defined in: [broad-phase/brute-force-broad-phase.ts:96](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/brute-force-broad-phase.ts#L96)
+Defined in: [broad-phase/brute-force-broad-phase.ts:96](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/brute-force-broad-phase.ts#L96)
 
 移动物理代理。
 实现父类抽象方法，核心逻辑：
@@ -424,7 +424,7 @@ Defined in: [broad-phase/brute-force-broad-phase.ts:96](https://github.com/mrjor
 
 > **rayCast**(`begin`, `end`, `callback`): `void`
 
-Defined in: [broad-phase/brute-force-broad-phase.ts:156](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/broad-phase/brute-force-broad-phase.ts#L156)
+Defined in: [broad-phase/brute-force-broad-phase.ts:156](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/brute-force-broad-phase.ts#L156)
 
 射线检测。
 实现父类抽象方法，核心逻辑：

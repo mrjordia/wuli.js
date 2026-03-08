@@ -6,7 +6,7 @@
 
 # Class: JacobianRow
 
-Defined in: [constraint/solver/jacobian-row.ts:6](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/jacobian-row.ts#L6)
+Defined in: [constraint/solver/jacobian-row.ts:6](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/jacobian-row.ts#L6)
 
 雅克比矩阵行类。
 物理引擎中约束求解的核心数据结构，存储单个约束方程的雅克比矩阵行数据，
@@ -28,7 +28,7 @@ Defined in: [constraint/solver/jacobian-row.ts:6](https://github.com/mrjordia/wu
 
 > **elements**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [constraint/solver/jacobian-row.ts:18](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/jacobian-row.ts#L18)
+Defined in: [constraint/solver/jacobian-row.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/jacobian-row.ts#L18)
 
 雅克比行的原始数据数组。
 雅克比行数据数组（长度13），存储线速度、角速度分量和稀疏性标记，
@@ -53,7 +53,7 @@ new Float64Array(13)
 
 > **get** **flag**(): `number`
 
-Defined in: [constraint/solver/jacobian-row.ts:25](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/jacobian-row.ts#L25)
+Defined in: [constraint/solver/jacobian-row.ts:25](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/jacobian-row.ts#L25)
 
 获取稀疏性标记位（flag）。
 只读访问elements[12]，通过位运算可判断哪些分量有效，用于优化约束求解性能
@@ -68,7 +68,7 @@ Defined in: [constraint/solver/jacobian-row.ts:25](https://github.com/mrjordia/w
 
 > **set** **flag**(`n`): `void`
 
-Defined in: [constraint/solver/jacobian-row.ts:34](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/jacobian-row.ts#L34)
+Defined in: [constraint/solver/jacobian-row.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/jacobian-row.ts#L34)
 
 设置稀疏性标记位（flag）。
 直接修改elements[12]，通常无需手动调用，由updateSparsity()管理
@@ -91,7 +91,7 @@ Defined in: [constraint/solver/jacobian-row.ts:34](https://github.com/mrjordia/w
 
 > **updateSparsity**(): `void`
 
-Defined in: [constraint/solver/jacobian-row.ts:46](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/jacobian-row.ts#L46)
+Defined in: [constraint/solver/jacobian-row.ts:46](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/jacobian-row.ts#L46)
 
 更新稀疏性标记位（核心方法）。
 根据线速度/角速度分量的数值自动计算flag标记位，规则：

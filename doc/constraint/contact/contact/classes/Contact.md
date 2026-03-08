@@ -6,7 +6,7 @@
 
 # Class: Contact
 
-Defined in: [constraint/contact/contact.ts:18](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L18)
+Defined in: [constraint/contact/contact.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L18)
 
 碰撞接触类。
 物理引擎中两个刚体之间碰撞接触的核心管理类，整合了碰撞检测、接触流形（Manifold）、接触约束、回调事件等所有相关数据和逻辑，
@@ -18,7 +18,7 @@ Defined in: [constraint/contact/contact.ts:18](https://github.com/mrjordia/wuli.
 
 > **new Contact**(): `Contact`
 
-Defined in: [constraint/contact/contact.ts:135](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L135)
+Defined in: [constraint/contact/contact.ts:135](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L135)
 
 构造函数：初始化碰撞接触实例。
 初始化时自动创建ManifoldUpdater和ContactConstraint实例，关联当前Contact的manifold
@@ -33,7 +33,7 @@ Defined in: [constraint/contact/contact.ts:135](https://github.com/mrjordia/wuli
 
 > **cachedDetectorData**: [`CachedDetectorData`](../../../../collision-detector/cached-detector-data/classes/CachedDetectorData.md)
 
-Defined in: [constraint/contact/contact.ts:84](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L84)
+Defined in: [constraint/contact/contact.ts:84](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L84)
 
 碰撞检测器的缓存数据。
 存储检测器的中间计算结果，避免重复计算，提升碰撞检测性能
@@ -44,7 +44,7 @@ Defined in: [constraint/contact/contact.ts:84](https://github.com/mrjordia/wuli.
 
 > **contactConstraint**: [`ContactConstraint`](../../contact-constraint/classes/ContactConstraint.md)
 
-Defined in: [constraint/contact/contact.ts:122](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L122)
+Defined in: [constraint/contact/contact.ts:122](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L122)
 
 接触约束。
 基于manifold数据构建的物理约束，用于求解碰撞后的速度、位置修正
@@ -55,7 +55,7 @@ Defined in: [constraint/contact/contact.ts:122](https://github.com/mrjordia/wuli
 
 > **detector**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`Detector`](../../../../collision-detector/detector/classes/Detector.md)\<[`Geometry`](../../../../shape/geometry/classes/Geometry.md), [`Geometry`](../../../../shape/geometry/classes/Geometry.md)\>\>
 
-Defined in: [constraint/contact/contact.ts:78](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L78)
+Defined in: [constraint/contact/contact.ts:78](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L78)
 
 碰撞检测器实例。
 用于检测shape1和shape2是否碰撞的检测器，不同形状组合对应不同的检测器实现
@@ -72,7 +72,7 @@ null
 
 > **detectorResult**: [`DetectorResult`](../../../../collision-detector/detector-result/classes/DetectorResult.md)
 
-Defined in: [constraint/contact/contact.ts:90](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L90)
+Defined in: [constraint/contact/contact.ts:90](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L90)
 
 碰撞检测结果。
 存储每次碰撞检测的输出结果，包括接触点、法向、穿透深度等核心数据
@@ -83,7 +83,7 @@ Defined in: [constraint/contact/contact.ts:90](https://github.com/mrjordia/wuli.
 
 > **latest**: `boolean` = `false`
 
-Defined in: [constraint/contact/contact.ts:97](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L97)
+Defined in: [constraint/contact/contact.ts:97](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L97)
 
 是否为最新的接触。
 标记该接触是否是当前帧最新检测到的，用于过滤无效/过期的接触
@@ -100,7 +100,7 @@ false
 
 > **link1**: [`ContactLink`](../../contact-link/classes/ContactLink.md)
 
-Defined in: [constraint/contact/contact.ts:37](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L37)
+Defined in: [constraint/contact/contact.ts:37](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L37)
 
 第一个碰撞物体的接触链接信息。
 关联第一个刚体/形状的接触元数据，用于快速索引和管理
@@ -111,7 +111,7 @@ Defined in: [constraint/contact/contact.ts:37](https://github.com/mrjordia/wuli.
 
 > **link2**: [`ContactLink`](../../contact-link/classes/ContactLink.md)
 
-Defined in: [constraint/contact/contact.ts:43](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L43)
+Defined in: [constraint/contact/contact.ts:43](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L43)
 
 第二个碰撞物体的接触链接信息。
 关联第二个刚体/形状的接触元数据，与link1对称
@@ -122,7 +122,7 @@ Defined in: [constraint/contact/contact.ts:43](https://github.com/mrjordia/wuli.
 
 > **manifold**: [`Manifold`](../../manifold/classes/Manifold.md)
 
-Defined in: [constraint/contact/contact.ts:110](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L110)
+Defined in: [constraint/contact/contact.ts:110](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L110)
 
 碰撞接触流形。
 存储该碰撞接触的所有接触点、法向/切向基向量等核心数据，是约束求解的核心数据源
@@ -133,7 +133,7 @@ Defined in: [constraint/contact/contact.ts:110](https://github.com/mrjordia/wuli
 
 > **next**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<`Contact`\>
 
-Defined in: [constraint/contact/contact.ts:24](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L24)
+Defined in: [constraint/contact/contact.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L24)
 
 接触链表的下一个节点。
 用于将多个Contact实例组织成双向链表，方便批量管理（如场景中所有碰撞接触）
@@ -150,7 +150,7 @@ null
 
 > **prev**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<`Contact`\>
 
-Defined in: [constraint/contact/contact.ts:31](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L31)
+Defined in: [constraint/contact/contact.ts:31](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L31)
 
 接触链表的上一个节点。
 双向链表的前驱节点，与next配合实现链表的遍历和管理
@@ -167,7 +167,7 @@ null
 
 > **rigidBody1**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`RigidBody`](../../../../rigid-body/rigid-body/classes/RigidBody.md)\>
 
-Defined in: [constraint/contact/contact.ts:64](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L64)
+Defined in: [constraint/contact/contact.ts:64](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L64)
 
 第一个碰撞的刚体。
 关联的第一个物理刚体，包含质量、变换、速度等物理属性，用于后续约束求解
@@ -184,7 +184,7 @@ null
 
 > **rigidBody2**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`RigidBody`](../../../../rigid-body/rigid-body/classes/RigidBody.md)\>
 
-Defined in: [constraint/contact/contact.ts:71](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L71)
+Defined in: [constraint/contact/contact.ts:71](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L71)
 
 第二个碰撞的刚体。
 关联的第二个物理刚体，与rigidBody1配对进行碰撞响应计算
@@ -201,7 +201,7 @@ null
 
 > **shape1**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`Shape`](../../../../shape/shape/classes/Shape.md)\>
 
-Defined in: [constraint/contact/contact.ts:50](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L50)
+Defined in: [constraint/contact/contact.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L50)
 
 第一个碰撞物体的形状。
 参与碰撞的第一个几何形状（如球体、盒子），必须非空才能进行碰撞检测
@@ -218,7 +218,7 @@ null
 
 > **shape2**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`Shape`](../../../../shape/shape/classes/Shape.md)\>
 
-Defined in: [constraint/contact/contact.ts:57](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L57)
+Defined in: [constraint/contact/contact.ts:57](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L57)
 
 第二个碰撞物体的形状。
 参与碰撞的第二个几何形状，与shape1配对进行碰撞检测
@@ -235,7 +235,7 @@ null
 
 > **shouldBeSkipped**: `boolean` = `false`
 
-Defined in: [constraint/contact/contact.ts:104](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L104)
+Defined in: [constraint/contact/contact.ts:104](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L104)
 
 是否应跳过该接触。
 标记该接触是否需要跳过约束求解，true时将不参与物理响应计算
@@ -252,7 +252,7 @@ false
 
 > **touching**: `boolean` = `false`
 
-Defined in: [constraint/contact/contact.ts:129](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L129)
+Defined in: [constraint/contact/contact.ts:129](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L129)
 
 是否处于接触状态。
 标记两个物体是否实际接触（有有效接触点），true表示碰撞中，false表示已分离
@@ -269,7 +269,7 @@ false
 
 > **updater**: [`ManifoldUpdater`](../../manifold-updater/classes/ManifoldUpdater.md)
 
-Defined in: [constraint/contact/contact.ts:116](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L116)
+Defined in: [constraint/contact/contact.ts:116](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L116)
 
 流形更新器。
 用于更新manifold数据的工具类实例，负责接触点的添加、移除、热启动等逻辑
@@ -280,7 +280,7 @@ Defined in: [constraint/contact/contact.ts:116](https://github.com/mrjordia/wuli
 
 > **postSolve**(): `void`
 
-Defined in: [constraint/contact/contact.ts:221](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L221)
+Defined in: [constraint/contact/contact.ts:221](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L221)
 
 碰撞约束求解后触发的回调方法。
 在接触约束求解完成后调用，触发两个碰撞形状的postSolve回调函数，
@@ -297,7 +297,7 @@ Defined in: [constraint/contact/contact.ts:221](https://github.com/mrjordia/wuli
 
 > **updateManifold**(): `void`
 
-Defined in: [constraint/contact/contact.ts:151](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact.ts#L151)
+Defined in: [constraint/contact/contact.ts:151](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact.ts#L151)
 
 更新碰撞接触流形数据（核心方法）。
 完整的接触更新流程，包含以下核心步骤：

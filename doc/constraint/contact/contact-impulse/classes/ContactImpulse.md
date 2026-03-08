@@ -6,7 +6,7 @@
 
 # Class: ContactImpulse
 
-Defined in: [constraint/contact/contact-impulse.ts:5](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-impulse.ts#L5)
+Defined in: [constraint/contact/contact-impulse.ts:5](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-impulse.ts#L5)
 
 接触冲量类。
 用于存储物理碰撞接触点的冲量信息，包含法向、切向、副法向、穿透方向冲量，以及冲量作用线的坐标分量
@@ -27,7 +27,7 @@ Defined in: [constraint/contact/contact-impulse.ts:5](https://github.com/mrjordi
 
 > **elements**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [constraint/contact/contact-impulse.ts:19](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/contact-impulse.ts#L19)
+Defined in: [constraint/contact/contact-impulse.ts:19](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-impulse.ts#L19)
 
 存储接触冲量各分量的数组。
 数组长度固定为7，各索引对应的物理含义如下：

@@ -6,7 +6,7 @@
 
 # Enumeration: GEOMETRY\_TYPE
 
-Defined in: [constant.ts:18](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constant.ts#L18)
+Defined in: [constant.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L18)
 
 几何体类型枚举。
 标识不同的碰撞几何体类型，用于碰撞检测分发
@@ -17,7 +17,7 @@ Defined in: [constant.ts:18](https://github.com/mrjordia/wuli.js/blob/7de21a8214
 
 > **BOX**: `1002`
 
-Defined in: [constant.ts:24](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constant.ts#L24)
+Defined in: [constant.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L24)
 
 盒型几何体
 
@@ -27,7 +27,7 @@ Defined in: [constant.ts:24](https://github.com/mrjordia/wuli.js/blob/7de21a8214
 
 > **CAPSULE**: `1005`
 
-Defined in: [constant.ts:30](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constant.ts#L30)
+Defined in: [constant.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L30)
 
 胶囊体几何体
 
@@ -37,7 +37,7 @@ Defined in: [constant.ts:30](https://github.com/mrjordia/wuli.js/blob/7de21a8214
 
 > **CONE**: `1004`
 
-Defined in: [constant.ts:28](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constant.ts#L28)
+Defined in: [constant.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L28)
 
 圆锥几何体
 
@@ -47,7 +47,7 @@ Defined in: [constant.ts:28](https://github.com/mrjordia/wuli.js/blob/7de21a8214
 
 > **CONVEX\_HULL**: `1006`
 
-Defined in: [constant.ts:32](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constant.ts#L32)
+Defined in: [constant.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L32)
 
 凸包几何体
 
@@ -57,7 +57,7 @@ Defined in: [constant.ts:32](https://github.com/mrjordia/wuli.js/blob/7de21a8214
 
 > **CYLINDER**: `1003`
 
-Defined in: [constant.ts:26](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constant.ts#L26)
+Defined in: [constant.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L26)
 
 圆柱几何体
 
@@ -67,7 +67,7 @@ Defined in: [constant.ts:26](https://github.com/mrjordia/wuli.js/blob/7de21a8214
 
 > **NULL**: `1000`
 
-Defined in: [constant.ts:20](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constant.ts#L20)
+Defined in: [constant.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L20)
 
 空几何体（无效类型）
 
@@ -77,7 +77,7 @@ Defined in: [constant.ts:20](https://github.com/mrjordia/wuli.js/blob/7de21a8214
 
 > **SPHERE**: `1001`
 
-Defined in: [constant.ts:22](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constant.ts#L22)
+Defined in: [constant.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L22)
 
 球体几何体
 
@@ -87,6 +87,6 @@ Defined in: [constant.ts:22](https://github.com/mrjordia/wuli.js/blob/7de21a8214
 
 > **TERRAIN**: `1007`
 
-Defined in: [constant.ts:34](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constant.ts#L34)
+Defined in: [constant.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L34)
 
 地形几何体（高度场）

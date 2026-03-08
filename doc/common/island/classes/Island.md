@@ -6,7 +6,7 @@
 
 # Class: Island
 
-Defined in: [common/island.ts:14](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L14)
+Defined in: [common/island.ts:14](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L14)
 
 物理引擎岛屿类。
 物理引擎核心优化机制，将相互关联的刚体和约束划分为独立“岛屿”并行求解，
@@ -29,7 +29,7 @@ Defined in: [common/island.ts:14](https://github.com/mrjordia/wuli.js/blob/7de21
 
 > **gravity**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [common/island.ts:32](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L32)
+Defined in: [common/island.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L32)
 
 岛屿级重力向量 [x, y, z]，作用于岛屿内所有刚体
 
@@ -39,7 +39,7 @@ Defined in: [common/island.ts:32](https://github.com/mrjordia/wuli.js/blob/7de21
 
 > **numRigidBodies**: `number` = `0`
 
-Defined in: [common/island.ts:24](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L24)
+Defined in: [common/island.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L24)
 
 岛屿内刚体的实际数量（数组有效元素个数）
 
@@ -49,7 +49,7 @@ Defined in: [common/island.ts:24](https://github.com/mrjordia/wuli.js/blob/7de21
 
 > **numSolvers**: `number` = `0`
 
-Defined in: [common/island.ts:26](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L26)
+Defined in: [common/island.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L26)
 
 岛屿内约束求解器的实际数量（solvers数组有效元素个数）
 
@@ -59,7 +59,7 @@ Defined in: [common/island.ts:26](https://github.com/mrjordia/wuli.js/blob/7de21
 
 > **numSolversNgs**: `number` = `0`
 
-Defined in: [common/island.ts:30](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L30)
+Defined in: [common/island.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L30)
 
 solversNgs数组中有效约束求解器数量
 
@@ -69,7 +69,7 @@ solversNgs数组中有效约束求解器数量
 
 > **numSolversSi**: `number` = `0`
 
-Defined in: [common/island.ts:28](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L28)
+Defined in: [common/island.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L28)
 
 solversSi数组中有效约束求解器数量
 
@@ -79,7 +79,7 @@ solversSi数组中有效约束求解器数量
 
 > **rigidBodies**: [`Nullable`](../../nullable/type-aliases/Nullable.md)\<[`RigidBody`](../../../rigid-body/rigid-body/classes/RigidBody.md)\>[]
 
-Defined in: [common/island.ts:16](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L16)
+Defined in: [common/island.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L16)
 
 岛屿内的刚体数组（初始容量由SETTING_ISLAND_INITIAL_RIGID_BODY_ARRAY_SIZE定义）
 
@@ -89,7 +89,7 @@ Defined in: [common/island.ts:16](https://github.com/mrjordia/wuli.js/blob/7de21
 
 > **solvers**: [`Nullable`](../../nullable/type-aliases/Nullable.md)\<[`ConstraintSolver`](../../../constraint/solver/constraint-solver/classes/ConstraintSolver.md)\>[]
 
-Defined in: [common/island.ts:18](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L18)
+Defined in: [common/island.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L18)
 
 岛屿内所有约束求解器（不分位置修正算法）
 
@@ -99,7 +99,7 @@ Defined in: [common/island.ts:18](https://github.com/mrjordia/wuli.js/blob/7de21
 
 > **solversNgs**: [`Nullable`](../../nullable/type-aliases/Nullable.md)\<[`ConstraintSolver`](../../../constraint/solver/constraint-solver/classes/ConstraintSolver.md)\>[]
 
-Defined in: [common/island.ts:22](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L22)
+Defined in: [common/island.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L22)
 
 采用NGS（高斯赛德尔）位置修正的约束求解器
 
@@ -109,7 +109,7 @@ Defined in: [common/island.ts:22](https://github.com/mrjordia/wuli.js/blob/7de21
 
 > **solversSi**: [`Nullable`](../../nullable/type-aliases/Nullable.md)\<[`ConstraintSolver`](../../../constraint/solver/constraint-solver/classes/ConstraintSolver.md)\>[]
 
-Defined in: [common/island.ts:20](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L20)
+Defined in: [common/island.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L20)
 
 采用SPLIT_IMPULSE（分离冲量）位置修正的约束求解器
 
@@ -119,7 +119,7 @@ Defined in: [common/island.ts:20](https://github.com/mrjordia/wuli.js/blob/7de21
 
 > **addConstraintSolver**(`solver`, `positionCorrection`): `void`
 
-Defined in: [common/island.ts:78](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L78)
+Defined in: [common/island.ts:78](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L78)
 
 向岛屿添加约束求解器（按位置修正算法分类存储）。
 核心逻辑：
@@ -151,7 +151,7 @@ Defined in: [common/island.ts:78](https://github.com/mrjordia/wuli.js/blob/7de21
 
 > **addRigidBody**(`rigidBody`): `void`
 
-Defined in: [common/island.ts:54](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L54)
+Defined in: [common/island.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L54)
 
 向岛屿添加刚体。
 核心逻辑：
@@ -177,7 +177,7 @@ Defined in: [common/island.ts:54](https://github.com/mrjordia/wuli.js/blob/7de21
 
 > **clear**(): `void`
 
-Defined in: [common/island.ts:39](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L39)
+Defined in: [common/island.ts:39](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L39)
 
 清空岛屿所有数据（重置数组和计数）。
 释放刚体/求解器引用（置null），重置所有计数为0；
@@ -193,7 +193,7 @@ Defined in: [common/island.ts:39](https://github.com/mrjordia/wuli.js/blob/7de21
 
 > **step**(`timeStep`, `numVelocityIterations`, `numPositionIterations`): `void`
 
-Defined in: [common/island.ts:240](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L240)
+Defined in: [common/island.ts:240](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L240)
 
 岛屿整体步进更新（核心物理求解逻辑）。
 核心流程（物理引擎单帧求解）：
@@ -234,7 +234,7 @@ Defined in: [common/island.ts:240](https://github.com/mrjordia/wuli.js/blob/7de2
 
 > **stepSingleRigidBody**(`timeStep`, `rb`): `void`
 
-Defined in: [common/island.ts:130](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/island.ts#L130)
+Defined in: [common/island.ts:130](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/island.ts#L130)
 
 单刚体步进更新（独立更新单个刚体的物理状态）。
 核心逻辑：

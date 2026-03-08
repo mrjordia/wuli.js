@@ -6,7 +6,7 @@
 
 # Class: Boundary
 
-Defined in: [constraint/solver/direct/boundary.ts:19](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary.ts#L19)
+Defined in: [constraint/solver/direct/boundary.ts:19](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary.ts#L19)
 
 约束边界类。
 物理引擎中MLCP（混合线性互补问题）求解的核心边界模型类，核心作用：
@@ -26,7 +26,7 @@ Defined in: [constraint/solver/direct/boundary.ts:19](https://github.com/mrjordi
 
 > **new Boundary**(`maxRows`): `Boundary`
 
-Defined in: [constraint/solver/direct/boundary.ts:99](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary.ts#L99)
+Defined in: [constraint/solver/direct/boundary.ts:99](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary.ts#L99)
 
 构造函数：初始化约束边界实例。
 核心初始化逻辑：
@@ -54,7 +54,7 @@ Defined in: [constraint/solver/direct/boundary.ts:99](https://github.com/mrjordi
 
 > **b**: `Float64Array`
 
-Defined in: [constraint/solver/direct/boundary.ts:57](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary.ts#L57)
+Defined in: [constraint/solver/direct/boundary.ts:57](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary.ts#L57)
 
 约束边界RHS（右手项）数组。
 存储MLCP求解的右手项值，核心作用：
@@ -68,7 +68,7 @@ Defined in: [constraint/solver/direct/boundary.ts:57](https://github.com/mrjordi
 
 > **iBounded**: `Int8Array`
 
-Defined in: [constraint/solver/direct/boundary.ts:28](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary.ts#L28)
+Defined in: [constraint/solver/direct/boundary.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary.ts#L28)
 
 有界约束行索引数组。
 存储当前边界中具有明确冲量限制的约束行索引，核心特性：
@@ -83,7 +83,7 @@ Defined in: [constraint/solver/direct/boundary.ts:28](https://github.com/mrjordi
 
 > **iUnbounded**: `Int8Array`
 
-Defined in: [constraint/solver/direct/boundary.ts:38](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary.ts#L38)
+Defined in: [constraint/solver/direct/boundary.ts:38](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary.ts#L38)
 
 无界约束行索引数组。
 存储当前边界中无冲量限制的约束行索引，核心特性：
@@ -98,7 +98,7 @@ Defined in: [constraint/solver/direct/boundary.ts:38](https://github.com/mrjordi
 
 > **matrixId**: `number` = `0`
 
-Defined in: [constraint/solver/direct/boundary.ts:87](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary.ts#L87)
+Defined in: [constraint/solver/direct/boundary.ts:87](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary.ts#L87)
 
 质量矩阵子矩阵缓存ID。
 基于无界约束行索引的位掩码标识，核心作用：
@@ -119,7 +119,7 @@ Defined in: [constraint/solver/direct/boundary.ts:87](https://github.com/mrjordi
 
 > **numBounded**: `number` = `0`
 
-Defined in: [constraint/solver/direct/boundary.ts:66](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary.ts#L66)
+Defined in: [constraint/solver/direct/boundary.ts:66](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary.ts#L66)
 
 有界约束行数量。
 标识iBounded数组的有效元素数量，核心特性：
@@ -138,7 +138,7 @@ Defined in: [constraint/solver/direct/boundary.ts:66](https://github.com/mrjordi
 
 > **numUnbounded**: `number` = `0`
 
-Defined in: [constraint/solver/direct/boundary.ts:76](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary.ts#L76)
+Defined in: [constraint/solver/direct/boundary.ts:76](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary.ts#L76)
 
 无界约束行数量。
 标识iUnbounded数组的有效元素数量，核心特性：
@@ -158,7 +158,7 @@ Defined in: [constraint/solver/direct/boundary.ts:76](https://github.com/mrjordi
 
 > **signs**: `Int8Array`
 
-Defined in: [constraint/solver/direct/boundary.ts:48](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary.ts#L48)
+Defined in: [constraint/solver/direct/boundary.ts:48](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary.ts#L48)
 
 有界约束行符号标记数组。
 标记有界约束行的冲量限制方向，核心取值：
@@ -173,7 +173,7 @@ Defined in: [constraint/solver/direct/boundary.ts:48](https://github.com/mrjordi
 
 > **computeImpulses**(`info`, `mass`, `relVels`, `impulses`, `dImpulses`, `impulseFactor`, `noCheck`): `boolean`
 
-Defined in: [constraint/solver/direct/boundary.ts:165](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary.ts#L165)
+Defined in: [constraint/solver/direct/boundary.ts:165](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary.ts#L165)
 
 计算约束冲量并验证边界可行性。
 核心计算流程（分四阶段）：
@@ -249,7 +249,7 @@ Defined in: [constraint/solver/direct/boundary.ts:165](https://github.com/mrjord
 
 > **init**(`buildInfo`): `void`
 
-Defined in: [constraint/solver/direct/boundary.ts:119](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/solver/direct/boundary.ts#L119)
+Defined in: [constraint/solver/direct/boundary.ts:119](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary.ts#L119)
 
 初始化边界状态。
 核心初始化逻辑：

@@ -6,7 +6,7 @@
 
 # Class: RevoluteJointConfig
 
-Defined in: [constraint/joint/revolute-joint-config.ts:14](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/revolute-joint-config.ts#L14)
+Defined in: [constraint/joint/revolute-joint-config.ts:14](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/revolute-joint-config.ts#L14)
 
 旋转关节配置类。
 继承自JointConfig，是旋转关节（Revolute Joint）的专属配置容器，
@@ -37,7 +37,7 @@ Defined in: [constraint/joint/revolute-joint-config.ts:14](https://github.com/mr
 
 > **allowCollision**: `boolean` = `false`
 
-Defined in: [constraint/joint/joint-config.ts:40](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/joint-config.ts#L40)
+Defined in: [constraint/joint/joint-config.ts:40](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L40)
 
 是否允许关联的两个刚体碰撞。
 关节约束下刚体的碰撞开关，默认值false（禁止碰撞），避免关节锚点处的穿透和异常碰撞反馈
@@ -52,7 +52,7 @@ Defined in: [constraint/joint/joint-config.ts:40](https://github.com/mrjordia/wu
 
 > **breakForce**: `number` = `0`
 
-Defined in: [constraint/joint/joint-config.ts:60](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/joint-config.ts#L60)
+Defined in: [constraint/joint/joint-config.ts:60](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L60)
 
 关节断裂的力阈值。
 触发关节断裂的合外力阈值，默认值0（永不因受力断裂），当关节承受的力超过该值时关节会断开
@@ -67,7 +67,7 @@ Defined in: [constraint/joint/joint-config.ts:60](https://github.com/mrjordia/wu
 
 > **breakTorque**: `number` = `0`
 
-Defined in: [constraint/joint/joint-config.ts:66](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/joint-config.ts#L66)
+Defined in: [constraint/joint/joint-config.ts:66](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L66)
 
 关节断裂的力矩阈值。
 触发关节断裂的合外力矩阈值，默认值0（永不因力矩断裂），当关节承受的力矩超过该值时关节会断开
@@ -82,7 +82,7 @@ Defined in: [constraint/joint/joint-config.ts:66](https://github.com/mrjordia/wu
 
 > **limitMotor**: [`RotationalLimitMotor`](../../rotational-limit-motor/classes/RotationalLimitMotor.md)
 
-Defined in: [constraint/joint/revolute-joint-config.ts:41](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/revolute-joint-config.ts#L41)
+Defined in: [constraint/joint/revolute-joint-config.ts:41](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/revolute-joint-config.ts#L41)
 
 旋转限位驱动配置。
 旋转关节旋转运动的限位范围、驱动速度、最大驱动力矩配置，默认初始化空实例（无限位/驱动）；
@@ -94,7 +94,7 @@ Defined in: [constraint/joint/revolute-joint-config.ts:41](https://github.com/mr
 
 > **localAnchor1**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [constraint/joint/joint-config.ts:28](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/joint-config.ts#L28)
+Defined in: [constraint/joint/joint-config.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L28)
 
 第一个刚体的本地锚点坐标。
 相对于rigidBody1本地坐标系的关节锚点，初始值为零向量，通过initialize方法从世界锚点转换而来
@@ -109,7 +109,7 @@ Defined in: [constraint/joint/joint-config.ts:28](https://github.com/mrjordia/wu
 
 > **localAnchor2**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [constraint/joint/joint-config.ts:34](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/joint-config.ts#L34)
+Defined in: [constraint/joint/joint-config.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L34)
 
 第二个刚体的本地锚点坐标。
 相对于rigidBody2本地坐标系的关节锚点，初始值为零向量，通过initialize方法从世界锚点转换而来
@@ -124,7 +124,7 @@ Defined in: [constraint/joint/joint-config.ts:34](https://github.com/mrjordia/wu
 
 > **localAxis1**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [constraint/joint/revolute-joint-config.ts:20](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/revolute-joint-config.ts#L20)
+Defined in: [constraint/joint/revolute-joint-config.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/revolute-joint-config.ts#L20)
 
 第一个刚体的本地旋转轴。
 相对于rigidBody1本地坐标系的旋转关节轴，默认值(1, 0, 0)（X轴）；
@@ -136,7 +136,7 @@ Defined in: [constraint/joint/revolute-joint-config.ts:20](https://github.com/mr
 
 > **localAxis2**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [constraint/joint/revolute-joint-config.ts:27](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/revolute-joint-config.ts#L27)
+Defined in: [constraint/joint/revolute-joint-config.ts:27](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/revolute-joint-config.ts#L27)
 
 第二个刚体的本地旋转轴。
 相对于rigidBody2本地坐标系的旋转关节轴，默认值(1, 0, 0)（X轴）；
@@ -148,7 +148,7 @@ Defined in: [constraint/joint/revolute-joint-config.ts:27](https://github.com/mr
 
 > **positionCorrectionAlgorithm**: `number` = `CONSTANT.SETTING_DEFAULT_JOINT_POSITION_CORRECTION_ALGORITHM`
 
-Defined in: [constraint/joint/joint-config.ts:54](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/joint-config.ts#L54)
+Defined in: [constraint/joint/joint-config.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L54)
 
 位置修正算法类型。
 指定关节位置误差的修正算法，默认值为CONSTANT.SETTING_DEFAULT_JOINT_POSITION_CORRECTION_ALGORITHM，
@@ -164,7 +164,7 @@ Defined in: [constraint/joint/joint-config.ts:54](https://github.com/mrjordia/wu
 
 > **rigidBody1**: [`RigidBody`](../../../../rigid-body/rigid-body/classes/RigidBody.md)
 
-Defined in: [constraint/joint/joint-config.ts:16](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/joint-config.ts#L16)
+Defined in: [constraint/joint/joint-config.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L16)
 
 关节关联的第一个刚体。
 关节约束的第一个目标刚体，非可选（通过!断言确保赋值），与rigidBody2共同构成关节约束的两个主体
@@ -179,7 +179,7 @@ Defined in: [constraint/joint/joint-config.ts:16](https://github.com/mrjordia/wu
 
 > **rigidBody2**: [`RigidBody`](../../../../rigid-body/rigid-body/classes/RigidBody.md)
 
-Defined in: [constraint/joint/joint-config.ts:22](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/joint-config.ts#L22)
+Defined in: [constraint/joint/joint-config.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L22)
 
 关节关联的第二个刚体。
 关节约束的第二个目标刚体，非可选（通过!断言确保赋值），若为静态刚体则作为关节的固定端
@@ -194,7 +194,7 @@ Defined in: [constraint/joint/joint-config.ts:22](https://github.com/mrjordia/wu
 
 > **solverType**: `number` = `CONSTANT.SETTING_DEFAULT_JOINT_CONSTRAINT_SOLVER_TYPE`
 
-Defined in: [constraint/joint/joint-config.ts:47](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/joint-config.ts#L47)
+Defined in: [constraint/joint/joint-config.ts:47](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L47)
 
 关节约束求解器类型。
 指定关节约束的求解算法类型，默认值为CONSTANT.SETTING_DEFAULT_JOINT_CONSTRAINT_SOLVER_TYPE，
@@ -210,7 +210,7 @@ Defined in: [constraint/joint/joint-config.ts:47](https://github.com/mrjordia/wu
 
 > **springDamper**: [`SpringDamper`](../../spring-damper/classes/SpringDamper.md)
 
-Defined in: [constraint/joint/revolute-joint-config.ts:34](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/revolute-joint-config.ts#L34)
+Defined in: [constraint/joint/revolute-joint-config.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/revolute-joint-config.ts#L34)
 
 旋转弹簧阻尼器配置。
 旋转关节旋转运动的弹簧阻尼参数，默认初始化空实例（无弹性约束）；
@@ -222,7 +222,7 @@ Defined in: [constraint/joint/revolute-joint-config.ts:34](https://github.com/mr
 
 > **init**(`rigidBody1`, `rigidBody2`, `_worldAnchor`, `_worldAxis`): `RevoluteJointConfig`
 
-Defined in: [constraint/joint/revolute-joint-config.ts:56](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/joint/revolute-joint-config.ts#L56)
+Defined in: [constraint/joint/revolute-joint-config.ts:56](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/revolute-joint-config.ts#L56)
 
 初始化旋转关节配置。
 核心初始化逻辑：

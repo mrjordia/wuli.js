@@ -6,7 +6,7 @@
 
 # Class: ManifoldUpdater
 
-Defined in: [constraint/contact/manifold-updater.ts:13](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L13)
+Defined in: [constraint/contact/manifold-updater.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L13)
 
 碰撞流形更新器类。
 负责碰撞流形（Manifold）的全生命周期更新管理，包括接触点的添加、移除、位置/深度更新、热启动数据继承、
@@ -18,7 +18,7 @@ Defined in: [constraint/contact/manifold-updater.ts:13](https://github.com/mrjor
 
 > **new ManifoldUpdater**(`manifold`): `ManifoldUpdater`
 
-Defined in: [constraint/contact/manifold-updater.ts:39](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L39)
+Defined in: [constraint/contact/manifold-updater.ts:39](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L39)
 
 构造函数：初始化碰撞流形更新器。
 初始化时创建oldPoints数组的ManifoldPoint实例，避免运行时动态创建，优化内存性能
@@ -41,7 +41,7 @@ Defined in: [constraint/contact/manifold-updater.ts:39](https://github.com/mrjor
 
 > **\_manifold**: [`Manifold`](../../manifold/classes/Manifold.md)
 
-Defined in: [constraint/contact/manifold-updater.ts:18](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L18)
+Defined in: [constraint/contact/manifold-updater.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L18)
 
 待管理的碰撞流形实例。
 指向需要进行接触点更新的Manifold实例，所有操作均基于此实例完成
@@ -52,7 +52,7 @@ Defined in: [constraint/contact/manifold-updater.ts:18](https://github.com/mrjor
 
 > **numOldPoints**: `number` = `0`
 
-Defined in: [constraint/contact/manifold-updater.ts:25](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L25)
+Defined in: [constraint/contact/manifold-updater.ts:25](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L25)
 
 旧接触点的数量。
 在全量更新时，用于暂存更新前的有效接触点数量，辅助新旧接触点的数据继承
@@ -69,7 +69,7 @@ Defined in: [constraint/contact/manifold-updater.ts:25](https://github.com/mrjor
 
 > **oldPoints**: [`ManifoldPoint`](../../manifold-point/classes/ManifoldPoint.md)[]
 
-Defined in: [constraint/contact/manifold-updater.ts:32](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L32)
+Defined in: [constraint/contact/manifold-updater.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L32)
 
 旧接触点缓存数组。
 预分配固定长度的ManifoldPoint数组，长度与SETTING_MAX_MANIFOLD_POINTS一致，
@@ -81,7 +81,7 @@ Defined in: [constraint/contact/manifold-updater.ts:32](https://github.com/mrjor
 
 > **addManifoldPoint**(`point`, `_tf1`, `_tf2`): `void`
 
-Defined in: [constraint/contact/manifold-updater.ts:114](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L114)
+Defined in: [constraint/contact/manifold-updater.ts:114](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L114)
 
 向碰撞流形添加新的接触点。
 核心逻辑：
@@ -120,7 +120,7 @@ Defined in: [constraint/contact/manifold-updater.ts:114](https://github.com/mrjo
 
 > **computeRelativePositions**(`_tf1`, `_tf2`): `void`
 
-Defined in: [constraint/contact/manifold-updater.ts:287](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L287)
+Defined in: [constraint/contact/manifold-updater.ts:287](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L287)
 
 计算所有接触点的相对质心坐标。
 核心逻辑：
@@ -152,7 +152,7 @@ Defined in: [constraint/contact/manifold-updater.ts:287](https://github.com/mrjo
 
 > **computeTargetIndex**(`newPoint`, `_tf1`, `_tf2`): `number`
 
-Defined in: [constraint/contact/manifold-updater.ts:175](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L175)
+Defined in: [constraint/contact/manifold-updater.ts:175](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L175)
 
 计算最优替换的接触点索引（当接触点数量达上限时）。
 核心算法：
@@ -193,7 +193,7 @@ Defined in: [constraint/contact/manifold-updater.ts:175](https://github.com/mrjo
 
 > **findNearestContactPointIndex**(`target`, `_tf1`, `_tf2`): `number`
 
-Defined in: [constraint/contact/manifold-updater.ts:316](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L316)
+Defined in: [constraint/contact/manifold-updater.ts:316](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L316)
 
 查找与新检测点最近的现有接触点索引。
 匹配逻辑：
@@ -234,7 +234,7 @@ Defined in: [constraint/contact/manifold-updater.ts:316](https://github.com/mrjo
 
 > **incrementalUpdate**(`result`, `_tf1`, `_tf2`): `void`
 
-Defined in: [constraint/contact/manifold-updater.ts:430](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L430)
+Defined in: [constraint/contact/manifold-updater.ts:430](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L430)
 
 增量更新碰撞流形（复用现有接触点，仅更新/添加新点）。
 增量更新流程（适用于连续碰撞帧）：
@@ -276,7 +276,7 @@ Defined in: [constraint/contact/manifold-updater.ts:430](https://github.com/mrjo
 
 > **removeManifoldPoint**(`index`): `void`
 
-Defined in: [constraint/contact/manifold-updater.ts:80](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L80)
+Defined in: [constraint/contact/manifold-updater.ts:80](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L80)
 
 移除指定索引的接触点并重置数据。
 核心逻辑：
@@ -303,7 +303,7 @@ Defined in: [constraint/contact/manifold-updater.ts:80](https://github.com/mrjor
 
 > **removeOutdatedPoints**(): `void`
 
-Defined in: [constraint/contact/manifold-updater.ts:52](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L52)
+Defined in: [constraint/contact/manifold-updater.ts:52](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L52)
 
 移除过期/无效的接触点。
 根据接触点的位置和法向关系，判断接触点是否超出有效范围，移除不符合条件的接触点：
@@ -321,7 +321,7 @@ Defined in: [constraint/contact/manifold-updater.ts:52](https://github.com/mrjor
 
 > **totalUpdate**(`result`, `_tf1`, `_tf2`): `void`
 
-Defined in: [constraint/contact/manifold-updater.ts:353](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold-updater.ts#L353)
+Defined in: [constraint/contact/manifold-updater.ts:353](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold-updater.ts#L353)
 
 全量更新碰撞流形（替换所有接触点）。
 全量更新流程：

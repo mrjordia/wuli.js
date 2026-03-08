@@ -8,7 +8,7 @@
 
 > `const` **CONSTANT**: `object`
 
-Defined in: [constant.ts:177](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constant.ts#L177)
+Defined in: [constant.ts:177](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L177)
 
 物理引擎核心常量配置。
 包含物理引擎的所有全局配置参数、阈值、默认值，

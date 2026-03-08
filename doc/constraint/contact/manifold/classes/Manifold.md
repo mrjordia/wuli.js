@@ -6,7 +6,7 @@
 
 # Class: Manifold
 
-Defined in: [constraint/contact/manifold.ts:11](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold.ts#L11)
+Defined in: [constraint/contact/manifold.ts:11](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold.ts#L11)
 
 碰撞流形类。
 用于存储两个碰撞物体之间的完整接触信息，包括接触法向/切向/副法向基向量、所有接触点（ManifoldPoint）集合，
@@ -18,7 +18,7 @@ Defined in: [constraint/contact/manifold.ts:11](https://github.com/mrjordia/wuli
 
 > **new Manifold**(): `Manifold`
 
-Defined in: [constraint/contact/manifold.ts:48](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold.ts#L48)
+Defined in: [constraint/contact/manifold.ts:48](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold.ts#L48)
 
 构造函数：初始化接触点数组。
 创建Manifold实例时，自动初始化points数组，为每个元素创建ManifoldPoint实例，避免运行时动态创建
@@ -33,7 +33,7 @@ Defined in: [constraint/contact/manifold.ts:48](https://github.com/mrjordia/wuli
 
 > **binormal**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [constraint/contact/manifold.ts:28](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold.ts#L28)
+Defined in: [constraint/contact/manifold.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold.ts#L28)
 
 碰撞接触副法向向量（世界坐标系）。
 长度为3的浮点数组，格式 [x, y, z]，与法向、切向都垂直的副法向单位向量，构成接触基的第三个轴（法向×切向）
@@ -44,7 +44,7 @@ Defined in: [constraint/contact/manifold.ts:28](https://github.com/mrjordia/wuli
 
 > **normal**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [constraint/contact/manifold.ts:16](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold.ts#L16)
+Defined in: [constraint/contact/manifold.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold.ts#L16)
 
 碰撞接触法向向量（世界坐标系）。
 长度为3的浮点数组，格式 [x, y, z]，表示两个碰撞物体接触区域的主法向方向，单位向量，指向从物体2到物体1的方向
@@ -55,7 +55,7 @@ Defined in: [constraint/contact/manifold.ts:16](https://github.com/mrjordia/wuli
 
 > **numPoints**: `number` = `0`
 
-Defined in: [constraint/contact/manifold.ts:35](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold.ts#L35)
+Defined in: [constraint/contact/manifold.ts:35](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold.ts#L35)
 
 当前有效接触点数量。
 范围 0 ~ SETTING_MAX_MANIFOLD_POINTS，标识points数组中实际有效的接触点个数
@@ -72,7 +72,7 @@ Defined in: [constraint/contact/manifold.ts:35](https://github.com/mrjordia/wuli
 
 > **points**: [`ManifoldPoint`](../../manifold-point/classes/ManifoldPoint.md)[]
 
-Defined in: [constraint/contact/manifold.ts:42](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold.ts#L42)
+Defined in: [constraint/contact/manifold.ts:42](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold.ts#L42)
 
 碰撞接触点数组。
 预分配固定长度的ManifoldPoint数组，长度由CONSTANT.SETTING_MAX_MANIFOLD_POINTS指定，
@@ -84,7 +84,7 @@ Defined in: [constraint/contact/manifold.ts:42](https://github.com/mrjordia/wuli
 
 > **tangent**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [constraint/contact/manifold.ts:22](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold.ts#L22)
+Defined in: [constraint/contact/manifold.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold.ts#L22)
 
 碰撞接触切向向量（世界坐标系）。
 长度为3的浮点数组，格式 [x, y, z]，与法向垂直的切向单位向量，构成接触基的第二个轴
@@ -95,7 +95,7 @@ Defined in: [constraint/contact/manifold.ts:22](https://github.com/mrjordia/wuli
 
 > **buildBasis**(`_normal`): `void`
 
-Defined in: [constraint/contact/manifold.ts:90](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold.ts#L90)
+Defined in: [constraint/contact/manifold.ts:90](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold.ts#L90)
 
 基于输入法向构建接触基向量（法向、切向、副法向）。
 算法原理：
@@ -122,7 +122,7 @@ Defined in: [constraint/contact/manifold.ts:90](https://github.com/mrjordia/wuli
 
 > **clear**(): `void`
 
-Defined in: [constraint/contact/manifold.ts:59](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold.ts#L59)
+Defined in: [constraint/contact/manifold.ts:59](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold.ts#L59)
 
 清空碰撞流形的所有接触点数据。
 将所有有效接触点的坐标、深度、冲量、状态等数据重置为初始值，并将有效接触点数量置0，
@@ -138,7 +138,7 @@ Defined in: [constraint/contact/manifold.ts:59](https://github.com/mrjordia/wuli
 
 > **updateDepthsAndPositions**(`_tf1`, `_tf2`): `void`
 
-Defined in: [constraint/contact/manifold.ts:131](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/constraint/contact/manifold.ts#L131)
+Defined in: [constraint/contact/manifold.ts:131](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/manifold.ts#L131)
 
 更新所有接触点的穿透深度和世界坐标。
 核心逻辑：

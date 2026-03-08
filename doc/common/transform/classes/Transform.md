@@ -6,7 +6,7 @@
 
 # Class: Transform
 
-Defined in: [common/transform.ts:13](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/transform.ts#L13)
+Defined in: [common/transform.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/transform.ts#L13)
 
 3D空间变换核心类。
 物理引擎中描述刚体/几何形状空间姿态的核心类，核心作用：
@@ -25,7 +25,7 @@ Defined in: [common/transform.ts:13](https://github.com/mrjordia/wuli.js/blob/7d
 
 > **new Transform**(): `Transform`
 
-Defined in: [common/transform.ts:36](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/transform.ts#L36)
+Defined in: [common/transform.ts:36](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/transform.ts#L36)
 
 构造函数：初始化单位变换。
 核心初始化逻辑：
@@ -43,7 +43,7 @@ Defined in: [common/transform.ts:36](https://github.com/mrjordia/wuli.js/blob/7d
 
 > **elements**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [common/transform.ts:27](https://github.com/mrjordia/wuli.js/blob/7de21a82143fc3ac3a292a682132d8c92838c4a4/src/common/transform.ts#L27)
+Defined in: [common/transform.ts:27](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/transform.ts#L27)
 
 变换数据存储数组（双精度浮点）。
 固定长度12的Float64Array，内存布局严格定义：
