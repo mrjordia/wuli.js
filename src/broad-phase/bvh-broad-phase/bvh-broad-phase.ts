@@ -703,4 +703,4 @@ export default class BvhBroadPhase extends BroadPhase {
     }
 }
 
-export { BvhProxy };
+export { BvhBroadPhase };
