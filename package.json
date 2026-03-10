@@ -1,6 +1,6 @@
 {
   "name": "wuli.js",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "基于bullet的轻量TypeScript物理引擎",
   "type": "commonjs",
   "main": "dist/modules/index.cjs",
@@ -11,17 +11,19 @@
   "exports": {
     ".": {
       "types": "./dist/modules/index.d.ts",
-      "browser": "./dist/bundle/wuli.mjs",
+      "browser": "./dist/modules/index.mjs",
       "import": "./dist/modules/index.mjs",
       "require": "./dist/modules/index.cjs"
     },
-    "./*": {
+    "./modules/*": {
       "types": "./dist/modules/*.d.ts",
+      "browser": "./dist/modules/*.mjs",
       "import": "./dist/modules/*.mjs",
       "require": "./dist/modules/*.cjs"
     },
     "./bundle": {
       "types": "./dist/bundle/wuli.d.ts",
+      "browser": "./dist/bundle/wuli.mjs",
       "import": "./dist/bundle/wuli.mjs",
       "require": "./dist/bundle/wuli.cjs"
     }
