@@ -6,7 +6,7 @@
 
 # Class: Method
 
-Defined in: [common/method.ts:41](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L41)
+Defined in: [common/method.ts:41](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L41)
 
 物理引擎核心工具方法类。
 物理引擎的底层数值计算核心类，封装所有通用的高性能数值操作，核心定位：
@@ -35,7 +35,7 @@ Defined in: [common/method.ts:41](https://github.com/mrjordia/wuli.js/blob/bac1a
 
 > `static` **absArray**(`a`, `out`, `aStart?`, `outStart?`, `length?`, `fac?`): `Float64Array`
 
-Defined in: [common/method.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L54)
+Defined in: [common/method.ts:54](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L54)
 
 计算数组元素的绝对值并缩放。
 核心逻辑：遍历数组指定范围，先取元素绝对值，再乘以缩放因子后写入输出数组。
@@ -90,7 +90,7 @@ Defined in: [common/method.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1a
 
 > `static` **addArray**(`a`, `b`, `out`, `startA?`, `startB?`, `startOut?`, `length?`): `Float64Array`
 
-Defined in: [common/method.ts:74](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L74)
+Defined in: [common/method.ts:74](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L74)
 
 两个数组逐元素相加。
 核心逻辑：遍历指定长度，将a[i] + b[i]的结果写入out[i]，支持不同起始索引的数组片段相加。
@@ -151,7 +151,7 @@ Defined in: [common/method.ts:74](https://github.com/mrjordia/wuli.js/blob/bac1a
 
 > `static` **boxContainsBox**(`b0`, `b1`): `boolean`
 
-Defined in: [common/method.ts:105](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L105)
+Defined in: [common/method.ts:105](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L105)
 
 检测第一个AABB是否完全包含第二个AABB。
 核心逻辑：检测b1的所有边界是否都在b0的边界范围内，是则判定为包含。
@@ -182,7 +182,7 @@ Defined in: [common/method.ts:105](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **boxIntersectsBox**(`b0`, `b1`): `boolean`
 
-Defined in: [common/method.ts:92](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L92)
+Defined in: [common/method.ts:92](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L92)
 
 检测两个AABB包围盒是否相交（轴对齐检测）。
 核心逻辑：基于轴对齐包围盒的分离轴定理（SAT），检测三个轴向上是否存在重叠，全部重叠则相交。
@@ -213,7 +213,7 @@ Defined in: [common/method.ts:92](https://github.com/mrjordia/wuli.js/blob/bac1a
 
 > `static` **boxUnionBox**(`b1`, `b2`, `out`): `Float64Array`
 
-Defined in: [common/method.ts:119](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L119)
+Defined in: [common/method.ts:119](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L119)
 
 计算两个AABB的并集（包围两个AABB的最小AABB）。
 核心逻辑：取两个AABB的最小min值和最大max值，构成新的包围盒。
@@ -250,7 +250,7 @@ Defined in: [common/method.ts:119](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **combineMat3Vec3ToTransform**(`vec3`, `mat3`, `transform`): `void`
 
-Defined in: [common/method.ts:152](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L152)
+Defined in: [common/method.ts:152](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L152)
 
 将Vec3（位置）和Mat3（旋转/缩放）合并为Transform变换数组。
 核心逻辑：将位置向量写入变换数组前3位，3x3矩阵写入后9位，完成平移+旋转的变换整合。
@@ -285,7 +285,7 @@ Defined in: [common/method.ts:152](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **copyElements**(`src`, `dst`, `startSrc?`, `startDst?`, `length?`): `Float64Array`
 
-Defined in: [common/method.ts:170](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L170)
+Defined in: [common/method.ts:170](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L170)
 
 拷贝数组元素（支持指定起始索引和长度）。
 核心逻辑：遍历指定长度，将src[startSrc+i]的值直接赋值给dst[startDst+i]，支持数组片段拷贝。
@@ -334,7 +334,7 @@ Defined in: [common/method.ts:170](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **crossVectors**(`x0`, `y0`, `z0`, `x1`, `y1`, `z1`, `out`, `start?`): `Float64Array`
 
-Defined in: [common/method.ts:138](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L138)
+Defined in: [common/method.ts:138](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L138)
 
 计算两个三维向量的叉乘（向量积）。
 核心公式：叉乘结果 = (y0*z1 - z0*y1, z0*x1 - x0*z1, x0*y1 - y0*x1)，适配物理引擎中法向量、力矩计算场景。
@@ -401,7 +401,7 @@ Defined in: [common/method.ts:138](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **expandBoxByPoint**(`box`, `x`, `y`, `z`): `void`
 
-Defined in: [common/method.ts:239](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L239)
+Defined in: [common/method.ts:239](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L239)
 
 按指定点扩展AABB包围盒（仅扩展到包含该点）。
 核心逻辑：仅当点超出当前AABB范围时，调整对应min/max值，保证包围盒最小且包含该点。
@@ -442,7 +442,7 @@ AABB数组，结构[minX,minY,minZ,maxX,maxY,maxZ]
 
 > `static` **expandBoxByScale**(`box`, `scale`): `void`
 
-Defined in: [common/method.ts:226](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L226)
+Defined in: [common/method.ts:226](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L226)
 
 按指定缩放值扩展AABB包围盒（各方向同时扩展）。
 核心逻辑：min分量减去scale，max分量加上scale，实现包围盒各方向的均匀扩展/收缩。
@@ -471,7 +471,7 @@ AABB数组，结构[minX,minY,minZ,maxX,maxY,maxZ]
 
 > `static` **extractQuatFromTransform**(`transform`, `out`): `void`
 
-Defined in: [common/method.ts:186](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L186)
+Defined in: [common/method.ts:186](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L186)
 
 从Transform变换数组中提取四元数（旋转部分）。
 核心逻辑：从变换数组的3x3旋转矩阵部分，通过矩阵转四元数的标准算法提取旋转信息，忽略平移分量。
@@ -500,7 +500,7 @@ Defined in: [common/method.ts:186](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **fillValue**\<`T`, `E`\>(`tar`, `start`, `end`, `value`): `T`
 
-Defined in: [common/method.ts:257](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L257)
+Defined in: [common/method.ts:257](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L257)
 
 填充数组指定范围的元素为指定值。
 核心逻辑：遍历数组从start到end的索引，将所有元素赋值为指定value，超出数组长度则终止。
@@ -557,7 +557,7 @@ Defined in: [common/method.ts:257](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **inverseInertia**(`axisX`, `axisY`, `axisZ`, `rv`, `ra`, `invMass`, `mass`): `number`
 
-Defined in: [common/method.ts:277](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L277)
+Defined in: [common/method.ts:277](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L277)
 
 计算惯性张量的逆值（物理引擎中刚体旋转惯性计算）。
 核心逻辑：基于刚体的惯性轴、旋转速度和质量，计算旋转惯性的逆值，适配刚体旋转动力学求解。
@@ -618,7 +618,7 @@ Defined in: [common/method.ts:277](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **inverseRotateVec3**(`_v`, `_rot`): `void`
 
-Defined in: [common/method.ts:339](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L339)
+Defined in: [common/method.ts:339](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L339)
 
 对三维向量执行逆旋转变换。
 核心逻辑：通过旋转矩阵的转置（逆）对向量执行旋转变换，适配局部→世界空间的逆旋转。
@@ -647,7 +647,7 @@ Defined in: [common/method.ts:339](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **inverseTransformM3**(`tf`, `wb`, `out?`): `void`
 
-Defined in: [common/method.ts:300](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L300)
+Defined in: [common/method.ts:300](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L300)
 
 对3x3矩阵执行变换的逆操作（物理引擎中坐标空间转换）。
 核心逻辑：基于变换数组的旋转矩阵部分，对输入3x3矩阵执行逆变换，适配世界→局部空间的矩阵转换。
@@ -682,7 +682,7 @@ Defined in: [common/method.ts:300](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **inverseTransformVec3**(`_tf`, `vec3`, `op`, `out`, `vecStart?`, `outStart?`): `void`
 
-Defined in: [common/method.ts:357](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L357)
+Defined in: [common/method.ts:357](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L357)
 
 对三维向量执行逆变换（从世界空间转换到局部空间）。
 核心逻辑：先扣除平移分量（可选），再执行逆旋转变换，完成世界→局部空间的向量转换。
@@ -735,7 +735,7 @@ Defined in: [common/method.ts:357](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **isArray**(`obj`): `boolean`
 
-Defined in: [common/method.ts:321](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L321)
+Defined in: [common/method.ts:321](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L321)
 
 判断对象是否为数组（兼容Float64Array等类数组对象）。
 核心逻辑：先判断是否为对象类型，再通过Array.isArray或索引访问特性判定是否为数组/类数组。
@@ -760,7 +760,7 @@ Defined in: [common/method.ts:321](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **makeBasis**(`x0`, `y0`, `z0`, `x1`, `y1`, `z1`, `outElements`): `void`
 
-Defined in: [common/method.ts:501](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L501)
+Defined in: [common/method.ts:501](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L501)
 
 从两个轴向量创建正交基矩阵（归一化）。
 核心逻辑：通过叉乘生成正交轴，归一化后构建正交基矩阵，适配刚体局部坐标系创建场景。
@@ -819,7 +819,7 @@ Defined in: [common/method.ts:501](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **mat3ToQuat**(`m3`, `out`): `void`
 
-Defined in: [common/method.ts:407](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L407)
+Defined in: [common/method.ts:407](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L407)
 
 将3x3旋转矩阵转换为四元数。
 核心逻辑：基于矩阵的迹（对角线元素和）选择最优计算路径，将旋转矩阵转换为四元数，避免数值不稳定。
@@ -848,7 +848,7 @@ Defined in: [common/method.ts:407](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **mat3ToVec3**(`bs`, `out`): `void`
 
-Defined in: [common/method.ts:463](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L463)
+Defined in: [common/method.ts:463](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L463)
 
 将3x3旋转矩阵转换为欧拉角（弧度）。
 核心逻辑：从旋转矩阵中提取各轴旋转角度，处理边界情况（如万向锁），转换为欧拉角表示。
@@ -877,7 +877,7 @@ Defined in: [common/method.ts:463](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **multiplyArray**(`a`, `b`, `startA?`, `startB?`, `length?`, `out?`, `outStart?`): `number`
 
-Defined in: [common/method.ts:558](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L558)
+Defined in: [common/method.ts:558](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L558)
 
 两个数组逐元素相乘并返回累加和（点积计算）。
 核心逻辑：遍历数组计算a[i]*b[i]，可选写入输出数组，同时累加结果得到点积，适配向量点积、矩阵行×列计算。
@@ -938,7 +938,7 @@ Defined in: [common/method.ts:558](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **multiplyBasis**(`b0`, `b1`, `out`): `void`
 
-Defined in: [common/method.ts:533](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L533)
+Defined in: [common/method.ts:533](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L533)
 
 两个3x3矩阵相乘（b0 * b1）。
 核心逻辑：按矩阵乘法规则，计算行×列的点积，生成乘积矩阵，适配旋转矩阵复合运算。
@@ -973,7 +973,7 @@ Defined in: [common/method.ts:533](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **multiplyTransform**(`_src`, `_m`, `_dst`): `void`
 
-Defined in: [common/method.ts:380](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L380)
+Defined in: [common/method.ts:380](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L380)
 
 合并两个变换数组（src变换应用到m变换上）。
 核心逻辑：先计算旋转矩阵的乘积，再计算平移分量的变换，完成两个变换的复合运算。
@@ -1008,7 +1008,7 @@ Defined in: [common/method.ts:380](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **normalize**(`ary`, `start`, `length`, `scale?`): `void`
 
-Defined in: [common/method.ts:580](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L580)
+Defined in: [common/method.ts:580](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L580)
 
 归一化数组（向量）为单位长度。
 核心逻辑：先计算向量模长，再将每个元素除以模长（非零），得到单位向量，适配方向向量标准化。
@@ -1049,7 +1049,7 @@ Defined in: [common/method.ts:580](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **quatToMat3**(`x`, `y`, `z`, `w`, `out`): `void`
 
-Defined in: [common/method.ts:601](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L601)
+Defined in: [common/method.ts:601](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L601)
 
 将四元数转换为3x3旋转矩阵。
 核心逻辑：通过四元数转旋转矩阵的标准公式，将四元数的旋转信息转换为矩阵表示，适配旋转计算。
@@ -1096,7 +1096,7 @@ Defined in: [common/method.ts:601](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **rotateTransform**(`_tf`, `_rot`): `void`
 
-Defined in: [common/method.ts:624](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L624)
+Defined in: [common/method.ts:624](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L624)
 
 对变换数组执行旋转变换（更新旋转矩阵部分）。
 核心逻辑：将旋转矩阵与变换数组的现有旋转矩阵相乘，更新变换的旋转部分，平移部分保持不变。
@@ -1125,7 +1125,7 @@ Defined in: [common/method.ts:624](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **rotateVec3**(`_v`, `_rot`): `void`
 
-Defined in: [common/method.ts:652](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L652)
+Defined in: [common/method.ts:652](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L652)
 
 对三维向量执行旋转变换。
 核心逻辑：将向量与旋转矩阵相乘，完成向量的旋转变换，适配局部→世界空间的方向转换。
@@ -1154,7 +1154,7 @@ Defined in: [common/method.ts:652](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **rotateVecTo**(`x`, `y`, `z`, `rot`, `out`): `void`
 
-Defined in: [common/method.ts:669](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L669)
+Defined in: [common/method.ts:669](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L669)
 
 将向量按指定旋转矩阵旋转后输出。
 核心逻辑：与rotateVec3逻辑一致，区别为输入是独立分量，输出到新数组，不修改原数据。
@@ -1201,7 +1201,7 @@ Defined in: [common/method.ts:669](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **scaleArray**(`a`, `s`, `out`, `startA?`, `startOut?`, `length?`): `Float64Array`
 
-Defined in: [common/method.ts:877](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L877)
+Defined in: [common/method.ts:877](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L877)
 
 数组元素缩放（乘以指定因子）。
 核心逻辑：遍历数组指定范围，将每个元素乘以缩放因子后写入输出数组，适配向量缩放、矩阵缩放场景。
@@ -1256,7 +1256,7 @@ Defined in: [common/method.ts:877](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **setBox**(`x1`, `y1`, `z1`, `x2`, `y2`, `z2`, `out`): `void`
 
-Defined in: [common/method.ts:941](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L941)
+Defined in: [common/method.ts:941](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L941)
 
 创建AABB轴对齐包围盒（从两个对角点坐标）。
 AABB包围盒是轴对齐的，通过比较两个点的坐标得到最小/最大值
@@ -1319,7 +1319,7 @@ AABB包围盒是轴对齐的，通过比较两个点的坐标得到最小/最大
 
 > `static` **setElements**\<`T`, `E`\>(`ele`, `start`, ...`es`): `T`
 
-Defined in: [common/method.ts:714](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L714)
+Defined in: [common/method.ts:714](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L714)
 
 批量设置数组元素值。
 核心逻辑：从start索引开始，依次将es中的值赋值给数组元素，适配多元素快速赋值场景。
@@ -1370,7 +1370,7 @@ Defined in: [common/method.ts:714](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **setIncidentVertex**(`obj`, `x`, `y`, `wx`, `wy`, `wz`, `start?`): `void`
 
-Defined in: [common/method.ts:732](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L732)
+Defined in: [common/method.ts:732](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L732)
 
 设置入射顶点数据（碰撞检测专用）。
 核心逻辑：按「坐标+法向量」的结构批量设置顶点数据，适配碰撞检测中入射顶点的存储。
@@ -1429,7 +1429,7 @@ Defined in: [common/method.ts:732](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **setJacobian**(`basisX`, `basisY`, `basisZ`, `vec1Elements`, `vec2Elements`, `outElements`): `void`
 
-Defined in: [common/method.ts:825](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L825)
+Defined in: [common/method.ts:825](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L825)
 
 设置雅可比矩阵（约束求解专用）。
 核心逻辑：基于约束基向量和刚体位置向量，构建雅可比矩阵，适配物理引擎的约束求解（如接触约束、关节约束）。
@@ -1482,7 +1482,7 @@ Defined in: [common/method.ts:825](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **setJacobianElements**(`jab`, `l1x`, `l1y`, `l1z`, `l2x`, `l2y`, `l2z`, `a1x`, `a1y`, `a1z`, `a2x`, `a2y`, `a2z`): `void`
 
-Defined in: [common/method.ts:858](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L858)
+Defined in: [common/method.ts:858](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L858)
 
 批量设置雅可比矩阵元素（约束求解专用）。
 核心逻辑：按「线性项+角向项」的结构，批量赋值雅可比矩阵的12个元素，适配约束求解的矩阵初始化。
@@ -1577,7 +1577,7 @@ Defined in: [common/method.ts:858](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **setM3X3**(`obj`, `e00`, `e01`, `e02`, `e10`, `e11`, `e12`, `e20`, `e21`, `e22`, `start?`): `void`
 
-Defined in: [common/method.ts:755](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L755)
+Defined in: [common/method.ts:755](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L755)
 
 设置3x3矩阵元素（行优先）。
 核心逻辑：按行优先顺序，将9个矩阵元素批量赋值到数组指定位置，适配矩阵快速初始化。
@@ -1660,7 +1660,7 @@ Defined in: [common/method.ts:755](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **setRotFromTwoVec3**(`axis1X`, `axis1Y`, `axis1Z`, `axis2X`, `axis2Y`, `axis2Z`, `outQuat`, `outMat3`): `void`
 
-Defined in: [common/method.ts:900](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L900)
+Defined in: [common/method.ts:900](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L900)
 
 从两个三维向量计算旋转（输出四元数和3x3旋转矩阵）。
 算法原理：通过向量点积计算夹角，叉积计算旋转轴，处理共线特殊情况
@@ -1729,7 +1729,7 @@ Defined in: [common/method.ts:900](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **setTransformOrientation**(`_tf`, `_quat`): `void`
 
-Defined in: [common/method.ts:780](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L780)
+Defined in: [common/method.ts:780](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L780)
 
 设置变换数组的朝向（从四元数转换为旋转矩阵）。
 核心逻辑：先将四元数转换为旋转矩阵（复用全局临时数组tf0），再赋值到变换数组的旋转部分。
@@ -1758,7 +1758,7 @@ Defined in: [common/method.ts:780](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **setTransformRotation**(`tf`, `rt`): `void`
 
-Defined in: [common/method.ts:767](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L767)
+Defined in: [common/method.ts:767](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L767)
 
 设置变换数组的旋转部分（替换3x3矩阵）。
 核心逻辑：将旋转矩阵直接赋值到变换数组的3-11索引位，替换原有旋转信息，平移部分保持不变。
@@ -1787,7 +1787,7 @@ Defined in: [common/method.ts:767](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **setXYZ**(`obj`, `x`, `y`, `z`): `object`
 
-Defined in: [common/method.ts:686](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L686)
+Defined in: [common/method.ts:686](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L686)
 
 设置对象的x/y/z属性。
 核心逻辑：直接赋值对象的x/y/z属性，返回原对象，适配向量对象的属性快速设置。
@@ -1852,7 +1852,7 @@ z值
 
 > `static` **setXYZW**(`obj`, `x`, `y`, `z`, `w`): `void`
 
-Defined in: [common/method.ts:700](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L700)
+Defined in: [common/method.ts:700](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L700)
 
 设置对象的x/y/z/w属性（适配四元数对象）。
 核心逻辑：直接赋值对象的x/y/z/w属性，适配四元数对象的属性快速设置。
@@ -1913,7 +1913,7 @@ w值
 
 > `static` **subArray**(`a`, `b`, `out`, `startA?`, `startB?`, `startOut?`, `length?`): `Float64Array`
 
-Defined in: [common/method.ts:807](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L807)
+Defined in: [common/method.ts:807](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L807)
 
 两个数组逐元素相减。
 核心逻辑：遍历指定长度，将a[i] - b[i]的结果写入out[i]，支持不同起始索引的数组片段相减。
@@ -1974,7 +1974,7 @@ Defined in: [common/method.ts:807](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **transformM3**(`tf`, `lb`, `out`): `void`
 
-Defined in: [common/method.ts:1014](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L1014)
+Defined in: [common/method.ts:1014](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L1014)
 
 对3x3矩阵执行旋转变换操作（矩阵乘法）。
 算法：使用变换数组中的旋转部分（后9个元素）与输入矩阵进行矩阵乘法
@@ -2013,7 +2013,7 @@ Defined in: [common/method.ts:1014](https://github.com/mrjordia/wuli.js/blob/bac
 
 > `static` **transformVec3**(`_tf`, `vec3`, `op?`, `out`, `vecStart?`, `outStart?`): `void`
 
-Defined in: [common/method.ts:973](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L973)
+Defined in: [common/method.ts:973](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L973)
 
 对三维向量执行空间变换（从局部空间转换到世界空间）。
 变换公式：
@@ -2078,7 +2078,7 @@ Defined in: [common/method.ts:973](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `static` **transposeM33**(`src`, `dst`): `Float64Array`
 
-Defined in: [common/method.ts:1045](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L1045)
+Defined in: [common/method.ts:1045](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L1045)
 
 3x3矩阵转置（行优先转列优先）。
 矩阵转置：将矩阵的行和列互换，M[i][j] = M[j][i]
@@ -2113,7 +2113,7 @@ Defined in: [common/method.ts:1045](https://github.com/mrjordia/wuli.js/blob/bac
 
 > `static` **vecToQuat**(`x`, `y`, `z`, `out`): `void`
 
-Defined in: [common/method.ts:1074](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L1074)
+Defined in: [common/method.ts:1074](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L1074)
 
 将三维向量转换为四元数（用于表示旋转轴，无旋转角度）。
 算法原理：找到与输入向量垂直的向量作为旋转轴，用于处理180度旋转的特殊情况

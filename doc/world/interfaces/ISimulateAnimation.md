@@ -6,7 +6,7 @@
 
 # Interface: ISimulateAnimation
 
-Defined in: [world.ts:29](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L29)
+Defined in: [world.ts:29](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L29)
 
 模拟动画控制器接口。
 物理世界的动画循环控制器，用于驱动物理步进的定时执行；
@@ -18,7 +18,7 @@ Defined in: [world.ts:29](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **callback**: () => `void`
 
-Defined in: [world.ts:31](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L31)
+Defined in: [world.ts:31](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L31)
 
 每次动画帧触发的回调（绑定物理世界step方法）
 
@@ -32,7 +32,7 @@ Defined in: [world.ts:31](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **start**: () => `void`
 
-Defined in: [world.ts:33](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L33)
+Defined in: [world.ts:33](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L33)
 
 启动动画循环
 
@@ -46,7 +46,7 @@ Defined in: [world.ts:33](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **stop**: () => `void`
 
-Defined in: [world.ts:35](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L35)
+Defined in: [world.ts:35](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L35)
 
 停止动画循环
 

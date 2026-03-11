@@ -6,7 +6,7 @@
 
 # Class: ConvexCastWrapper
 
-Defined in: [common/convex-cast-wrapper.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/convex-cast-wrapper.ts#L16)
+Defined in: [common/convex-cast-wrapper.ts:16](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/convex-cast-wrapper.ts#L16)
 
 凸体扫略检测回调包装类。
 宽相位碰撞检测中，用于执行凸几何体的扫略检测（模拟凸体沿指定路径移动的碰撞检测），
@@ -36,7 +36,7 @@ Defined in: [common/convex-cast-wrapper.ts:16](https://github.com/mrjordia/wuli.
 
 > **begin**: [`Transform`](../../transform/classes/Transform.md)
 
-Defined in: [common/convex-cast-wrapper.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/convex-cast-wrapper.ts#L28)
+Defined in: [common/convex-cast-wrapper.ts:28](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/convex-cast-wrapper.ts#L28)
 
 凸体初始变换（位置+旋转）。
 待扫略的凸体的起始变换矩阵，定义扫略的初始位置和朝向。
@@ -47,7 +47,7 @@ Defined in: [common/convex-cast-wrapper.ts:28](https://github.com/mrjordia/wuli.
 
 > `optional` **callback**: [`RayCastCallback`](../../ray-cast-callback/classes/RayCastCallback.md)
 
-Defined in: [common/convex-cast-wrapper.ts:47](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/convex-cast-wrapper.ts#L47)
+Defined in: [common/convex-cast-wrapper.ts:47](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/convex-cast-wrapper.ts#L47)
 
 扫略检测命中后的自定义回调。
 检测到凸体相交时触发，用于处理命中逻辑（如停止移动、播放碰撞效果）；
@@ -59,7 +59,7 @@ Defined in: [common/convex-cast-wrapper.ts:47](https://github.com/mrjordia/wuli.
 
 > `optional` **convex**: [`ConvexGeometry`](../../../shape/convex-geometry/classes/ConvexGeometry.md)
 
-Defined in: [common/convex-cast-wrapper.ts:53](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/convex-cast-wrapper.ts#L53)
+Defined in: [common/convex-cast-wrapper.ts:53](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/convex-cast-wrapper.ts#L53)
 
 待扫略的凸几何体（必选）。
 需检测的凸体（如球体、胶囊体、凸包），检测前必须赋值，否则会触发空值错误。
@@ -70,7 +70,7 @@ Defined in: [common/convex-cast-wrapper.ts:53](https://github.com/mrjordia/wuli.
 
 > **rayCastHit**: [`RayCastHit`](../../../shape/ray-cast-hit/classes/RayCastHit.md)
 
-Defined in: [common/convex-cast-wrapper.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/convex-cast-wrapper.ts#L22)
+Defined in: [common/convex-cast-wrapper.ts:22](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/convex-cast-wrapper.ts#L22)
 
 凸体扫略检测的命中结果。
 存储扫略检测的相交点、法向量、命中比例等核心结果；
@@ -82,7 +82,7 @@ Defined in: [common/convex-cast-wrapper.ts:22](https://github.com/mrjordia/wuli.
 
 > **translation**: [`Vec3`](../../vec3/classes/Vec3.md)
 
-Defined in: [common/convex-cast-wrapper.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/convex-cast-wrapper.ts#L34)
+Defined in: [common/convex-cast-wrapper.ts:34](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/convex-cast-wrapper.ts#L34)
 
 凸体扫略的平移向量。
 凸体沿该向量方向移动（扫略路径），决定扫略的方向和距离。
@@ -93,7 +93,7 @@ Defined in: [common/convex-cast-wrapper.ts:34](https://github.com/mrjordia/wuli.
 
 > **zero**: [`Vec3`](../../vec3/classes/Vec3.md)
 
-Defined in: [common/convex-cast-wrapper.ts:40](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/convex-cast-wrapper.ts#L40)
+Defined in: [common/convex-cast-wrapper.ts:40](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/convex-cast-wrapper.ts#L40)
 
 零向量（优化性能，避免重复创建）。
 固定为(0,0,0)的向量，作为GJK-EPA算法的默认入参，减少内存分配。
@@ -104,7 +104,7 @@ Defined in: [common/convex-cast-wrapper.ts:40](https://github.com/mrjordia/wuli.
 
 > **process**(`proxy`): `void`
 
-Defined in: [common/convex-cast-wrapper.ts:65](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/convex-cast-wrapper.ts#L65)
+Defined in: [common/convex-cast-wrapper.ts:65](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/convex-cast-wrapper.ts#L65)
 
 处理单个物理代理的凸体扫略检测。
 核心逻辑：

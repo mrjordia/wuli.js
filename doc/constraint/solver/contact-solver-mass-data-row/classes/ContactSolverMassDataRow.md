@@ -6,7 +6,7 @@
 
 # Class: ContactSolverMassDataRow
 
-Defined in: [constraint/solver/contact-solver-mass-data-row.ts:7](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/contact-solver-mass-data-row.ts#L7)
+Defined in: [constraint/solver/contact-solver-mass-data-row.ts:7](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/contact-solver-mass-data-row.ts#L7)
 
 接触约束求解质量数据行类。
 物理引擎中接触约束求解的核心质量数据存储结构，
@@ -29,7 +29,7 @@ Defined in: [constraint/solver/contact-solver-mass-data-row.ts:7](https://github
 
 > **elements**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [constraint/solver/contact-solver-mass-data-row.ts:31](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/contact-solver-mass-data-row.ts#L31)
+Defined in: [constraint/solver/contact-solver-mass-data-row.ts:31](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/contact-solver-mass-data-row.ts#L31)
 
 接触求解质量数据的原始数组。
 64位高精度浮点数组，存储三个方向的逆质量/转动惯量分量、有效质量和切向质量矩阵，

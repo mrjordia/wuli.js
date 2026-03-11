@@ -6,7 +6,7 @@
 
 # Class: PgsJointConstraintSolver
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L21)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L21)
 
 PGS（Projected Gauss-Seidel）关节约束求解器。
 物理引擎中基于PGS迭代算法的关节约束核心求解类，核心作用：
@@ -30,7 +30,7 @@ PGS（Projected Gauss-Seidel）关节约束求解器。
 
 > **new PgsJointConstraintSolver**(`joint`): `PgsJointConstraintSolver`
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:60](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L60)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:60](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L60)
 
 构造函数：初始化PGS关节约束求解器。
 核心初始化逻辑：
@@ -61,7 +61,7 @@ Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:60](https://github
 
 > **addedToIsland**: `boolean` = `false`
 
-Defined in: [constraint/solver/constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L21)
+Defined in: [constraint/solver/constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/constraint-solver.ts#L21)
 
 是否已加入求解岛标记。
 用于物理引擎的岛屿法（Island Method）优化：标记约束是否已被加入当前求解岛，
@@ -83,7 +83,7 @@ false
 
 > **info**: [`JointSolverInfo`](../../../joint/joint-solver-info/classes/JointSolverInfo.md)
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:39](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L39)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:39](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L39)
 
 关节求解器信息容器。
 存储约束求解的核心参数集合，核心作用：
@@ -98,7 +98,7 @@ Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:39](https://github
 
 > **joint**: [`Joint`](../../../joint/joint/classes/Joint.md)
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:29](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L29)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:29](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L29)
 
 当前求解的关节实例。
 绑定的目标关节对象，是约束求解的核心操作载体：
@@ -112,7 +112,7 @@ Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:29](https://github
 
 > **massData**: [`JointSolverMassDataRow`](../../../joint/joint-solver-mass-data-row/classes/JointSolverMassDataRow.md)[]
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:49](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L49)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:49](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L49)
 
 约束行质量数据数组。
 每个元素对应一行约束的质量矩阵衍生计算结果，核心作用：
@@ -127,7 +127,7 @@ Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:49](https://github
 
 > **postSolve**(): `void`
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:697](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L697)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:697](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L697)
 
 约束求解后置处理。
 整个约束求解流程的最终收尾逻辑，核心作用：
@@ -152,7 +152,7 @@ Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:697](https://githu
 
 > **postSolveVelocity**(`timeStep`): `void`
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:288](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L288)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:288](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L288)
 
 速度求解后置处理。
 速度求解完成后的收尾逻辑，核心作用：
@@ -186,7 +186,7 @@ Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:288](https://githu
 
 > **preSolvePosition**(`timeStep`): `void`
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:321](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L321)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:321](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L321)
 
 位置求解前置处理。
 位置求解阶段的前置初始化逻辑，核心作用：
@@ -222,7 +222,7 @@ Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:321](https://githu
 
 > **preSolveVelocity**(`timeStep`): `void`
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:80](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L80)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:80](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L80)
 
 速度求解前置处理。
 速度求解阶段的前置初始化逻辑，核心作用：
@@ -257,7 +257,7 @@ Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:80](https://github
 
 > **solvePositionNgs**(`timeStep`): `void`
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:431](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L431)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:431](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L431)
 
 NGS（Normalized Gauss-Seidel）位置求解。
 直接修正刚体位置/旋转的NGS位置求解算法，核心作用：
@@ -296,7 +296,7 @@ NGS（Normalized Gauss-Seidel）位置求解。
 
 > **solvePositionSplitImpulse**(): `void`
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:375](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L375)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:375](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L375)
 
 分离冲量位置求解。
 基于分离冲量（Split Impulse）的位置修正算法，核心作用：
@@ -323,7 +323,7 @@ Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:375](https://githu
 
 > **solveVelocity**(): `void`
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:200](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L200)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:200](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L200)
 
 速度约束核心求解。
 PGS算法的核心实现，分两阶段完成速度约束求解：
@@ -353,7 +353,7 @@ PGS算法的核心实现，分两阶段完成速度约束求解：
 
 > **warmStart**(`timeStep`): `void`
 
-Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:144](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/pgs-joint-constraint-solver.ts#L144)
+Defined in: [constraint/solver/pgs-joint-constraint-solver.ts:144](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/pgs-joint-constraint-solver.ts#L144)
 
 约束求解热启动。
 PGS算法的核心优化手段，核心作用：

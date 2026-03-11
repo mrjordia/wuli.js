@@ -6,7 +6,7 @@
 
 # Class: JointSolverInfo
 
-Defined in: [constraint/joint/joint-solver-info.ts:11](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info.ts#L11)
+Defined in: [constraint/joint/joint-solver-info.ts:11](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info.ts#L11)
 
 关节求解器核心信息容器类。
 物理引擎中关节约束求解的顶层数据容器，集中管理关节关联的刚体、约束行数量及所有单行约束信息，
@@ -18,7 +18,7 @@ Defined in: [constraint/joint/joint-solver-info.ts:11](https://github.com/mrjord
 
 > **new JointSolverInfo**(): `JointSolverInfo`
 
-Defined in: [constraint/joint/joint-solver-info.ts:48](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info.ts#L48)
+Defined in: [constraint/joint/joint-solver-info.ts:48](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info.ts#L48)
 
 构造函数：初始化关节求解器信息容器。
 核心初始化逻辑：
@@ -36,7 +36,7 @@ Defined in: [constraint/joint/joint-solver-info.ts:48](https://github.com/mrjord
 
 > **numRows**: `number` = `0`
 
-Defined in: [constraint/joint/joint-solver-info.ts:31](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info.ts#L31)
+Defined in: [constraint/joint/joint-solver-info.ts:31](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info.ts#L31)
 
 有效约束行数量。
 当前关节实际生效的约束行总数，默认值0；
@@ -48,7 +48,7 @@ Defined in: [constraint/joint/joint-solver-info.ts:31](https://github.com/mrjord
 
 > **rigidBody1**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`RigidBody`](../../../../rigid-body/rigid-body/classes/RigidBody.md)\>
 
-Defined in: [constraint/joint/joint-solver-info.ts:17](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info.ts#L17)
+Defined in: [constraint/joint/joint-solver-info.ts:17](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info.ts#L17)
 
 关节关联的第一个刚体。
 关节约束的第一个目标刚体，可为null（如关节仅关联单个刚体/世界）；
@@ -60,7 +60,7 @@ Defined in: [constraint/joint/joint-solver-info.ts:17](https://github.com/mrjord
 
 > **rigidBody2**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`RigidBody`](../../../../rigid-body/rigid-body/classes/RigidBody.md)\>
 
-Defined in: [constraint/joint/joint-solver-info.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info.ts#L24)
+Defined in: [constraint/joint/joint-solver-info.ts:24](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info.ts#L24)
 
 关节关联的第二个刚体。
 关节约束的第二个目标刚体，可为null（如关节关联静态刚体/世界）；
@@ -72,7 +72,7 @@ Defined in: [constraint/joint/joint-solver-info.ts:24](https://github.com/mrjord
 
 > **rows**: [`JointSolverInfoRow`](../../joint-solver-info-row/classes/JointSolverInfoRow.md)[]
 
-Defined in: [constraint/joint/joint-solver-info.ts:39](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info.ts#L39)
+Defined in: [constraint/joint/joint-solver-info.ts:39](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info.ts#L39)
 
 约束行信息数组。
 预分配的约束行信息数组，长度由CONSTANT.SETTING_MAX_JACOBIAN_ROWS指定；

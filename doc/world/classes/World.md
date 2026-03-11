@@ -6,7 +6,7 @@
 
 # Class: World
 
-Defined in: [world.ts:63](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L63)
+Defined in: [world.ts:63](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L63)
 
 物理引擎核心世界类。
 物理引擎的顶层管理类，负责：
@@ -21,7 +21,7 @@ Defined in: [world.ts:63](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **new World**(`optional`): `World`
 
-Defined in: [world.ts:115](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L115)
+Defined in: [world.ts:115](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L115)
 
 构造函数：初始化物理世界。
 核心初始化流程：
@@ -47,7 +47,7 @@ Defined in: [world.ts:115](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd
 
 > **afterCall**: [`Nullable`](../../common/nullable/type-aliases/Nullable.md)\<() => `void`\>
 
-Defined in: [world.ts:79](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L79)
+Defined in: [world.ts:79](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L79)
 
 物理步进后置回调（step执行后触发）
 
@@ -57,7 +57,7 @@ Defined in: [world.ts:79](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **beforeCall**: [`Nullable`](../../common/nullable/type-aliases/Nullable.md)\<() => `void`\>
 
-Defined in: [world.ts:77](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L77)
+Defined in: [world.ts:77](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L77)
 
 物理步进前置回调（step执行前触发）
 
@@ -67,7 +67,7 @@ Defined in: [world.ts:77](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > `readonly` **broadPhase**: [`BroadPhase`](../../broad-phase/broad-phase/classes/BroadPhase.md)
 
-Defined in: [world.ts:65](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L65)
+Defined in: [world.ts:65](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L65)
 
 宽相位检测实例（BVH/暴力检测二选一），只读
 
@@ -77,7 +77,7 @@ Defined in: [world.ts:65](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > `readonly` **contactManager**: [`ContactManager`](../../constraint/contact/contact-manager/classes/ContactManager.md)
 
-Defined in: [world.ts:67](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L67)
+Defined in: [world.ts:67](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L67)
 
 接触管理器，负责形状间接触的检测与管理，只读
 
@@ -87,7 +87,7 @@ Defined in: [world.ts:67](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **gravity**: [`Vec3`](../../common/vec3/classes/Vec3.md)
 
-Defined in: [world.ts:81](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L81)
+Defined in: [world.ts:81](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L81)
 
 世界重力向量（默认(0, -9.8, 0)）
 
@@ -97,7 +97,7 @@ Defined in: [world.ts:81](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **interval**: `number`
 
-Defined in: [world.ts:83](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L83)
+Defined in: [world.ts:83](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L83)
 
 物理步进间隔（秒），默认0.01666
 
@@ -107,7 +107,7 @@ Defined in: [world.ts:83](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **numPositionIterations**: `number` = `5`
 
-Defined in: [world.ts:73](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L73)
+Defined in: [world.ts:73](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L73)
 
 位置求解迭代次数（默认5次）
 
@@ -117,7 +117,7 @@ Defined in: [world.ts:73](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **numShapes**: `number` = `0`
 
-Defined in: [world.ts:69](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L69)
+Defined in: [world.ts:69](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L69)
 
 世界内形状总数
 
@@ -127,7 +127,7 @@ Defined in: [world.ts:69](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **numVelocityIterations**: `number` = `10`
 
-Defined in: [world.ts:75](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L75)
+Defined in: [world.ts:75](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L75)
 
 速度求解迭代次数（默认10次）
 
@@ -137,7 +137,7 @@ Defined in: [world.ts:75](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > `readonly` `optional` **performance**: [`InfoDisplay`](../../common/info-display/classes/InfoDisplay.md)
 
-Defined in: [world.ts:85](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L85)
+Defined in: [world.ts:85](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L85)
 
 性能监控实例（可选，由stats配置项控制创建），只读
 
@@ -147,7 +147,7 @@ Defined in: [world.ts:85](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **shapeIdCount**: `number` = `0`
 
-Defined in: [world.ts:71](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L71)
+Defined in: [world.ts:71](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L71)
 
 形状ID计数器（用于生成唯一形状ID）
 
@@ -159,7 +159,7 @@ Defined in: [world.ts:71](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd6
 
 > **get** **numIslands**(): `number`
 
-Defined in: [world.ts:575](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L575)
+Defined in: [world.ts:575](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L575)
 
 获取当前岛屿数量
 
@@ -177,7 +177,7 @@ Defined in: [world.ts:575](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd
 
 > **get** **numJoints**(): `number`
 
-Defined in: [world.ts:567](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L567)
+Defined in: [world.ts:567](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L567)
 
 获取世界内关节数量
 
@@ -195,7 +195,7 @@ Defined in: [world.ts:567](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd
 
 > **get** **numRigidBodies**(): `number`
 
-Defined in: [world.ts:559](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L559)
+Defined in: [world.ts:559](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L559)
 
 获取世界内刚体数量
 
@@ -213,7 +213,7 @@ Defined in: [world.ts:559](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd
 
 > **set** **simulate**(`state`): `void`
 
-Defined in: [world.ts:150](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L150)
+Defined in: [world.ts:150](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L150)
 
 物理模拟状态设置器。
 控制物理模拟的启动/停止/单次执行：
@@ -240,7 +240,7 @@ Defined in: [world.ts:150](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd
 
 > **aabbTest**(`aabb`, `callback`): `void`
 
-Defined in: [world.ts:549](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L549)
+Defined in: [world.ts:549](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L549)
 
 AABB检测（检测与指定AABB相交的形状）。
 配置AABB检测包装器，调用宽相位AABB检测。
@@ -269,7 +269,7 @@ AABB检测（检测与指定AABB相交的形状）。
 
 > **addJoint**(`joint`): `void`
 
-Defined in: [world.ts:386](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L386)
+Defined in: [world.ts:386](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L386)
 
 添加关节到物理世界。
 核心逻辑：
@@ -300,7 +300,7 @@ Defined in: [world.ts:386](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd
 
 > **addRigidBody**(`rigidBody`): `void`
 
-Defined in: [world.ts:212](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L212)
+Defined in: [world.ts:212](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L212)
 
 添加刚体到物理世界。
 核心逻辑：
@@ -331,7 +331,7 @@ Defined in: [world.ts:212](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd
 
 > **convexCast**(`convex`, `begin`, `translation`, `callback`): `void`
 
-Defined in: [world.ts:535](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L535)
+Defined in: [world.ts:535](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L535)
 
 凸体投射（凸几何体沿指定方向投射检测）。
 配置凸体投射包装器，调用宽相位凸体投射检测。
@@ -372,7 +372,7 @@ Defined in: [world.ts:535](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd
 
 > **rayCast**(`_begin`, `_end`, `callback?`): `void`
 
-Defined in: [world.ts:515](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L515)
+Defined in: [world.ts:515](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L515)
 
 射线检测（宽相位筛选+高精度检测）。
 核心流程：
@@ -430,7 +430,7 @@ Defined in: [world.ts:515](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd
 
 > **removeJoint**(`joint`): `void`
 
-Defined in: [world.ts:439](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L439)
+Defined in: [world.ts:439](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L439)
 
 从物理世界移除关节。
 核心逻辑：
@@ -461,7 +461,7 @@ Defined in: [world.ts:439](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd
 
 > **removeRigidBody**(`rigidBody`): `void`
 
-Defined in: [world.ts:246](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L246)
+Defined in: [world.ts:246](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L246)
 
 从物理世界移除刚体。
 核心逻辑：
@@ -492,7 +492,7 @@ Defined in: [world.ts:246](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd
 
 > **step**(`timeStep?`): `void`
 
-Defined in: [world.ts:180](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/world.ts#L180)
+Defined in: [world.ts:180](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/world.ts#L180)
 
 物理步进（核心单帧物理求解逻辑）。
 核心流程：

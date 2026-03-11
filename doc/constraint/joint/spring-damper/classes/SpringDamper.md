@@ -6,7 +6,7 @@
 
 # Class: SpringDamper
 
-Defined in: [constraint/joint/spring-damper.ts:6](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/spring-damper.ts#L6)
+Defined in: [constraint/joint/spring-damper.ts:6](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/spring-damper.ts#L6)
 
 弹簧阻尼器配置类。
 物理引擎中弹簧阻尼器的核心参数配置容器，定义弹簧的振动频率、阻尼系数及数值积分方式，
@@ -28,7 +28,7 @@ Defined in: [constraint/joint/spring-damper.ts:6](https://github.com/mrjordia/wu
 
 > **dampingRatio**: `number` = `0`
 
-Defined in: [constraint/joint/spring-damper.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/spring-damper.ts#L22)
+Defined in: [constraint/joint/spring-damper.ts:22](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/spring-damper.ts#L22)
 
 阻尼比。
 弹簧的阻尼系数（无量纲），默认值0；取值范围及效果：
@@ -43,7 +43,7 @@ Defined in: [constraint/joint/spring-damper.ts:22](https://github.com/mrjordia/w
 
 > **frequency**: `number` = `0`
 
-Defined in: [constraint/joint/spring-damper.ts:12](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/spring-damper.ts#L12)
+Defined in: [constraint/joint/spring-damper.ts:12](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/spring-damper.ts#L12)
 
 弹簧固有频率（Hz）。
 弹簧的振动频率，默认值0；值越大弹簧越“硬”（振动越快、恢复力越强），值为0时禁用弹簧效果，
@@ -55,7 +55,7 @@ Defined in: [constraint/joint/spring-damper.ts:12](https://github.com/mrjordia/w
 
 > **useSymplecticEuler**: `boolean` = `false`
 
-Defined in: [constraint/joint/spring-damper.ts:29](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/spring-damper.ts#L29)
+Defined in: [constraint/joint/spring-damper.ts:29](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/spring-damper.ts#L29)
 
 是否使用辛欧拉积分法。
 数值积分方式开关，默认值false；启用辛欧拉（Symplectic Euler）积分可提升弹簧阻尼系统的能量守恒特性，
@@ -67,7 +67,7 @@ Defined in: [constraint/joint/spring-damper.ts:29](https://github.com/mrjordia/w
 
 > **clone**(): `SpringDamper`
 
-Defined in: [constraint/joint/spring-damper.ts:37](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/spring-damper.ts#L37)
+Defined in: [constraint/joint/spring-damper.ts:37](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/spring-damper.ts#L37)
 
 克隆当前弹簧阻尼器配置。
 深度克隆（值类型拷贝）当前配置的所有参数，返回独立的新实例，

@@ -6,7 +6,7 @@
 
 # Class: FaceClipper
 
-Defined in: [collision-detector/box-box-detector/face-clipper.ts:12](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/face-clipper.ts#L12)
+Defined in: [collision-detector/box-box-detector/face-clipper.ts:12](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/face-clipper.ts#L12)
 
 面裁剪器核心类。
 物理引擎中入射顶点集合的矩形边界裁剪与顶点简化工具类；
@@ -21,7 +21,7 @@ Defined in: [collision-detector/box-box-detector/face-clipper.ts:12](https://git
 
 > **new FaceClipper**(): `FaceClipper`
 
-Defined in: [collision-detector/box-box-detector/face-clipper.ts:62](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/face-clipper.ts#L62)
+Defined in: [collision-detector/box-box-detector/face-clipper.ts:62](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/face-clipper.ts#L62)
 
 构造函数：初始化顶点数组。
 为vertices和tmpVertices数组预初始化8个IncidentVertex实例；
@@ -37,7 +37,7 @@ Defined in: [collision-detector/box-box-detector/face-clipper.ts:62](https://git
 
 > **h**: `number` = `0`
 
-Defined in: [collision-detector/box-box-detector/face-clipper.ts:25](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/face-clipper.ts#L25)
+Defined in: [collision-detector/box-box-detector/face-clipper.ts:25](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/face-clipper.ts#L25)
 
 裁剪矩形的半高度（Y轴方向）。
 裁剪边界阈值：Y轴有效范围为 [-h, h]，用于上/下边界的裁剪判断；
@@ -49,7 +49,7 @@ Defined in: [collision-detector/box-box-detector/face-clipper.ts:25](https://git
 
 > **numTmpVertices**: `number` = `0`
 
-Defined in: [collision-detector/box-box-detector/face-clipper.ts:39](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/face-clipper.ts#L39)
+Defined in: [collision-detector/box-box-detector/face-clipper.ts:39](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/face-clipper.ts#L39)
 
 临时顶点缓存数量。
 标记tmpVertices数组中临时存储的顶点数量；
@@ -61,7 +61,7 @@ Defined in: [collision-detector/box-box-detector/face-clipper.ts:39](https://git
 
 > **numVertices**: `number` = `0`
 
-Defined in: [collision-detector/box-box-detector/face-clipper.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/face-clipper.ts#L32)
+Defined in: [collision-detector/box-box-detector/face-clipper.ts:32](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/face-clipper.ts#L32)
 
 当前有效顶点数量。
 标记vertices数组中实际存储的入射顶点数量；
@@ -73,7 +73,7 @@ Defined in: [collision-detector/box-box-detector/face-clipper.ts:32](https://git
 
 > **tmpVertices**: [`IncidentVertex`](../../incident-vertex/classes/IncidentVertex.md)[]
 
-Defined in: [collision-detector/box-box-detector/face-clipper.ts:53](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/face-clipper.ts#L53)
+Defined in: [collision-detector/box-box-detector/face-clipper.ts:53](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/face-clipper.ts#L53)
 
 临时顶点缓存数组。
 固定长度8的顶点缓存数组，用于裁剪过程中的数据交换与临时存储；
@@ -85,7 +85,7 @@ Defined in: [collision-detector/box-box-detector/face-clipper.ts:53](https://git
 
 > **vertices**: [`IncidentVertex`](../../incident-vertex/classes/IncidentVertex.md)[]
 
-Defined in: [collision-detector/box-box-detector/face-clipper.ts:46](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/face-clipper.ts#L46)
+Defined in: [collision-detector/box-box-detector/face-clipper.ts:46](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/face-clipper.ts#L46)
 
 入射顶点存储数组。
 固定长度8的顶点数组，存储待裁剪/已裁剪的入射顶点数据；
@@ -97,7 +97,7 @@ Defined in: [collision-detector/box-box-detector/face-clipper.ts:46](https://git
 
 > **w**: `number` = `0`
 
-Defined in: [collision-detector/box-box-detector/face-clipper.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/face-clipper.ts#L18)
+Defined in: [collision-detector/box-box-detector/face-clipper.ts:18](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/face-clipper.ts#L18)
 
 裁剪矩形的半宽度（X轴方向）。
 裁剪边界阈值：X轴有效范围为 [-w, w]，用于左/右边界的裁剪判断；
@@ -109,7 +109,7 @@ Defined in: [collision-detector/box-box-detector/face-clipper.ts:18](https://git
 
 > **clip**(): `void`
 
-Defined in: [collision-detector/box-box-detector/face-clipper.ts:80](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/face-clipper.ts#L80)
+Defined in: [collision-detector/box-box-detector/face-clipper.ts:80](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/face-clipper.ts#L80)
 
 顶点矩形边界裁剪核心方法。
 按顺序对顶点集合执行四边界裁剪（左→右→下→上）；
@@ -130,7 +130,7 @@ Defined in: [collision-detector/box-box-detector/face-clipper.ts:80](https://git
 
 > **reduce**(): `void`
 
-Defined in: [collision-detector/box-box-detector/face-clipper.ts:149](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/face-clipper.ts#L149)
+Defined in: [collision-detector/box-box-detector/face-clipper.ts:149](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/face-clipper.ts#L149)
 
 顶点集合简化方法。
 对裁剪后的顶点集合进行极值简化，仅保留4个关键特征点；

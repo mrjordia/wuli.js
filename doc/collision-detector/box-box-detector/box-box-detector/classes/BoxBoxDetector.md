@@ -6,7 +6,7 @@
 
 # Class: BoxBoxDetector
 
-Defined in: [collision-detector/box-box-detector/box-box-detector.ts:19](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/box-box-detector.ts#L19)
+Defined in: [collision-detector/box-box-detector/box-box-detector.ts:19](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/box-box-detector.ts#L19)
 
 盒体-盒体碰撞检测核心类。
 物理引擎中轴对齐/旋转盒体（BoxGeometry）间的精确碰撞检测实现类；
@@ -26,7 +26,7 @@ Defined in: [collision-detector/box-box-detector/box-box-detector.ts:19](https:/
 
 > **new BoxBoxDetector**(): `BoxBoxDetector`
 
-Defined in: [collision-detector/box-box-detector/box-box-detector.ts:59](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/box-box-detector.ts#L59)
+Defined in: [collision-detector/box-box-detector/box-box-detector.ts:59](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/box-box-detector.ts#L59)
 
 构造函数：初始化盒体碰撞检测器。
 调用父类Detector的构造函数，设置非增量检测模式；
@@ -46,7 +46,7 @@ Defined in: [collision-detector/box-box-detector/box-box-detector.ts:59](https:/
 
 > **clipper**: [`FaceClipper`](../../face-clipper/classes/FaceClipper.md)
 
-Defined in: [collision-detector/box-box-detector/box-box-detector.ts:25](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/box-box-detector/box-box-detector.ts#L25)
+Defined in: [collision-detector/box-box-detector/box-box-detector.ts:25](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/box-box-detector/box-box-detector.ts#L25)
 
 面裁剪器实例。
 用于碰撞接触点的矩形边界裁剪与顶点简化；
@@ -58,7 +58,7 @@ Defined in: [collision-detector/box-box-detector/box-box-detector.ts:25](https:/
 
 > **swapped**: `boolean`
 
-Defined in: [collision-detector/detector.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector.ts#L24)
+Defined in: [collision-detector/detector.ts:24](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector.ts#L24)
 
 是否交换检测对象顺序标记。
 标记为true时：
@@ -77,7 +77,7 @@ Defined in: [collision-detector/detector.ts:24](https://github.com/mrjordia/wuli
 
 > **addPoint**(`result`, `pos1X`, `pos1Y`, `pos1Z`, `pos2X`, `pos2Y`, `pos2Z`, `depth`, `id`): `void`
 
-Defined in: [collision-detector/detector.ts:65](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector.ts#L65)
+Defined in: [collision-detector/detector.ts:65](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector.ts#L65)
 
 向检测结果添加碰撞点信息。
 自动根据swapped标记交换position1/position2坐标，保证坐标与检测顺序一致。
@@ -152,7 +152,7 @@ Defined in: [collision-detector/detector.ts:65](https://github.com/mrjordia/wuli
 
 > **detect**(`result`, `geom1`, `geom2`, `transform1`, `transform2`, `cachedData`): `void`
 
-Defined in: [collision-detector/detector.ts:102](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector.ts#L102)
+Defined in: [collision-detector/detector.ts:102](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector.ts#L102)
 
 执行碰撞检测的入口方法。
 执行流程：
@@ -212,7 +212,7 @@ Defined in: [collision-detector/detector.ts:102](https://github.com/mrjordia/wul
 
 > **setNormal**(`result`, `nX`, `nY`, `nZ`): `void`
 
-Defined in: [collision-detector/detector.ts:43](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector.ts#L43)
+Defined in: [collision-detector/detector.ts:43](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector.ts#L43)
 
 设置碰撞检测结果的法线向量。
 自动根据swapped标记决定是否对法线向量取反，保证法线方向符合检测顺序。

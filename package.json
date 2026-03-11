@@ -1,6 +1,6 @@
 {
   "name": "wuli.js",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "基于bullet的轻量TypeScript物理引擎",
   "type": "commonjs",
   "main": "dist/modules/index.cjs",
@@ -37,7 +37,8 @@
     "doc": "typedoc"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "keywords": [
     "physics",

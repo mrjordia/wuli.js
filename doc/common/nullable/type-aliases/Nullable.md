@@ -8,7 +8,7 @@
 
 > **Nullable**\<`T`\> = `T` \| `null` \| `undefined`
 
-Defined in: [common/nullable.ts:7](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/nullable.ts#L7)
+Defined in: [common/nullable.ts:7](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/nullable.ts#L7)
 
 通用可空类型别名。
 扩展基础类型，支持 `null` 和 `undefined` 两种空值状态

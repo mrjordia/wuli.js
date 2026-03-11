@@ -6,7 +6,7 @@
 
 # Class: DirectJointConstraintSolver
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L21)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L21)
 
 直接关节约束求解器类。
 继承自基础约束求解器，采用直接求解策略处理关节的速度/位置约束，核心职责包括：
@@ -27,7 +27,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:21](http
 
 > **new DirectJointConstraintSolver**(`joint`): `DirectJointConstraintSolver`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:98](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L98)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:98](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L98)
 
 构造函数：初始化关节约束求解器。
 核心初始化逻辑：
@@ -58,7 +58,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:98](http
 
 > **addedToIsland**: `boolean` = `false`
 
-Defined in: [constraint/solver/constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/constraint-solver.ts#L21)
+Defined in: [constraint/solver/constraint-solver.ts:21](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/constraint-solver.ts#L21)
 
 是否已加入求解岛标记。
 用于物理引擎的岛屿法（Island Method）优化：标记约束是否已被加入当前求解岛，
@@ -80,7 +80,7 @@ false
 
 > **boundaryBuilder**: [`BoundaryBuilder`](../../boundary-builder/classes/BoundaryBuilder.md)
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:44](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L44)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:44](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L44)
 
 边界构建器实例。
 用于构建约束的边界条件（如冲量上下限），生成求解所需的边界约束集合
@@ -91,7 +91,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:44](http
 
 > **dImpulses**: `Float64Array`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:81](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L81)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:81](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L81)
 
 冲量增量数组。
 长度为SETTING_MAX_JACOBIAN_ROWS的浮点数组，存储每次迭代中冲量的变化量
@@ -102,7 +102,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:81](http
 
 > **dTotalImpulses**: `Float64Array`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:87](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L87)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:87](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L87)
 
 总冲量增量数组。
 长度为SETTING_MAX_JACOBIAN_ROWS的浮点数组，存储累计的冲量变化量
@@ -113,7 +113,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:87](http
 
 > **impulses**: `Float64Array`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:75](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L75)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:75](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L75)
 
 冲量数组。
 长度为SETTING_MAX_JACOBIAN_ROWS的浮点数组，存储每个约束行的当前冲量值
@@ -124,7 +124,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:75](http
 
 > **info**: [`JointSolverInfo`](../../../../joint/joint-solver-info/classes/JointSolverInfo.md)
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L32)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:32](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L32)
 
 关节求解器核心信息容器。
 存储关节求解所需的雅可比矩阵、冲量限制、电机参数、刚体引用等核心数据，是约束求解的核心数据源
@@ -135,7 +135,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:32](http
 
 > **joint**: [`Joint`](../../../../joint/joint/classes/Joint.md)
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L26)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:26](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L26)
 
 当前求解器绑定的关节实例。
 求解器唯一关联的关节对象，所有约束求解逻辑均围绕该关节展开
@@ -146,7 +146,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:26](http
 
 > **massData**: [`JointSolverMassDataRow`](../../../../joint/joint-solver-mass-data-row/classes/JointSolverMassDataRow.md)[]
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:51](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L51)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:51](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L51)
 
 关节求解器质量数据行数组。
 预分配固定长度的质量数据行数组，每行对应一个约束行的质量相关数据（逆质量、逆惯性张量等），
@@ -158,7 +158,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:51](http
 
 > **massMatrix**: [`MassMatrix`](../../mass-matrix/classes/MassMatrix.md)
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:38](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L38)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:38](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L38)
 
 质量矩阵实例。
 用于存储和计算刚体的逆质量/逆惯性张量相关数据，是约束冲量计算的核心矩阵
@@ -169,7 +169,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:38](http
 
 > **posBoundarySelector**: [`BoundarySelector`](../../boundary-selector/classes/BoundarySelector.md)
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:63](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L63)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:63](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L63)
 
 位置约束的边界选择器。
 用于选择位置约束求解时需要处理的边界约束，优化求解效率
@@ -180,7 +180,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:63](http
 
 > **relVels**: `Float64Array`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:69](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L69)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:69](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L69)
 
 相对速度数组。
 长度为SETTING_MAX_JACOBIAN_ROWS的浮点数组，存储每个约束行计算出的刚体相对速度
@@ -191,7 +191,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:69](http
 
 > **velBoundarySelector**: [`BoundarySelector`](../../boundary-selector/classes/BoundarySelector.md)
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:57](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L57)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:57](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L57)
 
 速度约束的边界选择器。
 用于选择速度约束求解时需要处理的边界约束，优化求解效率
@@ -202,7 +202,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:57](http
 
 > **postSolve**(): `void`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:844](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L844)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:844](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L844)
 
 约束求解后置处理。
 完成所有约束求解后的收尾工作：
@@ -223,7 +223,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:844](htt
 
 > **postSolveVelocity**(`timeStep`): `void`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:387](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L387)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:387](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L387)
 
 速度约束求解后置处理。
 计算并更新关节的合外力/合外力矩：
@@ -252,7 +252,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:387](htt
 
 > **preSolvePosition**(`timeStep`): `void`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:416](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L416)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:416](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L416)
 
 位置约束求解前置处理。
 位置求解前的准备工作：
@@ -284,7 +284,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:416](htt
 
 > **preSolveVelocity**(`timeStep`): `void`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:135](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L135)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:135](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L135)
 
 速度约束求解前置处理。
 速度求解前的准备工作：
@@ -316,7 +316,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:135](htt
 
 > **solvePositionNgs**(`timeStep`): `void`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:555](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L555)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:555](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L555)
 
 NGS算法求解位置约束。
 基于NGS（Normalized Gauss-Seidel）算法修正刚体位置：
@@ -347,7 +347,7 @@ NGS算法求解位置约束。
 
 > **solvePositionSplitImpulse**(): `void`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:460](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L460)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:460](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L460)
 
 分离冲量法求解位置约束。
 基于分离冲量算法修正刚体位置，消除关节穿透：
@@ -370,7 +370,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:460](htt
 
 > **solveVelocity**(): `void`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:267](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L267)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:267](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L267)
 
 速度约束求解核心逻辑。
 计算满足关节速度约束的冲量并更新刚体速度：
@@ -393,7 +393,7 @@ Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:267](htt
 
 > **warmStart**(`timeStep`): `void`
 
-Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:176](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L176)
+Defined in: [constraint/solver/direct/direct-joint-constraint-solver.ts:176](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/direct-joint-constraint-solver.ts#L176)
 
 约束求解预热启动。
 复用上一帧的冲量数据，提升约束求解的稳定性和收敛速度：

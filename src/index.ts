@@ -206,6 +206,8 @@ export * from './collision-detector/sphere-capsule-detector';
 export * from './collision-detector/sphere-sphere-detector';
 /** 凸体-地形碰撞检测器 */
 export * from './collision-detector/convex-terrain-detector';
+/** 精确射线检测 */
+export * from './collision-detector/precise-ray-caster';
 
 // ========================= 盒-盒碰撞检测子模块 =========================
 /** 盒-盒碰撞检测器（精准的盒型间碰撞检测） */

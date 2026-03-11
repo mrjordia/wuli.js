@@ -6,7 +6,7 @@
 
 # Class: ContactManager
 
-Defined in: [constraint/contact/contact-manager.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L16)
+Defined in: [constraint/contact/contact-manager.ts:16](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L16)
 
 碰撞接触管理器类。
 物理引擎中碰撞接触的全局管理核心类，负责接触的创建、销毁、更新全生命周期管理，
@@ -18,7 +18,7 @@ Defined in: [constraint/contact/contact-manager.ts:16](https://github.com/mrjord
 
 > **new ContactManager**(`broadPhase`): `ContactManager`
 
-Defined in: [constraint/contact/contact-manager.ts:60](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L60)
+Defined in: [constraint/contact/contact-manager.ts:60](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L60)
 
 构造函数：初始化碰撞接触管理器。
 初始化时关联宽相位检测实例，初始化碰撞矩阵和接触池等核心属性
@@ -41,7 +41,7 @@ Defined in: [constraint/contact/contact-manager.ts:60](https://github.com/mrjord
 
 > **broadPhase**: [`BroadPhase`](../../../../broad-phase/broad-phase/classes/BroadPhase.md)
 
-Defined in: [constraint/contact/contact-manager.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L21)
+Defined in: [constraint/contact/contact-manager.ts:21](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L21)
 
 宽相位碰撞检测实例。
 提供潜在碰撞对（proxyPairList）的数据源，是接触创建的基础
@@ -52,7 +52,7 @@ Defined in: [constraint/contact/contact-manager.ts:21](https://github.com/mrjord
 
 > **collisionMatrix**: [`CollisionMatrix`](../../../../collision-detector/collision-matrix/classes/CollisionMatrix.md)
 
-Defined in: [constraint/contact/contact-manager.ts:27](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L27)
+Defined in: [constraint/contact/contact-manager.ts:27](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L27)
 
 碰撞检测器矩阵。
 存储不同几何形状组合对应的碰撞检测器，用于为接触匹配正确的检测器实例
@@ -63,7 +63,7 @@ Defined in: [constraint/contact/contact-manager.ts:27](https://github.com/mrjord
 
 > **contactList**: [`Contact`](../../contact/classes/Contact.md)
 
-Defined in: [constraint/contact/contact-manager.ts:40](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L40)
+Defined in: [constraint/contact/contact-manager.ts:40](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L40)
 
 接触链表的头节点。
 存储所有当前有效接触的双向链表头节点，遍历从该节点开始
@@ -74,7 +74,7 @@ Defined in: [constraint/contact/contact-manager.ts:40](https://github.com/mrjord
 
 > **contactListLast**: [`Contact`](../../contact/classes/Contact.md)
 
-Defined in: [constraint/contact/contact-manager.ts:46](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L46)
+Defined in: [constraint/contact/contact-manager.ts:46](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L46)
 
 接触链表的尾节点。
 接触双向链表的尾节点，用于快速添加新接触到链表末尾
@@ -85,7 +85,7 @@ Defined in: [constraint/contact/contact-manager.ts:46](https://github.com/mrjord
 
 > **contactPool**: [`Contact`](../../contact/classes/Contact.md)
 
-Defined in: [constraint/contact/contact-manager.ts:53](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L53)
+Defined in: [constraint/contact/contact-manager.ts:53](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L53)
 
 接触对象池。
 复用已销毁的Contact实例的对象池，避免频繁创建/销毁对象导致的性能开销，
@@ -97,7 +97,7 @@ Defined in: [constraint/contact/contact-manager.ts:53](https://github.com/mrjord
 
 > **numContacts**: `number` = `0`
 
-Defined in: [constraint/contact/contact-manager.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L34)
+Defined in: [constraint/contact/contact-manager.ts:34](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L34)
 
 当前有效接触的数量。
 标记接触链表（contactList）中实际有效的Contact实例数量，用于性能统计和遍历控制
@@ -114,7 +114,7 @@ Defined in: [constraint/contact/contact-manager.ts:34](https://github.com/mrjord
 
 > **createContacts**(): `void`
 
-Defined in: [constraint/contact/contact-manager.ts:75](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L75)
+Defined in: [constraint/contact/contact-manager.ts:75](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L75)
 
 创建新的碰撞接触（核心方法）。
 基于宽相位检测的潜在碰撞对，创建/更新Contact实例，核心流程：
@@ -136,7 +136,7 @@ Defined in: [constraint/contact/contact-manager.ts:75](https://github.com/mrjord
 
 > **destroyOutdatedContacts**(): `void`
 
-Defined in: [constraint/contact/contact-manager.ts:180](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L180)
+Defined in: [constraint/contact/contact-manager.ts:180](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L180)
 
 销毁过期/无效的碰撞接触。
 清理无效的Contact实例，核心逻辑分两种模式：
@@ -164,7 +164,7 @@ Defined in: [constraint/contact/contact-manager.ts:180](https://github.com/mrjor
 
 > **postSolve**(): `void`
 
-Defined in: [constraint/contact/contact-manager.ts:352](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L352)
+Defined in: [constraint/contact/contact-manager.ts:352](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L352)
 
 触发所有接触的postSolve回调。
 遍历所有有效接触，对处于touching状态的Contact触发postSolve回调，
@@ -180,7 +180,7 @@ Defined in: [constraint/contact/contact-manager.ts:352](https://github.com/mrjor
 
 > **shouldCollide**(`s1`, `s2`): `boolean`
 
-Defined in: [constraint/contact/contact-manager.ts:304](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L304)
+Defined in: [constraint/contact/contact-manager.ts:304](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L304)
 
 判断两个形状是否应该发生碰撞。
 碰撞过滤规则（按优先级）：
@@ -216,7 +216,7 @@ Defined in: [constraint/contact/contact-manager.ts:304](https://github.com/mrjor
 
 > **updateContacts**(): `void`
 
-Defined in: [constraint/contact/contact-manager.ts:341](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/contact/contact-manager.ts#L341)
+Defined in: [constraint/contact/contact-manager.ts:341](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/contact/contact-manager.ts#L341)
 
 更新所有碰撞接触（对外暴露的核心入口）。
 接触更新完整流程：

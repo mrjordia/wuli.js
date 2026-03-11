@@ -6,7 +6,7 @@
 
 # Abstract Class: BroadPhase
 
-Defined in: [broad-phase/broad-phase.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L30)
+Defined in: [broad-phase/broad-phase.ts:30](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L30)
 
 粗检测抽象基类。
 物理引擎中碰撞粗检测的核心抽象类，定义粗检测的通用接口与基础能力；
@@ -22,7 +22,7 @@ Defined in: [broad-phase/broad-phase.ts:30](https://github.com/mrjordia/wuli.js/
 ## Extended by
 
 - [`BruteForceBroadPhase`](../../brute-force-broad-phase/classes/BruteForceBroadPhase.md)
-- [`default`](../../bvh-broad-phase/bvh-broad-phase/classes/default.md)
+- [`BvhBroadPhase`](../../bvh-broad-phase/bvh-broad-phase/classes/BvhBroadPhase.md)
 
 ## Constructors
 
@@ -30,7 +30,7 @@ Defined in: [broad-phase/broad-phase.ts:30](https://github.com/mrjordia/wuli.js/
 
 > **new BroadPhase**(`type`): `BroadPhase`
 
-Defined in: [broad-phase/broad-phase.ts:100](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L100)
+Defined in: [broad-phase/broad-phase.ts:100](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L100)
 
 构造函数：初始化粗检测抽象类。
 核心初始化逻辑：
@@ -57,7 +57,7 @@ Defined in: [broad-phase/broad-phase.ts:100](https://github.com/mrjordia/wuli.js
 
 > **identity**: [`Transform`](../../../common/transform/classes/Transform.md)
 
-Defined in: [broad-phase/broad-phase.ts:75](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L75)
+Defined in: [broad-phase/broad-phase.ts:75](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L75)
 
 单位变换矩阵。
 预初始化的单位Transform实例（无平移、无旋转）；
@@ -69,7 +69,7 @@ Defined in: [broad-phase/broad-phase.ts:75](https://github.com/mrjordia/wuli.js/
 
 > **incremental**: `boolean` = `false`
 
-Defined in: [broad-phase/broad-phase.ts:61](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L61)
+Defined in: [broad-phase/broad-phase.ts:61](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L61)
 
 增量检测开关。
 是否启用增量式粗检测；
@@ -81,7 +81,7 @@ Defined in: [broad-phase/broad-phase.ts:61](https://github.com/mrjordia/wuli.js/
 
 > **proxyPairList**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`ProxyPair`](../../proxy-pair/classes/ProxyPair.md)\>
 
-Defined in: [broad-phase/broad-phase.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L54)
+Defined in: [broad-phase/broad-phase.ts:54](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L54)
 
 碰撞对链表头节点。
 指向当前帧检测出的候选碰撞对链表的第一个节点；
@@ -93,7 +93,7 @@ collectPairs方法会更新该链表，用于后续细检测阶段处理。
 
 > **raycastHit**: [`RayCastHit`](../../../shape/ray-cast-hit/classes/RayCastHit.md)
 
-Defined in: [broad-phase/broad-phase.ts:89](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L89)
+Defined in: [broad-phase/broad-phase.ts:89](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L89)
 
 射线检测命中结果。
 预初始化的RayCastHit实例，用于存储射线检测的命中数据；
@@ -105,7 +105,7 @@ Defined in: [broad-phase/broad-phase.ts:89](https://github.com/mrjordia/wuli.js/
 
 > **testCount**: `number` = `0`
 
-Defined in: [broad-phase/broad-phase.ts:68](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L68)
+Defined in: [broad-phase/broad-phase.ts:68](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L68)
 
 检测计数。
 统计当前帧粗检测的碰撞对测试次数；
@@ -117,7 +117,7 @@ Defined in: [broad-phase/broad-phase.ts:68](https://github.com/mrjordia/wuli.js/
 
 > `readonly` **type**: [`BROAD_PHASE_TYPE`](../../../constant/enumerations/BROAD_PHASE_TYPE.md)
 
-Defined in: [broad-phase/broad-phase.ts:47](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L47)
+Defined in: [broad-phase/broad-phase.ts:47](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L47)
 
 粗检测类型标识。
 标记当前粗检测实例的具体类型（如网格型、扫描型等）；
@@ -129,7 +129,7 @@ Defined in: [broad-phase/broad-phase.ts:47](https://github.com/mrjordia/wuli.js/
 
 > **zero**: [`Vec3`](../../../common/vec3/classes/Vec3.md)
 
-Defined in: [broad-phase/broad-phase.ts:82](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L82)
+Defined in: [broad-phase/broad-phase.ts:82](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L82)
 
 零向量。
 预初始化的零向量（x=0,y=0,z=0）；
@@ -141,7 +141,7 @@ Defined in: [broad-phase/broad-phase.ts:82](https://github.com/mrjordia/wuli.js/
 
 > `abstract` **aabbTest**(`aabb`, `callback`): `void`
 
-Defined in: [broad-phase/broad-phase.ts:202](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L202)
+Defined in: [broad-phase/broad-phase.ts:202](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L202)
 
 AABB测试抽象方法。
 子类需实现该方法，筛选出与指定AABB相交的代理：
@@ -173,7 +173,7 @@ AABB测试回调函数
 
 > `abstract` **collectPairs**(): `void`
 
-Defined in: [broad-phase/broad-phase.ts:163](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L163)
+Defined in: [broad-phase/broad-phase.ts:163](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L163)
 
 收集碰撞对抽象方法。
 子类需实现该方法，筛选出所有候选碰撞对：
@@ -191,7 +191,7 @@ Defined in: [broad-phase/broad-phase.ts:163](https://github.com/mrjordia/wuli.js
 
 > `abstract` **convexCast**(`convex`, `begin`, `translation`, `callback`): `void`
 
-Defined in: [broad-phase/broad-phase.ts:190](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L190)
+Defined in: [broad-phase/broad-phase.ts:190](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L190)
 
 凸体扫掠检测抽象方法。
 子类需实现该方法，完成凸体扫掠与代理的相交检测：
@@ -235,7 +235,7 @@ Defined in: [broad-phase/broad-phase.ts:190](https://github.com/mrjordia/wuli.js
 
 > `abstract` **createProxy**(`userData`, `aabb`): `any`
 
-Defined in: [broad-phase/broad-phase.ts:114](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L114)
+Defined in: [broad-phase/broad-phase.ts:114](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L114)
 
 创建物理代理抽象方法。
 子类需实现该方法，完成PhysicsProxy的创建与注册：
@@ -269,7 +269,7 @@ Defined in: [broad-phase/broad-phase.ts:114](https://github.com/mrjordia/wuli.js
 
 > `abstract` **destroyProxy**(`proxy`): `void`
 
-Defined in: [broad-phase/broad-phase.ts:125](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L125)
+Defined in: [broad-phase/broad-phase.ts:125](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L125)
 
 销毁物理代理抽象方法。
 子类需实现该方法，完成PhysicsProxy的销毁与清理：
@@ -295,7 +295,7 @@ Defined in: [broad-phase/broad-phase.ts:125](https://github.com/mrjordia/wuli.js
 
 > **isOverlapping**(`proxy1`, `proxy2`): `boolean`
 
-Defined in: [broad-phase/broad-phase.ts:150](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L150)
+Defined in: [broad-phase/broad-phase.ts:150](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L150)
 
 判断两个代理的AABB是否重叠。
 通用的AABB重叠判断实现：
@@ -329,7 +329,7 @@ Defined in: [broad-phase/broad-phase.ts:150](https://github.com/mrjordia/wuli.js
 
 > `abstract` **moveProxy**(`proxy`, `aabb`, `displacement`): `void`
 
-Defined in: [broad-phase/broad-phase.ts:138](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L138)
+Defined in: [broad-phase/broad-phase.ts:138](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L138)
 
 移动物理代理抽象方法。
 子类需实现该方法，处理代理位置变化：
@@ -367,7 +367,7 @@ Defined in: [broad-phase/broad-phase.ts:138](https://github.com/mrjordia/wuli.js
 
 > `abstract` **rayCast**(`begin`, `end`, `callback`): `void`
 
-Defined in: [broad-phase/broad-phase.ts:176](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L176)
+Defined in: [broad-phase/broad-phase.ts:176](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L176)
 
 射线检测抽象方法。
 子类需实现该方法，完成射线与代理的相交检测：

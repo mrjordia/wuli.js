@@ -6,7 +6,7 @@
 
 # Class: DetectorResultPoint
 
-Defined in: [collision-detector/detector-result-point.ts:8](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result-point.ts#L8)
+Defined in: [collision-detector/detector-result-point.ts:8](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector-result-point.ts#L8)
 
 碰撞检测点详情类。
 物理引擎碰撞检测中单个碰撞点的详情容器，
@@ -28,7 +28,7 @@ Defined in: [collision-detector/detector-result-point.ts:8](https://github.com/m
 
 > **depth**: `number` = `0`
 
-Defined in: [collision-detector/detector-result-point.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result-point.ts#L28)
+Defined in: [collision-detector/detector-result-point.ts:28](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector-result-point.ts#L28)
 
 碰撞点穿透深度。
 两个几何对象在该碰撞点处的穿透深度值（正数表示穿透，越大穿透越严重），
@@ -40,7 +40,7 @@ Defined in: [collision-detector/detector-result-point.ts:28](https://github.com/
 
 > **id**: `number` = `0`
 
-Defined in: [collision-detector/detector-result-point.ts:35](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result-point.ts#L35)
+Defined in: [collision-detector/detector-result-point.ts:35](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector-result-point.ts#L35)
 
 碰撞点唯一标识ID。
 用于区分不同碰撞点的标识值，初始值为0，
@@ -52,7 +52,7 @@ Defined in: [collision-detector/detector-result-point.ts:35](https://github.com/
 
 > **position1**: [`Vec3`](../../../common/vec3/classes/Vec3.md)
 
-Defined in: [collision-detector/detector-result-point.ts:14](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result-point.ts#L14)
+Defined in: [collision-detector/detector-result-point.ts:14](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector-result-point.ts#L14)
 
 第一个几何对象的碰撞点坐标。
 以世界坐标系/局部坐标系表示的第一个几何对象碰撞位置，初始化为零向量，
@@ -64,7 +64,7 @@ Defined in: [collision-detector/detector-result-point.ts:14](https://github.com/
 
 > **position2**: [`Vec3`](../../../common/vec3/classes/Vec3.md)
 
-Defined in: [collision-detector/detector-result-point.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector-result-point.ts#L21)
+Defined in: [collision-detector/detector-result-point.ts:21](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector-result-point.ts#L21)
 
 第二个几何对象的碰撞点坐标。
 以世界坐标系/局部坐标系表示的第二个几何对象碰撞位置，初始化为零向量，

@@ -6,7 +6,7 @@
 
 # Class: Mat3
 
-Defined in: [common/mat3.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/mat3.ts#L16)
+Defined in: [common/mat3.ts:16](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/mat3.ts#L16)
 
 3x3 双精度浮点矩阵类。
 物理引擎核心数学工具类，专为3维空间变换设计，
@@ -26,7 +26,7 @@ Defined in: [common/mat3.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **new Mat3**(`e00?`, `e01?`, `e02?`, `e10?`, `e11?`, `e12?`, `e20?`, `e21?`, `e22?`): `Mat3`
 
-Defined in: [common/mat3.ts:36](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/mat3.ts#L36)
+Defined in: [common/mat3.ts:36](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/mat3.ts#L36)
 
 构造函数。
 初始化3x3矩阵，默认创建单位矩阵（物理引擎中最常用的初始状态）
@@ -97,7 +97,7 @@ Defined in: [common/mat3.ts:36](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **elements**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [common/mat3.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/mat3.ts#L21)
+Defined in: [common/mat3.ts:21](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/mat3.ts#L21)
 
 矩阵元素存储数组（行主序）。
 默认初始化为单位矩阵（无旋转/缩放）。
@@ -108,7 +108,7 @@ Defined in: [common/mat3.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **init**(`e00`, `e01`, `e02`, `e10`, `e11`, `e12`, `e20`, `e21`, `e22`): `Mat3`
 
-Defined in: [common/mat3.ts:74](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/mat3.ts#L74)
+Defined in: [common/mat3.ts:74](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/mat3.ts#L74)
 
 重新初始化矩阵元素。
 

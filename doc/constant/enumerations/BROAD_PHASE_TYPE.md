@@ -6,7 +6,7 @@
 
 # Enumeration: BROAD\_PHASE\_TYPE
 
-Defined in: [constant.ts:77](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L77)
+Defined in: [constant.ts:77](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L77)
 
 宽相位检测类型枚举。
 标识宽相位碰撞检测的实现类型
@@ -17,7 +17,7 @@ Defined in: [constant.ts:77](https://github.com/mrjordia/wuli.js/blob/bac1aebf7f
 
 > **BRUTE\_FORCE**: `5001`
 
-Defined in: [constant.ts:81](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L81)
+Defined in: [constant.ts:81](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L81)
 
 暴力检测（遍历所有代理对，性能低）
 
@@ -27,7 +27,7 @@ Defined in: [constant.ts:81](https://github.com/mrjordia/wuli.js/blob/bac1aebf7f
 
 > **BVH**: `5002`
 
-Defined in: [constant.ts:83](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L83)
+Defined in: [constant.ts:83](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L83)
 
 BVH检测（二叉体积层次树，高性能）
 
@@ -37,6 +37,6 @@ BVH检测（二叉体积层次树，高性能）
 
 > **NULL**: `5000`
 
-Defined in: [constant.ts:79](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L79)
+Defined in: [constant.ts:79](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L79)
 
 空类型（无效）

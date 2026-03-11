@@ -6,7 +6,7 @@
 
 # Class: RayCastClosest
 
-Defined in: [common/ray-cast-closest.ts:12](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-closest.ts#L12)
+Defined in: [common/ray-cast-closest.ts:12](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/ray-cast-closest.ts#L12)
 
 射线检测最近命中回调类。
 继承射线检测回调接口，专门用于筛选射线检测中**最近的相交形状**；
@@ -36,7 +36,7 @@ Defined in: [common/ray-cast-closest.ts:12](https://github.com/mrjordia/wuli.js/
 
 > **fraction**: `number` = `1`
 
-Defined in: [common/ray-cast-closest.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-closest.ts#L20)
+Defined in: [common/ray-cast-closest.ts:20](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/ray-cast-closest.ts#L20)
 
 最近命中的比例（0~1，0=射线起点，1=射线终点；初始为1表示未命中）
 
@@ -46,7 +46,7 @@ Defined in: [common/ray-cast-closest.ts:20](https://github.com/mrjordia/wuli.js/
 
 > **hit**: `boolean` = `false`
 
-Defined in: [common/ray-cast-closest.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-closest.ts#L22)
+Defined in: [common/ray-cast-closest.ts:22](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/ray-cast-closest.ts#L22)
 
 是否命中任意形状（true=有命中，false=无命中）
 
@@ -56,7 +56,7 @@ Defined in: [common/ray-cast-closest.ts:22](https://github.com/mrjordia/wuli.js/
 
 > **normal**: [`Vec3`](../../vec3/classes/Vec3.md)
 
-Defined in: [common/ray-cast-closest.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-closest.ts#L16)
+Defined in: [common/ray-cast-closest.ts:16](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/ray-cast-closest.ts#L16)
 
 最近命中点的法向量（初始为(0,0,0)）
 
@@ -66,7 +66,7 @@ Defined in: [common/ray-cast-closest.ts:16](https://github.com/mrjordia/wuli.js/
 
 > **position**: [`Vec3`](../../vec3/classes/Vec3.md)
 
-Defined in: [common/ray-cast-closest.ts:14](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-closest.ts#L14)
+Defined in: [common/ray-cast-closest.ts:14](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/ray-cast-closest.ts#L14)
 
 最近命中点的世界坐标（初始为(0,0,0)）
 
@@ -76,7 +76,7 @@ Defined in: [common/ray-cast-closest.ts:14](https://github.com/mrjordia/wuli.js/
 
 > **shape**: [`Nullable`](../../nullable/type-aliases/Nullable.md)\<[`Shape`](../../../shape/shape/classes/Shape.md)\>
 
-Defined in: [common/ray-cast-closest.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-closest.ts#L18)
+Defined in: [common/ray-cast-closest.ts:18](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/ray-cast-closest.ts#L18)
 
 最近命中的形状实例（未命中时为null）
 
@@ -86,7 +86,7 @@ Defined in: [common/ray-cast-closest.ts:18](https://github.com/mrjordia/wuli.js/
 
 > **clear**(): `void`
 
-Defined in: [common/ray-cast-closest.ts:29](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-closest.ts#L29)
+Defined in: [common/ray-cast-closest.ts:29](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/ray-cast-closest.ts#L29)
 
 重置所有命中状态（复用实例前调用）。
 清空形状引用、重置命中比例为1、归零位置/法向量、标记未命中；
@@ -102,7 +102,7 @@ Defined in: [common/ray-cast-closest.ts:29](https://github.com/mrjordia/wuli.js/
 
 > **process**(`shape`, `hit`): `void`
 
-Defined in: [common/ray-cast-closest.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/ray-cast-closest.ts#L50)
+Defined in: [common/ray-cast-closest.ts:50](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/ray-cast-closest.ts#L50)
 
 处理单次射线相交结果（核心筛选逻辑）。
 核心逻辑：

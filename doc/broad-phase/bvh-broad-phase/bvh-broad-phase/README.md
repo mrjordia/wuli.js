@@ -8,10 +8,10 @@
 
 ## Classes
 
-- [default](classes/default.md)
+- [BvhBroadPhase](classes/BvhBroadPhase.md)
 
 ## References
 
-### BvhProxy
+### default
 
-Re-exports [BvhProxy](../bvh-proxy/classes/BvhProxy.md)
+Renames and re-exports [BvhBroadPhase](classes/BvhBroadPhase.md)

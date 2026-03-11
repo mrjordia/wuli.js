@@ -6,7 +6,7 @@
 
 # Class: EpaPolyhedron
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:14](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L14)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:14](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L14)
 
 EPA多面体类。
 属于EPA（扩展多面体算法）核心数据结构，用于表示碰撞检测中动态扩展的凸多面体，
@@ -29,7 +29,7 @@ EPA多面体类。
 
 > **center**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L26)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:26](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L26)
 
 多面体中心点。
 多面体的几何中心点，用于三角面初始化时的朝向判断和法向量计算
@@ -40,7 +40,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:26](https://g
 
 > **numTriangles**: `number` = `0`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L50)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:50](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L50)
 
 有效三角面数量。
 记录多面体中实际有效的三角面个数，随三角面添加/移除动态更新
@@ -51,7 +51,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:50](https://g
 
 > **numVertices**: `number` = `0`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L32)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:32](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L32)
 
 有效顶点数量。
 记录vertices数组中实际有效的顶点个数，随顶点添加动态递增
@@ -62,7 +62,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:32](https://g
 
 > **status**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<`number`\>
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:75](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L75)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:75](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L75)
 
 状态码。
 多面体操作的状态标记，不同数值对应不同错误/正常状态：
@@ -80,7 +80,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:75](https://g
 
 > **triangleList**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`EpaTriangle`](../../epa-triangle/classes/EpaTriangle.md)\>
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:38](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L38)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:38](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L38)
 
 三角面链表头节点。
 指向多面体三角面双向链表的第一个节点，用于遍历所有三角面
@@ -91,7 +91,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:38](https://g
 
 > **triangleListLast**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`EpaTriangle`](../../epa-triangle/classes/EpaTriangle.md)\>
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:44](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L44)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:44](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L44)
 
 三角面链表尾节点。
 指向多面体三角面双向链表的最后一个节点，用于快速添加新三角面
@@ -102,7 +102,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:44](https://g
 
 > **trianglePool**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`EpaTriangle`](../../epa-triangle/classes/EpaTriangle.md)\>
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:56](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L56)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:56](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L56)
 
 三角面对象池。
 三角面复用池，存储已销毁的三角面实例，避免频繁创建/销毁对象，优化内存性能
@@ -113,7 +113,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:56](https://g
 
 > **vertexPool**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`EpaVertex`](../../epa-vertex/classes/EpaVertex.md)\>
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:62](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L62)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:62](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L62)
 
 顶点对象池。
 顶点复用池（当前代码未实际使用，预留用于顶点复用优化）
@@ -124,7 +124,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:62](https://g
 
 > **vertices**: `any`[]
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L20)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:20](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L20)
 
 多面体顶点数组。
 存储多面体所有顶点的数组，长度由SETTING_MAX_EPA_VERTICES限制，
@@ -136,7 +136,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:20](https://g
 
 > **addVertex**(`vertex`, `base`): `boolean`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:266](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L266)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:266](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L266)
 
 向多面体添加新顶点（EPA扩展核心操作）。
 核心扩展逻辑：
@@ -174,7 +174,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:266](https://
 
 > **findEdgeLoop**(`id`, `base`, `_from`): `void`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:141](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L141)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:141](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L141)
 
 查找多面体的边环（递归DFS）。
 核心逻辑（EPA扩展的核心步骤）：
@@ -217,7 +217,7 @@ DFS遍历唯一标识ID（避免重复遍历）
 
 > **init**(`v1`, `v2`, `v3`, `v4`): `boolean`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:223](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L223)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:223](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L223)
 
 初始化四面体（EPA多面体的初始状态）。
 核心初始化逻辑：
@@ -267,7 +267,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:223](https://
 
 > **validate**(): `boolean`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:87](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L87)
+Defined in: [collision-detector/gjk-epa-detector/epa-polyhedron.ts:87](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-polyhedron.ts#L87)
 
 校验多面体拓扑结构的合法性。
 核心校验逻辑：

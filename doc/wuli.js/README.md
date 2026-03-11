@@ -108,6 +108,12 @@ Re-exports [BVH_INSERTION_STRATEGY](../constant/enumerations/BVH_INSERTION_STRAT
 
 ***
 
+### BvhBroadPhase
+
+Re-exports [BvhBroadPhase](../broad-phase/bvh-broad-phase/bvh-broad-phase/classes/BvhBroadPhase.md)
+
+***
+
 ### BvhNode
 
 Re-exports [BvhNode](../broad-phase/bvh-broad-phase/bvh-node/classes/BvhNode.md)
@@ -567,6 +573,18 @@ Re-exports [PhysicsProxy](../broad-phase/physics-proxy/classes/PhysicsProxy.md)
 ### POSITION\_CORRECTION\_ALGORITHM
 
 Re-exports [POSITION_CORRECTION_ALGORITHM](../constant/enumerations/POSITION_CORRECTION_ALGORITHM.md)
+
+***
+
+### PreciseRayCaster
+
+Re-exports [PreciseRayCaster](../collision-detector/precise-ray-caster/classes/PreciseRayCaster.md)
+
+***
+
+### PreciseRayCastResult
+
+Re-exports [PreciseRayCastResult](../collision-detector/precise-ray-caster/interfaces/PreciseRayCastResult.md)
 
 ***
 

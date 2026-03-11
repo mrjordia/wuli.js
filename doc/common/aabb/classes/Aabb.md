@@ -6,7 +6,7 @@
 
 # Class: Aabb
 
-Defined in: [common/aabb.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/aabb.ts#L13)
+Defined in: [common/aabb.ts:13](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/aabb.ts#L13)
 
 轴对齐包围盒类。
 用于物理引擎的碰撞检测（宽相检测、形状包围盒计算），表示3D空间中与坐标轴对齐的最小包围盒
@@ -22,7 +22,7 @@ Defined in: [common/aabb.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **new Aabb**(`ix?`, `iy?`, `iz?`, `ax?`, `ay?`, `az?`): `Aabb`
 
-Defined in: [common/aabb.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/aabb.ts#L30)
+Defined in: [common/aabb.ts:30](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/aabb.ts#L30)
 
 构造函数。
 初始化AABB包围盒，未传参时默认创建空包围盒（所有分量为0）
@@ -75,7 +75,7 @@ Defined in: [common/aabb.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **elements**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [common/aabb.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/aabb.ts#L18)
+Defined in: [common/aabb.ts:18](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/aabb.ts#L18)
 
 AABB分量存储数组（双精度浮点）。
 索引0-2为最小点(min)，3-5为最大点(max)，直接操作可提升碰撞检测性能
@@ -86,7 +86,7 @@ AABB分量存储数组（双精度浮点）。
 
 > **clone**(): `Float64Array`
 
-Defined in: [common/aabb.ts:70](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/aabb.ts#L70)
+Defined in: [common/aabb.ts:70](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/aabb.ts#L70)
 
 克隆当前AABB的分量数组。
 返回新的Float64Array（深拷贝），而非引用，避免数据污染
@@ -103,7 +103,7 @@ Defined in: [common/aabb.ts:70](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **copyFrom**(`_aabb`): `Aabb`
 
-Defined in: [common/aabb.ts:59](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/aabb.ts#L59)
+Defined in: [common/aabb.ts:59](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/aabb.ts#L59)
 
 从另一个AABB复制数据。
 用于复用已有AABB实例，避免频繁创建新对象，提升宽相检测性能
@@ -128,7 +128,7 @@ Defined in: [common/aabb.ts:59](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **init**(`min`, `max`): `Aabb`
 
-Defined in: [common/aabb.ts:46](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/aabb.ts#L46)
+Defined in: [common/aabb.ts:46](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/aabb.ts#L46)
 
 通过最小/最大点向量初始化AABB。
 便捷的初始化方式，适配引擎中Vec3向量的使用习惯

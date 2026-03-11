@@ -8,7 +8,7 @@
 
 > `const` **DEFAULT\_33**: `number`[]
 
-Defined in: [common/method.ts:8](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L8)
+Defined in: [common/method.ts:8](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L8)
 
 默认3x3单位矩阵（行主序）。
 用于初始化旋转/变换矩阵的基础值，无旋转、无缩放的恒等变换状态：

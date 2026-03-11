@@ -6,7 +6,7 @@
 
 # Class: RagdollJointConfig
 
-Defined in: [constraint/joint/ragdoll-joint-config.ts:15](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/ragdoll-joint-config.ts#L15)
+Defined in: [constraint/joint/ragdoll-joint-config.ts:15](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/ragdoll-joint-config.ts#L15)
 
 布娃娃关节配置类。
 继承自JointConfig，是布娃娃关节（Ragdoll Joint）的专属配置容器，
@@ -38,7 +38,7 @@ Defined in: [constraint/joint/ragdoll-joint-config.ts:15](https://github.com/mrj
 
 > **allowCollision**: `boolean` = `false`
 
-Defined in: [constraint/joint/joint-config.ts:40](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L40)
+Defined in: [constraint/joint/joint-config.ts:40](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-config.ts#L40)
 
 是否允许关联的两个刚体碰撞。
 关节约束下刚体的碰撞开关，默认值false（禁止碰撞），避免关节锚点处的穿透和异常碰撞反馈
@@ -53,7 +53,7 @@ Defined in: [constraint/joint/joint-config.ts:40](https://github.com/mrjordia/wu
 
 > **breakForce**: `number` = `0`
 
-Defined in: [constraint/joint/joint-config.ts:60](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L60)
+Defined in: [constraint/joint/joint-config.ts:60](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-config.ts#L60)
 
 关节断裂的力阈值。
 触发关节断裂的合外力阈值，默认值0（永不因受力断裂），当关节承受的力超过该值时关节会断开
@@ -68,7 +68,7 @@ Defined in: [constraint/joint/joint-config.ts:60](https://github.com/mrjordia/wu
 
 > **breakTorque**: `number` = `0`
 
-Defined in: [constraint/joint/joint-config.ts:66](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L66)
+Defined in: [constraint/joint/joint-config.ts:66](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-config.ts#L66)
 
 关节断裂的力矩阈值。
 触发关节断裂的合外力矩阈值，默认值0（永不因力矩断裂），当关节承受的力矩超过该值时关节会断开
@@ -83,7 +83,7 @@ Defined in: [constraint/joint/joint-config.ts:66](https://github.com/mrjordia/wu
 
 > **localAnchor1**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [constraint/joint/joint-config.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L28)
+Defined in: [constraint/joint/joint-config.ts:28](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-config.ts#L28)
 
 第一个刚体的本地锚点坐标。
 相对于rigidBody1本地坐标系的关节锚点，初始值为零向量，通过initialize方法从世界锚点转换而来
@@ -98,7 +98,7 @@ Defined in: [constraint/joint/joint-config.ts:28](https://github.com/mrjordia/wu
 
 > **localAnchor2**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [constraint/joint/joint-config.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L34)
+Defined in: [constraint/joint/joint-config.ts:34](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-config.ts#L34)
 
 第二个刚体的本地锚点坐标。
 相对于rigidBody2本地坐标系的关节锚点，初始值为零向量，通过initialize方法从世界锚点转换而来
@@ -113,7 +113,7 @@ Defined in: [constraint/joint/joint-config.ts:34](https://github.com/mrjordia/wu
 
 > **localSwingAxis1**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [constraint/joint/ragdoll-joint-config.ts:35](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/ragdoll-joint-config.ts#L35)
+Defined in: [constraint/joint/ragdoll-joint-config.ts:35](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/ragdoll-joint-config.ts#L35)
 
 第一个刚体的本地摆动轴。
 相对于rigidBody1本地坐标系的摆动参考轴（如人体关节的左右摆动轴），默认值(0,1,0)（Y轴）；
@@ -125,7 +125,7 @@ Defined in: [constraint/joint/ragdoll-joint-config.ts:35](https://github.com/mrj
 
 > **localTwistAxis1**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [constraint/joint/ragdoll-joint-config.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/ragdoll-joint-config.ts#L21)
+Defined in: [constraint/joint/ragdoll-joint-config.ts:21](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/ragdoll-joint-config.ts#L21)
 
 第一个刚体的本地扭转轴。
 相对于rigidBody1本地坐标系的扭转旋转轴（如人体关节的前后旋转轴），默认值(1,0,0)（X轴）；
@@ -137,7 +137,7 @@ Defined in: [constraint/joint/ragdoll-joint-config.ts:21](https://github.com/mrj
 
 > **localTwistAxis2**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [constraint/joint/ragdoll-joint-config.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/ragdoll-joint-config.ts#L28)
+Defined in: [constraint/joint/ragdoll-joint-config.ts:28](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/ragdoll-joint-config.ts#L28)
 
 第二个刚体的本地扭转轴。
 相对于rigidBody2本地坐标系的扭转旋转轴，默认值(1,0,0)（X轴）；
@@ -149,7 +149,7 @@ Defined in: [constraint/joint/ragdoll-joint-config.ts:28](https://github.com/mrj
 
 > **maxSwingAngle1**: `number` = `3.14159265358979`
 
-Defined in: [constraint/joint/ragdoll-joint-config.ts:63](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/ragdoll-joint-config.ts#L63)
+Defined in: [constraint/joint/ragdoll-joint-config.ts:63](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/ragdoll-joint-config.ts#L63)
 
 第一摆动轴最大角度。
 沿摆动参考轴的第一方向最大摆动角度，默认值π（180°）；
@@ -161,7 +161,7 @@ Defined in: [constraint/joint/ragdoll-joint-config.ts:63](https://github.com/mrj
 
 > **maxSwingAngle2**: `number` = `3.14159265358979`
 
-Defined in: [constraint/joint/ragdoll-joint-config.ts:70](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/ragdoll-joint-config.ts#L70)
+Defined in: [constraint/joint/ragdoll-joint-config.ts:70](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/ragdoll-joint-config.ts#L70)
 
 第二摆动轴最大角度。
 沿摆动参考轴垂直方向的第二方向最大摆动角度，默认值π（180°）；
@@ -173,7 +173,7 @@ Defined in: [constraint/joint/ragdoll-joint-config.ts:70](https://github.com/mrj
 
 > **positionCorrectionAlgorithm**: `number` = `CONSTANT.SETTING_DEFAULT_JOINT_POSITION_CORRECTION_ALGORITHM`
 
-Defined in: [constraint/joint/joint-config.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L54)
+Defined in: [constraint/joint/joint-config.ts:54](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-config.ts#L54)
 
 位置修正算法类型。
 指定关节位置误差的修正算法，默认值为CONSTANT.SETTING_DEFAULT_JOINT_POSITION_CORRECTION_ALGORITHM，
@@ -189,7 +189,7 @@ Defined in: [constraint/joint/joint-config.ts:54](https://github.com/mrjordia/wu
 
 > **rigidBody1**: [`RigidBody`](../../../../rigid-body/rigid-body/classes/RigidBody.md)
 
-Defined in: [constraint/joint/joint-config.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L16)
+Defined in: [constraint/joint/joint-config.ts:16](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-config.ts#L16)
 
 关节关联的第一个刚体。
 关节约束的第一个目标刚体，非可选（通过!断言确保赋值），与rigidBody2共同构成关节约束的两个主体
@@ -204,7 +204,7 @@ Defined in: [constraint/joint/joint-config.ts:16](https://github.com/mrjordia/wu
 
 > **rigidBody2**: [`RigidBody`](../../../../rigid-body/rigid-body/classes/RigidBody.md)
 
-Defined in: [constraint/joint/joint-config.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L22)
+Defined in: [constraint/joint/joint-config.ts:22](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-config.ts#L22)
 
 关节关联的第二个刚体。
 关节约束的第二个目标刚体，非可选（通过!断言确保赋值），若为静态刚体则作为关节的固定端
@@ -219,7 +219,7 @@ Defined in: [constraint/joint/joint-config.ts:22](https://github.com/mrjordia/wu
 
 > **solverType**: `number` = `CONSTANT.SETTING_DEFAULT_JOINT_CONSTRAINT_SOLVER_TYPE`
 
-Defined in: [constraint/joint/joint-config.ts:47](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-config.ts#L47)
+Defined in: [constraint/joint/joint-config.ts:47](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-config.ts#L47)
 
 关节约束求解器类型。
 指定关节约束的求解算法类型，默认值为CONSTANT.SETTING_DEFAULT_JOINT_CONSTRAINT_SOLVER_TYPE，
@@ -235,7 +235,7 @@ Defined in: [constraint/joint/joint-config.ts:47](https://github.com/mrjordia/wu
 
 > **swingSpringDamper**: [`SpringDamper`](../../spring-damper/classes/SpringDamper.md)
 
-Defined in: [constraint/joint/ragdoll-joint-config.ts:49](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/ragdoll-joint-config.ts#L49)
+Defined in: [constraint/joint/ragdoll-joint-config.ts:49](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/ragdoll-joint-config.ts#L49)
 
 摆动运动弹簧阻尼器。
 摆动轴旋转运动的弹簧阻尼参数，默认初始化空实例（无弹性约束）；
@@ -247,7 +247,7 @@ Defined in: [constraint/joint/ragdoll-joint-config.ts:49](https://github.com/mrj
 
 > **twistLimitMotor**: [`RotationalLimitMotor`](../../rotational-limit-motor/classes/RotationalLimitMotor.md)
 
-Defined in: [constraint/joint/ragdoll-joint-config.ts:56](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/ragdoll-joint-config.ts#L56)
+Defined in: [constraint/joint/ragdoll-joint-config.ts:56](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/ragdoll-joint-config.ts#L56)
 
 扭转限位驱动。
 扭转轴旋转的限位范围、驱动速度、最大驱动力矩配置，默认初始化空实例（无限位/驱动）；
@@ -259,7 +259,7 @@ Defined in: [constraint/joint/ragdoll-joint-config.ts:56](https://github.com/mrj
 
 > **twistSpringDamper**: [`SpringDamper`](../../spring-damper/classes/SpringDamper.md)
 
-Defined in: [constraint/joint/ragdoll-joint-config.ts:42](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/ragdoll-joint-config.ts#L42)
+Defined in: [constraint/joint/ragdoll-joint-config.ts:42](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/ragdoll-joint-config.ts#L42)
 
 扭转运动弹簧阻尼器。
 扭转轴旋转运动的弹簧阻尼参数，默认初始化空实例（无弹性约束）；
@@ -271,7 +271,7 @@ Defined in: [constraint/joint/ragdoll-joint-config.ts:42](https://github.com/mrj
 
 > **init**(`rigidBody1`, `rigidBody2`, `_worldAnchor`, `_worldTwistAxis`, `_worldSwingAxis`): `RagdollJointConfig`
 
-Defined in: [constraint/joint/ragdoll-joint-config.ts:87](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/ragdoll-joint-config.ts#L87)
+Defined in: [constraint/joint/ragdoll-joint-config.ts:87](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/ragdoll-joint-config.ts#L87)
 
 初始化布娃娃关节配置。
 核心初始化逻辑：

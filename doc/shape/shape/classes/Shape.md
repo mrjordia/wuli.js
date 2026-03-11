@@ -6,7 +6,7 @@
 
 # Class: Shape
 
-Defined in: [shape/shape.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L18)
+Defined in: [shape/shape.ts:18](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L18)
 
 物理形状核心类。
 物理引擎中碰撞形状的核心封装，关联几何体、变换、物理属性（摩擦/恢复系数/密度），
@@ -19,7 +19,7 @@ Defined in: [shape/shape.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **new Shape**(`config`): `Shape`
 
-Defined in: [shape/shape.ts:60](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L60)
+Defined in: [shape/shape.ts:60](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L60)
 
 构造函数。
 初始化形状的本地变换、物理属性、几何体、碰撞过滤规则，
@@ -43,7 +43,7 @@ Defined in: [shape/shape.ts:60](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **aabb**: [`Aabb`](../../../common/aabb/classes/Aabb.md)
 
-Defined in: [shape/shape.ts:40](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L40)
+Defined in: [shape/shape.ts:40](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L40)
 
 形状的AABB包围盒（用于宽相位检测）
 
@@ -53,7 +53,7 @@ Defined in: [shape/shape.ts:40](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **collisionGroup**: `number`
 
-Defined in: [shape/shape.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L34)
+Defined in: [shape/shape.ts:34](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L34)
 
 碰撞组（用于碰撞过滤，仅与匹配的collisionMask碰撞）
 
@@ -63,7 +63,7 @@ Defined in: [shape/shape.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **collisionMask**: `number`
 
-Defined in: [shape/shape.ts:36](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L36)
+Defined in: [shape/shape.ts:36](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L36)
 
 碰撞掩码（用于碰撞过滤，标识可碰撞的组）
 
@@ -73,7 +73,7 @@ Defined in: [shape/shape.ts:36](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **contactCallback**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`ContactCallback`](../../../common/contact-callback/classes/ContactCallback.md)\>
 
-Defined in: [shape/shape.ts:38](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L38)
+Defined in: [shape/shape.ts:38](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L38)
 
 接触回调（碰撞开始/持续/结束时触发的自定义逻辑）
 
@@ -83,7 +83,7 @@ Defined in: [shape/shape.ts:38](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **displacement**: [`Vec3`](../../../common/vec3/classes/Vec3.md)
 
-Defined in: [shape/shape.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L50)
+Defined in: [shape/shape.ts:50](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L50)
 
 位移向量（当前帧相对于上一帧的位移，用于宽相位代理移动）
 
@@ -93,7 +93,7 @@ Defined in: [shape/shape.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **friction**: `number`
 
-Defined in: [shape/shape.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L30)
+Defined in: [shape/shape.ts:30](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L30)
 
 摩擦系数（0=无摩擦，1=最大静摩擦）
 
@@ -103,7 +103,7 @@ Defined in: [shape/shape.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **geometry**: [`Geometry`](../../geometry/classes/Geometry.md)
 
-Defined in: [shape/shape.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L32)
+Defined in: [shape/shape.ts:32](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L32)
 
 形状关联的几何体（如球体/盒型/胶囊体等）
 
@@ -113,7 +113,7 @@ Defined in: [shape/shape.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **id**: `number` = `-1`
 
-Defined in: [shape/shape.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L20)
+Defined in: [shape/shape.ts:20](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L20)
 
 形状唯一标识ID（-1表示未初始化）
 
@@ -123,7 +123,7 @@ Defined in: [shape/shape.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **localTransform**: [`Transform`](../../../common/transform/classes/Transform.md)
 
-Defined in: [shape/shape.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L22)
+Defined in: [shape/shape.ts:22](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L22)
 
 形状相对于刚体的本地变换（位置+旋转）
 
@@ -133,7 +133,7 @@ Defined in: [shape/shape.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **next**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<`Shape`\>
 
-Defined in: [shape/shape.ts:48](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L48)
+Defined in: [shape/shape.ts:48](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L48)
 
 形状链表后继节点（刚体的形状链表）
 
@@ -143,7 +143,7 @@ Defined in: [shape/shape.ts:48](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **prev**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<`Shape`\>
 
-Defined in: [shape/shape.ts:46](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L46)
+Defined in: [shape/shape.ts:46](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L46)
 
 形状链表前驱节点（刚体的形状链表）
 
@@ -153,7 +153,7 @@ Defined in: [shape/shape.ts:46](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **proxy**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`PhysicsProxy`](../../../broad-phase/physics-proxy/classes/PhysicsProxy.md)\>
 
-Defined in: [shape/shape.ts:42](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L42)
+Defined in: [shape/shape.ts:42](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L42)
 
 宽相位代理（关联到BroadPhase的碰撞代理）
 
@@ -163,7 +163,7 @@ Defined in: [shape/shape.ts:42](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **ptransform**: [`Transform`](../../../common/transform/classes/Transform.md)
 
-Defined in: [shape/shape.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L24)
+Defined in: [shape/shape.ts:24](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L24)
 
 上一帧的世界变换（用于插值/碰撞检测的历史状态）
 
@@ -173,7 +173,7 @@ Defined in: [shape/shape.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **restitution**: `number`
 
-Defined in: [shape/shape.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L28)
+Defined in: [shape/shape.ts:28](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L28)
 
 恢复系数（弹性，0=完全非弹性碰撞，1=完全弹性碰撞）
 
@@ -183,7 +183,7 @@ Defined in: [shape/shape.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **rigidBody**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`RigidBody`](../../../rigid-body/rigid-body/classes/RigidBody.md)\>
 
-Defined in: [shape/shape.ts:44](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L44)
+Defined in: [shape/shape.ts:44](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L44)
 
 绑定的刚体（Shape必须归属到一个RigidBody）
 
@@ -193,7 +193,7 @@ Defined in: [shape/shape.ts:44](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **transform**: [`Transform`](../../../common/transform/classes/Transform.md)
 
-Defined in: [shape/shape.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L26)
+Defined in: [shape/shape.ts:26](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L26)
 
 当前帧的世界变换（本地变换 × 刚体世界变换）
 
@@ -205,7 +205,7 @@ Defined in: [shape/shape.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **get** **density**(): `number`
 
-Defined in: [shape/shape.ts:155](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L155)
+Defined in: [shape/shape.ts:155](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L155)
 
 获取形状密度。
 密度是计算刚体质量的核心参数，不同形状的密度结合体积可得到质量。
@@ -220,7 +220,7 @@ Defined in: [shape/shape.ts:155](https://github.com/mrjordia/wuli.js/blob/bac1ae
 
 > **set** **density**(`density`): `void`
 
-Defined in: [shape/shape.ts:170](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L170)
+Defined in: [shape/shape.ts:170](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L170)
 
 设置形状密度。
 修改密度后会触发以下连锁更新：
@@ -249,7 +249,7 @@ Defined in: [shape/shape.ts:170](https://github.com/mrjordia/wuli.js/blob/bac1ae
 
 > **setLocalTransform**(`transform`): `void`
 
-Defined in: [shape/shape.ts:83](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/shape.ts#L83)
+Defined in: [shape/shape.ts:83](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/shape.ts#L83)
 
 设置形状的本地变换（相对于刚体）。
 修改形状相对于刚体的本地变换，并触发以下连锁更新：

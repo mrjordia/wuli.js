@@ -6,7 +6,7 @@
 
 # Class: AabbTestWrapper
 
-Defined in: [common/aabb-test-wrapper.ts:11](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/aabb-test-wrapper.ts#L11)
+Defined in: [common/aabb-test-wrapper.ts:11](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/aabb-test-wrapper.ts#L11)
 
 AABB检测回调包装类。
 宽相位碰撞检测中，用于筛选与目标AABB相交的物理代理（PhysicsProxy），
@@ -36,7 +36,7 @@ AABB检测回调包装类。
 
 > **aabb**: [`Aabb`](../../aabb/classes/Aabb.md)
 
-Defined in: [common/aabb-test-wrapper.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/aabb-test-wrapper.ts#L16)
+Defined in: [common/aabb-test-wrapper.ts:16](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/aabb-test-wrapper.ts#L16)
 
 目标检测AABB（待检测相交的轴对齐包围盒）。
 初始化为空AABB，需在检测前设置具体的min/max值（elements[0-5]对应xmin/ymin/zmin/xmax/ymax/zmax）。
@@ -47,7 +47,7 @@ Defined in: [common/aabb-test-wrapper.ts:16](https://github.com/mrjordia/wuli.js
 
 > `optional` **callback**: [`AabbTestCallback`](../../aabb-test-callback/classes/AabbTestCallback.md)
 
-Defined in: [common/aabb-test-wrapper.ts:23](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/aabb-test-wrapper.ts#L23)
+Defined in: [common/aabb-test-wrapper.ts:23](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/aabb-test-wrapper.ts#L23)
 
 AABB相交后的自定义回调函数。
 检测到代理AABB与目标AABB相交时触发，用于处理相交的形状（如收集结果、过滤逻辑）；
@@ -59,7 +59,7 @@ AABB相交后的自定义回调函数。
 
 > **process**(`proxy`): `void`
 
-Defined in: [common/aabb-test-wrapper.ts:35](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/aabb-test-wrapper.ts#L35)
+Defined in: [common/aabb-test-wrapper.ts:35](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/aabb-test-wrapper.ts#L35)
 
 处理单个物理代理的AABB相交检测。
 核心逻辑：

@@ -6,7 +6,7 @@
 
 # Abstract Class: BroadPhaseProxyCallback
 
-Defined in: [broad-phase/broad-phase-proxy-callback.ts:14](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase-proxy-callback.ts#L14)
+Defined in: [broad-phase/broad-phase-proxy-callback.ts:14](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase-proxy-callback.ts#L14)
 
 粗检测代理回调抽象类。
 物理引擎中粗检测（BroadPhase）阶段的代理遍历回调抽象类；
@@ -40,7 +40,7 @@ Defined in: [broad-phase/broad-phase-proxy-callback.ts:14](https://github.com/mr
 
 > `abstract` **process**(`proxy`): `void`
 
-Defined in: [broad-phase/broad-phase-proxy-callback.ts:25](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase-proxy-callback.ts#L25)
+Defined in: [broad-phase/broad-phase-proxy-callback.ts:25](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase-proxy-callback.ts#L25)
 
 代理处理抽象方法。
 子类需实现该方法，定义对命中代理的具体处理逻辑：

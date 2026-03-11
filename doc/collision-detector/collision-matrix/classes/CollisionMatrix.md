@@ -6,7 +6,7 @@
 
 # Class: CollisionMatrix
 
-Defined in: [collision-detector/collision-matrix.ts:17](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/collision-matrix.ts#L17)
+Defined in: [collision-detector/collision-matrix.ts:17](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/collision-matrix.ts#L17)
 
 碰撞检测器矩阵类。
 物理引擎的碰撞检测器映射矩阵，核心作用是根据两个几何形状的类型（GEOMETRY_TYPE），
@@ -19,7 +19,7 @@ Defined in: [collision-detector/collision-matrix.ts:17](https://github.com/mrjor
 
 > **new CollisionMatrix**(): `CollisionMatrix`
 
-Defined in: [collision-detector/collision-matrix.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/collision-matrix.ts#L30)
+Defined in: [collision-detector/collision-matrix.ts:30](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/collision-matrix.ts#L30)
 
 碰撞矩阵构造函数。
 初始化时自动调用私有方法_init()，完成检测器矩阵的初始化，
@@ -35,7 +35,7 @@ Defined in: [collision-detector/collision-matrix.ts:30](https://github.com/mrjor
 
 > **detectors**: [`Detector`](../../detector/classes/Detector.md)\<[`Geometry`](../../../shape/geometry/classes/Geometry.md), [`Geometry`](../../../shape/geometry/classes/Geometry.md)\>[][] = `[]`
 
-Defined in: [collision-detector/collision-matrix.ts:23](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/collision-matrix.ts#L23)
+Defined in: [collision-detector/collision-matrix.ts:23](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/collision-matrix.ts#L23)
 
 碰撞检测器二维矩阵。
 行/列索引对应几何类型（GEOMETRY_TYPE）转换后的数值，
@@ -47,7 +47,7 @@ Defined in: [collision-detector/collision-matrix.ts:23](https://github.com/mrjor
 
 > **getDetector**(`geomType1`, `geomType2`): [`Detector`](../../detector/classes/Detector.md)
 
-Defined in: [collision-detector/collision-matrix.ts:44](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/collision-matrix.ts#L44)
+Defined in: [collision-detector/collision-matrix.ts:44](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/collision-matrix.ts#L44)
 
 获取指定几何类型组合的碰撞检测器。
 核心逻辑：

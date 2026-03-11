@@ -6,7 +6,7 @@
 
 # Class: TimeStep
 
-Defined in: [common/time-step.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/time-step.ts#L13)
+Defined in: [common/time-step.ts:13](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/time-step.ts#L13)
 
 物理引擎时间步长管理类。
 物理引擎中模拟时间的核心管理类，核心作用：
@@ -25,7 +25,7 @@ Defined in: [common/time-step.ts:13](https://github.com/mrjordia/wuli.js/blob/ba
 
 > **new TimeStep**(`dt?`, `invDt?`, `dtRatio?`): `TimeStep`
 
-Defined in: [common/time-step.ts:53](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/time-step.ts#L53)
+Defined in: [common/time-step.ts:53](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/time-step.ts#L53)
 
 构造函数：初始化时间步长参数。
 核心初始化逻辑：
@@ -63,7 +63,7 @@ Defined in: [common/time-step.ts:53](https://github.com/mrjordia/wuli.js/blob/ba
 
 > **dt**: `number`
 
-Defined in: [common/time-step.ts:21](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/time-step.ts#L21)
+Defined in: [common/time-step.ts:21](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/time-step.ts#L21)
 
 物理模拟单次时间步长（秒）。
 物理引擎每一步模拟的时间增量，是模拟的核心时间单位：
@@ -77,7 +77,7 @@ Defined in: [common/time-step.ts:21](https://github.com/mrjordia/wuli.js/blob/ba
 
 > **dtRatio**: `number`
 
-Defined in: [common/time-step.ts:41](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/time-step.ts#L41)
+Defined in: [common/time-step.ts:41](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/time-step.ts#L41)
 
 时间步长比率（当前dt / 基准dt）。
 用于时间缩放或帧率补偿的系数：
@@ -92,7 +92,7 @@ Defined in: [common/time-step.ts:41](https://github.com/mrjordia/wuli.js/blob/ba
 
 > **invDt**: `number`
 
-Defined in: [common/time-step.ts:31](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/time-step.ts#L31)
+Defined in: [common/time-step.ts:31](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/time-step.ts#L31)
 
 时间步长的倒数（1/dt）。
 预计算的衍生值，核心作用：

@@ -6,7 +6,7 @@
 
 # Class: ConvexTerrainDetector
 
-Defined in: [collision-detector/convex-terrain-detector.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/convex-terrain-detector.ts#L22)
+Defined in: [collision-detector/convex-terrain-detector.ts:22](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/convex-terrain-detector.ts#L22)
 
 凸几何体-地形碰撞检测器类。
 专用于检测凸几何体（球体、胶囊体、通用凸体）与地形（TerrainGeometry）之间碰撞的检测器；
@@ -26,7 +26,7 @@ Defined in: [collision-detector/convex-terrain-detector.ts:22](https://github.co
 
 > **new ConvexTerrainDetector**(`swapped`): `ConvexTerrainDetector`
 
-Defined in: [collision-detector/convex-terrain-detector.ts:60](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/convex-terrain-detector.ts#L60)
+Defined in: [collision-detector/convex-terrain-detector.ts:60](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/convex-terrain-detector.ts#L60)
 
 凸几何体-地形检测器构造函数。
 初始化父类Detector，传入swapped标记，适配不同的检测对象顺序。
@@ -53,7 +53,7 @@ Defined in: [collision-detector/convex-terrain-detector.ts:60](https://github.co
 
 > **convexTerrainLayered**: `boolean` = `true`
 
-Defined in: [collision-detector/convex-terrain-detector.ts:53](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/convex-terrain-detector.ts#L53)
+Defined in: [collision-detector/convex-terrain-detector.ts:53](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/convex-terrain-detector.ts#L53)
 
 是否启用分层检测模式（true=分层检测，false=通用凸体检测）
 
@@ -63,7 +63,7 @@ Defined in: [collision-detector/convex-terrain-detector.ts:53](https://github.co
 
 > **stabilizeRadiusRatio**: `number` = `0.7`
 
-Defined in: [collision-detector/convex-terrain-detector.ts:51](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/convex-terrain-detector.ts#L51)
+Defined in: [collision-detector/convex-terrain-detector.ts:51](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/convex-terrain-detector.ts#L51)
 
 稳定点半径比例系数，用于计算稳定采样点的位置
 
@@ -73,7 +73,7 @@ Defined in: [collision-detector/convex-terrain-detector.ts:51](https://github.co
 
 > **swapped**: `boolean`
 
-Defined in: [collision-detector/detector.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector.ts#L24)
+Defined in: [collision-detector/detector.ts:24](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector.ts#L24)
 
 是否交换检测对象顺序标记。
 标记为true时：
@@ -92,7 +92,7 @@ Defined in: [collision-detector/detector.ts:24](https://github.com/mrjordia/wuli
 
 > **addPoint**(`result`, `pos1X`, `pos1Y`, `pos1Z`, `pos2X`, `pos2Y`, `pos2Z`, `depth`, `id`): `void`
 
-Defined in: [collision-detector/detector.ts:65](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector.ts#L65)
+Defined in: [collision-detector/detector.ts:65](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector.ts#L65)
 
 向检测结果添加碰撞点信息。
 自动根据swapped标记交换position1/position2坐标，保证坐标与检测顺序一致。
@@ -167,7 +167,7 @@ Defined in: [collision-detector/detector.ts:65](https://github.com/mrjordia/wuli
 
 > **detect**(`result`, `geom1`, `geom2`, `transform1`, `transform2`, `cachedData`): `void`
 
-Defined in: [collision-detector/detector.ts:102](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector.ts#L102)
+Defined in: [collision-detector/detector.ts:102](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector.ts#L102)
 
 执行碰撞检测的入口方法。
 执行流程：
@@ -227,7 +227,7 @@ Defined in: [collision-detector/detector.ts:102](https://github.com/mrjordia/wul
 
 > **setNormal**(`result`, `nX`, `nY`, `nZ`): `void`
 
-Defined in: [collision-detector/detector.ts:43](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/detector.ts#L43)
+Defined in: [collision-detector/detector.ts:43](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/detector.ts#L43)
 
 设置碰撞检测结果的法线向量。
 自动根据swapped标记决定是否对法线向量取反，保证法线方向符合检测顺序。

@@ -6,7 +6,7 @@
 
 # Class: MassData
 
-Defined in: [rigid-body/mass-data.ts:11](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/mass-data.ts#L11)
+Defined in: [rigid-body/mass-data.ts:11](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/rigid-body/mass-data.ts#L11)
 
 物理引擎刚体质量数据类。
 用于存储刚体的核心质量属性，包含总质量和本地坐标系下的转动惯量矩阵，
@@ -31,7 +31,7 @@ Defined in: [rigid-body/mass-data.ts:11](https://github.com/mrjordia/wuli.js/blo
 
 > **localInertia**: [`Mat3`](../../../common/mat3/classes/Mat3.md)
 
-Defined in: [rigid-body/mass-data.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/mass-data.ts#L30)
+Defined in: [rigid-body/mass-data.ts:30](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/rigid-body/mass-data.ts#L30)
 
 本地坐标系下的转动惯量矩阵（单位：kg·m²）。
 3x3对称矩阵，描述刚体绕质心各轴的转动惯性分布，核心作用：
@@ -49,7 +49,7 @@ Defined in: [rigid-body/mass-data.ts:30](https://github.com/mrjordia/wuli.js/blo
 
 > **mass**: `number` = `0`
 
-Defined in: [rigid-body/mass-data.ts:17](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/rigid-body/mass-data.ts#L17)
+Defined in: [rigid-body/mass-data.ts:17](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/rigid-body/mass-data.ts#L17)
 
 刚体总质量（单位：千克/kg）。
 计算逻辑：所有关联Shape的质量之和（质量 = 密度 × 体积）

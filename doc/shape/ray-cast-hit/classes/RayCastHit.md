@@ -6,7 +6,7 @@
 
 # Class: RayCastHit
 
-Defined in: [shape/ray-cast-hit.ts:8](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/ray-cast-hit.ts#L8)
+Defined in: [shape/ray-cast-hit.ts:8](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/ray-cast-hit.ts#L8)
 
 射线检测命中结果类。
 存储射线与几何体相交检测的核心结果数据，是物理引擎中射线检测的核心返回载体，
@@ -28,7 +28,7 @@ Defined in: [shape/ray-cast-hit.ts:8](https://github.com/mrjordia/wuli.js/blob/b
 
 > **fraction**: `number` = `0`
 
-Defined in: [shape/ray-cast-hit.ts:33](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/ray-cast-hit.ts#L33)
+Defined in: [shape/ray-cast-hit.ts:33](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/ray-cast-hit.ts#L33)
 
 射线相交比例（0~1）。
 核心意义：
@@ -42,7 +42,7 @@ Defined in: [shape/ray-cast-hit.ts:33](https://github.com/mrjordia/wuli.js/blob/
 
 > **normal**: [`Vec3`](../../../common/vec3/classes/Vec3.md)
 
-Defined in: [shape/ray-cast-hit.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/ray-cast-hit.ts#L24)
+Defined in: [shape/ray-cast-hit.ts:24](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/ray-cast-hit.ts#L24)
 
 相交点处几何体表面的法向量（归一化，长度为1）。
 三维向量存储法向量的X/Y/Z分量：
@@ -55,7 +55,7 @@ Defined in: [shape/ray-cast-hit.ts:24](https://github.com/mrjordia/wuli.js/blob/
 
 > **position**: [`Vec3`](../../../common/vec3/classes/Vec3.md)
 
-Defined in: [shape/ray-cast-hit.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/ray-cast-hit.ts#L16)
+Defined in: [shape/ray-cast-hit.ts:16](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/ray-cast-hit.ts#L16)
 
 射线与几何体的相交点坐标（世界/局部坐标系由射线检测方法决定）。
 三维向量存储相交点的X/Y/Z坐标：

@@ -6,7 +6,7 @@
 
 # Enumeration: POSITION\_CORRECTION\_ALGORITHM
 
-Defined in: [constant.ts:141](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L141)
+Defined in: [constant.ts:141](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L141)
 
 位置修正算法枚举。
 约束求解中位置修正的算法类型
@@ -17,7 +17,7 @@ Defined in: [constant.ts:141](https://github.com/mrjordia/wuli.js/blob/bac1aebf7
 
 > **BAUMGARTE**: `0`
 
-Defined in: [constant.ts:143](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L143)
+Defined in: [constant.ts:143](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L143)
 
 鲍姆加特算法（经典，简单但可能引入能量）
 
@@ -27,7 +27,7 @@ Defined in: [constant.ts:143](https://github.com/mrjordia/wuli.js/blob/bac1aebf7
 
 > **NGS**: `2`
 
-Defined in: [constant.ts:147](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L147)
+Defined in: [constant.ts:147](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L147)
 
 NGS算法（牛顿迭代法，高精度）
 
@@ -37,6 +37,6 @@ NGS算法（牛顿迭代法，高精度）
 
 > **SPLIT\_IMPULSE**: `1`
 
-Defined in: [constant.ts:145](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L145)
+Defined in: [constant.ts:145](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L145)
 
 分离冲量（避免能量引入，更稳定）

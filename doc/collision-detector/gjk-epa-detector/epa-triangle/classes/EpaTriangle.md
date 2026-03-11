@@ -6,7 +6,7 @@
 
 # Class: EpaTriangle
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L13)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:13](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L13)
 
 EPA三角面类。
 属于EPA（扩展多面体算法）核心数据结构，用于表示碰撞检测中多面体的三角面，
@@ -29,7 +29,7 @@ EPA三角面类。
 
 > **adjacentPairIndex**: `Int8Array`\<`ArrayBuffer`\>
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:73](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L73)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:73](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L73)
 
 相邻三角面对应的边索引。
 长度为3的数组，存储相邻三角面中对应共享边的索引，用于快速定位相邻边
@@ -40,7 +40,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:73](https://git
 
 > **adjacentTriangles**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<`EpaTriangle`\>[]
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:67](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L67)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:67](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L67)
 
 相邻三角面数组。
 长度为3的数组，存储与当前三角面共享边的三个相邻三角面，
@@ -52,7 +52,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:67](https://git
 
 > **distanceSq**: `number` = `0`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:42](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L42)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:42](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L42)
 
 原点到三角面的距离平方。
 优化计算用的缓存值，避免重复开平方，核心用于筛选最近三角面
@@ -63,7 +63,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:42](https://git
 
 > **id**: `number` = `++CONSTANT.EPA_TRIANGLE_COUNT`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L18)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:18](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L18)
 
 三角面唯一标识ID。
 自增ID，通过全局EPA_TRIANGLE_COUNT生成，用于区分不同三角面实例
@@ -74,7 +74,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:18](https://git
 
 > **next**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<`EpaTriangle`\>
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L24)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:24](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L24)
 
 链表下一个三角面。
 用于三角面链表管理的指针，指向链表中当前三角面的下一个节点
@@ -85,7 +85,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:24](https://git
 
 > **nextIndex**: `any`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:85](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L85)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:85](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L85)
 
 下一个顶点索引映射。
 预定义的顶点索引循环映射：[0,1,2,0]，用于快速获取当前顶点的下一个顶点索引
@@ -96,7 +96,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:85](https://git
 
 > **normal**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:36](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L36)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:36](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L36)
 
 三角面法向量。
 三角面的单位法向量（指向外部），用于判断三角面朝向和计算距离
@@ -107,7 +107,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:36](https://git
 
 > **prev**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<`EpaTriangle`\>
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L30)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:30](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L30)
 
 链表上一个三角面。
 用于三角面链表管理的指针，指向链表中当前三角面的上一个节点
@@ -118,7 +118,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:30](https://git
 
 > **tmp**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:79](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L79)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:79](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L79)
 
 临时向量存储。
 用于计算的临时向量，避免频繁创建新Vec3实例，优化内存开销
@@ -129,7 +129,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:79](https://git
 
 > **tmpDfsId**: `number` = `0`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:48](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L48)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:48](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L48)
 
 DFS遍历临时ID。
 深度优先搜索（DFS）时的临时标记ID，用于遍历过程中区分已访问/未访问三角面
@@ -140,7 +140,7 @@ DFS遍历临时ID。
 
 > **tmpDfsVisible**: `boolean` = `false`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L54)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:54](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L54)
 
 DFS遍历可见性标记。
 深度优先搜索（DFS）时的临时可见性标记，标记三角面是否朝向原点（可见）
@@ -151,7 +151,7 @@ DFS遍历可见性标记。
 
 > **vertices**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`EpaVertex`](../../epa-vertex/classes/EpaVertex.md)\>[]
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:60](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L60)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:60](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L60)
 
 三角面的三个顶点。
 长度为3的数组，存储构成三角面的三个EPA顶点实例，索引0/1/2对应三角面的三个顶点
@@ -162,7 +162,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:60](https://git
 
 > **init**(`vertex1`, `vertex2`, `vertex3`, `center`, `autoCheck`): `boolean`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:117](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L117)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:117](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L117)
 
 初始化EPA三角面。
 核心初始化逻辑：
@@ -216,7 +216,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:117](https://gi
 
 > **removeAdjacentTriangles**(): `void`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:283](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L283)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:283](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L283)
 
 移除所有相邻三角面关联。
 核心逻辑：
@@ -235,7 +235,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:283](https://gi
 
 > **removeReferences**(): `void`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:318](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L318)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:318](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L318)
 
 移除所有引用（清理内存）。
 核心逻辑：
@@ -253,7 +253,7 @@ Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:318](https://gi
 
 > **setAdjacentTriangle**(`triangle`): `boolean`
 
-Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:205](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L205)
+Defined in: [collision-detector/gjk-epa-detector/epa-triangle.ts:205](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/collision-detector/gjk-epa-detector/epa-triangle.ts#L205)
 
 设置相邻三角面。
 核心逻辑：

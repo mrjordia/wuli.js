@@ -6,7 +6,7 @@
 
 # Enumeration: EPA\_POLYHEDRON\_STATE
 
-Defined in: [constant.ts:101](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L101)
+Defined in: [constant.ts:101](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L101)
 
 EPA多面体状态枚举。
 GJK-EPA算法中EPA多面体构建的状态码
@@ -17,7 +17,7 @@ GJK-EPA算法中EPA多面体构建的状态码
 
 > **EDGE\_LOOP\_BROKEN**: `4`
 
-Defined in: [constant.ts:111](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L111)
+Defined in: [constant.ts:111](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L111)
 
 边环断裂
 
@@ -27,7 +27,7 @@ Defined in: [constant.ts:111](https://github.com/mrjordia/wuli.js/blob/bac1aebf7
 
 > **INVALID\_TRIANGLE**: `1`
 
-Defined in: [constant.ts:105](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L105)
+Defined in: [constant.ts:105](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L105)
 
 无效三角形
 
@@ -37,7 +37,7 @@ Defined in: [constant.ts:105](https://github.com/mrjordia/wuli.js/blob/bac1aebf7
 
 > **NO\_ADJACENT\_PAIR\_INDEX**: `2`
 
-Defined in: [constant.ts:107](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L107)
+Defined in: [constant.ts:107](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L107)
 
 无相邻对索引
 
@@ -47,7 +47,7 @@ Defined in: [constant.ts:107](https://github.com/mrjordia/wuli.js/blob/bac1aebf7
 
 > **NO\_ADJACENT\_TRIANGLE**: `3`
 
-Defined in: [constant.ts:109](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L109)
+Defined in: [constant.ts:109](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L109)
 
 无相邻三角形
 
@@ -57,7 +57,7 @@ Defined in: [constant.ts:109](https://github.com/mrjordia/wuli.js/blob/bac1aebf7
 
 > **NO\_OUTER\_TRIANGLE**: `5`
 
-Defined in: [constant.ts:113](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L113)
+Defined in: [constant.ts:113](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L113)
 
 无外层三角形
 
@@ -67,7 +67,7 @@ Defined in: [constant.ts:113](https://github.com/mrjordia/wuli.js/blob/bac1aebf7
 
 > **OK**: `0`
 
-Defined in: [constant.ts:103](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L103)
+Defined in: [constant.ts:103](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L103)
 
 状态正常
 
@@ -77,6 +77,6 @@ Defined in: [constant.ts:103](https://github.com/mrjordia/wuli.js/blob/bac1aebf7
 
 > **TRIANGLE\_INVISIBLE**: `6`
 
-Defined in: [constant.ts:115](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L115)
+Defined in: [constant.ts:115](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L115)
 
 三角形不可见

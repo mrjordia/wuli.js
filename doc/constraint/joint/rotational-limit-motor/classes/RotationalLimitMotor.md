@@ -6,7 +6,7 @@
 
 # Class: RotationalLimitMotor
 
-Defined in: [constraint/joint/rotational-limit-motor.ts:8](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/rotational-limit-motor.ts#L8)
+Defined in: [constraint/joint/rotational-limit-motor.ts:8](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/rotational-limit-motor.ts#L8)
 
 旋转限位驱动类。
 用于控制旋转关节的角度限位和驱动特性的核心配置类，
@@ -30,7 +30,7 @@ Defined in: [constraint/joint/rotational-limit-motor.ts:8](https://github.com/mr
 
 > **lowerLimit**: `number` = `1`
 
-Defined in: [constraint/joint/rotational-limit-motor.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/rotational-limit-motor.ts#L16)
+Defined in: [constraint/joint/rotational-limit-motor.ts:16](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/rotational-limit-motor.ts#L16)
 
 旋转下限角度。
 关节允许旋转的最小角度（弧度），默认值1；
@@ -43,7 +43,7 @@ Defined in: [constraint/joint/rotational-limit-motor.ts:16](https://github.com/m
 
 > **motorSpeed**: `number` = `0`
 
-Defined in: [constraint/joint/rotational-limit-motor.ts:40](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/rotational-limit-motor.ts#L40)
+Defined in: [constraint/joint/rotational-limit-motor.ts:40](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/rotational-limit-motor.ts#L40)
 
 电机目标转速。
 驱动关节旋转的目标角速度（弧度/秒），默认值0（无主动旋转）；
@@ -56,7 +56,7 @@ Defined in: [constraint/joint/rotational-limit-motor.ts:40](https://github.com/m
 
 > **motorTorque**: `number` = `0`
 
-Defined in: [constraint/joint/rotational-limit-motor.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/rotational-limit-motor.ts#L32)
+Defined in: [constraint/joint/rotational-limit-motor.ts:32](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/rotational-limit-motor.ts#L32)
 
 电机驱动力矩。
 驱动关节旋转的最大力矩（N·m），默认值0（无驱动力）；
@@ -69,7 +69,7 @@ Defined in: [constraint/joint/rotational-limit-motor.ts:32](https://github.com/m
 
 > **upperLimit**: `number` = `0`
 
-Defined in: [constraint/joint/rotational-limit-motor.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/rotational-limit-motor.ts#L24)
+Defined in: [constraint/joint/rotational-limit-motor.ts:24](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/rotational-limit-motor.ts#L24)
 
 旋转上限角度。
 关节允许旋转的最大角度（弧度），默认值0；
@@ -82,7 +82,7 @@ Defined in: [constraint/joint/rotational-limit-motor.ts:24](https://github.com/m
 
 > **clone**(): `RotationalLimitMotor`
 
-Defined in: [constraint/joint/rotational-limit-motor.ts:76](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/rotational-limit-motor.ts#L76)
+Defined in: [constraint/joint/rotational-limit-motor.ts:76](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/rotational-limit-motor.ts#L76)
 
 克隆当前实例。
 创建并返回一个与当前实例参数完全相同的新实例，
@@ -100,7 +100,7 @@ Defined in: [constraint/joint/rotational-limit-motor.ts:76](https://github.com/m
 
 > **setLimits**(`lower`, `upper`): `RotationalLimitMotor`
 
-Defined in: [constraint/joint/rotational-limit-motor.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/rotational-limit-motor.ts#L50)
+Defined in: [constraint/joint/rotational-limit-motor.ts:50](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/rotational-limit-motor.ts#L50)
 
 设置旋转角度限位。
 批量设置旋转角度的上下限，返回自身以支持链式调用；
@@ -132,7 +132,7 @@ Defined in: [constraint/joint/rotational-limit-motor.ts:50](https://github.com/m
 
 > **setMotor**(`speed`, `torque`): `RotationalLimitMotor`
 
-Defined in: [constraint/joint/rotational-limit-motor.ts:64](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/rotational-limit-motor.ts#L64)
+Defined in: [constraint/joint/rotational-limit-motor.ts:64](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/rotational-limit-motor.ts#L64)
 
 设置电机驱动参数。
 批量设置电机的目标转速和最大力矩，返回自身以支持链式调用；

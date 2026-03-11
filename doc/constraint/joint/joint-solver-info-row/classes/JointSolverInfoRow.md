@@ -6,7 +6,7 @@
 
 # Class: JointSolverInfoRow
 
-Defined in: [constraint/joint/joint-solver-info-row.ts:10](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info-row.ts#L10)
+Defined in: [constraint/joint/joint-solver-info-row.ts:10](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info-row.ts#L10)
 
 关节求解器单行约束信息类。
 物理引擎中关节约束求解的核心单行约束数据容器，存储单条约束行的雅可比矩阵、约束参数、驱动参数、冲量限制等完整信息，
@@ -28,7 +28,7 @@ Defined in: [constraint/joint/joint-solver-info-row.ts:10](https://github.com/mr
 
 > **cfm**: `number` = `0`
 
-Defined in: [constraint/joint/joint-solver-info-row.ts:30](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info-row.ts#L30)
+Defined in: [constraint/joint/joint-solver-info-row.ts:30](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info-row.ts#L30)
 
 约束力混合系数（Constraint Force Mixing）。
 用于软化约束的系数，默认值0；非零值可让约束具备“弹性”（允许微小穿透/偏移），
@@ -40,7 +40,7 @@ Defined in: [constraint/joint/joint-solver-info-row.ts:30](https://github.com/mr
 
 > **impulse**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`JointImpulse`](../../joint-impulse/classes/JointImpulse.md)\>
 
-Defined in: [constraint/joint/joint-solver-info-row.ts:65](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info-row.ts#L65)
+Defined in: [constraint/joint/joint-solver-info-row.ts:65](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info-row.ts#L65)
 
 约束行的冲量数据引用。
 关联的冲量存储实例，可为null（未初始化/无冲量数据时）；用于记录当前约束行的速度约束、驱动、位置约束冲量值，
@@ -52,7 +52,7 @@ Defined in: [constraint/joint/joint-solver-info-row.ts:65](https://github.com/mr
 
 > **jacobian**: [`JacobianRow`](../../../solver/jacobian-row/classes/JacobianRow.md)
 
-Defined in: [constraint/joint/joint-solver-info-row.ts:16](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info-row.ts#L16)
+Defined in: [constraint/joint/joint-solver-info-row.ts:16](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info-row.ts#L16)
 
 约束行的雅可比矩阵行。
 描述当前约束行的雅可比矩阵数据，包含刚体速度/位置与约束的映射关系，是约束求解的核心数学基础，
@@ -64,7 +64,7 @@ Defined in: [constraint/joint/joint-solver-info-row.ts:16](https://github.com/mr
 
 > **maxImpulse**: `number` = `0`
 
-Defined in: [constraint/joint/joint-solver-info-row.ts:44](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info-row.ts#L44)
+Defined in: [constraint/joint/joint-solver-info-row.ts:44](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info-row.ts#L44)
 
 冲量上限。
 当前约束行允许的最大冲量值，默认值0，与minImpulse共同限制约束冲量的取值区间，
@@ -76,7 +76,7 @@ Defined in: [constraint/joint/joint-solver-info-row.ts:44](https://github.com/mr
 
 > **minImpulse**: `number` = `0`
 
-Defined in: [constraint/joint/joint-solver-info-row.ts:37](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info-row.ts#L37)
+Defined in: [constraint/joint/joint-solver-info-row.ts:37](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info-row.ts#L37)
 
 冲量下限。
 当前约束行允许的最小冲量值，默认值0，与maxImpulse配合限定冲量范围，
@@ -88,7 +88,7 @@ Defined in: [constraint/joint/joint-solver-info-row.ts:37](https://github.com/mr
 
 > **motorMaxImpulse**: `number` = `0`
 
-Defined in: [constraint/joint/joint-solver-info-row.ts:58](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info-row.ts#L58)
+Defined in: [constraint/joint/joint-solver-info-row.ts:58](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info-row.ts#L58)
 
 驱动最大冲量。
 关节约束驱动允许输出的最大冲量值，默认值0；值为0时表示禁用驱动功能，
@@ -100,7 +100,7 @@ Defined in: [constraint/joint/joint-solver-info-row.ts:58](https://github.com/mr
 
 > **motorSpeed**: `number` = `0`
 
-Defined in: [constraint/joint/joint-solver-info-row.ts:51](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info-row.ts#L51)
+Defined in: [constraint/joint/joint-solver-info-row.ts:51](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info-row.ts#L51)
 
 驱动目标速度。
 关节约束驱动的目标速度，默认值0；仅在motorMaxImpulse>0时生效，
@@ -112,7 +112,7 @@ Defined in: [constraint/joint/joint-solver-info-row.ts:51](https://github.com/mr
 
 > **rhs**: `number` = `0`
 
-Defined in: [constraint/joint/joint-solver-info-row.ts:23](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-info-row.ts#L23)
+Defined in: [constraint/joint/joint-solver-info-row.ts:23](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-info-row.ts#L23)
 
 约束方程右侧值（Right Hand Side）。
 约束方程 $J \cdot v = rhs$ 中的右侧目标值，默认值0，用于定义约束的目标状态（如速度约束的目标相对速度），

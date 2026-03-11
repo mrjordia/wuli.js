@@ -2,11 +2,11 @@
 
 ***
 
-[wuli.js API文档](../../../../modules.md) / [broad-phase/bvh-broad-phase/bvh-broad-phase](../README.md) / default
+[wuli.js API文档](../../../../modules.md) / [broad-phase/bvh-broad-phase/bvh-broad-phase](../README.md) / BvhBroadPhase
 
-# Class: default
+# Class: BvhBroadPhase
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:35](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L35)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:35](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L35)
 
 BVH（边界体积层次）粗检测核心实现类。
 物理引擎中基于BVH树的高性能粗检测实现，核心作用：
@@ -32,9 +32,9 @@ BVH（边界体积层次）粗检测核心实现类。
 
 ### Constructor
 
-> **new default**(): `BvhBroadPhase`
+> **new BvhBroadPhase**(): `BvhBroadPhase`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:68](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L68)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:68](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L68)
 
 构造函数：初始化BVH粗检测实例。
 核心初始化逻辑：
@@ -56,7 +56,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:68](https://github.c
 
 > **identity**: [`Transform`](../../../../common/transform/classes/Transform.md)
 
-Defined in: [broad-phase/broad-phase.ts:75](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L75)
+Defined in: [broad-phase/broad-phase.ts:75](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L75)
 
 单位变换矩阵。
 预初始化的单位Transform实例（无平移、无旋转）；
@@ -72,7 +72,7 @@ Defined in: [broad-phase/broad-phase.ts:75](https://github.com/mrjordia/wuli.js/
 
 > **incremental**: `boolean` = `true`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:43](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L43)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:43](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L43)
 
 增量更新开关。
 是否启用增量粗检测：
@@ -90,7 +90,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:43](https://github.c
 
 > **movedProxies**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`BvhProxy`](../../bvh-proxy/classes/BvhProxy.md)\>[]
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L50)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:50](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L50)
 
 移动代理数组。
 存储帧内发生移动的BvhProxy实例，长度初始化为1024；
@@ -102,7 +102,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:50](https://github.c
 
 > **numMovedProxies**: `number` = `0`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:57](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L57)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:57](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L57)
 
 移动代理数量。
 统计当前帧移动代理数组中的有效代理数量；
@@ -114,7 +114,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:57](https://github.c
 
 > **proxyPairList**: [`Nullable`](../../../../common/nullable/type-aliases/Nullable.md)\<[`ProxyPair`](../../../proxy-pair/classes/ProxyPair.md)\>
 
-Defined in: [broad-phase/broad-phase.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L54)
+Defined in: [broad-phase/broad-phase.ts:54](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L54)
 
 碰撞对链表头节点。
 指向当前帧检测出的候选碰撞对链表的第一个节点；
@@ -130,7 +130,7 @@ collectPairs方法会更新该链表，用于后续细检测阶段处理。
 
 > **raycastHit**: [`RayCastHit`](../../../../shape/ray-cast-hit/classes/RayCastHit.md)
 
-Defined in: [broad-phase/broad-phase.ts:89](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L89)
+Defined in: [broad-phase/broad-phase.ts:89](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L89)
 
 射线检测命中结果。
 预初始化的RayCastHit实例，用于存储射线检测的命中数据；
@@ -146,7 +146,7 @@ Defined in: [broad-phase/broad-phase.ts:89](https://github.com/mrjordia/wuli.js/
 
 > **testCount**: `number` = `0`
 
-Defined in: [broad-phase/broad-phase.ts:68](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L68)
+Defined in: [broad-phase/broad-phase.ts:68](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L68)
 
 检测计数。
 统计当前帧粗检测的碰撞对测试次数；
@@ -162,7 +162,7 @@ Defined in: [broad-phase/broad-phase.ts:68](https://github.com/mrjordia/wuli.js/
 
 > `readonly` **type**: [`BROAD_PHASE_TYPE`](../../../../constant/enumerations/BROAD_PHASE_TYPE.md)
 
-Defined in: [broad-phase/broad-phase.ts:47](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L47)
+Defined in: [broad-phase/broad-phase.ts:47](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L47)
 
 粗检测类型标识。
 标记当前粗检测实例的具体类型（如网格型、扫描型等）；
@@ -178,7 +178,7 @@ Defined in: [broad-phase/broad-phase.ts:47](https://github.com/mrjordia/wuli.js/
 
 > **zero**: [`Vec3`](../../../../common/vec3/classes/Vec3.md)
 
-Defined in: [broad-phase/broad-phase.ts:82](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L82)
+Defined in: [broad-phase/broad-phase.ts:82](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L82)
 
 零向量。
 预初始化的零向量（x=0,y=0,z=0）；
@@ -194,7 +194,7 @@ Defined in: [broad-phase/broad-phase.ts:82](https://github.com/mrjordia/wuli.js/
 
 > **aabbTest**(`aabb`, `callback`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:534](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L534)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:534](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L534)
 
 AABB测试入口方法。
 核心逻辑：
@@ -230,7 +230,7 @@ AABB测试回调函数
 
 > **aabbTestRecursive**(`node`, `aabb`, `callback`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:187](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L187)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:187](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L187)
 
 递归AABB测试（BVH树遍历）。
 AABB测试核心逻辑（剪枝遍历）：
@@ -269,7 +269,7 @@ AABB测试回调函数
 
 > **collectPairs**(): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:412](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L412)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:412](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L412)
 
 收集碰撞对（增量/全量检测）。
 核心逻辑（增量检测为主）：
@@ -296,7 +296,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:412](https://github.
 
 > **collide**(`n1`, `n2`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:88](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L88)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:88](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L88)
 
 递归检测两个BVH节点的碰撞（核心碰撞对收集逻辑）。
 基于BVH树的碰撞对收集算法，核心逻辑（递归遍历）：
@@ -334,7 +334,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:88](https://github.c
 
 > **convexCast**(`convex`, `begin`, `translation`, `callback`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:519](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L519)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:519](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L519)
 
 凸体扫掠检测入口方法。
 核心逻辑：
@@ -382,7 +382,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:519](https://github.
 
 > **convexCastRecursive**(`node`, `convex`, `begin`, `translation`, `callback`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:158](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L158)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:158](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L158)
 
 递归凸体扫掠检测（BVH树遍历）。
 凸体扫掠检测核心逻辑（剪枝遍历）：
@@ -434,7 +434,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:158](https://github.
 
 > **createProxy**(`userData`, `aabb`): [`BvhProxy`](../../bvh-proxy/classes/BvhProxy.md)
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:319](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L319)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:319](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L319)
 
 创建BVH物理代理（关联BVH树叶子节点）。
 核心逻辑：
@@ -476,7 +476,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:319](https://github.
 
 > **destroyProxy**(`proxy`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:381](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L381)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:381](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L381)
 
 销毁BVH物理代理（从BVH树移除并回收节点）。
 核心逻辑：
@@ -507,7 +507,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:381](https://github.
 
 > **getTreeBalance**(): `number`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:545](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L545)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:545](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L545)
 
 获取BVH树的总平衡度。
 封装BvhTree的getBalance方法，对外提供树平衡度查询接口；
@@ -525,7 +525,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:545](https://github.
 
 > **isOverlapping**(`proxy1`, `proxy2`): `boolean`
 
-Defined in: [broad-phase/broad-phase.ts:150](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/broad-phase.ts#L150)
+Defined in: [broad-phase/broad-phase.ts:150](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/broad-phase.ts#L150)
 
 判断两个代理的AABB是否重叠。
 通用的AABB重叠判断实现：
@@ -563,7 +563,7 @@ Defined in: [broad-phase/broad-phase.ts:150](https://github.com/mrjordia/wuli.js
 
 > **moveProxy**(`proxy`, `aabb`, `displacement`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:212](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L212)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:212](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L212)
 
 移动物理代理（更新AABB并标记移动状态）。
 核心逻辑：
@@ -606,7 +606,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:212](https://github.
 
 > **rayCast**(`begin`, `end`, `callback`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:500](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L500)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:500](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L500)
 
 射线检测入口方法。
 核心逻辑：
@@ -648,7 +648,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:500](https://github.
 
 > **rayCastRecursive**(`node`, `x1`, `y1`, `z1`, `x2`, `y2`, `z2`, `callback`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:131](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L131)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:131](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L131)
 
 递归射线检测（BVH树遍历）。
 射线检测核心逻辑（剪枝遍历）：
@@ -717,7 +717,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:131](https://github.
 
 > **setProxyChain**(`parent`, `self`, `si`, `child`, `ci`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:240](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L240)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:240](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L240)
 
 设置代理链（维护BVH树父子节点关系）。
 核心逻辑：
@@ -767,7 +767,7 @@ Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:240](https://github.
 
 > **updateNode**(`nd`, `tree`): `void`
 
-Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:261](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L261)
+Defined in: [broad-phase/bvh-broad-phase/bvh-broad-phase.ts:261](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/bvh-broad-phase/bvh-broad-phase.ts#L261)
 
 更新BVH节点（平衡优化+AABB/高度更新）。
 核心逻辑（自底向上更新）：

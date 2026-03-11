@@ -16,6 +16,7 @@
 
 ## 待办
 - 文档完善
+- 角色控制器
 
 ## 安装
 ```bash  
@@ -35,7 +36,7 @@ import {
   CapsuleGeometry,  
   Shape,  
   ShapeConfig  
-} from 'wuli';  
+} from 'wuli.js';  
 
 // 1. 创建物理容器  
 const world = new World({  
@@ -78,7 +79,7 @@ world.afterCall=()=>{
 // 根据不同平台（如H5、微信小程序...）创建自定义计算循环
 
 // 导入接口
-import { ISimulateAnimation } from 'wuli';
+import { ISimulateAnimation } from 'wuli.js';
 
 // 实现接口（自定义计算循环）
 class AnimationRequest implements ISimulateAnimation{
@@ -116,7 +117,7 @@ import {
   Shape,  
   ShapeConfig,  
   SIMULATE_STATE
-} from 'wuli';  
+} from 'wuli.js';  
 impor {AnimationRequest} from 'AnimationRequest 的路径'； // 导入自定义计算循环
 
 // 创建物理容器

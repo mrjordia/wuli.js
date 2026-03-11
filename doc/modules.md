@@ -32,6 +32,7 @@
 - [collision-detector/gjk-epa-detector/gjk-cache](collision-detector/gjk-epa-detector/gjk-cache/README.md)
 - [collision-detector/gjk-epa-detector/gjk-epa](collision-detector/gjk-epa-detector/gjk-epa/README.md)
 - [collision-detector/gjk-epa-detector/gjk-epa-detector](collision-detector/gjk-epa-detector/gjk-epa-detector/README.md)
+- [collision-detector/precise-ray-caster](collision-detector/precise-ray-caster/README.md)
 - [collision-detector/sphere-box-detector](collision-detector/sphere-box-detector/README.md)
 - [collision-detector/sphere-capsule-detector](collision-detector/sphere-capsule-detector/README.md)
 - [collision-detector/sphere-sphere-detector](collision-detector/sphere-sphere-detector/README.md)

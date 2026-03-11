@@ -6,7 +6,7 @@
 
 # Class: ProxyPair
 
-Defined in: [broad-phase/proxy-pair.ts:12](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/proxy-pair.ts#L12)
+Defined in: [broad-phase/proxy-pair.ts:12](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/proxy-pair.ts#L12)
 
 物理代理对核心类。
 物理引擎中用于管理两个PhysicsProxy碰撞配对关系的核心类；
@@ -31,7 +31,7 @@ Defined in: [broad-phase/proxy-pair.ts:12](https://github.com/mrjordia/wuli.js/b
 
 > **next**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<`ProxyPair`\>
 
-Defined in: [broad-phase/proxy-pair.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/proxy-pair.ts#L32)
+Defined in: [broad-phase/proxy-pair.ts:32](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/proxy-pair.ts#L32)
 
 单向链表后继节点。
 指向链表中下一个ProxyPair实例；
@@ -43,7 +43,7 @@ Defined in: [broad-phase/proxy-pair.ts:32](https://github.com/mrjordia/wuli.js/b
 
 > **proxy1**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`PhysicsProxy`](../../physics-proxy/classes/PhysicsProxy.md)\>
 
-Defined in: [broad-phase/proxy-pair.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/proxy-pair.ts#L18)
+Defined in: [broad-phase/proxy-pair.ts:18](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/proxy-pair.ts#L18)
 
 第一个物理代理实例。
 指向配对中的第一个PhysicsProxy对象；
@@ -55,7 +55,7 @@ Defined in: [broad-phase/proxy-pair.ts:18](https://github.com/mrjordia/wuli.js/b
 
 > **proxy2**: [`Nullable`](../../../common/nullable/type-aliases/Nullable.md)\<[`PhysicsProxy`](../../physics-proxy/classes/PhysicsProxy.md)\>
 
-Defined in: [broad-phase/proxy-pair.ts:25](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/broad-phase/proxy-pair.ts#L25)
+Defined in: [broad-phase/proxy-pair.ts:25](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/broad-phase/proxy-pair.ts#L25)
 
 第二个物理代理实例。
 指向配对中的第二个PhysicsProxy对象；

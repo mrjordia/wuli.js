@@ -6,7 +6,7 @@
 
 # Class: JointSolverMassDataRow
 
-Defined in: [constraint/joint/joint-solver-mass-data-row.ts:6](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-mass-data-row.ts#L6)
+Defined in: [constraint/joint/joint-solver-mass-data-row.ts:6](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-mass-data-row.ts#L6)
 
 关节求解器质量数据单行类。
 物理引擎中关节约束求解的单行质量数据容器，存储单个约束行对应的刚体逆质量/逆惯性张量、约束质量等核心物理参数，
@@ -28,7 +28,7 @@ Defined in: [constraint/joint/joint-solver-mass-data-row.ts:6](https://github.co
 
 > **elements**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [constraint/joint/joint-solver-mass-data-row.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-mass-data-row.ts#L20)
+Defined in: [constraint/joint/joint-solver-mass-data-row.ts:20](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-mass-data-row.ts#L20)
 
 质量数据数组（Float64Array类型）。
 长度为14的浮点数组，按固定索引存储单行约束的所有质量相关参数，索引定义如下：
@@ -50,7 +50,7 @@ Defined in: [constraint/joint/joint-solver-mass-data-row.ts:20](https://github.c
 
 > **get** **mass**(): `number`
 
-Defined in: [constraint/joint/joint-solver-mass-data-row.ts:27](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-mass-data-row.ts#L27)
+Defined in: [constraint/joint/joint-solver-mass-data-row.ts:27](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-mass-data-row.ts#L27)
 
 当前约束行的综合质量值。
 获取elements[12]存储的综合质量值，该值是约束冲量计算的核心参数，
@@ -64,7 +64,7 @@ Defined in: [constraint/joint/joint-solver-mass-data-row.ts:27](https://github.c
 
 > **set** **mass**(`n`): `void`
 
-Defined in: [constraint/joint/joint-solver-mass-data-row.ts:34](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/joint/joint-solver-mass-data-row.ts#L34)
+Defined in: [constraint/joint/joint-solver-mass-data-row.ts:34](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/joint/joint-solver-mass-data-row.ts#L34)
 
 当前约束行的综合质量值。
 设置elements[12]存储的综合质量值，直接影响约束冲量的计算结果，

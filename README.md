@@ -20,6 +20,17 @@ npm install wuli.js
 # 或  
 yarn add wuli.js
 ```
+## 引用方式
+```
+import {World,Quat} from 'wuli.js';
+```
+### 或
+```
+import {World} from 'wuli.js/modules/world';
+import {Quat} from 'wuli.js/modules/common/quat';
+
+```
+
 ## 快速开始
 ```
 // 导入核心模块  

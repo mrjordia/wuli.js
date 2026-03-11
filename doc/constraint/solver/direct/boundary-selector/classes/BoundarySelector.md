@@ -6,7 +6,7 @@
 
 # Class: BoundarySelector
 
-Defined in: [constraint/solver/direct/boundary-selector.ts:14](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-selector.ts#L14)
+Defined in: [constraint/solver/direct/boundary-selector.ts:14](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/boundary-selector.ts#L14)
 
 边界索引选择器类。
 物理引擎中边界索引的动态管理与排序工具类，核心作用：
@@ -26,7 +26,7 @@ Defined in: [constraint/solver/direct/boundary-selector.ts:14](https://github.co
 
 > **new BoundarySelector**(`n`): `BoundarySelector`
 
-Defined in: [constraint/solver/direct/boundary-selector.ts:53](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-selector.ts#L53)
+Defined in: [constraint/solver/direct/boundary-selector.ts:53](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/boundary-selector.ts#L53)
 
 构造函数：初始化边界索引选择器。
 核心初始化逻辑：
@@ -53,7 +53,7 @@ Defined in: [constraint/solver/direct/boundary-selector.ts:53](https://github.co
 
 > **indices**: `Int8Array`
 
-Defined in: [constraint/solver/direct/boundary-selector.ts:32](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-selector.ts#L32)
+Defined in: [constraint/solver/direct/boundary-selector.ts:32](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/boundary-selector.ts#L32)
 
 活跃索引数组。
 存储当前有效的边界索引序列，核心特性：
@@ -68,7 +68,7 @@ Defined in: [constraint/solver/direct/boundary-selector.ts:32](https://github.co
 
 > **n**: `number`
 
-Defined in: [constraint/solver/direct/boundary-selector.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-selector.ts#L22)
+Defined in: [constraint/solver/direct/boundary-selector.ts:22](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/boundary-selector.ts#L22)
 
 索引数组总长度。
 限定索引管理的最大维度数量，核心作用：
@@ -82,7 +82,7 @@ Defined in: [constraint/solver/direct/boundary-selector.ts:22](https://github.co
 
 > **tmpIndices**: `Int8Array`
 
-Defined in: [constraint/solver/direct/boundary-selector.ts:42](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-selector.ts#L42)
+Defined in: [constraint/solver/direct/boundary-selector.ts:42](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/boundary-selector.ts#L42)
 
 临时索引缓冲区。
 索引分割操作的临时存储缓冲区，核心作用：
@@ -97,7 +97,7 @@ Defined in: [constraint/solver/direct/boundary-selector.ts:42](https://github.co
 
 > **getIndex**(`i`): `number`
 
-Defined in: [constraint/solver/direct/boundary-selector.ts:73](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-selector.ts#L73)
+Defined in: [constraint/solver/direct/boundary-selector.ts:73](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/boundary-selector.ts#L73)
 
 获取指定位置的索引值。
 索引数组的安全访问接口，核心作用：
@@ -125,7 +125,7 @@ Defined in: [constraint/solver/direct/boundary-selector.ts:73](https://github.co
 
 > **select**(`index`): `void`
 
-Defined in: [constraint/solver/direct/boundary-selector.ts:87](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-selector.ts#L87)
+Defined in: [constraint/solver/direct/boundary-selector.ts:87](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/boundary-selector.ts#L87)
 
 选中指定索引并置顶。
 核心操作逻辑（原地冒泡排序）：
@@ -153,7 +153,7 @@ Defined in: [constraint/solver/direct/boundary-selector.ts:87](https://github.co
 
 > **setSize**(`size`): `void`
 
-Defined in: [constraint/solver/direct/boundary-selector.ts:113](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constraint/solver/direct/boundary-selector.ts#L113)
+Defined in: [constraint/solver/direct/boundary-selector.ts:113](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constraint/solver/direct/boundary-selector.ts#L113)
 
 按尺寸阈值分割索引数组。
 核心分割逻辑（双指针+缓冲区交换）：

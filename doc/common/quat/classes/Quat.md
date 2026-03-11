@@ -6,7 +6,7 @@
 
 # Class: Quat
 
-Defined in: [common/quat.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L13)
+Defined in: [common/quat.ts:13](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L13)
 
 双精度浮点四元数类（x, y, z, w）。
 用于物理引擎中高效表示3维空间旋转（避免欧拉角万向锁问题）
@@ -23,7 +23,7 @@ Defined in: [common/quat.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **new Quat**(`x?`, `y?`, `z?`, `w?`): `Quat`
 
-Defined in: [common/quat.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L28)
+Defined in: [common/quat.ts:28](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L28)
 
 构造函数。
 初始化四元数，默认创建单位四元数 (0, 0, 0, 1)（无旋转）
@@ -64,7 +64,7 @@ Defined in: [common/quat.ts:28](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **elements**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [common/quat.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L18)
+Defined in: [common/quat.ts:18](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L18)
 
 四元数分量存储数组（双精度浮点）。
 直接操作此数组可提升计算性能，也可通过x/y/z/w访问器便捷操作
@@ -77,7 +77,7 @@ Defined in: [common/quat.ts:18](https://github.com/mrjordia/wuli.js/blob/bac1aeb
 
 > **get** **w**(): `number`
 
-Defined in: [common/quat.ts:93](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L93)
+Defined in: [common/quat.ts:93](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L93)
 
 w分量访问器。
 便捷操作elements[3]（实部w），兼顾易用性与性能
@@ -92,7 +92,7 @@ w分量访问器。
 
 > **set** **w**(`num`): `void`
 
-Defined in: [common/quat.ts:101](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L101)
+Defined in: [common/quat.ts:101](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L101)
 
 w分量设置器。
 
@@ -116,7 +116,7 @@ w分量设置器。
 
 > **get** **x**(): `number`
 
-Defined in: [common/quat.ts:42](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L42)
+Defined in: [common/quat.ts:42](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L42)
 
 x分量访问器。
 便捷操作elements[0]（虚部x），兼顾易用性与性能
@@ -131,7 +131,7 @@ x分量访问器。
 
 > **set** **x**(`num`): `void`
 
-Defined in: [common/quat.ts:50](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L50)
+Defined in: [common/quat.ts:50](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L50)
 
 x分量设置器。
 
@@ -155,7 +155,7 @@ x分量设置器。
 
 > **get** **y**(): `number`
 
-Defined in: [common/quat.ts:59](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L59)
+Defined in: [common/quat.ts:59](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L59)
 
 y分量访问器。
 便捷操作elements[1]（虚部y），兼顾易用性与性能
@@ -170,7 +170,7 @@ y分量访问器。
 
 > **set** **y**(`num`): `void`
 
-Defined in: [common/quat.ts:67](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L67)
+Defined in: [common/quat.ts:67](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L67)
 
 y分量设置器。
 
@@ -194,7 +194,7 @@ y分量设置器。
 
 > **get** **z**(): `number`
 
-Defined in: [common/quat.ts:76](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L76)
+Defined in: [common/quat.ts:76](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L76)
 
 z分量访问器。
 便捷操作elements[2]（虚部z），兼顾易用性与性能
@@ -209,7 +209,7 @@ z分量访问器。
 
 > **set** **z**(`num`): `void`
 
-Defined in: [common/quat.ts:84](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L84)
+Defined in: [common/quat.ts:84](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L84)
 
 z分量设置器。
 
@@ -231,7 +231,7 @@ z分量设置器。
 
 > **init**(`x`, `y`, `z`, `w`): `Quat`
 
-Defined in: [common/quat.ts:114](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/quat.ts#L114)
+Defined in: [common/quat.ts:114](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/quat.ts#L114)
 
 重新初始化四元数分量。
 用于复用已有Quat实例，避免频繁创建新对象，提升物理模拟性能

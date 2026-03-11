@@ -6,7 +6,7 @@
 
 # Enumeration: JACOBIAN\_ROW\_BIT
 
-Defined in: [constant.ts:154](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L154)
+Defined in: [constant.ts:154](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L154)
 
 雅可比行位标识枚举。
 标识雅可比行是否包含线性/角向约束
@@ -17,7 +17,7 @@ Defined in: [constant.ts:154](https://github.com/mrjordia/wuli.js/blob/bac1aebf7
 
 > **ANGULAR\_SET**: `2`
 
-Defined in: [constant.ts:158](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L158)
+Defined in: [constant.ts:158](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L158)
 
 角向约束已设置
 
@@ -27,6 +27,6 @@ Defined in: [constant.ts:158](https://github.com/mrjordia/wuli.js/blob/bac1aebf7
 
 > **LINEAR\_SET**: `1`
 
-Defined in: [constant.ts:156](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/constant.ts#L156)
+Defined in: [constant.ts:156](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/constant.ts#L156)
 
 线性约束已设置

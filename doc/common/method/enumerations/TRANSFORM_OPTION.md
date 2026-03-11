@@ -6,7 +6,7 @@
 
 # Enumeration: TRANSFORM\_OPTION
 
-Defined in: [common/method.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L20)
+Defined in: [common/method.ts:20](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L20)
 
 变换操作选项枚举。
 控制向量/矩阵变换时的操作范围，适配物理引擎中不同坐标空间转换场景：
@@ -20,7 +20,7 @@ Defined in: [common/method.ts:20](https://github.com/mrjordia/wuli.js/blob/bac1a
 
 > **ROTATE**: `1`
 
-Defined in: [common/method.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L24)
+Defined in: [common/method.ts:24](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L24)
 
 仅执行旋转变换，适配纯姿态调整（如刚体朝向修改）
 
@@ -30,7 +30,7 @@ Defined in: [common/method.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1a
 
 > **TRANSLATE**: `2`
 
-Defined in: [common/method.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L26)
+Defined in: [common/method.ts:26](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L26)
 
 仅执行平移变换，适配纯位置调整（如刚体平移）
 
@@ -40,6 +40,6 @@ Defined in: [common/method.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1a
 
 > **TRANSLATE\_ROTATE**: `0`
 
-Defined in: [common/method.ts:22](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/common/method.ts#L22)
+Defined in: [common/method.ts:22](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/common/method.ts#L22)
 
 同时执行平移+旋转变换（默认），适配局部→世界空间的完整转换

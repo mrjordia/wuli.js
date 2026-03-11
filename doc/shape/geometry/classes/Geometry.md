@@ -6,7 +6,7 @@
 
 # Abstract Class: Geometry
 
-Defined in: [shape/geometry.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L13)
+Defined in: [shape/geometry.ts:13](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/geometry.ts#L13)
 
 几何体抽象基类。
 物理引擎中所有碰撞几何体的核心抽象层，定义了几何体的通用接口和基础属性，
@@ -24,7 +24,7 @@ Defined in: [shape/geometry.ts:13](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > **new Geometry**(`type`): `Geometry`
 
-Defined in: [shape/geometry.ts:33](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L33)
+Defined in: [shape/geometry.ts:33](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/geometry.ts#L33)
 
 构造函数。
 初始化几何体类型标识，所有子类需调用此构造函数指定具体类型。
@@ -47,7 +47,7 @@ Defined in: [shape/geometry.ts:33](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > **aabbComputed**: [`Aabb`](../../../common/aabb/classes/Aabb.md)
 
-Defined in: [shape/geometry.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L26)
+Defined in: [shape/geometry.ts:26](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/geometry.ts#L26)
 
 预计算的AABB缓存（用于临时计算，避免频繁创建新Aabb实例）
 
@@ -57,7 +57,7 @@ Defined in: [shape/geometry.ts:26](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > **inertiaCoeff**: `Float64Array`\<`ArrayBuffer`\>
 
-Defined in: [shape/geometry.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L24)
+Defined in: [shape/geometry.ts:24](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/geometry.ts#L24)
 
 惯性张量系数（3x3矩阵，Float64Array存储，按行优先排列）。
 惯性张量的基础系数，不同几何体有不同的系数矩阵，
@@ -70,7 +70,7 @@ Defined in: [shape/geometry.ts:24](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `readonly` **type**: [`GEOMETRY_TYPE`](../../../constant/enumerations/GEOMETRY_TYPE.md)
 
-Defined in: [shape/geometry.ts:15](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L15)
+Defined in: [shape/geometry.ts:15](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/geometry.ts#L15)
 
 几何体类型标识（如SPHERE/BOX/CAPSULE等），只读不可修改
 
@@ -80,7 +80,7 @@ Defined in: [shape/geometry.ts:15](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > **volume**: `number` = `0`
 
-Defined in: [shape/geometry.ts:17](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L17)
+Defined in: [shape/geometry.ts:17](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/geometry.ts#L17)
 
 几何体体积（m³），用于结合密度计算质量
 
@@ -90,7 +90,7 @@ Defined in: [shape/geometry.ts:17](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `abstract` **computeAabb**(`aabb`, `tf`): `void`
 
-Defined in: [shape/geometry.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L54)
+Defined in: [shape/geometry.ts:54](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/geometry.ts#L54)
 
 计算几何体在指定变换下的AABB包围盒。
 抽象方法，子类需实现以适配不同几何体的AABB计算逻辑：
@@ -121,7 +121,7 @@ Defined in: [shape/geometry.ts:54](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > **rayCast**(`_begin`, `_end`, `_transform`, `hit`): `boolean`
 
-Defined in: [shape/geometry.ts:86](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L86)
+Defined in: [shape/geometry.ts:86](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/geometry.ts#L86)
 
 世界坐标系下的射线检测（通用实现，无需子类重写）。
 通用射线检测逻辑，核心步骤：
@@ -168,7 +168,7 @@ Defined in: [shape/geometry.ts:86](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > **rayCastLocal**(`beginX`, `beginY`, `beginZ`, `endX`, `endY`, `endZ`, `hit`): `boolean`
 
-Defined in: [shape/geometry.ts:69](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L69)
+Defined in: [shape/geometry.ts:69](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/geometry.ts#L69)
 
 本地坐标系下的射线检测（子类可重写）。
 基础实现返回false，子类需根据自身几何形状重写此方法，
@@ -230,7 +230,7 @@ Defined in: [shape/geometry.ts:69](https://github.com/mrjordia/wuli.js/blob/bac1
 
 > `abstract` **updateMass**(): `void`
 
-Defined in: [shape/geometry.ts:44](https://github.com/mrjordia/wuli.js/blob/bac1aebf7fcd638eb053ed18ec8eeaaaac3b8714/src/shape/geometry.ts#L44)
+Defined in: [shape/geometry.ts:44](https://github.com/mrjordia/wuli.js/blob/3509599867d77e0e3754230f539293beafd55570/src/shape/geometry.ts#L44)
 
 更新几何体的质量相关数据。
 抽象方法，子类需实现以计算当前几何体的体积和惯性张量系数：
